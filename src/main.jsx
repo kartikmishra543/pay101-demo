@@ -7,9 +7,13 @@ import './style.css';
 
 const chart=[{m:'Jan',v:32},{m:'Feb',v:44},{m:'Mar',v:39},{m:'Apr',v:62},{m:'May',v:57},{m:'Jun',v:81},{m:'Jul',v:76},{m:'Aug',v:96}];
 const tx=[['Payin received','Merchant checkout','+₹2,840.00','Success'],['Payout processed','Vendor transfer','-₹1,280.00','Success'],['Settlement','Bank account','+₹4,820.00','Settled']];
+const heroSlides=[{eyebrow:'PAYMENT INFRASTRUCTURE FOR BUSINESS',line1:'Move money.',line2:'Move business.',copy:'Accept payments, manage payouts and access streamlined settlement flows through one modern payment platform.',cta:'Start with Pay101'},{eyebrow:'FASTER PAYMENT OPERATIONS',line1:'Settle faster.',line2:'Grow smarter.',copy:'Bring payins, payouts and settlement visibility together in one connected payment experience.',cta:'Explore settlements'},{eyebrow:'PAYINS · PAYOUTS · PAYMENT RAILS',line1:'One platform.',line2:'More possibilities.',copy:'Support UPI, IMPS, NEFT and RTGS payment workflows for your business operations.',cta:'Explore solutions'}];
 
 function App(){
  const [menu,setMenu]=React.useState(false);
+ const [activeSlide,setActiveSlide]=React.useState(0);
+ React.useEffect(()=>{const timer=setInterval(()=>setActiveSlide(i=>(i+1)%heroSlides.length),5000);return ()=>clearInterval(timer)},[]);
+ const slide=heroSlides[activeSlide];
  return <div className="app">
   <nav className="nav">
    <a className="brand" href="#" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a>
@@ -23,10 +27,11 @@ function App(){
    <section className="hero">
     <div className="orb orb1"/><div className="orb orb2"/>
     <div className="heroCopy">
-     <div className="eyebrow"><span className="pulse"/> PAYMENT INFRASTRUCTURE FOR BUSINESS</div>
-     <h1>Move money.<br/><em>Move business.</em></h1>
-     <p>Accept payments, manage payouts and access streamlined settlement flows through one modern payment platform.</p>
-     <div className="heroCtas"><button className="primary">Start with Pay101 <ArrowRight size={17}/></button><button className="play"><span>→</span> Explore solutions</button></div>
+     <div className="eyebrow"><span className="pulse"/> {slide.eyebrow}</div>
+     <h1 key={activeSlide} className="heroHeadline">{slide.line1}<br/><em>{slide.line2}</em></h1>
+     <p key={`copy-${activeSlide}`} className="heroDescription">{slide.copy}</p>
+     <div className="heroCtas"><a className="primary" href="#solutions">{slide.cta} <ArrowRight size={17}/></a><a className="play" href="#rails"><span>→</span> Explore solutions</a></div>
+     <div className="heroSlider" aria-label="Choose hero slide">{heroSlides.map((item,i)=><button key={item.eyebrow} className={`heroDot ${i===activeSlide?'active':''}`} onClick={()=>setActiveSlide(i)} aria-label={`Show slide ${i+1}`} aria-pressed={i===activeSlide}/>)}</div>
      <div className="trust"><div className="avatars"><i/><i/><i/><i/></div><span><b>One platform</b> for your payment operations</span></div>
     </div>
     <Dashboard/>
