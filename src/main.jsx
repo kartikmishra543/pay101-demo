@@ -6,7 +6,7 @@ import {AreaChart, Area, ResponsiveContainer, Tooltip, XAxis} from 'recharts';
 import './style.css';
 
 const chart=[{m:'Jan',v:32},{m:'Feb',v:44},{m:'Mar',v:39},{m:'Apr',v:62},{m:'May',v:57},{m:'Jun',v:81},{m:'Jul',v:76},{m:'Aug',v:96}];
-const tx=[['Payin received','Merchant checkout','+$2,840.00 USD','Success'],['Payout processed','Vendor transfer','-AED 1,280.00','Success'],['Settlement','Bank account','+A$4,820.00 AUD','Settled']];
+const tx=[['Payment received','Merchant checkout','+$2,840.00 USD','Success'],['Payment sent','Vendor transfer','-AED 1,280.00','Success'],['Money received','Bank account','+A$4,820.00 AUD','Settled']];
 const heroSlides=[{eyebrow:'PAYMENTS MADE SIMPLE',line1:'Make payments.',line2:'Make progress.',copy:'Accept money from customers, send payments to partners, and see what is happening in one clear place.',cta:'Explore Pay101'},{eyebrow:'LESS TIME CHASING PAYMENTS',line1:'Know what’s paid.',line2:'Know what’s next.',copy:'See incoming payments, outgoing transfers and when money is expected to reach your account.',cta:'See how it works'},{eyebrow:'PAYMENTS FOR MORE MARKETS',line1:'One clear view.',line2:'More ways to pay.',copy:'Explore familiar payment options and bank transfers for businesses serving customers in different markets.',cta:'Explore markets'}];
 
 function App(){
@@ -89,13 +89,13 @@ function App(){
    <section className="split">
     <div className="splitVisual">
      <div className="miniCard"><div className="miniTop"><span>PAY101 PAYMENT HUB</span><span className="liveDot">● LIVE</span></div><strong>$248,920.42</strong><div className="miniChange">Illustrative multi-currency activity <small>demo view</small></div><div className="currencyChips"><span><b>Nu.</b> BTN</span><span><b>रू</b> NPR</span><span><b>د.إ</b> AED</span><span><b>A$</b> AUD</span><span><b>$</b> USD</span></div><div className="miniBars">{[30,52,42,67,54,80,63,91,76,100].map((h,i)=><i key={i} style={{height:h+'%'}}/>)}</div></div>
-     <div className="floatTag tag1"><Check size={15}/> Settlement initiated</div><div className="floatTag tag2">UPI · IMPS · NEFT · RTGS</div>
+     <div className="floatTag tag1"><Check size={15}/> Settlement initiated</div><div className="floatTag tag2">UPI · Bank transfers</div>
     </div>
     <div className="splitCopy"><span className="kicker">ONE CONNECTED WORKFLOW</span><h2>From payment to <em>settlement.</em></h2><p>Keep your payment operations visible from collection through payout and settlement.</p><ul><li><Check/> Real-time transaction visibility</li><li><Check/> Payin and payout workflows</li><li><Check/> Settlement status tracking</li><li><Check/> Clear reporting for operations</li></ul><button className="textBtn">Explore Pay101 solutions <ArrowRight size={17}/></button></div>
    </section>
 
    <section id="developers" className="devSection">
-    <div className="devCopy"><span className="kicker">FOR DEVELOPERS</span><h2>Payment infrastructure that is <em>easy to integrate.</em></h2><p>Build payment experiences with straightforward APIs, clear integration patterns and transaction visibility.</p><div className="codeTabs"><span>Node.js</span><span>Python</span><span>cURL</span></div><div className="code"><div className="dots"><i/><i/><i/></div><pre><code><span>const</span> payment = <span>await</span> pay101.payments.create({'{'}
+    <div className="devCopy"><span className="kicker">FOR DEVELOPERS</span><h2>Payment infrastructure that is <em>easy to integrate.</em></h2><p>Build payment experiences with straightforward technical connections, clear integration patterns and transaction visibility.</p><div className="codeTabs"><span>Node.js</span><span>Python</span><span>cURL</span></div><div className="code"><div className="dots"><i/><i/><i/></div><pre><code><span>const</span> payment = <span>await</span> pay101.payments.create({'{'}
   amount: <b>4999</b>,
   currency: <b>'INR'</b>,
   method: <b>'UPI'</b>
@@ -115,9 +115,9 @@ function App(){
 function Feature({icon,title,text}){return <motion.div className="feature" whileHover={{y:-5}}><div className="icon">{icon}</div><h3>{title}</h3><p>{text}</p><ArrowRight className="featureArrow" size={17}/></motion.div>}
 
 const currencySlides=[
- {code:'BTN',name:'Bhutanese Ngultrum',symbol:'Nu.',amount:'Nu. 184,290',volume:'Nu. 2,840',region:'BHUTAN',tx:[['Payin received','Merchant checkout','+Nu. 2,840','Success'],['Payout processed','Vendor transfer','-Nu. 1,280','Success'],['Settlement','Bank account','+Nu. 4,820','Settled']]},
- {code:'NPR',name:'Nepalese Rupee',symbol:'रू',amount:'रू 18,42,900',volume:'रू 28,400',region:'NEPAL',tx:[['Payin received','Merchant checkout','+रू 28,400','Success'],['Payout processed','Vendor transfer','-रू 12,800','Success'],['Settlement','Bank account','+रू 48,200','Settled']]},
- {code:'AED',name:'UAE Dirham',symbol:'د.إ',amount:'د.إ 184,290',volume:'د.إ 2,840',region:'UNITED ARAB EMIRATES',tx:[['Payin received','Merchant checkout','+د.إ 2,840','Success'],['Payout processed','Vendor transfer','-د.إ 1,280','Success'],['Settlement','Bank account','+د.إ 4,820','Settled']]},
+ {code:'BTN',name:'Bhutanese Ngultrum',symbol:'Nu.',amount:'Nu. 184,290',volume:'Nu. 2,840',region:'BHUTAN',tx:[['Payment received','Merchant checkout','+Nu. 2,840','Success'],['Payment sent','Vendor transfer','-Nu. 1,280','Success'],['Money received','Bank account','+Nu. 4,820','Settled']]},
+ {code:'NPR',name:'Nepalese Rupee',symbol:'रू',amount:'रू 18,42,900',volume:'रू 28,400',region:'NEPAL',tx:[['Payment received','Merchant checkout','+रू 28,400','Success'],['Payment sent','Vendor transfer','-रू 12,800','Success'],['Money received','Bank account','+रू 48,200','Settled']]},
+ {code:'AED',name:'UAE Dirham',symbol:'د.إ',amount:'د.إ 184,290',volume:'د.إ 2,840',region:'UNITED ARAB EMIRATES',tx:[['Payment received','Merchant checkout','+د.إ 2,840','Success'],['Payment sent','Vendor transfer','-د.إ 1,280','Success'],['Money received','Bank account','+د.إ 4,820','Settled']]},
  {code:'AUD',name:'Australian Dollar',symbol:'A
 
 
@@ -128,7 +128,7 @@ function MerchantLogin(){
  const [password,setPassword]=React.useState('');
  const [remember,setRemember]=React.useState(true);
  const [message,setMessage]=React.useState('');
- function handleSubmit(e){e.preventDefault();setMessage('This is a UI preview. Connect the merchant authentication API before using real accounts.');}
+ function handleSubmit(e){e.preventDefault();setMessage('This is a UI preview. Connect the merchant authentication technical connection before using real accounts.');}
  return <div className="merchantPage">
   <header className="merchantHeader"><a href="/" className="merchantBrand"><img src="/assets/pay101-logo.png" alt="Pay101"/></a><div className="merchantHeaderRight"><span>New to Pay101?</span><a href="mailto:support@pay101.uk?subject=Merchant%20account%20access">Contact our team <ArrowRight size={15}/></a></div></header>
   <main className="merchantLayout">
@@ -154,7 +154,7 @@ function MerchantLogin(){
 
 const isMerchantLogin=window.location.pathname==='/login'||window.location.hostname==='partner.pay101.uk';
 createRoot(document.getElementById('root')).render(isMerchantLogin?<MerchantLogin/>:<App/>);
-,amount:'A$ 184,290',volume:'A$ 2,840',region:'AUSTRALIA',tx:[['Payin received','Merchant checkout','+A$ 2,840','Success'],['Payout processed','Vendor transfer','-A$ 1,280','Success'],['Settlement','Bank account','+A$ 4,820','Settled']]},
+,amount:'A$ 184,290',volume:'A$ 2,840',region:'AUSTRALIA',tx:[['Payment received','Merchant checkout','+A$ 2,840','Success'],['Payment sent','Vendor transfer','-A$ 1,280','Success'],['Money received','Bank account','+A$ 4,820','Settled']]},
  {code:'USD',name:'US Dollar',symbol:'
 
 
@@ -165,7 +165,7 @@ function MerchantLogin(){
  const [password,setPassword]=React.useState('');
  const [remember,setRemember]=React.useState(true);
  const [message,setMessage]=React.useState('');
- function handleSubmit(e){e.preventDefault();setMessage('This is a UI preview. Connect the merchant authentication API before using real accounts.');}
+ function handleSubmit(e){e.preventDefault();setMessage('This is a UI preview. Connect the merchant authentication technical connection before using real accounts.');}
  return <div className="merchantPage">
   <header className="merchantHeader"><a href="/" className="merchantBrand"><img src="/assets/pay101-logo.png" alt="Pay101"/></a><div className="merchantHeaderRight"><span>New to Pay101?</span><a href="mailto:support@pay101.uk?subject=Merchant%20account%20access">Contact our team <ArrowRight size={15}/></a></div></header>
   <main className="merchantLayout">
@@ -191,8 +191,8 @@ function MerchantLogin(){
 
 const isMerchantLogin=window.location.pathname==='/login'||window.location.hostname==='partner.pay101.uk';
 createRoot(document.getElementById('root')).render(isMerchantLogin?<MerchantLogin/>:<App/>);
-,amount:'$ 184,290',volume:'$ 2,840',region:'GLOBAL EXAMPLE',tx:[['Payin received','Merchant checkout','+$2,840.00','Success'],['Payout processed','Vendor transfer','-$1,280.00','Success'],['Settlement','Bank account','+$4,820.00','Settled']]},
- {code:'INR',name:'Indian Rupee',symbol:'₹',amount:'₹ 1,84,290',volume:'₹ 2,840',region:'INDIA',tx:[['Payin received','Merchant checkout','+₹ 2,840','Success'],['Payout processed','Vendor transfer','-₹ 1,280','Success'],['Settlement','Bank account','+₹ 4,820','Settled']]}
+,amount:'$ 184,290',volume:'$ 2,840',region:'GLOBAL EXAMPLE',tx:[['Payment received','Merchant checkout','+$2,840.00','Success'],['Payment sent','Vendor transfer','-$1,280.00','Success'],['Money received','Bank account','+$4,820.00','Settled']]},
+ {code:'INR',name:'Indian Rupee',symbol:'₹',amount:'₹ 1,84,290',volume:'₹ 2,840',region:'INDIA',tx:[['Payment received','Merchant checkout','+₹ 2,840','Success'],['Payment sent','Vendor transfer','-₹ 1,280','Success'],['Money received','Bank account','+₹ 4,820','Settled']]}
 ];
 function Dashboard(){
  const [activeCurrency,setActiveCurrency]=React.useState(0);
@@ -201,9 +201,9 @@ function Dashboard(){
  return <motion.div className="dashboard" initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8}}>
  <div className="dashGlow"/>
  <div className="dashHead"><div><small>PAYMENT OVERVIEW · {current.region}</small><h3>Pay101 dashboard</h3></div><div className="user">P</div></div>
- <div className="currencySpotlight" key={current.code}><div><span>{current.code} · {current.name}</span><strong>{current.amount}</strong><small>Illustrative processed volume</small></div><div className="currencyMark">{current.symbol}</div></div>
+ <div className="currencySpotlight" key={current.code}><div><span>{current.code} · {current.name}</span><strong>{current.amount}</strong><small>Example total</small></div><div className="currencyMark">{current.symbol}</div></div>
  <div className="currencyProgress" aria-label="Currency rotation">{currencySlides.map((item,i)=><button key={item.code} onClick={()=>setActiveCurrency(i)} className={i===activeCurrency?'active':''} aria-label={`Show ${item.name}`} aria-pressed={i===activeCurrency}/>)}</div>
- <div className="stats"><div><span>Sample transaction</span><strong>{current.volume}</strong><b>● {current.code} example</b></div><div><span>Success rate</span><strong>98.7%</strong><b>↑ 1.2%</b></div></div>
+ <div className="stats"><div><span>Example payment</span><strong>{current.volume}</strong><b>● {current.code} example</b></div><div><span>Success rate</span><strong>98.7%</strong><b>↑ 1.2%</b></div></div>
  <div className="chartBox"><div className="chartTitle"><span>Payment activity</span><small>{current.code} · demo</small></div><div className="chart"><ResponsiveContainer width="100%" height="100%"><AreaChart data={chart}><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#0878f9" stopOpacity=".28"/><stop offset="100%" stopColor="#0878f9" stopOpacity="0"/></linearGradient></defs><XAxis dataKey="m" hide/><Tooltip contentStyle={{background:'#fff',border:'1px solid #dce6ea',borderRadius:10,color:'#10202b'}}/><Area type="monotone" dataKey="v" stroke="#0878f9" strokeWidth={3} fill="url(#fill)"/></AreaChart></ResponsiveContainer></div></div>
  <div className="recent"><span>RECENT ACTIVITY · {current.code}</span>{current.tx.map((t,i)=><div className="tx" key={i}><div className="txIcon">{i===1?'↗':current.symbol}</div><div><b>{t[0]}</b><small>{t[1]}</small></div><strong className={i===1?'minus':''}>{t[2]}</strong><i>{t[3]}</i></div>)}</div>
  </motion.div>
@@ -217,7 +217,7 @@ function MerchantLogin(){
  const [password,setPassword]=React.useState('');
  const [remember,setRemember]=React.useState(true);
  const [message,setMessage]=React.useState('');
- function handleSubmit(e){e.preventDefault();setMessage('This is a UI preview. Connect the merchant authentication API before using real accounts.');}
+ function handleSubmit(e){e.preventDefault();setMessage('This is a UI preview. Connect the merchant authentication technical connection before using real accounts.');}
  return <div className="merchantPage">
   <header className="merchantHeader"><a href="/" className="merchantBrand"><img src="/assets/pay101-logo.png" alt="Pay101"/></a><div className="merchantHeaderRight"><span>New to Pay101?</span><a href="mailto:support@pay101.uk?subject=Merchant%20account%20access">Contact our team <ArrowRight size={15}/></a></div></header>
   <main className="merchantLayout">
