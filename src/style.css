@@ -66,3 +66,9 @@ footer{border-top:1px solid #e1e8eb;max-width:1220px;margin:auto;padding:35px 28
 .merchantFooter div{display:flex;gap:20px}.merchantFooter a{color:#526985}
 @media(max-width:900px){.merchantLayout{grid-template-columns:1fr;gap:35px;max-width:620px;padding:45px 22px 55px}.merchantIntro h1{font-size:54px}.merchantPreview{max-width:100%}.merchantBenefits{gap:12px}.loginPanel{padding:28px}}
 @media(max-width:550px){.merchantHeader{height:72px;padding:0 18px}.merchantBrand img{width:125px;max-height:40px}.merchantHeaderRight span{display:none}.merchantLayout{padding:34px 18px 40px;gap:28px}.merchantIntro h1{font-size:45px}.merchantIntro>p{font-size:14px;margin:16px 0 22px}.merchantPreview{padding:15px}.merchantBenefits{gap:12px}.merchantBenefits span{font-size:10px}.loginPanel{padding:23px 19px;border-radius:18px}.loginPanelHead h2{font-size:28px}.merchantFooter{padding:20px 18px;flex-wrap:wrap}.merchantFooter div{width:100%}}
+
+
+/* Multi-region currency display in the illustrative payment dashboard */
+.currencyChips{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 5px}
+.currencyChips span{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border-radius:7px;background:#eaf3ff;border:1px solid #d5e7ff;color:#526985;font-size:10px;font-weight:600}
+.currencyChips b{color:#0878f9;font-size:11px}
