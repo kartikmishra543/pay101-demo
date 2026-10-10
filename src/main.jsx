@@ -18,7 +18,7 @@ function App(){
   <nav className="nav">
    <a className="brand" href="#" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a>
    <div className="navLinks"><a href="#solutions">Solutions</a><a href="#rails">Payment Rails</a><a href="#developers">Developers</a><a href="#security">Security</a></div>
-   <div className="navActions"><button className="ghost">Sign in</button><button className="primary small">Get started <ArrowRight size={15}/></button></div>
+   <div className="navActions"><a className="ghost" href="/login">Sign in</a><button className="primary small">Get started <ArrowRight size={15}/></button></div>
    <button className="mobileBtn" onClick={()=>setMenu(!menu)} aria-label="Toggle menu">{menu?<X/>:<Menu/>}</button>
   </nav>
   {menu&&<div className="mobileMenu"><a href="#solutions">Solutions</a><a href="#rails">Payment Rails</a><a href="#developers">Developers</a><a href="#security">Security</a><button className="primary">Get started</button></div>}
@@ -97,6 +97,7 @@ function Dashboard(){return <motion.div className="dashboard" initial={{opacity:
 
 
 function MerchantLogin(){
+ React.useEffect(()=>{document.title='Merchant Login | Pay101';},[]);
  const [showPassword,setShowPassword]=React.useState(false);
  const [email,setEmail]=React.useState('');
  const [password,setPassword]=React.useState('');
