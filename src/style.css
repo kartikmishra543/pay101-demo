@@ -129,3 +129,11 @@ footer{border-top:1px solid #e1e8eb;max-width:1220px;margin:auto;padding:35px 28
 @media (max-width: 900px){
   .hero .dashboard{top:0;}
 }
+
+
+/* Keep the Solutions dropdown trigger aligned on one line with the other nav links */
+.navLinks{align-items:center;}
+.navDropdownWrap{align-self:center;flex-shrink:0;}
+.navDropTrigger{white-space:nowrap;flex-wrap:nowrap;line-height:1.2;}
+.navDropTrigger span{display:inline-block;line-height:1;flex-shrink:0;}
+.navLinks>a{white-space:nowrap;}
