@@ -87,13 +87,100 @@ function App(){
 
 function Feature({icon,title,text}){return <motion.div className="feature" whileHover={{y:-5}}><div className="icon">{icon}</div><h3>{title}</h3><p>{text}</p><ArrowRight className="featureArrow" size={17}/></motion.div>}
 
-function Dashboard(){return <motion.div className="dashboard" initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8}}>
+const currencySlides=[
+ {code:'BTN',name:'Bhutanese Ngultrum',symbol:'Nu.',amount:'Nu. 184,290',volume:'Nu. 2,840',region:'BHUTAN',tx:[['Payin received','Merchant checkout','+Nu. 2,840','Success'],['Payout processed','Vendor transfer','-Nu. 1,280','Success'],['Settlement','Bank account','+Nu. 4,820','Settled']]},
+ {code:'NPR',name:'Nepalese Rupee',symbol:'रू',amount:'रू 18,42,900',volume:'रू 28,400',region:'NEPAL',tx:[['Payin received','Merchant checkout','+रू 28,400','Success'],['Payout processed','Vendor transfer','-रू 12,800','Success'],['Settlement','Bank account','+रू 48,200','Settled']]},
+ {code:'AED',name:'UAE Dirham',symbol:'د.إ',amount:'د.إ 184,290',volume:'د.إ 2,840',region:'UNITED ARAB EMIRATES',tx:[['Payin received','Merchant checkout','+د.إ 2,840','Success'],['Payout processed','Vendor transfer','-د.إ 1,280','Success'],['Settlement','Bank account','+د.إ 4,820','Settled']]},
+ {code:'AUD',name:'Australian Dollar',symbol:'A
+
+
+function MerchantLogin(){
+ React.useEffect(()=>{document.title='Merchant Login | Pay101';},[]);
+ const [showPassword,setShowPassword]=React.useState(false);
+ const [email,setEmail]=React.useState('');
+ const [password,setPassword]=React.useState('');
+ const [remember,setRemember]=React.useState(true);
+ const [message,setMessage]=React.useState('');
+ function handleSubmit(e){e.preventDefault();setMessage('This is a UI preview. Connect the merchant authentication API before using real accounts.');}
+ return <div className="merchantPage">
+  <header className="merchantHeader"><a href="/" className="merchantBrand"><img src="/assets/pay101-logo.png" alt="Pay101"/></a><div className="merchantHeaderRight"><span>New to Pay101?</span><a href="mailto:support@pay101.uk?subject=Merchant%20account%20access">Contact our team <ArrowRight size={15}/></a></div></header>
+  <main className="merchantLayout">
+   <section className="merchantIntro"><div className="merchantEyebrow"><span/> MERCHANT PORTAL</div><h1>Your payments.<br/><em>Your business.</em></h1><p>Sign in to manage your payment activity, monitor settlements and keep track of your transactions in one place.</p>
+    <div className="merchantPreview"><div className="previewTop"><div><span>ACCOUNT OVERVIEW</span><strong>Payment activity</strong></div><div className="previewAvatar">P</div></div><div className="previewStats"><div><span>Payment methods</span><strong>UPI · IMPS</strong><small>NEFT · RTGS</small></div><div><span>Portal access</span><strong>Merchant</strong><small>Account workspace</small></div></div><div className="previewLine"><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/></div><div className="previewFoot"><span><i/> Payment monitoring</span><span>Pay101 Portal</span></div></div>
+    <div className="merchantBenefits"><span><ShieldCheck size={17}/> Payment visibility</span><span><LockKeyhole size={17}/> Account access</span><span><BarChart3 size={17}/> Settlement overview</span></div>
+   </section>
+   <section className="loginPanel"><div className="loginPanelHead"><div className="loginIcon"><LockKeyhole size={21}/></div><span className="loginTag">MERCHANT SIGN IN</span><h2>Welcome back</h2><p>Enter your account details to continue.</p></div>
+    <form className="loginForm" onSubmit={handleSubmit}>
+     <label htmlFor="merchant-email">Email address</label><div className="loginInput"><Mail size={17}/><input id="merchant-email" type="email" autoComplete="username" placeholder="you@company.com" value={email} onChange={e=>setEmail(e.target.value)} required/></div>
+     <div className="passwordLabel"><label htmlFor="merchant-password">Password</label><a href="mailto:support@pay101.uk?subject=Merchant%20password%20reset">Forgot password?</a></div><div className="loginInput"><LockKeyhole size={17}/><input id="merchant-password" type={showPassword?'text':'password'} autoComplete="current-password" placeholder="Enter your password" value={password} onChange={e=>setPassword(e.target.value)} required/><button className="passwordToggle" type="button" onClick={()=>setShowPassword(v=>!v)} aria-label={showPassword?'Hide password':'Show password'}>{showPassword?<EyeOff size={17}/>:<Eye size={17}/>}</button></div>
+     <label className="rememberRow"><input type="checkbox" checked={remember} onChange={e=>setRemember(e.target.checked)}/> <span>Remember me on this device</span></label>
+     <button className="loginSubmit" type="submit">Sign in to merchant portal <ArrowRight size={17}/></button>
+     {message&&<p className="loginNotice" role="status">{message}</p>}
+    </form>
+    <div className="loginHelp">Need access to your merchant account? <a href="mailto:support@pay101.uk?subject=Merchant%20portal%20access">Contact support</a></div>
+    <div className="loginSecurity"><LockKeyhole size={14}/> Never share your password or one-time codes.</div>
+   </section>
+  </main>
+  <footer className="merchantFooter"><span>© 2026 Pay101. Merchant portal preview.</span><div><a href="/">Pay101 home</a><a href="mailto:support@pay101.uk">Help & support</a></div></footer>
+ </div>
+}
+
+const isMerchantLogin=window.location.pathname==='/login'||window.location.hostname==='partner.pay101.uk';
+createRoot(document.getElementById('root')).render(isMerchantLogin?<MerchantLogin/>:<App/>);
+,amount:'A$ 184,290',volume:'A$ 2,840',region:'AUSTRALIA',tx:[['Payin received','Merchant checkout','+A$ 2,840','Success'],['Payout processed','Vendor transfer','-A$ 1,280','Success'],['Settlement','Bank account','+A$ 4,820','Settled']]},
+ {code:'USD',name:'US Dollar',symbol:'
+
+
+function MerchantLogin(){
+ React.useEffect(()=>{document.title='Merchant Login | Pay101';},[]);
+ const [showPassword,setShowPassword]=React.useState(false);
+ const [email,setEmail]=React.useState('');
+ const [password,setPassword]=React.useState('');
+ const [remember,setRemember]=React.useState(true);
+ const [message,setMessage]=React.useState('');
+ function handleSubmit(e){e.preventDefault();setMessage('This is a UI preview. Connect the merchant authentication API before using real accounts.');}
+ return <div className="merchantPage">
+  <header className="merchantHeader"><a href="/" className="merchantBrand"><img src="/assets/pay101-logo.png" alt="Pay101"/></a><div className="merchantHeaderRight"><span>New to Pay101?</span><a href="mailto:support@pay101.uk?subject=Merchant%20account%20access">Contact our team <ArrowRight size={15}/></a></div></header>
+  <main className="merchantLayout">
+   <section className="merchantIntro"><div className="merchantEyebrow"><span/> MERCHANT PORTAL</div><h1>Your payments.<br/><em>Your business.</em></h1><p>Sign in to manage your payment activity, monitor settlements and keep track of your transactions in one place.</p>
+    <div className="merchantPreview"><div className="previewTop"><div><span>ACCOUNT OVERVIEW</span><strong>Payment activity</strong></div><div className="previewAvatar">P</div></div><div className="previewStats"><div><span>Payment methods</span><strong>UPI · IMPS</strong><small>NEFT · RTGS</small></div><div><span>Portal access</span><strong>Merchant</strong><small>Account workspace</small></div></div><div className="previewLine"><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/></div><div className="previewFoot"><span><i/> Payment monitoring</span><span>Pay101 Portal</span></div></div>
+    <div className="merchantBenefits"><span><ShieldCheck size={17}/> Payment visibility</span><span><LockKeyhole size={17}/> Account access</span><span><BarChart3 size={17}/> Settlement overview</span></div>
+   </section>
+   <section className="loginPanel"><div className="loginPanelHead"><div className="loginIcon"><LockKeyhole size={21}/></div><span className="loginTag">MERCHANT SIGN IN</span><h2>Welcome back</h2><p>Enter your account details to continue.</p></div>
+    <form className="loginForm" onSubmit={handleSubmit}>
+     <label htmlFor="merchant-email">Email address</label><div className="loginInput"><Mail size={17}/><input id="merchant-email" type="email" autoComplete="username" placeholder="you@company.com" value={email} onChange={e=>setEmail(e.target.value)} required/></div>
+     <div className="passwordLabel"><label htmlFor="merchant-password">Password</label><a href="mailto:support@pay101.uk?subject=Merchant%20password%20reset">Forgot password?</a></div><div className="loginInput"><LockKeyhole size={17}/><input id="merchant-password" type={showPassword?'text':'password'} autoComplete="current-password" placeholder="Enter your password" value={password} onChange={e=>setPassword(e.target.value)} required/><button className="passwordToggle" type="button" onClick={()=>setShowPassword(v=>!v)} aria-label={showPassword?'Hide password':'Show password'}>{showPassword?<EyeOff size={17}/>:<Eye size={17}/>}</button></div>
+     <label className="rememberRow"><input type="checkbox" checked={remember} onChange={e=>setRemember(e.target.checked)}/> <span>Remember me on this device</span></label>
+     <button className="loginSubmit" type="submit">Sign in to merchant portal <ArrowRight size={17}/></button>
+     {message&&<p className="loginNotice" role="status">{message}</p>}
+    </form>
+    <div className="loginHelp">Need access to your merchant account? <a href="mailto:support@pay101.uk?subject=Merchant%20portal%20access">Contact support</a></div>
+    <div className="loginSecurity"><LockKeyhole size={14}/> Never share your password or one-time codes.</div>
+   </section>
+  </main>
+  <footer className="merchantFooter"><span>© 2026 Pay101. Merchant portal preview.</span><div><a href="/">Pay101 home</a><a href="mailto:support@pay101.uk">Help & support</a></div></footer>
+ </div>
+}
+
+const isMerchantLogin=window.location.pathname==='/login'||window.location.hostname==='partner.pay101.uk';
+createRoot(document.getElementById('root')).render(isMerchantLogin?<MerchantLogin/>:<App/>);
+,amount:'$ 184,290',volume:'$ 2,840',region:'GLOBAL EXAMPLE',tx:[['Payin received','Merchant checkout','+$2,840.00','Success'],['Payout processed','Vendor transfer','-$1,280.00','Success'],['Settlement','Bank account','+$4,820.00','Settled']]},
+ {code:'INR',name:'Indian Rupee',symbol:'₹',amount:'₹ 1,84,290',volume:'₹ 2,840',region:'INDIA',tx:[['Payin received','Merchant checkout','+₹ 2,840','Success'],['Payout processed','Vendor transfer','-₹ 1,280','Success'],['Settlement','Bank account','+₹ 4,820','Settled']]}
+];
+function Dashboard(){
+ const [activeCurrency,setActiveCurrency]=React.useState(0);
+ React.useEffect(()=>{const timer=setInterval(()=>setActiveCurrency(i=>(i+1)%currencySlides.length),5000);return ()=>clearInterval(timer)},[]);
+ const current=currencySlides[activeCurrency];
+ return <motion.div className="dashboard" initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8}}>
  <div className="dashGlow"/>
- <div className="dashHead"><div><small>PAYMENT OVERVIEW</small><h3>Pay101 dashboard</h3></div><div className="user">P</div></div>
- <div className="stats"><div><span>Processed volume</span><strong>$184,290</strong><b>↑ 24.8%</b></div><div><span>Success rate</span><strong>98.7%</strong><b>↑ 1.2%</b></div></div>
- <div className="chartBox"><div className="chartTitle"><span>Payment activity</span><small>Last 8 months⌄</small></div><div className="chart"><ResponsiveContainer width="100%" height="100%"><AreaChart data={chart}><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#0878f9" stopOpacity=".28"/><stop offset="100%" stopColor="#0878f9" stopOpacity="0"/></linearGradient></defs><XAxis dataKey="m" hide/><Tooltip contentStyle={{background:'#fff',border:'1px solid #dce6ea',borderRadius:10,color:'#10202b'}}/><Area type="monotone" dataKey="v" stroke="#0878f9" strokeWidth={3} fill="url(#fill)"/></AreaChart></ResponsiveContainer></div></div>
- <div className="recent"><span>RECENT ACTIVITY</span>{tx.map((t,i)=><div className="tx" key={i}><div className="txIcon">{i===1?'↗':'₹'}</div><div><b>{t[0]}</b><small>{t[1]}</small></div><strong className={i===1?'minus':''}>{t[2]}</strong><i>{t[3]}</i></div>)}</div>
- </motion.div>}
+ <div className="dashHead"><div><small>PAYMENT OVERVIEW · {current.region}</small><h3>Pay101 dashboard</h3></div><div className="user">P</div></div>
+ <div className="currencySpotlight" key={current.code}><div><span>{current.code} · {current.name}</span><strong>{current.amount}</strong><small>Illustrative processed volume</small></div><div className="currencyMark">{current.symbol}</div></div>
+ <div className="currencyProgress" aria-label="Currency rotation">{currencySlides.map((item,i)=><button key={item.code} onClick={()=>setActiveCurrency(i)} className={i===activeCurrency?'active':''} aria-label={`Show ${item.name}`} aria-pressed={i===activeCurrency}/>)}</div>
+ <div className="stats"><div><span>Sample transaction</span><strong>{current.volume}</strong><b>● {current.code} example</b></div><div><span>Success rate</span><strong>98.7%</strong><b>↑ 1.2%</b></div></div>
+ <div className="chartBox"><div className="chartTitle"><span>Payment activity</span><small>{current.code} · demo</small></div><div className="chart"><ResponsiveContainer width="100%" height="100%"><AreaChart data={chart}><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#0878f9" stopOpacity=".28"/><stop offset="100%" stopColor="#0878f9" stopOpacity="0"/></linearGradient></defs><XAxis dataKey="m" hide/><Tooltip contentStyle={{background:'#fff',border:'1px solid #dce6ea',borderRadius:10,color:'#10202b'}}/><Area type="monotone" dataKey="v" stroke="#0878f9" strokeWidth={3} fill="url(#fill)"/></AreaChart></ResponsiveContainer></div></div>
+ <div className="recent"><span>RECENT ACTIVITY · {current.code}</span>{current.tx.map((t,i)=><div className="tx" key={i}><div className="txIcon">{i===1?'↗':current.symbol}</div><div><b>{t[0]}</b><small>{t[1]}</small></div><strong className={i===1?'minus':''}>{t[2]}</strong><i>{t[3]}</i></div>)}</div>
+ </motion.div>
+}
 
 
 function MerchantLogin(){
