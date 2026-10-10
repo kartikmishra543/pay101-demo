@@ -7,21 +7,36 @@ import './style.css';
 
 const chart=[{m:'Jan',v:32},{m:'Feb',v:44},{m:'Mar',v:39},{m:'Apr',v:62},{m:'May',v:57},{m:'Jun',v:81},{m:'Jul',v:76},{m:'Aug',v:96}];
 const tx=[['Payin received','Merchant checkout','+$2,840.00 USD','Success'],['Payout processed','Vendor transfer','-AED 1,280.00','Success'],['Settlement','Bank account','+A$4,820.00 AUD','Settled']];
-const heroSlides=[{eyebrow:'PAYMENT INFRASTRUCTURE FOR BUSINESS',line1:'Move money.',line2:'Move business.',copy:'Accept payments, manage payouts and access streamlined settlement flows through one modern payment platform.',cta:'Start with Pay101'},{eyebrow:'FASTER PAYMENT OPERATIONS',line1:'Settle faster.',line2:'Grow smarter.',copy:'Bring payins, payouts and settlement visibility together in one connected payment experience.',cta:'Explore settlements'},{eyebrow:'PAYINS · PAYOUTS · PAYMENT RAILS',line1:'One platform.',line2:'More possibilities.',copy:'Support UPI, IMPS, NEFT and RTGS payment workflows for your business operations.',cta:'Explore solutions'}];
+const heroSlides=[{eyebrow:'PAYMENTS MADE SIMPLE',line1:'Make payments.',line2:'Make progress.',copy:'Accept money from customers, send payments to partners, and see what is happening in one clear place.',cta:'Explore Pay101'},{eyebrow:'LESS TIME CHASING PAYMENTS',line1:'Know what’s paid.',line2:'Know what’s next.',copy:'See incoming payments, outgoing transfers and when money is expected to reach your account.',cta:'See how it works'},{eyebrow:'PAYMENTS FOR MORE MARKETS',line1:'One clear view.',line2:'More ways to pay.',copy:'Explore familiar payment options and bank transfers for businesses serving customers in different markets.',cta:'Explore markets'}];
 
 function App(){
  const [menu,setMenu]=React.useState(false);
+ const [solutionsOpen,setSolutionsOpen]=React.useState(false);
+ const [solutionTab,setSolutionTab]=React.useState('markets');
  const [activeSlide,setActiveSlide]=React.useState(0);
  React.useEffect(()=>{const timer=setInterval(()=>setActiveSlide(i=>(i+1)%heroSlides.length),5000);return ()=>clearInterval(timer)},[]);
  const slide=heroSlides[activeSlide];
  return <div className="app">
   <nav className="nav">
    <a className="brand" href="#" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a>
-   <div className="navLinks"><a href="#solutions">Solutions</a><a href="#rails">Payment Rails</a><a href="#developers">Developers</a><a href="#security">Security</a></div>
+   <div className="navLinks">
+    <div className="navDropdownWrap" onMouseEnter={()=>setSolutionsOpen(true)} onMouseLeave={()=>setSolutionsOpen(false)}>
+     <button className={`navDropTrigger ${solutionsOpen?'isOpen':''}`} onClick={()=>setSolutionsOpen(v=>!v)} aria-expanded={solutionsOpen}>Solutions <span>⌄</span></button>
+     {solutionsOpen&&<div className="solutionsDropdown">
+      <div className="solutionsTabs"><button className={solutionTab==='markets'?'selected':''} onClick={()=>setSolutionTab('markets')}>Local markets</button><button className={solutionTab==='industries'?'selected':''} onClick={()=>setSolutionTab('industries')}>Industries</button><button className={solutionTab==='features'?'selected':''} onClick={()=>setSolutionTab('features')}>Features</button></div>
+      <div className="solutionsPanel">
+       {solutionTab==='markets'&&<><span className="dropdownHeading">Explore markets</span><a href="#markets"><b>🇮🇳 India</b><small>UPI and bank transfers</small></a><a href="#markets"><b>🇳🇵 Nepal</b><small>Local payment options</small></a><a href="#markets"><b>🇧🇹 Bhutan</b><small>Regional payment options</small></a><a href="#markets"><b>🇦🇪 United Arab Emirates</b><small>Dirham currency examples</small></a><a href="#markets"><b>🇦🇺 Australia</b><small>Australian dollar examples</small></a></>}
+       {solutionTab==='industries'&&<><span className="dropdownHeading">Who we help</span><a href="#solutions"><b>Online stores</b><small>Make checkout easier</small></a><a href="#solutions"><b>Marketplaces</b><small>Collect and send payments</small></a><a href="#solutions"><b>Digital services</b><small>Manage customer payments</small></a></>}
+       {solutionTab==='features'&&<><span className="dropdownHeading">What you can do</span><a href="#solutions"><b>Accept payments</b><small>Give customers easy ways to pay</small></a><a href="#solutions"><b>Send payouts</b><small>Pay vendors and partners</small></a><a href="#solutions"><b>Track your money</b><small>See payments and transfers clearly</small></a></>}
+      </div>
+     </div>}
+    </div>
+    <a href="#markets">Markets</a><a href="#developers">How it works</a><a href="#security">Security</a>
+   </div>
    <div className="navActions"><a className="ghost" href="/login">Sign in</a><button className="primary small">Get started <ArrowRight size={15}/></button></div>
    <button className="mobileBtn" onClick={()=>setMenu(!menu)} aria-label="Toggle menu">{menu?<X/>:<Menu/>}</button>
   </nav>
-  {menu&&<div className="mobileMenu"><a href="#solutions">Solutions</a><a href="#rails">Payment Rails</a><a href="#developers">Developers</a><a href="#security">Security</a><button className="primary">Get started</button></div>}
+  {menu&&<div className="mobileMenu"><a href="#solutions">Solutions</a><a href="#markets">Markets</a><a href="#developers">How it works</a><a href="#security">Security</a><button className="primary">Get started</button></div>}
 
   <main>
    <section className="hero">
@@ -35,6 +50,18 @@ function App(){
      <div className="trust"><div className="avatars"><i/><i/><i/><i/></div><span><b>One platform</b> for your payment operations</span></div>
     </div>
     <Dashboard/>
+   </section>
+
+   <section id="markets" className="marketsSection">
+    <div className="marketsIntro"><span className="kicker">EXPLORE MARKETS</span><h2>Payments that feel <em>local.</em></h2><p>Customers like to pay in familiar ways. Explore the markets we are considering and ask our team which options are available for your business.</p></div>
+    <div className="marketGrid">
+     <a href="mailto:support@pay101.uk?subject=Pay101%20India%20market"><span className="marketFlag">🇮🇳</span><div><b>India</b><small>UPI and bank transfers</small></div><ArrowRight size={17}/></a>
+     <a href="mailto:support@pay101.uk?subject=Pay101%20Nepal%20market"><span className="marketFlag">🇳🇵</span><div><b>Nepal</b><small>Explore local payment options</small></div><ArrowRight size={17}/></a>
+     <a href="mailto:support@pay101.uk?subject=Pay101%20Bhutan%20market"><span className="marketFlag">🇧🇹</span><div><b>Bhutan</b><small>Explore local payment options</small></div><ArrowRight size={17}/></a>
+     <a href="mailto:support@pay101.uk?subject=Pay101%20UAE%20market"><span className="marketFlag">🇦🇪</span><div><b>United Arab Emirates</b><small>AED currency examples</small></div><ArrowRight size={17}/></a>
+     <a href="mailto:support@pay101.uk?subject=Pay101%20Australia%20market"><span className="marketFlag">🇦🇺</span><div><b>Australia</b><small>AUD currency examples</small></div><ArrowRight size={17}/></a>
+    </div>
+    <p className="marketDisclaimer">Market examples are for demonstration. Payment methods and country availability must be confirmed with Pay101.</p>
    </section>
 
    <section id="rails" className="rails">
