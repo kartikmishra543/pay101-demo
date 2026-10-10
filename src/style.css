@@ -72,3 +72,16 @@ footer{border-top:1px solid #e1e8eb;max-width:1220px;margin:auto;padding:35px 28
 .currencyChips{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 5px}
 .currencyChips span{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border-radius:7px;background:#eaf3ff;border:1px solid #d5e7ff;color:#526985;font-size:10px;font-weight:600}
 .currencyChips b{color:#0878f9;font-size:11px}
+
+
+/* Auto-rotating multi-currency dashboard spotlight */
+.currencySpotlight{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 16px;margin-top:18px;border:1px solid #d5e7ff;border-radius:13px;background:linear-gradient(120deg,#eef6ff,#fff);animation:currencyFade .35s ease both}
+.currencySpotlight span,.currencySpotlight small{display:block;color:#647b94;font-size:9px;letter-spacing:.6px}
+.currencySpotlight strong{display:block;margin:7px 0 5px;font:600 24px 'Space Grotesk';letter-spacing:-.7px;color:#10202b}
+.currencySpotlight small{letter-spacing:0}
+.currencyMark{display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;border-radius:14px;background:#0878f914;color:#0878f9;font:600 19px 'Space Grotesk'}
+.currencyProgress{display:flex;gap:5px;align-items:center;margin:9px 0 0}
+.currencyProgress button{height:4px;flex:1;border:0;border-radius:10px;padding:0;background:#d6e5f6;cursor:pointer}
+.currencyProgress button.active{background:#0878f9}
+@keyframes currencyFade{from{opacity:.45;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:550px){.currencySpotlight strong{font-size:21px}.currencyMark{flex-basis:42px;width:42px;height:42px}}
