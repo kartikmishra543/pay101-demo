@@ -6,7 +6,7 @@ import {AreaChart, Area, ResponsiveContainer, Tooltip, XAxis} from 'recharts';
 import './style.css';
 
 const chart=[{m:'Jan',v:32},{m:'Feb',v:44},{m:'Mar',v:39},{m:'Apr',v:62},{m:'May',v:57},{m:'Jun',v:81},{m:'Jul',v:76},{m:'Aug',v:96}];
-const tx=[['Payin received','Merchant checkout','+₹2,840.00','Success'],['Payout processed','Vendor transfer','-₹1,280.00','Success'],['Settlement','Bank account','+₹4,820.00','Settled']];
+const tx=[['Payin received','Merchant checkout','+$2,840.00 USD','Success'],['Payout processed','Vendor transfer','-AED 1,280.00','Success'],['Settlement','Bank account','+A$4,820.00 AUD','Settled']];
 const heroSlides=[{eyebrow:'PAYMENT INFRASTRUCTURE FOR BUSINESS',line1:'Move money.',line2:'Move business.',copy:'Accept payments, manage payouts and access streamlined settlement flows through one modern payment platform.',cta:'Start with Pay101'},{eyebrow:'FASTER PAYMENT OPERATIONS',line1:'Settle faster.',line2:'Grow smarter.',copy:'Bring payins, payouts and settlement visibility together in one connected payment experience.',cta:'Explore settlements'},{eyebrow:'PAYINS · PAYOUTS · PAYMENT RAILS',line1:'One platform.',line2:'More possibilities.',copy:'Support UPI, IMPS, NEFT and RTGS payment workflows for your business operations.',cta:'Explore solutions'}];
 
 function App(){
@@ -61,7 +61,7 @@ function App(){
 
    <section className="split">
     <div className="splitVisual">
-     <div className="miniCard"><div className="miniTop"><span>PAY101 PAYMENT HUB</span><span className="liveDot">● LIVE</span></div><strong>₹248,920.42</strong><div className="miniChange">Settlement activity <small>this month</small></div><div className="miniBars">{[30,52,42,67,54,80,63,91,76,100].map((h,i)=><i key={i} style={{height:h+'%'}}/>)}</div></div>
+     <div className="miniCard"><div className="miniTop"><span>PAY101 PAYMENT HUB</span><span className="liveDot">● LIVE</span></div><strong>$248,920.42</strong><div className="miniChange">Illustrative multi-currency activity <small>demo view</small></div><div className="currencyChips"><span><b>Nu.</b> BTN</span><span><b>रू</b> NPR</span><span><b>د.إ</b> AED</span><span><b>A$</b> AUD</span><span><b>$</b> USD</span></div><div className="miniBars">{[30,52,42,67,54,80,63,91,76,100].map((h,i)=><i key={i} style={{height:h+'%'}}/>)}</div></div>
      <div className="floatTag tag1"><Check size={15}/> Settlement initiated</div><div className="floatTag tag2">UPI · IMPS · NEFT · RTGS</div>
     </div>
     <div className="splitCopy"><span className="kicker">ONE CONNECTED WORKFLOW</span><h2>From payment to <em>settlement.</em></h2><p>Keep your payment operations visible from collection through payout and settlement.</p><ul><li><Check/> Real-time transaction visibility</li><li><Check/> Payin and payout workflows</li><li><Check/> Settlement status tracking</li><li><Check/> Clear reporting for operations</li></ul><button className="textBtn">Explore Pay101 solutions <ArrowRight size={17}/></button></div>
@@ -90,7 +90,7 @@ function Feature({icon,title,text}){return <motion.div className="feature" while
 function Dashboard(){return <motion.div className="dashboard" initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8}}>
  <div className="dashGlow"/>
  <div className="dashHead"><div><small>PAYMENT OVERVIEW</small><h3>Pay101 dashboard</h3></div><div className="user">P</div></div>
- <div className="stats"><div><span>Processed volume</span><strong>₹184,290</strong><b>↑ 24.8%</b></div><div><span>Success rate</span><strong>98.7%</strong><b>↑ 1.2%</b></div></div>
+ <div className="stats"><div><span>Processed volume</span><strong>$184,290</strong><b>↑ 24.8%</b></div><div><span>Success rate</span><strong>98.7%</strong><b>↑ 1.2%</b></div></div>
  <div className="chartBox"><div className="chartTitle"><span>Payment activity</span><small>Last 8 months⌄</small></div><div className="chart"><ResponsiveContainer width="100%" height="100%"><AreaChart data={chart}><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#0878f9" stopOpacity=".28"/><stop offset="100%" stopColor="#0878f9" stopOpacity="0"/></linearGradient></defs><XAxis dataKey="m" hide/><Tooltip contentStyle={{background:'#fff',border:'1px solid #dce6ea',borderRadius:10,color:'#10202b'}}/><Area type="monotone" dataKey="v" stroke="#0878f9" strokeWidth={3} fill="url(#fill)"/></AreaChart></ResponsiveContainer></div></div>
  <div className="recent"><span>RECENT ACTIVITY</span>{tx.map((t,i)=><div className="tx" key={i}><div className="txIcon">{i===1?'↗':'₹'}</div><div><b>{t[0]}</b><small>{t[1]}</small></div><strong className={i===1?'minus':''}>{t[2]}</strong><i>{t[3]}</i></div>)}</div>
  </motion.div>}
