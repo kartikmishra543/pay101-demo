@@ -65,7 +65,7 @@ function App(){
    </section>
 
    <section id="rails" className="rails">
-    <div><span>PAYMENT RAILS</span><strong>Built around the ways businesses move money.</strong></div>
+    <div><span>PAYMENT SYSTEM</span><strong>Built around the ways businesses move money.</strong></div>
     <div className="railList">
      <div><WalletCards size={20}/><b>UPI</b><small>Digital payments</small></div>
      <div><Send size={20}/><b>IMPS</b><small>Fast transfers</small></div>
