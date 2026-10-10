@@ -118,80 +118,8 @@ const currencySlides=[
  {code:'BTN',name:'Bhutanese Ngultrum',symbol:'Nu.',amount:'Nu. 184,290',volume:'Nu. 2,840',region:'BHUTAN',tx:[['Payment received','Merchant checkout','+Nu. 2,840','Success'],['Payment sent','Vendor transfer','-Nu. 1,280','Success'],['Money received','Bank account','+Nu. 4,820','Settled']]},
  {code:'NPR',name:'Nepalese Rupee',symbol:'रू',amount:'रू 18,42,900',volume:'रू 28,400',region:'NEPAL',tx:[['Payment received','Merchant checkout','+रू 28,400','Success'],['Payment sent','Vendor transfer','-रू 12,800','Success'],['Money received','Bank account','+रू 48,200','Settled']]},
  {code:'AED',name:'UAE Dirham',symbol:'د.إ',amount:'د.إ 184,290',volume:'د.إ 2,840',region:'UNITED ARAB EMIRATES',tx:[['Payment received','Merchant checkout','+د.إ 2,840','Success'],['Payment sent','Vendor transfer','-د.إ 1,280','Success'],['Money received','Bank account','+د.إ 4,820','Settled']]},
- {code:'AUD',name:'Australian Dollar',symbol:'A
-
-
-function MerchantLogin(){
- React.useEffect(()=>{document.title='Merchant Login | Pay101';},[]);
- const [showPassword,setShowPassword]=React.useState(false);
- const [email,setEmail]=React.useState('');
- const [password,setPassword]=React.useState('');
- const [remember,setRemember]=React.useState(true);
- const [message,setMessage]=React.useState('');
- function handleSubmit(e){e.preventDefault();setMessage('This is a UI preview. Connect the merchant authentication technical connection before using real accounts.');}
- return <div className="merchantPage">
-  <header className="merchantHeader"><a href="/" className="merchantBrand"><img src="/assets/pay101-logo.png" alt="Pay101"/></a><div className="merchantHeaderRight"><span>New to Pay101?</span><a href="mailto:support@pay101.uk?subject=Merchant%20account%20access">Contact our team <ArrowRight size={15}/></a></div></header>
-  <main className="merchantLayout">
-   <section className="merchantIntro"><div className="merchantEyebrow"><span/> MERCHANT PORTAL</div><h1>Your payments.<br/><em>Your business.</em></h1><p>Sign in to manage your payment activity, monitor settlements and keep track of your transactions in one place.</p>
-    <div className="merchantPreview"><div className="previewTop"><div><span>ACCOUNT OVERVIEW</span><strong>Payment activity</strong></div><div className="previewAvatar">P</div></div><div className="previewStats"><div><span>Payment methods</span><strong>UPI · IMPS</strong><small>NEFT · RTGS</small></div><div><span>Portal access</span><strong>Merchant</strong><small>Account workspace</small></div></div><div className="previewLine"><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/></div><div className="previewFoot"><span><i/> Payment monitoring</span><span>Pay101 Portal</span></div></div>
-    <div className="merchantBenefits"><span><ShieldCheck size={17}/> Payment visibility</span><span><LockKeyhole size={17}/> Account access</span><span><BarChart3 size={17}/> Settlement overview</span></div>
-   </section>
-   <section className="loginPanel"><div className="loginPanelHead"><div className="loginIcon"><LockKeyhole size={21}/></div><span className="loginTag">MERCHANT SIGN IN</span><h2>Welcome back</h2><p>Enter your account details to continue.</p></div>
-    <form className="loginForm" onSubmit={handleSubmit}>
-     <label htmlFor="merchant-email">Email address</label><div className="loginInput"><Mail size={17}/><input id="merchant-email" type="email" autoComplete="username" placeholder="you@company.com" value={email} onChange={e=>setEmail(e.target.value)} required/></div>
-     <div className="passwordLabel"><label htmlFor="merchant-password">Password</label><a href="mailto:support@pay101.uk?subject=Merchant%20password%20reset">Forgot password?</a></div><div className="loginInput"><LockKeyhole size={17}/><input id="merchant-password" type={showPassword?'text':'password'} autoComplete="current-password" placeholder="Enter your password" value={password} onChange={e=>setPassword(e.target.value)} required/><button className="passwordToggle" type="button" onClick={()=>setShowPassword(v=>!v)} aria-label={showPassword?'Hide password':'Show password'}>{showPassword?<EyeOff size={17}/>:<Eye size={17}/>}</button></div>
-     <label className="rememberRow"><input type="checkbox" checked={remember} onChange={e=>setRemember(e.target.checked)}/> <span>Remember me on this device</span></label>
-     <button className="loginSubmit" type="submit">Sign in to merchant portal <ArrowRight size={17}/></button>
-     {message&&<p className="loginNotice" role="status">{message}</p>}
-    </form>
-    <div className="loginHelp">Need access to your merchant account? <a href="mailto:support@pay101.uk?subject=Merchant%20portal%20access">Contact support</a></div>
-    <div className="loginSecurity"><LockKeyhole size={14}/> Never share your password or one-time codes.</div>
-   </section>
-  </main>
-  <footer className="merchantFooter"><span>© 2026 Pay101. Merchant portal preview.</span><div><a href="/">Pay101 home</a><a href="mailto:support@pay101.uk">Help & support</a></div></footer>
- </div>
-}
-
-const isMerchantLogin=window.location.pathname==='/login'||window.location.hostname==='partner.pay101.uk';
-createRoot(document.getElementById('root')).render(isMerchantLogin?<MerchantLogin/>:<App/>);
-,amount:'A$ 184,290',volume:'A$ 2,840',region:'AUSTRALIA',tx:[['Payment received','Merchant checkout','+A$ 2,840','Success'],['Payment sent','Vendor transfer','-A$ 1,280','Success'],['Money received','Bank account','+A$ 4,820','Settled']]},
- {code:'USD',name:'US Dollar',symbol:'
-
-
-function MerchantLogin(){
- React.useEffect(()=>{document.title='Merchant Login | Pay101';},[]);
- const [showPassword,setShowPassword]=React.useState(false);
- const [email,setEmail]=React.useState('');
- const [password,setPassword]=React.useState('');
- const [remember,setRemember]=React.useState(true);
- const [message,setMessage]=React.useState('');
- function handleSubmit(e){e.preventDefault();setMessage('This is a UI preview. Connect the merchant authentication technical connection before using real accounts.');}
- return <div className="merchantPage">
-  <header className="merchantHeader"><a href="/" className="merchantBrand"><img src="/assets/pay101-logo.png" alt="Pay101"/></a><div className="merchantHeaderRight"><span>New to Pay101?</span><a href="mailto:support@pay101.uk?subject=Merchant%20account%20access">Contact our team <ArrowRight size={15}/></a></div></header>
-  <main className="merchantLayout">
-   <section className="merchantIntro"><div className="merchantEyebrow"><span/> MERCHANT PORTAL</div><h1>Your payments.<br/><em>Your business.</em></h1><p>Sign in to manage your payment activity, monitor settlements and keep track of your transactions in one place.</p>
-    <div className="merchantPreview"><div className="previewTop"><div><span>ACCOUNT OVERVIEW</span><strong>Payment activity</strong></div><div className="previewAvatar">P</div></div><div className="previewStats"><div><span>Payment methods</span><strong>UPI · IMPS</strong><small>NEFT · RTGS</small></div><div><span>Portal access</span><strong>Merchant</strong><small>Account workspace</small></div></div><div className="previewLine"><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/></div><div className="previewFoot"><span><i/> Payment monitoring</span><span>Pay101 Portal</span></div></div>
-    <div className="merchantBenefits"><span><ShieldCheck size={17}/> Payment visibility</span><span><LockKeyhole size={17}/> Account access</span><span><BarChart3 size={17}/> Settlement overview</span></div>
-   </section>
-   <section className="loginPanel"><div className="loginPanelHead"><div className="loginIcon"><LockKeyhole size={21}/></div><span className="loginTag">MERCHANT SIGN IN</span><h2>Welcome back</h2><p>Enter your account details to continue.</p></div>
-    <form className="loginForm" onSubmit={handleSubmit}>
-     <label htmlFor="merchant-email">Email address</label><div className="loginInput"><Mail size={17}/><input id="merchant-email" type="email" autoComplete="username" placeholder="you@company.com" value={email} onChange={e=>setEmail(e.target.value)} required/></div>
-     <div className="passwordLabel"><label htmlFor="merchant-password">Password</label><a href="mailto:support@pay101.uk?subject=Merchant%20password%20reset">Forgot password?</a></div><div className="loginInput"><LockKeyhole size={17}/><input id="merchant-password" type={showPassword?'text':'password'} autoComplete="current-password" placeholder="Enter your password" value={password} onChange={e=>setPassword(e.target.value)} required/><button className="passwordToggle" type="button" onClick={()=>setShowPassword(v=>!v)} aria-label={showPassword?'Hide password':'Show password'}>{showPassword?<EyeOff size={17}/>:<Eye size={17}/>}</button></div>
-     <label className="rememberRow"><input type="checkbox" checked={remember} onChange={e=>setRemember(e.target.checked)}/> <span>Remember me on this device</span></label>
-     <button className="loginSubmit" type="submit">Sign in to merchant portal <ArrowRight size={17}/></button>
-     {message&&<p className="loginNotice" role="status">{message}</p>}
-    </form>
-    <div className="loginHelp">Need access to your merchant account? <a href="mailto:support@pay101.uk?subject=Merchant%20portal%20access">Contact support</a></div>
-    <div className="loginSecurity"><LockKeyhole size={14}/> Never share your password or one-time codes.</div>
-   </section>
-  </main>
-  <footer className="merchantFooter"><span>© 2026 Pay101. Merchant portal preview.</span><div><a href="/">Pay101 home</a><a href="mailto:support@pay101.uk">Help & support</a></div></footer>
- </div>
-}
-
-const isMerchantLogin=window.location.pathname==='/login'||window.location.hostname==='partner.pay101.uk';
-createRoot(document.getElementById('root')).render(isMerchantLogin?<MerchantLogin/>:<App/>);
-,amount:'$ 184,290',volume:'$ 2,840',region:'GLOBAL EXAMPLE',tx:[['Payment received','Merchant checkout','+$2,840.00','Success'],['Payment sent','Vendor transfer','-$1,280.00','Success'],['Money received','Bank account','+$4,820.00','Settled']]},
+ {code:'AUD',name:'Australian Dollar',symbol:'A$',amount:'A$ 184,290',volume:'A$ 2,840',region:'AUSTRALIA',tx:[['Payment received','Merchant checkout','+A$ 2,840','Success'],['Payment sent','Vendor transfer','-A$ 1,280','Success'],['Money received','Bank account','+A$ 4,820','Settled']]},
+ {code:'USD',name:'US Dollar',symbol:'$',amount:'$ 184,290',volume:'$ 2,840',region:'GLOBAL EXAMPLE',tx:[['Payment received','Merchant checkout','+$2,840.00','Success'],['Payment sent','Vendor transfer','-$1,280.00','Success'],['Money received','Bank account','+$4,820.00','Settled']]},
  {code:'INR',name:'Indian Rupee',symbol:'₹',amount:'₹ 1,84,290',volume:'₹ 2,840',region:'INDIA',tx:[['Payment received','Merchant checkout','+₹ 2,840','Success'],['Payment sent','Vendor transfer','-₹ 1,280','Success'],['Money received','Bank account','+₹ 4,820','Settled']]}
 ];
 function Dashboard(){
