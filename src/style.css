@@ -85,3 +85,38 @@ footer{border-top:1px solid #e1e8eb;max-width:1220px;margin:auto;padding:35px 28
 .currencyProgress button.active{background:#0878f9}
 @keyframes currencyFade{from{opacity:.45;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:550px){.currencySpotlight strong{font-size:21px}.currencyMark{flex-basis:42px;width:42px;height:42px}}
+
+
+/* Markets menu inspired by a clear two-column market selector */
+.navDropdownWrap{position:relative;display:flex;align-items:center}
+.navDropTrigger{border:0;background:transparent;color:#526673;font:500 14px 'DM Sans';padding:12px 0;cursor:pointer;display:flex;align-items:center;gap:7px}
+.navDropTrigger span{font-size:20px;line-height:10px;transition:transform .2s}
+.navDropTrigger.isOpen,.navDropTrigger:hover{color:#0878f9}
+.navDropTrigger.isOpen span{transform:rotate(180deg)}
+.solutionsDropdown{position:absolute;z-index:30;top:calc(100% + 12px);left:50%;transform:translateX(-35%);width:590px;display:grid;grid-template-columns:190px 1fr;gap:12px;padding:12px;background:#fff;border:1px solid #e0e8f2;border-radius:20px;box-shadow:0 24px 70px #142f501c;animation:dropdownEnter .18s ease both}
+.solutionsDropdown:before{content:'';position:absolute;top:-7px;left:35%;width:14px;height:14px;transform:rotate(45deg);background:#fff;border-left:1px solid #e0e8f2;border-top:1px solid #e0e8f2}
+.solutionsTabs{display:flex;flex-direction:column;gap:5px;padding:5px}
+.solutionsTabs button{border:0;border-radius:13px;padding:14px 15px;text-align:left;background:transparent;color:#263c59;font:600 13px 'DM Sans';cursor:pointer}
+.solutionsTabs button.selected,.solutionsTabs button:hover{background:#eef3ff;color:#0878f9}
+.solutionsPanel{min-height:250px;background:#f0f4ff;border-radius:15px;padding:15px;display:flex;flex-direction:column;gap:2px}
+.dropdownHeading{font-size:10px;font-weight:700;letter-spacing:1.2px;color:#8191a7;text-transform:uppercase;padding:4px 8px 8px}
+.solutionsPanel a{padding:9px 8px;border-radius:9px;display:flex;flex-direction:column;gap:4px;color:#253b59}
+.solutionsPanel a:hover{background:#fff}
+.solutionsPanel a b{font-size:13px;font-weight:600}
+.solutionsPanel a small{font-size:10px;color:#6c7e94}
+@keyframes dropdownEnter{from{opacity:0;transform:translate(-35%,-5px)}to{opacity:1;transform:translate(-35%,0)}}
+.marketsSection{max-width:1220px;margin:auto;padding:78px 28px 72px;display:grid;grid-template-columns:.85fr 1.15fr;column-gap:65px;align-items:start;border-bottom:1px solid #e1e8eb}
+.marketsIntro h2{font-size:clamp(38px,4vw,55px);line-height:1.03;margin-top:15px}
+.marketsIntro p{font-size:14px;line-height:1.75;color:#61727d;max-width:390px;margin-top:18px}
+.marketGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.marketGrid a{min-width:0;display:flex;align-items:center;gap:12px;padding:16px 14px;background:#fff;border:1px solid #dce6ea;border-radius:14px;box-shadow:0 8px 25px #142f5007;transition:transform .2s,border-color .2s}
+.marketGrid a:hover{transform:translateY(-2px);border-color:#b9d6fa}
+.marketFlag{width:38px;height:38px;flex:0 0 38px;border-radius:12px;display:grid;place-items:center;background:#eef4ff;font-size:20px}
+.marketGrid a div{min-width:0;flex:1}
+.marketGrid b,.marketGrid small{display:block}
+.marketGrid b{font-size:12px;color:#253b59}
+.marketGrid small{font-size:10px;line-height:1.4;color:#71838e;margin-top:5px}
+.marketGrid a>svg{color:#0878f9;flex:0 0 auto}
+.marketDisclaimer{grid-column:2;font-size:10px;line-height:1.5;color:#8795a5;margin:12px 0 0}
+@media(max-width:900px){.solutionsDropdown{left:0;transform:none;width:min(590px,calc(100vw - 40px))}.solutionsDropdown:before{left:25%}.marketsSection{grid-template-columns:1fr;gap:25px}.marketDisclaimer{grid-column:1}}
+@media(max-width:550px){.solutionsDropdown{position:fixed;top:75px;left:12px;transform:none;width:calc(100vw - 24px);grid-template-columns:115px 1fr;gap:6px;padding:8px;max-height:70vh;overflow:auto}.solutionsDropdown:before{display:none}.solutionsTabs button{padding:12px 8px;font-size:11px}.solutionsPanel{padding:10px}.solutionsPanel a{padding:8px 6px}.solutionsPanel a b{font-size:11px}.solutionsPanel a small{font-size:9px}.marketsSection{padding:58px 20px}.marketGrid{grid-template-columns:1fr}.marketGrid a{padding:13px}}
