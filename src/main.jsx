@@ -1,7 +1,7 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
 import {motion} from 'framer-motion';
-import {ArrowRight, Check, Globe2, ShieldCheck, Zap, Menu, X, CreditCard, BarChart3, Code2, LockKeyhole, Landmark, Send, WalletCards} from 'lucide-react';
+import {ArrowRight, Check, Globe2, ShieldCheck, Zap, Menu, X, CreditCard, BarChart3, Code2, LockKeyhole, Landmark, Send, WalletCards, Eye, EyeOff, Mail} from 'lucide-react';
 import {AreaChart, Area, ResponsiveContainer, Tooltip, XAxis} from 'recharts';
 import './style.css';
 
@@ -95,4 +95,36 @@ function Dashboard(){return <motion.div className="dashboard" initial={{opacity:
  <div className="recent"><span>RECENT ACTIVITY</span>{tx.map((t,i)=><div className="tx" key={i}><div className="txIcon">{i===1?'↗':'₹'}</div><div><b>{t[0]}</b><small>{t[1]}</small></div><strong className={i===1?'minus':''}>{t[2]}</strong><i>{t[3]}</i></div>)}</div>
  </motion.div>}
 
-createRoot(document.getElementById('root')).render(<App/>);
+
+function MerchantLogin(){
+ const [showPassword,setShowPassword]=React.useState(false);
+ const [email,setEmail]=React.useState('');
+ const [password,setPassword]=React.useState('');
+ const [remember,setRemember]=React.useState(true);
+ const [message,setMessage]=React.useState('');
+ function handleSubmit(e){e.preventDefault();setMessage('This is a UI preview. Connect the merchant authentication API before using real accounts.');}
+ return <div className="merchantPage">
+  <header className="merchantHeader"><a href="/" className="merchantBrand"><img src="/assets/pay101-logo.png" alt="Pay101"/></a><div className="merchantHeaderRight"><span>New to Pay101?</span><a href="mailto:support@pay101.uk?subject=Merchant%20account%20access">Contact our team <ArrowRight size={15}/></a></div></header>
+  <main className="merchantLayout">
+   <section className="merchantIntro"><div className="merchantEyebrow"><span/> MERCHANT PORTAL</div><h1>Your payments.<br/><em>Your business.</em></h1><p>Sign in to manage your payment activity, monitor settlements and keep track of your transactions in one place.</p>
+    <div className="merchantPreview"><div className="previewTop"><div><span>ACCOUNT OVERVIEW</span><strong>Payment activity</strong></div><div className="previewAvatar">P</div></div><div className="previewStats"><div><span>Payment methods</span><strong>UPI · IMPS</strong><small>NEFT · RTGS</small></div><div><span>Portal access</span><strong>Merchant</strong><small>Account workspace</small></div></div><div className="previewLine"><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/></div><div className="previewFoot"><span><i/> Payment monitoring</span><span>Pay101 Portal</span></div></div>
+    <div className="merchantBenefits"><span><ShieldCheck size={17}/> Payment visibility</span><span><LockKeyhole size={17}/> Account access</span><span><BarChart3 size={17}/> Settlement overview</span></div>
+   </section>
+   <section className="loginPanel"><div className="loginPanelHead"><div className="loginIcon"><LockKeyhole size={21}/></div><span className="loginTag">MERCHANT SIGN IN</span><h2>Welcome back</h2><p>Enter your account details to continue.</p></div>
+    <form className="loginForm" onSubmit={handleSubmit}>
+     <label htmlFor="merchant-email">Email address</label><div className="loginInput"><Mail size={17}/><input id="merchant-email" type="email" autoComplete="username" placeholder="you@company.com" value={email} onChange={e=>setEmail(e.target.value)} required/></div>
+     <div className="passwordLabel"><label htmlFor="merchant-password">Password</label><a href="mailto:support@pay101.uk?subject=Merchant%20password%20reset">Forgot password?</a></div><div className="loginInput"><LockKeyhole size={17}/><input id="merchant-password" type={showPassword?'text':'password'} autoComplete="current-password" placeholder="Enter your password" value={password} onChange={e=>setPassword(e.target.value)} required/><button className="passwordToggle" type="button" onClick={()=>setShowPassword(v=>!v)} aria-label={showPassword?'Hide password':'Show password'}>{showPassword?<EyeOff size={17}/>:<Eye size={17}/>}</button></div>
+     <label className="rememberRow"><input type="checkbox" checked={remember} onChange={e=>setRemember(e.target.checked)}/> <span>Remember me on this device</span></label>
+     <button className="loginSubmit" type="submit">Sign in to merchant portal <ArrowRight size={17}/></button>
+     {message&&<p className="loginNotice" role="status">{message}</p>}
+    </form>
+    <div className="loginHelp">Need access to your merchant account? <a href="mailto:support@pay101.uk?subject=Merchant%20portal%20access">Contact support</a></div>
+    <div className="loginSecurity"><LockKeyhole size={14}/> Never share your password or one-time codes.</div>
+   </section>
+  </main>
+  <footer className="merchantFooter"><span>© 2026 Pay101. Merchant portal preview.</span><div><a href="/">Pay101 home</a><a href="mailto:support@pay101.uk">Help & support</a></div></footer>
+ </div>
+}
+
+const isMerchantLogin=window.location.pathname==='/login'||window.location.hostname==='partner.pay101.uk';
+createRoot(document.getElementById('root')).render(isMerchantLogin?<MerchantLogin/>:<App/>);
