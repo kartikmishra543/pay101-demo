@@ -120,3 +120,12 @@ footer{border-top:1px solid #e1e8eb;max-width:1220px;margin:auto;padding:35px 28
 .marketDisclaimer{grid-column:2;font-size:10px;line-height:1.5;color:#8795a5;margin:12px 0 0}
 @media(max-width:900px){.solutionsDropdown{left:0;transform:none;width:min(590px,calc(100vw - 40px))}.solutionsDropdown:before{left:25%}.marketsSection{grid-template-columns:1fr;gap:25px}.marketDisclaimer{grid-column:1}}
 @media(max-width:550px){.solutionsDropdown{position:fixed;top:75px;left:12px;transform:none;width:calc(100vw - 24px);grid-template-columns:115px 1fr;gap:6px;padding:8px;max-height:70vh;overflow:auto}.solutionsDropdown:before{display:none}.solutionsTabs button{padding:12px 8px;font-size:11px}.solutionsPanel{padding:10px}.solutionsPanel a{padding:8px 6px}.solutionsPanel a b{font-size:11px}.solutionsPanel a small{font-size:9px}.marketsSection{padding:58px 20px}.marketGrid{grid-template-columns:1fr}.marketGrid a{padding:13px}}
+
+
+/* Raise the Pay101 dashboard preview on desktop, matching the merchant portal layout */
+@media (min-width: 901px){
+  .hero .dashboard{position:relative;top:-42px;}
+}
+@media (max-width: 900px){
+  .hero .dashboard{top:0;}
+}
