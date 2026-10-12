@@ -205,3 +205,18 @@ footer a:hover{color:var(--blue)}
 .aiCopilotButton{display:inline-flex;align-items:center;gap:7px;border:1px solid #cfe3ff;border-radius:8px;background:#fff;color:#075fcf;padding:7px 10px;font:600 10px 'DM Sans',sans-serif;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s}
 .aiCopilotButton:hover{background:#eaf4ff;transform:translateY(-1px);box-shadow:0 5px 14px rgba(8,120,249,.12)}
 @media(max-width:600px){.aiCopilot{padding:13px;gap:10px}.aiCopilotIcon{width:34px;height:34px;flex-basis:34px}}
+
+
+/* Refined AI insight module: compact, restrained and enterprise-oriented */
+.aiCopilot{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:14px;row-gap:9px;margin-top:14px;padding:13px 15px;border:1px solid #dfe8f2;border-left:3px solid #0878f9;border-radius:10px;background:#fbfdff;box-shadow:none;overflow:hidden}
+.aiCopilot:after{display:none}
+.aiCopilotTop{grid-column:1/-1;display:flex;align-items:center;gap:7px;min-width:0}
+.aiCopilotSpark{display:inline-flex;align-items:center;justify-content:center;color:#0878f9}
+.aiCopilotEyebrow{font-size:9px;letter-spacing:1.25px;font-weight:700;color:#48647f}
+.aiCopilotPreview{margin-left:auto;font-size:8px;letter-spacing:.7px;color:#6c7e8e;background:#eef3f8;border-radius:4px;padding:3px 5px}
+.aiCopilotInsight{min-width:0}
+.aiCopilotInsight>strong{display:block;font:600 12px 'DM Sans',sans-serif;color:#172b3b;line-height:1.4}
+.aiCopilotInsight p{font-size:10px;line-height:1.5;color:#667987;margin:4px 0 0}
+.aiCopilotButton{align-self:center;white-space:nowrap;border:1px solid #d8e5f3;border-radius:7px;background:#fff;color:#185da8;padding:7px 9px;font:600 9px 'DM Sans',sans-serif;box-shadow:none}
+.aiCopilotButton:hover{background:#f0f6fd;transform:translateY(-1px);box-shadow:none}
+@media(max-width:600px){.aiCopilot{grid-template-columns:1fr;gap:9px;padding:12px}.aiCopilotButton{justify-self:start}}
