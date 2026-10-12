@@ -137,3 +137,57 @@ footer{border-top:1px solid #e1e8eb;max-width:1220px;margin:auto;padding:35px 28
 .navDropTrigger{white-space:nowrap;flex-wrap:nowrap;line-height:1.2;}
 .navDropTrigger span{display:inline-block;line-height:1;flex-shrink:0;}
 .navLinks>a{white-space:nowrap;}
+
+
+/* Polished, high-energy Pay101 visual pass — preserve the blue-and-white brand */
+:root{
+ --blue:#0878f9;
+ --blueDeep:#064dc4;
+ --blueGlow:rgba(8,120,249,.18);
+}
+body{
+ background:
+  radial-gradient(ellipse at 76% 15%,rgba(8,120,249,.13),transparent 31%),
+  radial-gradient(ellipse at 8% 45%,rgba(74,160,255,.08),transparent 28%),
+  var(--bg);
+}
+.app{position:relative;isolation:isolate}
+.app:before{
+ content:"";position:absolute;z-index:-1;pointer-events:none;
+ width:580px;height:580px;right:-210px;top:90px;border-radius:50%;
+ background:radial-gradient(circle,rgba(8,120,249,.14),rgba(8,120,249,.045) 42%,transparent 70%);
+ animation:pay101Glow 9s ease-in-out infinite alternate;
+}
+.nav{position:relative;z-index:20;backdrop-filter:blur(16px);background:rgba(245,248,250,.82)}
+.brandLogo{transition:transform .25s ease,filter .25s ease}
+.brand:hover .brandLogo{transform:translateY(-2px) scale(1.025);filter:drop-shadow(0 7px 12px rgba(8,120,249,.18))}
+.navLinks>a,.navDropTrigger{transition:color .2s ease,background .2s ease}
+.navLinks>a:hover,.navDropTrigger:hover{color:var(--blue);text-shadow:0 0 18px rgba(8,120,249,.18)}
+.primary{background:linear-gradient(115deg,#1687ff 0%,#0878f9 55%,#075ee8 100%);color:#fff;box-shadow:0 10px 24px rgba(8,120,249,.22);transition:transform .22s ease,box-shadow .22s ease,filter .22s ease}
+.primary:hover{background:linear-gradient(115deg,#39a0ff,#0878f9 58%,#075ee8);box-shadow:0 14px 32px rgba(8,120,249,.32);transform:translateY(-2px);filter:saturate(1.08)}
+.hero{position:relative}
+.hero h1,.hero h2{letter-spacing:-.055em}
+.hero h1 em,.hero h1 strong,.hero h1 span{background:linear-gradient(100deg,#0878f9 8%,#00a4ff 54%,#075ee8 95%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.dashboard{
+ border-color:rgba(8,120,249,.20);
+ box-shadow:0 32px 85px rgba(17,65,120,.16),0 0 0 1px rgba(255,255,255,.8) inset;
+ background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(244,249,255,.96));
+ transition:box-shadow .3s ease,border-color .3s ease;
+}
+.dashboard:hover{box-shadow:0 38px 100px rgba(17,65,120,.21),0 0 0 1px rgba(255,255,255,.9) inset;border-color:rgba(8,120,249,.34)}
+.dashGlow{background:linear-gradient(120deg,rgba(8,120,249,.10),transparent 36%,transparent 67%,rgba(0,164,255,.10))}
+.currencySpotlight{background:linear-gradient(120deg,#f5faff,#fff 60%,#edf6ff);border-color:#d6e8ff;box-shadow:0 8px 26px rgba(8,120,249,.055)}
+.currencyMark{background:linear-gradient(145deg,#eaf4ff,#d9eaff);color:#0878f9;box-shadow:0 8px 20px rgba(8,120,249,.10)}
+.chartBox{box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
+.chartBox,.stats>div,.featureCard,.railCard,.securityCard{transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.stats>div:hover,.featureCard:hover,.railCard:hover,.securityCard:hover{transform:translateY(-4px);border-color:rgba(8,120,249,.3);box-shadow:0 16px 34px rgba(17,65,120,.09)}
+.rails{position:relative}
+.rails:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 80% 20%,rgba(8,120,249,.07),transparent 48%)}
+.solutionsDropdown{border-color:#d7e8fb;box-shadow:0 24px 60px rgba(14,52,93,.18)}
+.cta{background:linear-gradient(115deg,#e9f4ff,#f8fbff 55%,#eaf4ff);border:1px solid #d9eaff;box-shadow:0 18px 55px rgba(8,120,249,.10)}
+footer a{transition:color .2s ease}
+footer a:hover{color:var(--blue)}
+@keyframes pay101Glow{from{transform:translate3d(0,0,0) scale(.96);opacity:.7}to{transform:translate3d(-24px,18px,0) scale(1.06);opacity:1}}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
