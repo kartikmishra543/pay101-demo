@@ -191,3 +191,17 @@ footer a:hover{color:var(--blue)}
 @media(prefers-reduced-motion:reduce){
  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
 }
+
+
+/* AI Copilot demo card inside the Pay101 dashboard */
+.aiCopilot{display:flex;align-items:flex-start;gap:13px;margin-top:16px;padding:16px;border:1px solid rgba(8,120,249,.22);border-radius:16px;background:linear-gradient(120deg,#f0f7ff 0%,#fff 62%,#f4f9ff 100%);box-shadow:0 10px 28px rgba(8,120,249,.08);position:relative;overflow:hidden}
+.aiCopilot:after{content:"";position:absolute;width:150px;height:150px;right:-70px;top:-75px;border-radius:50%;background:radial-gradient(circle,rgba(8,120,249,.12),transparent 70%);pointer-events:none}
+.aiCopilotIcon{width:38px;height:38px;flex:0 0 38px;display:grid;place-items:center;border-radius:12px;color:#fff;background:linear-gradient(145deg,#35a0ff,#0878f9 60%,#075ee8);box-shadow:0 7px 16px rgba(8,120,249,.23)}
+.aiCopilotBody{min-width:0;flex:1;position:relative;z-index:1}
+.aiCopilotLabel{display:flex;align-items:center;gap:8px;margin-bottom:7px;font-size:9px;font-weight:700;letter-spacing:1.3px;color:#0878f9}
+.aiCopilotLabel i{font-style:normal;font-size:8px;letter-spacing:.5px;color:#61727d;background:#e9f1fb;border-radius:5px;padding:3px 5px}
+.aiCopilotBody>strong{display:block;font:600 14px 'Space Grotesk',sans-serif;color:#10202b;line-height:1.35}
+.aiCopilotBody p{margin:6px 0 10px;color:#61727d;font-size:11px;line-height:1.55}
+.aiCopilotButton{display:inline-flex;align-items:center;gap:7px;border:1px solid #cfe3ff;border-radius:8px;background:#fff;color:#075fcf;padding:7px 10px;font:600 10px 'DM Sans',sans-serif;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s}
+.aiCopilotButton:hover{background:#eaf4ff;transform:translateY(-1px);box-shadow:0 5px 14px rgba(8,120,249,.12)}
+@media(max-width:600px){.aiCopilot{padding:13px;gap:10px}.aiCopilotIcon{width:34px;height:34px;flex-basis:34px}}
