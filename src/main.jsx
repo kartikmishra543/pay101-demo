@@ -1,7 +1,7 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
 import {motion} from 'framer-motion';
-import {ArrowRight, Check, Globe2, ShieldCheck, Zap, Menu, X, CreditCard, BarChart3, Code2, LockKeyhole, Landmark, Send, WalletCards, Eye, EyeOff, Mail} from 'lucide-react';
+import {ArrowRight, Check, Globe2, ShieldCheck, Zap, Sparkles, Menu, X, CreditCard, BarChart3, Code2, LockKeyhole, Landmark, Send, WalletCards, Eye, EyeOff, Mail} from 'lucide-react';
 import {AreaChart, Area, ResponsiveContainer, Tooltip, XAxis} from 'recharts';
 import './style.css';
 
@@ -124,6 +124,7 @@ const currencySlides=[
 ];
 function Dashboard(){
  const [activeCurrency,setActiveCurrency]=React.useState(0);
+ const [aiExpanded,setAiExpanded]=React.useState(false);
  React.useEffect(()=>{const timer=setInterval(()=>setActiveCurrency(i=>(i+1)%currencySlides.length),5000);return ()=>clearInterval(timer)},[]);
  const current=currencySlides[activeCurrency];
  return <motion.div className="dashboard" initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8}}>
@@ -133,6 +134,15 @@ function Dashboard(){
  <div className="currencyProgress" aria-label="Currency rotation">{currencySlides.map((item,i)=><button key={item.code} onClick={()=>setActiveCurrency(i)} className={i===activeCurrency?'active':''} aria-label={`Show ${item.name}`} aria-pressed={i===activeCurrency}/>)}</div>
  <div className="stats"><div><span>Example payment</span><strong>{current.volume}</strong><b>● {current.code} example</b></div><div><span>Success rate</span><strong>98.7%</strong><b>↑ 1.2%</b></div></div>
  <div className="chartBox"><div className="chartTitle"><span>Payment activity</span><small>{current.code} · demo</small></div><div className="chart"><ResponsiveContainer width="100%" height="100%"><AreaChart data={chart}><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#0878f9" stopOpacity=".28"/><stop offset="100%" stopColor="#0878f9" stopOpacity="0"/></linearGradient></defs><XAxis dataKey="m" hide/><Tooltip contentStyle={{background:'#fff',border:'1px solid #dce6ea',borderRadius:10,color:'#10202b'}}/><Area type="monotone" dataKey="v" stroke="#0878f9" strokeWidth={3} fill="url(#fill)"/></AreaChart></ResponsiveContainer></div></div>
+ <div className="aiCopilot">
+  <div className="aiCopilotIcon"><Sparkles size={18}/></div>
+  <div className="aiCopilotBody">
+   <div className="aiCopilotLabel"><span>PAY101 AI COPILOT</span><i>DEMO</i></div>
+   <strong>Make your payment data work smarter.</strong>
+   <p>{aiExpanded?'AI insight preview: compare payment activity over time, spot unusual changes and prepare a plain-language summary for your team. This is a UI demonstration, not a live analysis.':'Get clear explanations of payment trends and settlement activity with an AI-powered assistant concept.'}</p>
+   <button type="button" className="aiCopilotButton" onClick={()=>setAiExpanded(v=>!v)}>{aiExpanded?'Hide insight':'Explore AI insight'} <ArrowRight size={14}/></button>
+  </div>
+ </div>
  <div className="recent"><span>RECENT ACTIVITY · {current.code}</span>{current.tx.map((t,i)=><div className="tx" key={i}><div className="txIcon">{i===1?'↗':current.symbol}</div><div><b>{t[0]}</b><small>{t[1]}</small></div><strong className={i===1?'minus':''}>{t[2]}</strong><i>{t[3]}</i></div>)}</div>
  </motion.div>
 }
