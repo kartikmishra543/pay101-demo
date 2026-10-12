@@ -135,13 +135,12 @@ function Dashboard(){
  <div className="stats"><div><span>Example payment</span><strong>{current.volume}</strong><b>● {current.code} example</b></div><div><span>Success rate</span><strong>98.7%</strong><b>↑ 1.2%</b></div></div>
  <div className="chartBox"><div className="chartTitle"><span>Payment activity</span><small>{current.code} · demo</small></div><div className="chart"><ResponsiveContainer width="100%" height="100%"><AreaChart data={chart}><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#0878f9" stopOpacity=".28"/><stop offset="100%" stopColor="#0878f9" stopOpacity="0"/></linearGradient></defs><XAxis dataKey="m" hide/><Tooltip contentStyle={{background:'#fff',border:'1px solid #dce6ea',borderRadius:10,color:'#10202b'}}/><Area type="monotone" dataKey="v" stroke="#0878f9" strokeWidth={3} fill="url(#fill)"/></AreaChart></ResponsiveContainer></div></div>
  <div className="aiCopilot">
-  <div className="aiCopilotIcon"><Sparkles size={18}/></div>
-  <div className="aiCopilotBody">
-   <div className="aiCopilotLabel"><span>PAY101 AI COPILOT</span><i>DEMO</i></div>
-   <strong>Make your payment data work smarter.</strong>
-   <p>{aiExpanded?'AI insight preview: compare payment activity over time, spot unusual changes and prepare a plain-language summary for your team. This is a UI demonstration, not a live analysis.':'Get clear explanations of payment trends and settlement activity with an AI-powered assistant concept.'}</p>
-   <button type="button" className="aiCopilotButton" onClick={()=>setAiExpanded(v=>!v)}>{aiExpanded?'Hide insight':'Explore AI insight'} <ArrowRight size={14}/></button>
+  <div className="aiCopilotTop"><span className="aiCopilotSpark"><Sparkles size={14}/></span><span className="aiCopilotEyebrow">AI INSIGHT</span><span className="aiCopilotPreview">PREVIEW</span></div>
+  <div className="aiCopilotInsight">
+   <strong>{aiExpanded?'Payment activity summary':'A clearer view of payment activity'}</strong>
+   <p>{aiExpanded?'This sample insight illustrates how an AI assistant could summarize changes in transaction volume and flag patterns for review. It is not based on live payment data.':'Explore how an AI assistant could summarize trends and highlight activity that may need attention.'}</p>
   </div>
+  <button type="button" className="aiCopilotButton" onClick={()=>setAiExpanded(v=>!v)}>{aiExpanded?'Show less':'View sample insight'} <ArrowRight size={13}/></button>
  </div>
  <div className="recent"><span>RECENT ACTIVITY · {current.code}</span>{current.tx.map((t,i)=><div className="tx" key={i}><div className="txIcon">{i===1?'↗':current.symbol}</div><div><b>{t[0]}</b><small>{t[1]}</small></div><strong className={i===1?'minus':''}>{t[2]}</strong><i>{t[3]}</i></div>)}</div>
  </motion.div>
