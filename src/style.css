@@ -341,3 +341,8 @@ footer a:hover{color:var(--blue)}
 @media(max-width:900px){#solutions .featureGrid{gap:12px}#solutions .feature{padding:20px;min-height:0}}
 @media(max-width:550px){#solutions .feature{padding:19px 20px;border-radius:18px}#solutions .feature .icon{margin-bottom:15px}}
 @media(prefers-reduced-motion:reduce){#solutions .feature{transition:none}}
+
+/* Keep Bhutan payment badge clear of the globe's center caption */
+.globePinBhutan{left:4%;bottom:17%}
+.globeCenterLabel{bottom:7%;z-index:5}
+@media(max-width:550px){.globePinBhutan{left:0;bottom:20%}.globeCenterLabel{bottom:5%}}
