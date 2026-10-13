@@ -369,3 +369,19 @@ footer a:hover{color:var(--blue)}
 .globePinText{display:flex;flex-direction:column;min-width:0}
 .globeCountryFlag{position:static!important;flex:0 0 23px;width:23px!important;height:16px!important;object-fit:cover;border-radius:3px;margin-left:2px;box-shadow:0 1px 4px #001b3430}
 @media(max-width:550px){.globePin{gap:5px;padding:6px 7px;min-height:45px}.globeMethodLogo{flex-basis:27px;width:27px;height:27px;border-radius:8px}.globeMethodLogo strong{font-size:9px}.globeMethodLogo svg{width:17px;height:17px}.globeCountryFlag{width:18px!important;height:12px!important;flex-basis:18px}}
+
+/* Circular, continuously scrolling payment-method carousel */
+.paymentMethodsSection{grid-template-columns:minmax(240px,300px) minmax(0,1fr);align-items:center;overflow:hidden}
+.paymentMethodsMarquee{position:relative;min-width:0;width:100%;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);padding:20px 0}
+.paymentMethodsTrack{display:flex;width:max-content;animation:paymentScrollRight 48s linear infinite;will-change:transform}
+.paymentMethodsLoop{display:flex;align-items:center;gap:18px;padding-right:18px;flex:0 0 auto}
+.paymentMethodsLoop .paymentMethodCard{box-sizing:border-box;flex:0 0 162px;width:162px;height:162px;min-height:162px;max-width:162px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:7px;padding:18px 13px;background:radial-gradient(circle at 35% 20%,#fff 0%,#f3f8ff 100%);border:1px solid #d8e8fa;box-shadow:0 8px 22px #1253a512;transition:box-shadow .25s,border-color .25s,transform .25s}
+.paymentMethodsLoop .paymentMethodCard:hover{transform:translateY(-5px);border-color:#82bbff;box-shadow:0 16px 28px #0878f92a}
+.paymentMethodsLoop .paymentMethodIcon{position:static;flex:0 0 43px;width:43px;height:43px;border-radius:50%;display:grid;place-items:center}
+.paymentMethodsLoop .paymentMethodCard b{font-size:15px;line-height:1.2;white-space:normal}
+.paymentMethodsLoop .paymentMethodCard small{font-size:10px;line-height:1.25;max-width:125px;white-space:normal}
+.paymentMethodsMarquee:hover .paymentMethodsTrack,.paymentMethodsMarquee:focus-within .paymentMethodsTrack{animation-play-state:paused}
+@keyframes paymentScrollRight{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@media(max-width:1100px){.paymentMethodsSection{grid-template-columns:1fr;gap:22px}}
+@media(max-width:550px){.paymentMethodsLoop{gap:12px;padding-right:12px}.paymentMethodsLoop .paymentMethodCard{flex-basis:136px;width:136px;height:136px;min-height:136px;max-width:136px;padding:12px}.paymentMethodsLoop .paymentMethodIcon{flex-basis:36px;width:36px;height:36px}.paymentMethodsLoop .paymentMethodCard b{font-size:13px}.paymentMethodsLoop .paymentMethodCard small{font-size:9px}}
+@media(prefers-reduced-motion:reduce){.paymentMethodsTrack{animation:none}.paymentMethodsMarquee{overflow-x:auto;mask-image:none;-webkit-mask-image:none}}
