@@ -385,3 +385,19 @@ footer a:hover{color:var(--blue)}
 @media(max-width:1100px){.paymentMethodsSection{grid-template-columns:1fr;gap:22px}}
 @media(max-width:550px){.paymentMethodsLoop{gap:12px;padding-right:12px}.paymentMethodsLoop .paymentMethodCard{flex-basis:136px;width:136px;height:136px;min-height:136px;max-width:136px;padding:12px}.paymentMethodsLoop .paymentMethodIcon{flex-basis:36px;width:36px;height:36px}.paymentMethodsLoop .paymentMethodCard b{font-size:13px}.paymentMethodsLoop .paymentMethodCard small{font-size:9px}}
 @media(prefers-reduced-motion:reduce){.paymentMethodsTrack{animation:none}.paymentMethodsMarquee{overflow-x:auto;mask-image:none;-webkit-mask-image:none}}
+
+/* Compact payment overview vertically and align heading near the top */
+.dashboardShowcase{align-items:start!important;gap:32px;padding-top:42px;padding-bottom:55px}
+.dashboardShowcaseIntro{align-self:start;padding-top:12px}
+.dashboardShowcase .dashboard{align-self:start;padding:16px!important;border-radius:20px}
+.dashboardShowcase .dashHead{margin-bottom:10px}
+.dashboardShowcase .currencySpotlight{padding:13px!important;margin-bottom:10px}
+.dashboardShowcase .currencyProgress{margin:8px 0!important}
+.dashboardShowcase .stats{margin:10px 0!important;gap:8px}
+.dashboardShowcase .stats>div{padding:11px!important}
+.dashboardShowcase .chartBox{padding:11px!important;margin:10px 0!important}
+.dashboardShowcase .chart{height:82px!important;margin-top:5px!important}
+.dashboardShowcase .recent{padding-top:9px!important}
+.dashboardShowcase .recent .tx{padding:7px 0!important}
+@media(min-width:901px){.dashboardShowcaseIntro{padding-top:20px}.dashboardShowcase .dashboard{margin-top:0!important}}
+@media(max-width:900px){.dashboardShowcase{gap:20px;padding-top:35px}.dashboardShowcaseIntro{padding-top:0}}
