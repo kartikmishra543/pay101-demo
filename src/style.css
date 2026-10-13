@@ -310,3 +310,21 @@ footer a:hover{color:var(--blue)}
 .marketGrid a:hover>svg{transform:translateX(3px);background:#0878f9;color:#fff}
 @media(max-width:550px){.marketGrid{gap:12px}.marketGrid a{min-height:90px;padding:14px;border-radius:17px}.marketGrid .marketFlag{flex-basis:52px;width:52px;height:52px;min-width:52px;max-width:52px;min-height:52px;max-height:52px}.marketGrid .marketFlag img{width:41px!important;height:29px!important}.marketGrid a b{font-size:13px}.marketGrid a small{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.marketGrid a,.marketGrid a>svg{transition:none}}
+
+/* Ten-payment-method showcase: soft blue and white, responsive, balanced cards */
+.paymentMethodsSection{display:grid;grid-template-columns:280px minmax(0,1fr);gap:48px;align-items:start;padding-top:70px;padding-bottom:70px}
+.paymentMethodsIntro{padding-top:10px}
+.paymentMethodsIntro strong{display:block;font-size:clamp(24px,2.2vw,32px);line-height:1.2;margin:16px 0}
+.paymentMethodsIntro p{font-size:13px;line-height:1.7;color:#60788b;margin:0 0 15px}
+.paymentMethodsIntro>small{display:block;font-size:10px;line-height:1.6;color:#8596a8}
+.railList.paymentMethodsGrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;min-width:0}
+.paymentMethodsGrid .paymentMethodCard{position:relative;min-width:0;min-height:152px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-end;gap:7px;padding:18px 15px;border:1px solid #d9e7f5;border-radius:19px;background:linear-gradient(150deg,#fff,#f3f8ff);box-shadow:0 8px 25px rgba(8,80,160,.045);transition:transform .25s,border-color .25s,box-shadow .25s}
+.paymentMethodsGrid .paymentMethodCard:hover{transform:translateY(-5px);border-color:#9bcafb;box-shadow:0 16px 36px #0878f91d}
+.paymentMethodIcon{position:absolute;left:15px;top:15px;width:43px;height:43px;border-radius:13px;background:#e7f2ff;color:#0878f9;display:grid;place-items:center}
+.paymentMethodFlag{position:absolute;top:17px;right:14px;font-size:21px;line-height:1.2}
+.paymentMethodsGrid .paymentMethodCard b{font-size:15px;line-height:1.2;color:#19324b;overflow-wrap:anywhere}
+.paymentMethodsGrid .paymentMethodCard small{font-size:10px;line-height:1.5;color:#71869b}
+@media(max-width:1100px){.paymentMethodsSection{grid-template-columns:1fr;gap:25px}.railList.paymentMethodsGrid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:750px){.railList.paymentMethodsGrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:480px){.railList.paymentMethodsGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.paymentMethodsGrid .paymentMethodCard{min-height:138px;padding:14px 12px}.paymentMethodIcon{top:12px;left:12px;width:37px;height:37px}.paymentMethodFlag{top:14px;right:10px}}
+@media(prefers-reduced-motion:reduce){.paymentMethodsGrid .paymentMethodCard{transition:none}}
