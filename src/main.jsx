@@ -81,12 +81,15 @@ function App(){
 
    <section id="rails" className="rails paymentMethodsSection">
     <div className="paymentMethodsIntro"><span>PAYMENT SYSTEM</span><strong>Familiar ways to pay, across markets.</strong><p>Explore widely recognized payment networks, wallets and payment methods from around the world.</p><small>Illustrative examples only · Integration and availability are not confirmed.</small></div>
-    <div className="railList paymentMethodsGrid">
-     {paymentMethods.map(item=><div className="paymentMethodCard" key={item.name}>
-      <span className="paymentMethodIcon">{item.icon}</span>
-      <span className="paymentMethodFlag" aria-label={item.country}>{item.flag}</span>
-      <b>{item.name}</b><small>{item.subtitle}</small>
-     </div>)}
+    <div className="paymentMethodsMarquee" aria-label="Illustrative payment methods moving left to right">
+     <div className="paymentMethodsTrack">
+      {[0,1].map(copy=><div className="paymentMethodsLoop" key={copy} aria-hidden={copy===1}>
+       {paymentMethods.map(item=><div className="paymentMethodCard" key={item.name}>
+        <span className="paymentMethodIcon">{item.icon}</span>
+        <b>{item.name}</b><small>{item.subtitle}</small>
+       </div>)}
+      </div>)}
+     </div>
     </div>
    </section>
 
