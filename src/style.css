@@ -415,13 +415,3 @@ h1,h2,h3,h4,h5,h6{font-family:Manrope,Arial,sans-serif!important;font-weight:800
 #solutions .feature p{font-size:12px!important;line-height:1.45!important;margin:0!important;padding-right:18px}
 #solutions .feature .featureArrow{right:16px!important;bottom:14px!important}
 @media(max-width:650px){#solutions .feature{min-height:145px!important;padding:15px 16px!important}#solutions .feature .icon{margin-bottom:9px!important}}
-
-/* Improve headline readability: lighter weight and natural character spacing */
-h1,h2,h3,h4,h5,h6,
-.hero h1,.sectionHead h2,.dashboardShowcaseIntro h2,
-.paymentMethodsIntro strong,#solutions .feature h3{
- font-weight:600!important;
- letter-spacing:-.015em!important;
-}
-.hero h1 strong,.hero h1 b,.dashboardShowcaseIntro h2 strong{font-weight:600!important}
-@media(max-width:550px){h1,h2,h3,h4,h5,h6{letter-spacing:0!important}}
