@@ -161,7 +161,6 @@ const currencySlides=[
 ];
 function Dashboard(){
  const [activeCurrency,setActiveCurrency]=React.useState(0);
- const [monitorExpanded,setMonitorExpanded]=React.useState(false);
  React.useEffect(()=>{const timer=setInterval(()=>setActiveCurrency(i=>(i+1)%currencySlides.length),5000);return ()=>clearInterval(timer)},[]);
  const current=currencySlides[activeCurrency];
  return <motion.div className="dashboard" initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8}}>
@@ -171,22 +170,6 @@ function Dashboard(){
  <div className="currencyProgress" aria-label="Currency rotation">{currencySlides.map((item,i)=><button key={item.code} onClick={()=>setActiveCurrency(i)} className={i===activeCurrency?'active':''} aria-label={`Show ${item.name}`} aria-pressed={i===activeCurrency}/>)}</div>
  <div className="stats"><div><span>Example payment</span><strong>{current.volume}</strong><b>● {current.code} example</b></div><div><span>Success rate</span><strong>98.7%</strong><b>↑ 1.2%</b></div></div>
  <div className="chartBox"><div className="chartTitle"><span>Payment activity</span><small>{current.code} · demo</small></div><div className="chart"><ResponsiveContainer width="100%" height="100%"><AreaChart data={chart}><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#0878f9" stopOpacity=".28"/><stop offset="100%" stopColor="#0878f9" stopOpacity="0"/></linearGradient></defs><XAxis dataKey="m" hide/><Tooltip contentStyle={{background:'#fff',border:'1px solid #dce6ea',borderRadius:10,color:'#10202b'}}/><Area type="monotone" dataKey="v" stroke="#0878f9" strokeWidth={3} fill="url(#fill)"/></AreaChart></ResponsiveContainer></div></div>
- <div className="smartMonitor">
-  <div className="smartMonitorHead">
-   <div className="smartMonitorTitle"><span className="monitorGlyph"><ShieldCheck size={16}/></span><div><strong>Smart transaction monitoring</strong><small>AI-assisted risk signals</small></div></div>
-   <span className="monitorDemoBadge">DEMO</span>
-  </div>
-  <div className="monitorSummary">
-   <div className="monitorScore"><span className="scoreRing"><span>02</span></span><div><strong>Items to review</strong><small>Illustrative monitoring queue</small></div></div>
-   <span className="monitorStatus"><i/> Monitoring preview</span>
-  </div>
-  <div className="monitorEvents">
-   <div className="monitorEvent"><span className="eventMark amber"><Zap size={13}/></span><div><strong>Unusual transaction pattern</strong><small>Example signal · review recommended</small></div><span className="eventSeverity">Review</span></div>
-   <div className="monitorEvent"><span className="eventMark blue"><BarChart3 size={13}/></span><div><strong>Payment activity shift</strong><small>Example signal · compare recent activity</small></div><span className="eventSeverity neutral">Observe</span></div>
-  </div>
-  {monitorExpanded&&<div className="monitorDetail"><strong>How this could work</strong><p>A production system could score transactions against approved rules, highlight unusual patterns and send flagged items to a human reviewer. These examples are static demo content, not detected events.</p></div>}
-  <button type="button" className="monitorAction" onClick={()=>setMonitorExpanded(v=>!v)}>{monitorExpanded?'Hide details':'View monitoring details'} <ArrowRight size={13}/></button>
- </div>
  <div className="recent"><span>RECENT ACTIVITY · {current.code}</span>{current.tx.map((t,i)=><div className="tx" key={i}><div className="txIcon">{i===1?'↗':current.symbol}</div><div><b>{t[0]}</b><small>{t[1]}</small></div><strong className={i===1?'minus':''}>{t[2]}</strong><i>{t[3]}</i></div>)}</div>
  </motion.div>
 }
