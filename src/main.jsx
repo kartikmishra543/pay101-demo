@@ -56,11 +56,11 @@ function App(){
    <section id="markets" className="marketsSection">
     <div className="marketsIntro"><span className="kicker">EXPLORE MARKETS</span><h2>Payments that feel <em>local.</em></h2><p>Customers like to pay in familiar ways. Explore the markets we are considering and ask our team which options are available for your business.</p></div>
     <div className="marketGrid">
-     <a href="mailto:support@pay101.uk?subject=Pay101%20India%20market"><span className="marketFlag">🇮🇳</span><div><b>India</b><small>UPI and bank transfers</small></div><ArrowRight size={17}/></a>
-     <a href="mailto:support@pay101.uk?subject=Pay101%20Nepal%20market"><span className="marketFlag">🇳🇵</span><div><b>Nepal</b><small>Explore local payment options</small></div><ArrowRight size={17}/></a>
-     <a href="mailto:support@pay101.uk?subject=Pay101%20Bhutan%20market"><span className="marketFlag">🇧🇹</span><div><b>Bhutan</b><small>Explore local payment options</small></div><ArrowRight size={17}/></a>
-     <a href="mailto:support@pay101.uk?subject=Pay101%20Brazil%20market"><span className="marketFlag">🇧🇷</span><div><b>Brazil</b><small>BRL and Pix examples</small></div><ArrowRight size={17}/></a>
-     <a href="mailto:support@pay101.uk?subject=Pay101%20Australia%20market"><span className="marketFlag">🇦🇺</span><div><b>Australia</b><small>AUD currency examples</small></div><ArrowRight size={17}/></a>
+     <a href="mailto:support@pay101.uk?subject=Pay101%20India%20market"><span className="marketFlag"><img src="https://flagcdn.com/w80/in.png" alt="India flag" loading="lazy"/></span><div><b>India</b><small>UPI and bank transfers</small></div><ArrowRight size={17}/></a>
+     <a href="mailto:support@pay101.uk?subject=Pay101%20Nepal%20market"><span className="marketFlag"><img src="https://flagcdn.com/w80/np.png" alt="Nepal flag" loading="lazy"/></span><div><b>Nepal</b><small>Explore local payment options</small></div><ArrowRight size={17}/></a>
+     <a href="mailto:support@pay101.uk?subject=Pay101%20Bhutan%20market"><span className="marketFlag"><img src="https://flagcdn.com/w80/bt.png" alt="Bhutan flag" loading="lazy"/></span><div><b>Bhutan</b><small>Explore local payment options</small></div><ArrowRight size={17}/></a>
+     <a href="mailto:support@pay101.uk?subject=Pay101%20Brazil%20market"><span className="marketFlag"><img src="https://flagcdn.com/w80/br.png" alt="Brazil flag" loading="lazy"/></span><div><b>Brazil</b><small>BRL and Pix examples</small></div><ArrowRight size={17}/></a>
+     <a href="mailto:support@pay101.uk?subject=Pay101%20Australia%20market"><span className="marketFlag"><img src="https://flagcdn.com/w80/au.png" alt="Australia flag" loading="lazy"/></span><div><b>Australia</b><small>AUD currency examples</small></div><ArrowRight size={17}/></a>
     </div>
     <p className="marketDisclaimer">Market examples are for demonstration. Payment methods and country availability must be confirmed with Pay101.</p>
    </section>
