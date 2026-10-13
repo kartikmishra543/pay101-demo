@@ -401,3 +401,7 @@ footer a:hover{color:var(--blue)}
 .dashboardShowcase .recent .tx{padding:7px 0!important}
 @media(min-width:901px){.dashboardShowcaseIntro{padding-top:20px}.dashboardShowcase .dashboard{margin-top:0!important}}
 @media(max-width:900px){.dashboardShowcase{gap:20px;padding-top:35px}.dashboardShowcaseIntro{padding-top:0}}
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+body,button,input,textarea,select{font-family:Manrope,Arial,sans-serif!important}
+h1,h2,h3,h4,h5,h6{font-family:Manrope,Arial,sans-serif!important;font-weight:800;letter-spacing:-.04em}
