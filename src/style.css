@@ -346,3 +346,15 @@ footer a:hover{color:var(--blue)}
 .globePinBhutan{left:4%;bottom:17%}
 .globeCenterLabel{bottom:7%;z-index:5}
 @media(max-width:550px){.globePinBhutan{left:0;bottom:20%}.globeCenterLabel{bottom:5%}}
+
+/* Reduce the payment overview dashboard preview to half its previous visual size */
+@media(min-width:901px){
+ .dashboardShowcase{grid-template-columns:1fr 1fr;gap:36px}
+ .dashboardShowcase .dashboard{zoom:.5;max-width:590px;width:590px;justify-self:center;margin:0}
+}
+@media(max-width:900px){
+ .dashboardShowcase .dashboard{zoom:.75;max-width:590px;width:min(590px,100%);justify-self:center}
+}
+@media(max-width:550px){
+ .dashboardShowcase .dashboard{zoom:.65;width:min(590px,100%);max-width:100%}
+}
