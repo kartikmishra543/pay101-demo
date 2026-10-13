@@ -328,3 +328,16 @@ footer a:hover{color:var(--blue)}
 @media(max-width:750px){.railList.paymentMethodsGrid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:480px){.railList.paymentMethodsGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.paymentMethodsGrid .paymentMethodCard{min-height:138px;padding:14px 12px}.paymentMethodIcon{top:12px;left:12px;width:37px;height:37px}.paymentMethodFlag{top:14px;right:10px}}
 @media(prefers-reduced-motion:reduce){.paymentMethodsGrid .paymentMethodCard{transition:none}}
+
+/* Compact organic Pay101 Solutions cards */
+#solutions .featureGrid{gap:16px;align-items:stretch}
+#solutions .feature{min-height:0;padding:21px 23px 24px;border-radius:22px;background:linear-gradient(145deg,#fff 0%,#f7fbff 100%);border:1px solid #dce9f5;box-shadow:0 7px 24px rgba(18,67,115,.045);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+#solutions .feature:hover{transform:translateY(-5px);border-color:#a9d2ff;box-shadow:0 16px 35px rgba(8,120,249,.12)}
+#solutions .feature .icon{width:47px;height:47px;border-radius:15px;margin-bottom:18px;background:linear-gradient(145deg,#e8f3ff,#ddecff)}
+#solutions .feature .icon svg{width:21px;height:21px}
+#solutions .feature h3{font-size:17px;line-height:1.3;letter-spacing:-.45px;margin:0}
+#solutions .feature p{font-size:12px;line-height:1.6;margin:8px 0 0;max-width:360px}
+#solutions .feature .featureArrow{right:20px;bottom:19px}
+@media(max-width:900px){#solutions .featureGrid{gap:12px}#solutions .feature{padding:20px;min-height:0}}
+@media(max-width:550px){#solutions .feature{padding:19px 20px;border-radius:18px}#solutions .feature .icon{margin-bottom:15px}}
+@media(prefers-reduced-motion:reduce){#solutions .feature{transition:none}}
