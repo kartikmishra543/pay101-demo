@@ -294,3 +294,19 @@ footer a:hover{color:var(--blue)}
 /* Render actual country flags rather than emoji abbreviations on Windows browsers */
 .marketFlag{overflow:hidden;padding:0;background:#eef4ff}
 .marketFlag img{display:block;width:100%;height:100%;object-fit:cover;border-radius:10px}
+
+/* Explore Markets: fixed flag dimensions, no text overlap, premium organic cards */
+.marketGrid{gap:14px;align-items:stretch}
+.marketGrid a{position:relative;isolation:isolate;box-sizing:border-box;min-width:0;min-height:104px;display:flex;flex-direction:row;align-items:center;gap:15px;padding:18px 18px;background:linear-gradient(135deg,#ffffff 0%,#f8fbff 100%);border:1px solid #dce9f7;border-radius:21px;overflow:hidden;box-shadow:0 8px 24px rgba(20,63,110,.045);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease}
+.marketGrid a:before{content:"";position:absolute;z-index:-1;width:125px;height:125px;right:-75px;top:-85px;border-radius:50%;background:radial-gradient(circle,#b8dcff70,transparent 70%);transition:transform .3s ease}
+.marketGrid a:hover{transform:translateY(-5px);border-color:#9bcafa;box-shadow:0 18px 40px rgba(8,120,249,.13);background:linear-gradient(135deg,#fff,#eff7ff)}
+.marketGrid a:hover:before{transform:scale(1.7)}
+.marketGrid .marketFlag{position:relative;display:flex;align-items:center;justify-content:center;flex:0 0 56px;width:56px;height:56px;min-width:56px;max-width:56px;min-height:56px;max-height:56px;overflow:hidden;border-radius:16px;background:#eef5ff;border:1px solid #e0ebfa;box-shadow:0 4px 12px #123f6812;font-size:0}
+.marketGrid .marketFlag img{position:static!important;display:block!important;width:44px!important;height:31px!important;min-width:0!important;max-width:44px!important;min-height:0!important;max-height:31px!important;object-fit:contain!important;border-radius:3px!important;flex:none!important}
+.marketGrid a>div{position:relative;min-width:0;flex:1 1 auto;display:flex;flex-direction:column;justify-content:center;gap:5px}
+.marketGrid a b{font-size:14px;line-height:1.25;color:#183456;font-weight:750}
+.marketGrid a small{font-size:11px;line-height:1.45;color:#71839a;margin:0}
+.marketGrid a>svg{flex:0 0 28px;width:28px;height:28px;padding:6px;box-sizing:border-box;border-radius:50%;background:#eaf3ff;color:#0878f9;transition:transform .25s,background .25s,color .25s}
+.marketGrid a:hover>svg{transform:translateX(3px);background:#0878f9;color:#fff}
+@media(max-width:550px){.marketGrid{gap:12px}.marketGrid a{min-height:90px;padding:14px;border-radius:17px}.marketGrid .marketFlag{flex-basis:52px;width:52px;height:52px;min-width:52px;max-width:52px;min-height:52px;max-height:52px}.marketGrid .marketFlag img{width:41px!important;height:29px!important}.marketGrid a b{font-size:13px}.marketGrid a small{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.marketGrid a,.marketGrid a>svg{transition:none}}
