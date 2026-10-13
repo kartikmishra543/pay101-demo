@@ -356,3 +356,16 @@ footer a:hover{color:var(--blue)}
 .dashboardShowcase .dashboard .tx strong{font-size:11px}
 @media(max-width:900px){.dashboardShowcase{grid-template-columns:1fr;gap:28px}.dashboardShowcase .dashboard{max-width:340px!important}}
 @media(max-width:550px){.dashboardShowcase .dashboard{max-width:min(340px,100%)!important}}
+
+/* Compact method wordmarks and country flags on globe cards */
+.globePin{gap:9px;padding:10px 12px;min-height:64px}
+.globeMethodLogo{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:12px;background:#eef6ff;color:#0878f9}
+.globeMethodLogo strong{font-size:12px;font-weight:900;letter-spacing:-.65px}
+.globeMethodLogo.logoPix{background:#e5f9f4;color:#149f86}
+.globeMethodLogo.logoeSewa{background:#e8f7e7;color:#279448}
+.globeMethodLogo.logoPayID{background:#eaf1ff;color:#1555ad}
+.globeMethodLogo.logoUPI{background:#fff3e7;color:#df6c22}
+.globeMethodLogo.logoBank{background:#e9f3ff}
+.globePinText{display:flex;flex-direction:column;min-width:0}
+.globeCountryFlag{position:static!important;flex:0 0 23px;width:23px!important;height:16px!important;object-fit:cover;border-radius:3px;margin-left:2px;box-shadow:0 1px 4px #001b3430}
+@media(max-width:550px){.globePin{gap:5px;padding:6px 7px;min-height:45px}.globeMethodLogo{flex-basis:27px;width:27px;height:27px;border-radius:8px}.globeMethodLogo strong{font-size:9px}.globeMethodLogo svg{width:17px;height:17px}.globeCountryFlag{width:18px!important;height:12px!important;flex-basis:18px}}
