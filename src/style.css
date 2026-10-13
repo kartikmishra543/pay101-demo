@@ -290,3 +290,7 @@ footer a:hover{color:var(--blue)}
 @media(max-width:900px){.hero{grid-template-columns:1fr;min-height:0;gap:0}.globeStage{height:530px;max-width:650px;margin:auto}.dashboardShowcase{grid-template-columns:1fr;gap:30px}.dashboardShowcase .dashboard{margin:auto}}
 @media(max-width:550px){.globeStage{height:395px}.globeSphere{width:72%}.globePin{padding:6px 8px;gap:5px;border-radius:10px}.globeFlag{font-size:19px}.globePin b{font-size:10px}.globePin small{font-size:8px}.globePinUSA{top:8%;left:0}.globePinIndia{top:18%}.globePinNepal{top:44%;right:0}.globePinBrazil{left:0;top:56%}.globePinAustralia{bottom:14%}.globePinBhutan{bottom:5%;left:8%}.globeCenterLabel{bottom:5%;font-size:8px;padding:7px}.globeFootnote{font-size:8px;bottom:-8px}.dashboardShowcase{padding:55px 20px}}
 @media(prefers-reduced-motion:reduce){.globeSphere,.globePin{animation:none}}
+
+/* Render actual country flags rather than emoji abbreviations on Windows browsers */
+.marketFlag{overflow:hidden;padding:0;background:#eef4ff}
+.marketFlag img{display:block;width:100%;height:100%;object-fit:cover;border-radius:10px}
