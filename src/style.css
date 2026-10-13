@@ -347,14 +347,12 @@ footer a:hover{color:var(--blue)}
 .globeCenterLabel{bottom:7%;z-index:5}
 @media(max-width:550px){.globePinBhutan{left:0;bottom:20%}.globeCenterLabel{bottom:5%}}
 
-/* Reduce the payment overview dashboard preview to half its previous visual size */
-@media(min-width:901px){
- .dashboardShowcase{grid-template-columns:1fr 1fr;gap:36px}
- .dashboardShowcase .dashboard{zoom:.5;max-width:590px;width:590px;justify-self:center;margin:0}
-}
-@media(max-width:900px){
- .dashboardShowcase .dashboard{zoom:.75;max-width:590px;width:min(590px,100%);justify-self:center}
-}
-@media(max-width:550px){
- .dashboardShowcase .dashboard{zoom:.65;width:min(590px,100%);max-width:100%}
-}
+
+/* Narrow dashboard width only; preserve natural text and chart scale */
+.dashboardShowcase{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:38px}
+.dashboardShowcase .dashboard{zoom:1!important;transform:none;max-width:340px!important;width:100%!important;min-width:0;justify-self:center;margin:0 auto;box-sizing:border-box}
+.dashboardShowcase .dashboard .stats{gap:8px}
+.dashboardShowcase .dashboard .tx{gap:6px}
+.dashboardShowcase .dashboard .tx strong{font-size:11px}
+@media(max-width:900px){.dashboardShowcase{grid-template-columns:1fr;gap:28px}.dashboardShowcase .dashboard{max-width:340px!important}}
+@media(max-width:550px){.dashboardShowcase .dashboard{max-width:min(340px,100%)!important}}
