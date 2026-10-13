@@ -9,6 +9,19 @@ const chart=[{m:'Jan',v:32},{m:'Feb',v:44},{m:'Mar',v:39},{m:'Apr',v:62},{m:'May
 const tx=[['Payment received','Merchant checkout','+$2,840.00 USD','Success'],['Payment sent','Vendor transfer','-R$ 1.280,00','Success'],['Money received','Bank account','+A$4,820.00 AUD','Settled']];
 const heroSlides=[{eyebrow:'PAYMENTS MADE SIMPLE',line1:'Make payments.',line2:'Make progress.',copy:'Accept money from customers, send payments to partners, and see what is happening in one clear place.',cta:'Explore Pay101'},{eyebrow:'LESS TIME CHASING PAYMENTS',line1:'Know what’s paid.',line2:'Know what’s next.',copy:'See incoming payments, outgoing transfers and when money is expected to reach your account.',cta:'See how it works'},{eyebrow:'PAYMENTS FOR MORE MARKETS',line1:'One clear view.',line2:'More ways to pay.',copy:'Explore familiar payment options and bank transfers for businesses serving customers in different markets.',cta:'Explore markets'}];
 
+const paymentMethods=[
+ {name:'UPI',subtitle:'Instant bank payments',country:'India',flag:'🇮🇳',icon:<WalletCards size={23}/>},
+ {name:'NPCI',subtitle:'Payments infrastructure',country:'India',flag:'🇮🇳',icon:<Landmark size={23}/>},
+ {name:'Paytm',subtitle:'Digital wallet & payments',country:'India',flag:'🇮🇳',icon:<CreditCard size={23}/>},
+ {name:'PhonePe',subtitle:'UPI & digital payments',country:'India',flag:'🇮🇳',icon:<WalletCards size={23}/>},
+ {name:'GPay',subtitle:'Google Pay · India',country:'India',flag:'🇮🇳',icon:<CreditCard size={23}/>},
+ {name:'eSewa',subtitle:'Digital wallet',country:'Nepal',flag:'🇳🇵',icon:<WalletCards size={23}/>},
+ {name:'bKash',subtitle:'Mobile financial services',country:'Bangladesh',flag:'🇧🇩',icon:<Send size={23}/>},
+ {name:'Pix',subtitle:'Instant payments',country:'Brazil',flag:'🇧🇷',icon:<Zap size={23}/>},
+ {name:'Apple Pay',subtitle:'Digital wallet',country:'International',flag:'🌐',icon:<CreditCard size={23}/>},
+ {name:'Google Pay',subtitle:'Digital wallet',country:'International',flag:'🌐',icon:<CreditCard size={23}/>}
+];
+
 function App(){
  const [menu,setMenu]=React.useState(false);
  const [solutionsOpen,setSolutionsOpen]=React.useState(false);
@@ -65,13 +78,14 @@ function App(){
     <p className="marketDisclaimer">Market examples are for demonstration. Payment methods and country availability must be confirmed with Pay101.</p>
    </section>
 
-   <section id="rails" className="rails">
-    <div><span>PAYMENT SYSTEM</span><strong>Built around the ways businesses move money.</strong></div>
-    <div className="railList">
-     <div><WalletCards size={20}/><b>UPI</b><small>Digital payments</small></div>
-     <div><Send size={20}/><b>IMPS</b><small>Fast transfers</small></div>
-     <div><Landmark size={20}/><b>NEFT</b><small>Bank transfers</small></div>
-     <div><Landmark size={20}/><b>RTGS</b><small>High-value transfers</small></div>
+   <section id="rails" className="rails paymentMethodsSection">
+    <div className="paymentMethodsIntro"><span>PAYMENT SYSTEM</span><strong>Familiar ways to pay, across markets.</strong><p>Explore widely recognized payment networks, wallets and payment methods from around the world.</p><small>Illustrative examples only · Integration and availability are not confirmed.</small></div>
+    <div className="railList paymentMethodsGrid">
+     {paymentMethods.map(item=><div className="paymentMethodCard" key={item.name}>
+      <span className="paymentMethodIcon">{item.icon}</span>
+      <span className="paymentMethodFlag" aria-label={item.country}>{item.flag}</span>
+      <b>{item.name}</b><small>{item.subtitle}</small>
+     </div>)}
     </div>
    </section>
 
