@@ -405,3 +405,13 @@ footer a:hover{color:var(--blue)}
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 body,button,input,textarea,select{font-family:Manrope,Arial,sans-serif!important}
 h1,h2,h3,h4,h5,h6{font-family:Manrope,Arial,sans-serif!important;font-weight:800;letter-spacing:-.04em}
+
+/* Dense solutions cards: preserve all six services without wasted vertical space */
+#solutions .featureGrid{gap:12px!important;align-items:stretch}
+#solutions .feature{height:auto!important;min-height:165px!important;padding:17px 20px 18px!important;border-radius:18px!important;display:flex;flex-direction:column;justify-content:flex-start}
+#solutions .feature .icon{width:39px!important;height:39px!important;min-height:39px;margin-bottom:12px!important;border-radius:12px!important}
+#solutions .feature .icon svg{width:19px;height:19px}
+#solutions .feature h3{font-size:16px!important;line-height:1.25!important;margin:0 0 5px!important}
+#solutions .feature p{font-size:12px!important;line-height:1.45!important;margin:0!important;padding-right:18px}
+#solutions .feature .featureArrow{right:16px!important;bottom:14px!important}
+@media(max-width:650px){#solutions .feature{min-height:145px!important;padding:15px 16px!important}#solutions .feature .icon{margin-bottom:9px!important}}
