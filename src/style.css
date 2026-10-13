@@ -257,3 +257,36 @@ footer a:hover{color:var(--blue)}
 .monitorAction{display:inline-flex;align-items:center;gap:7px;margin-top:8px;padding:0;border:0;background:transparent;color:#075fcf;font:600 10px 'DM Sans',sans-serif;cursor:pointer}
 .monitorAction:hover{color:#034a9f}
 @media(max-width:600px){.smartMonitor{padding:12px}.monitorStatus{font-size:0}.monitorStatus i{width:7px;height:7px}.monitorSummary{padding:9px}.monitorEvent{gap:7px}}
+
+/* Global payments hero — brand blue/white palette retained */
+.hero{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);min-height:640px;align-items:center;gap:15px}
+.heroCopy{position:relative;z-index:3}
+.globeStage{position:relative;width:100%;height:560px;isolation:isolate;display:grid;place-items:center}
+.globeHalo{position:absolute;width:95%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#b5dbff88 0%,#e2f2ff66 40%,transparent 70%);filter:blur(15px)}
+.globeSphere{position:relative;width:min(82%,430px);aspect-ratio:1;border-radius:50%;overflow:hidden;border:1px solid #8dbdff;background:radial-gradient(circle at 30% 22%,#effaff 0%,#b8ddff 35%,#5ba4f0 67%,#1258b6 100%);box-shadow:inset -35px -30px 75px #064d9b55,inset 22px 18px 45px #fff9,0 28px 75px #0878f933;animation:globeFloat 7s ease-in-out infinite}
+.globeSphere:before{content:"";position:absolute;inset:0;border-radius:50%;background:repeating-linear-gradient(0deg,transparent 0 40px,#fff4 41px 42px,transparent 43px 78px);opacity:.5}
+.globeLatitude{position:absolute;left:4%;width:92%;height:30%;border:1px solid #fff7;border-radius:50%}
+.latOne{top:16%}.latTwo{top:35%}.latThree{top:56%}
+.globeMeridian{position:absolute;inset:0 22%;border:1px solid #fff8;border-radius:50%}.merTwo{inset:0 35%}.merThree{inset:0 8%}
+.globeLand{position:absolute;background:#eaf9ffbd;filter:drop-shadow(0 0 8px #ffffff55);border-radius:40% 55% 45% 35%}
+.landAmericas{width:28%;height:45%;left:10%;top:24%;transform:rotate(-25deg);clip-path:polygon(12% 0,100% 10%,75% 43%,96% 70%,60% 100%,35% 68%,0 43%)}
+.landEurope{width:21%;height:16%;left:47%;top:25%;transform:rotate(18deg)}
+.landAsia{width:39%;height:33%;right:5%;top:28%;clip-path:polygon(5% 0,95% 8%,100% 65%,62% 100%,24% 75%,0 38%)}
+.landAfrica{width:23%;height:34%;left:48%;top:46%;transform:rotate(-15deg);clip-path:polygon(15% 0,100% 15%,80% 68%,44% 100%,0 35%)}
+.landAustralia{width:17%;height:10%;right:10%;bottom:17%;transform:rotate(-12deg)}
+.globeSheen{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 24% 18%,#fff9,transparent 38%)}
+.globeOrbit{position:absolute;width:100%;height:65%;border:1px dashed #0878f94d;border-radius:50%;transform:rotate(-24deg);pointer-events:none}.orbitInner{width:84%;height:85%;transform:rotate(30deg);border-style:solid;opacity:.5}
+.globePin{position:absolute;z-index:4;display:flex;align-items:center;gap:8px;padding:9px 13px 9px 9px;border:1px solid #d5e8ff;border-radius:15px;background:#fffffff0;box-shadow:0 10px 28px #164f8726;color:#153759;cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s;animation:pinBob 5s ease-in-out infinite}
+.globePin:hover,.globePin.isSelected{transform:translateY(-6px) scale(1.06);border-color:#0878f9;box-shadow:0 16px 34px #0878f93b}
+.globeFlag{font-size:25px;line-height:1}.globePin b,.globePin small{display:block;text-align:left;white-space:nowrap}.globePin b{font-size:12px}.globePin small{font-size:10px;color:#647b94;margin-top:3px}
+.globePinIndia{right:0;top:24%}.globePinBrazil{left:0;top:58%}.globePinUSA{left:1%;top:13%}.globePinAustralia{right:0;bottom:16%}.globePinNepal{right:3%;top:49%}.globePinBhutan{left:16%;bottom:5%}
+.globeCenterLabel{position:absolute;z-index:3;bottom:10%;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;white-space:nowrap;color:#075bb7;background:#ffffffec;border:1px solid #d5e8ff;padding:10px 14px;border-radius:50px;font-size:10px;font-weight:800;letter-spacing:1.2px;box-shadow:0 8px 30px #0878f91a}
+.globeFootnote{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:10px;color:#7a8b9f}
+.dashboardShowcase{max-width:1220px;margin:0 auto;padding:75px 28px 95px;display:grid;grid-template-columns:.78fr 1fr;gap:80px;align-items:center}
+.dashboardShowcaseIntro h2{font-size:clamp(40px,4.7vw,66px);line-height:1.06;margin:18px 0}.dashboardShowcaseIntro h2 em{font-style:normal;color:#0878f9}.dashboardShowcaseIntro p{max-width:420px;color:#617581;line-height:1.8}
+.dashboardShowcase .dashboard{top:auto!important;max-width:590px;width:100%}
+@keyframes globeFloat{50%{transform:translateY(-12px) rotate(2deg)}}
+@keyframes pinBob{50%{translate:0 -5px}}
+@media(max-width:900px){.hero{grid-template-columns:1fr;min-height:0;gap:0}.globeStage{height:530px;max-width:650px;margin:auto}.dashboardShowcase{grid-template-columns:1fr;gap:30px}.dashboardShowcase .dashboard{margin:auto}}
+@media(max-width:550px){.globeStage{height:395px}.globeSphere{width:72%}.globePin{padding:6px 8px;gap:5px;border-radius:10px}.globeFlag{font-size:19px}.globePin b{font-size:10px}.globePin small{font-size:8px}.globePinUSA{top:8%;left:0}.globePinIndia{top:18%}.globePinNepal{top:44%;right:0}.globePinBrazil{left:0;top:56%}.globePinAustralia{bottom:14%}.globePinBhutan{bottom:5%;left:8%}.globeCenterLabel{bottom:5%;font-size:8px;padding:7px}.globeFootnote{font-size:8px;bottom:-8px}.dashboardShowcase{padding:55px 20px}}
+@media(prefers-reduced-motion:reduce){.globeSphere,.globePin{animation:none}}
