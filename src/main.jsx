@@ -11,14 +11,14 @@ const tx=[['Payment received','Merchant checkout','+$2,840.00 USD','Success'],['
 const heroSlides=[{eyebrow:'PAYMENTS MADE SIMPLE',line1:'Make payments.',line2:'Make progress.',copy:'Accept money from customers, send payments to partners, and see what is happening in one clear place.',cta:'Explore Pay101'},{eyebrow:'LESS TIME CHASING PAYMENTS',line1:'Know what’s paid.',line2:'Know what’s next.',copy:'See incoming payments, outgoing transfers and when money is expected to reach your account.',cta:'See how it works'},{eyebrow:'PAYMENTS FOR MORE MARKETS',line1:'One clear view.',line2:'More ways to pay.',copy:'Explore familiar payment options and bank transfers for businesses serving customers in different markets.',cta:'Explore markets'}];
 
 const paymentMethods=[
- {name:'UPI',brand:'upi',subtitle:'Instant bank payments',country:'India',flag:'🇮🇳',icon:<WalletCards size={23}/>},
+ {name:'UPI',brand:'upi',logoSrc:'https://commons.wikimedia.org/wiki/Special:FilePath/UPI-Logo-vector.svg',subtitle:'Instant bank payments',country:'India',flag:'🇮🇳',icon:<WalletCards size={23}/>},
  {name:'NPCI',brand:'npci',subtitle:'Payments infrastructure',country:'India',flag:'🇮🇳',icon:<Landmark size={23}/>},
  {name:'Paytm',brand:'paytm',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/paytm.svg',subtitle:'Digital wallet & payments',country:'India',flag:'🇮🇳',icon:<CreditCard size={23}/>},
  {name:'PhonePe',brand:'phonepe',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/phonepe.svg',subtitle:'UPI & digital payments',country:'India',flag:'🇮🇳',icon:<WalletCards size={23}/>},
  {name:'GPay',brand:'googlepay',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/googlepay.svg',subtitle:'Google Pay · India',country:'India',flag:'🇮🇳',icon:<CreditCard size={23}/>},
- {name:'eSewa',brand:'esewa',subtitle:'Digital wallet',country:'Nepal',flag:'🇳🇵',icon:<WalletCards size={23}/>},
+ {name:'eSewa',brand:'esewa',logoSrc:'https://commons.wikimedia.org/wiki/Special:FilePath/Esewa_logo.webp',subtitle:'Digital wallet',country:'Nepal',flag:'🇳🇵',icon:<WalletCards size={23}/>},
  {name:'bKash',brand:'bkash',subtitle:'Mobile financial services',country:'Bangladesh',flag:'🇧🇩',icon:<Send size={23}/>},
- {name:'Pix',brand:'pix',subtitle:'Instant payments',country:'Brazil',flag:'🇧🇷',icon:<Zap size={23}/>},
+ {name:'Pix',brand:'pix',logoSrc:'https://www.bcb.gov.br/content/estabilidadefinanceira/piximg/logo_pix.png',subtitle:'Instant payments',country:'Brazil',flag:'🇧🇷',icon:<Zap size={23}/>},
  {name:'Apple Pay',brand:'applepay',subtitle:'Digital wallet',country:'International',flag:'🌐',icon:<CreditCard size={23}/>},
  {name:'Google Pay',brand:'googlepay',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/googlepay.svg',subtitle:'Digital wallet',country:'International',flag:'🌐',icon:<CreditCard size={23}/>}
 ];
@@ -88,7 +88,7 @@ function App(){
       {[0,1].map(copy=><div className="paymentMethodsLoop" key={copy} aria-hidden={copy===1}>
        {paymentMethods.map(item=><div className={`paymentMethodCard paymentBrand-${item.brand}`} key={item.name}>
         <span className={`paymentMethodIcon ${item.logoSrc?"paymentBrandIcon":""}`}>{item.logoSrc?<img src={item.logoSrc} alt={`${item.name} logo`} loading="lazy"/>:item.icon}</span>
-        {!item.logoSrc&&<b>{item.name}</b>}<small>{item.subtitle}</small>
+        
        </div>)}
       </div>)}
      </div>
@@ -140,8 +140,8 @@ function App(){
 const globeMethods=[
  {flag:'🇮🇳',country:'India',method:'UPI',iso:'in',logo:'UPI',logoUrl:'https://commons.wikimedia.org/wiki/Special:FilePath/UPI-Logo-vector.svg',pos:'globePinIndia'},
  {flag:'🇧🇷',country:'Brazil',method:'Pix',iso:'br',logo:'Pix',logoUrl:'https://www.bcb.gov.br/content/estabilidadefinanceira/piximg/logo_pix.png',pos:'globePinBrazil'},
- {flag:'🇺🇸',country:'United States',method:'Cards',iso:'us',logo:'Cards',pos:'globePinUSA'},
- {flag:'🇦🇺',country:'Australia',method:'PayID',iso:'au',logo:'PayID',pos:'globePinAustralia'},
+ {flag:'🇺🇸',country:'United States',method:'Cards',iso:'us',logo:'Cards',logoUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYyLHuzjcWr5ziwsakqz3gzylUdQ_pdv2-mamTg6LX0iCTDZJ_NHXJOdLF&s=10',pos:'globePinUSA'},
+ {flag:'🇦🇺',country:'Australia',method:'PayID',iso:'au',logo:'PayID',logoUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh_0ML0tDOp5uPgq4_SQF3oaqvaDJ-OqONyI2VQe_S9w&s=10',pos:'globePinAustralia'},
  {flag:'🇳🇵',country:'Nepal',method:'eSewa',iso:'np',logo:'eSewa',logoUrl:'https://commons.wikimedia.org/wiki/Special:FilePath/Esewa_logo.webp',pos:'globePinNepal'},
  {flag:'🇧🇹',country:'Bhutan',method:'Bank transfer',iso:'bt',logo:'Bank',pos:'globePinBhutan'}
 ];
@@ -152,7 +152,7 @@ function PaymentGlobe(){
   <div className="globeHalo"/>
   <div className="globeOrbit orbitOuter"/><div className="globeOrbit orbitInner"/>
   <div className="globeSphere"><div className="globeLatitude latOne"/><div className="globeLatitude latTwo"/><div className="globeLatitude latThree"/><div className="globeMeridian merOne"/><div className="globeMeridian merTwo"/><div className="globeMeridian merThree"/><div className="globeLand landAmericas"/><div className="globeLand landEurope"/><div className="globeLand landAsia"/><div className="globeLand landAfrica"/><div className="globeLand landAustralia"/><div className="globeSheen"/></div>
-  {globeMethods.map((item,i)=><button key={item.country} type="button" onClick={()=>setSelected(i)} className={`globePin ${item.pos} ${selected===i?'isSelected':''}`} aria-label={`${item.country}: ${item.method}`}><span className={`globeMethodLogo logo${item.logo}`} aria-hidden="true">{item.logoUrl?<img className="globeBrandImage" src={item.logoUrl} alt="" loading="lazy" referrerPolicy="no-referrer"/>:item.logo==='Cards'?<CreditCard size={22}/>:item.logo==='Bank'?<Landmark size={22}/>:<strong>{item.method}</strong>}</span><img className="globeCountryFlag" src={`https://flagcdn.com/w40/${item.iso}.png`} alt={`${item.country} flag`} loading="lazy"/></button>)}
+  {globeMethods.map((item,i)=><button key={item.country} type="button" onClick={()=>setSelected(i)} className={`globePin ${item.pos} ${selected===i?'isSelected':''}`} aria-label={`${item.country}: ${item.method}`}><span className={`globeMethodLogo logo${item.logo}`} aria-hidden="true">{item.logoUrl?<img className="globeBrandImage" src={item.logoUrl} alt="" loading="lazy" referrerPolicy="no-referrer"/>:item.logo==='Cards'?<CreditCard size={22}/>:item.logo==='Bank'?<Landmark size={22}/>:<strong>{item.method}</strong>}</span></button>)}
   <div className="globeCenterLabel"><Globe2 size={16}/><span>PAYMENTS WITHOUT BORDERS</span></div>
   <div className="globeFootnote">Concept illustration · Payment method availability subject to confirmation</div>
  </div>
