@@ -488,3 +488,23 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .paymentMethodsLoop .paymentBrandIcon img{display:block;width:100%;height:100%;object-fit:contain}
 .paymentMethodsLoop .paymentMethodCard:has(.paymentBrandIcon){gap:8px}
 @media(max-width:550px){.paymentMethodsLoop .paymentMethodIcon.paymentBrandIcon{width:64px;height:44px;flex-basis:44px}}
+
+/* Distinct payment-provider palettes; original SVG artwork retains proportions */
+.paymentMethodsLoop .paymentMethodCard{border-width:1.5px;isolation:isolate}
+.paymentMethodsLoop .paymentMethodCard .paymentMethodIcon{background:var(--brand-tint,#edf5ff);color:var(--brand-color,#0878f9)}
+.paymentMethodsLoop .paymentMethodCard.paymentBrand-paytm{--brand-color:#00baf2;--brand-tint:#e7faff;border-color:#b5eafb;background:radial-gradient(circle at 35% 20%,#fff,#effbff)}
+.paymentMethodsLoop .paymentMethodCard.paymentBrand-phonepe{--brand-color:#5f259f;--brand-tint:#f3eaff;border-color:#ddc9f2;background:radial-gradient(circle at 35% 20%,#fff,#f8f1ff)}
+.paymentMethodsLoop .paymentMethodCard.paymentBrand-googlepay{--brand-color:#4285f4;--brand-tint:#edf4ff;border-color:#d1e2ff;background:radial-gradient(circle at 35% 20%,#fff,#f2f7ff)}
+.paymentMethodsLoop .paymentMethodCard.paymentBrand-upi{--brand-color:#e77824;--brand-tint:#fff1e7;border-color:#f5d9bd}
+.paymentMethodsLoop .paymentMethodCard.paymentBrand-npci{--brand-color:#006a9c;--brand-tint:#e9f6fc;border-color:#c7e5f3}
+.paymentMethodsLoop .paymentMethodCard.paymentBrand-esewa{--brand-color:#55a329;--brand-tint:#ecf8e6;border-color:#d5eac7}
+.paymentMethodsLoop .paymentMethodCard.paymentBrand-bkash{--brand-color:#e2136e;--brand-tint:#fff0f6;border-color:#f4c9dc}
+.paymentMethodsLoop .paymentMethodCard.paymentBrand-pix{--brand-color:#32bcad;--brand-tint:#e7faf7;border-color:#c4ece7}
+.paymentMethodsLoop .paymentMethodCard.paymentBrand-applepay{--brand-color:#1b1b1b;--brand-tint:#f0f0f0;border-color:#dedede}
+.paymentMethodsLoop .paymentMethodCard .paymentBrandIcon{background:var(--brand-tint,#edf5ff)!important;width:76px;height:58px;flex:0 0 58px;border-radius:16px;padding:13px;box-sizing:border-box}
+.paymentMethodsLoop .paymentBrandIcon img{filter:brightness(0) saturate(100%);opacity:.9}
+.paymentMethodsLoop .paymentBrand-paytm .paymentBrandIcon img{filter:invert(58%) sepia(92%) saturate(2140%) hue-rotate(155deg) brightness(99%) contrast(101%)}
+.paymentMethodsLoop .paymentBrand-phonepe .paymentBrandIcon img{filter:invert(20%) sepia(80%) saturate(1850%) hue-rotate(257deg) brightness(88%) contrast(100%)}
+.paymentMethodsLoop .paymentBrand-googlepay .paymentBrandIcon img{filter:invert(48%) sepia(94%) saturate(1957%) hue-rotate(195deg) brightness(100%) contrast(92%)}
+.paymentMethodsLoop .paymentMethodCard small{color:#64788a}
+@media(max-width:550px){.paymentMethodsLoop .paymentMethodCard .paymentBrandIcon{width:64px;height:48px;flex-basis:48px;padding:10px}}
