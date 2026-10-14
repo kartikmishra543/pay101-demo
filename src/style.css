@@ -440,3 +440,28 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .globePin .globePinText small{display:block;white-space:nowrap}
 .globePin .globeCountryFlag{position:static!important;width:23px!important;height:16px!important;flex:0 0 23px!important;object-fit:cover}
 @media(max-width:550px){.globePin{min-height:45px!important;padding:6px 7px!important;gap:5px!important;border-radius:14px!important}.globePin .globeMethodLogo{width:27px!important;height:27px!important;flex-basis:27px!important;border-radius:8px!important}.globePin .globeMethodLogo svg{width:17px!important;height:17px!important}.globePin .globeCountryFlag{width:18px!important;height:12px!important;flex-basis:18px!important}}
+
+/* Refined globe badges: consistent card widths, legible labels and no overlaps */
+.globeStage .globePin{box-sizing:border-box;width:170px!important;min-width:170px!important;max-width:170px!important;height:66px!important;min-height:66px!important;padding:9px 11px!important;gap:8px!important;border-radius:18px!important;justify-content:flex-start!important;align-items:center!important;box-shadow:0 12px 28px rgba(20,65,120,.13)!important;white-space:normal}
+.globeStage .globePin .globeMethodLogo{width:42px!important;height:42px!important;flex:0 0 42px!important;padding:4px;border-radius:12px!important}
+.globeStage .globePin .globePinText{display:flex!important;flex:1 1 auto;min-width:0;overflow:hidden;align-items:center;justify-content:flex-start}
+.globeStage .globePin .globePinText small{font-size:12px!important;font-weight:700;line-height:1.2;color:#234668;white-space:normal!important;overflow-wrap:normal}
+.globeStage .globePin .globeCountryFlag{position:static!important;display:block;flex:0 0 23px!important;width:23px!important;height:16px!important;object-fit:cover;margin-left:auto!important;border-radius:3px}
+.globeStage .globePinUSA{left:0!important;top:13%!important;right:auto!important;bottom:auto!important}
+.globeStage .globePinIndia{right:0!important;top:22%!important;left:auto!important;bottom:auto!important}
+.globeStage .globePinNepal{right:0!important;top:47%!important;left:auto!important;bottom:auto!important}
+.globeStage .globePinAustralia{right:0!important;top:auto!important;bottom:15%!important;left:auto!important}
+.globeStage .globePinBrazil{left:0!important;top:53%!important;right:auto!important;bottom:auto!important}
+.globeStage .globePinBhutan{left:3%!important;top:auto!important;bottom:13%!important;right:auto!important}
+@media(max-width:650px){
+ .globeStage .globePin{width:122px!important;min-width:122px!important;max-width:122px!important;height:48px!important;min-height:48px!important;padding:6px!important;gap:4px!important;border-radius:12px!important}
+ .globeStage .globePin .globeMethodLogo{width:28px!important;height:28px!important;flex-basis:28px!important;padding:2px!important;border-radius:8px!important}
+ .globeStage .globePin .globePinText small{font-size:9px!important}
+ .globeStage .globePin .globeCountryFlag{width:17px!important;height:12px!important;flex-basis:17px!important}
+ .globeStage .globePinUSA{top:8%!important}
+ .globeStage .globePinIndia{top:18%!important}
+ .globeStage .globePinNepal{top:42%!important}
+ .globeStage .globePinBrazil{top:54%!important}
+ .globeStage .globePinBhutan{left:0!important;bottom:18%!important}
+ .globeStage .globePinAustralia{bottom:14%!important}
+}
