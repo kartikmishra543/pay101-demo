@@ -470,3 +470,15 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .globeStage .globePin{width:112px!important;min-width:112px!important;max-width:112px!important;height:60px!important;min-height:60px!important;padding:8px!important;gap:7px!important;justify-content:center!important}
 .globeStage .globePin .globeCountryFlag{margin-left:0!important}
 @media(max-width:650px){.globeStage .globePin{width:86px!important;min-width:86px!important;max-width:86px!important;height:44px!important;min-height:44px!important;padding:5px!important;gap:5px!important}}
+
+/* About and contact sections above final CTA */
+.aboutContactSection,.contactSection{max-width:1220px;margin:0 auto;padding:70px 28px;scroll-margin-top:85px}
+.aboutContactLabel{display:block;color:#0878f9;font-size:12px;font-weight:800;letter-spacing:.18em;margin-bottom:20px}
+.aboutContactGrid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.aboutContactGrid h2,.contactSection h2{font-size:clamp(32px,4vw,54px);line-height:1.15;letter-spacing:-.02em;margin:0;color:#10202b}
+.aboutContactGrid p,.contactSection p{font-size:17px;line-height:1.8;color:#617581;margin:0 0 16px}
+.aboutContactGrid small{color:#8094a5;font-size:12px;line-height:1.6;display:block}
+.contactSection{display:flex;justify-content:space-between;align-items:center;gap:32px;padding-top:50px;padding-bottom:65px;border-top:1px solid #dce9f5}
+.contactSection p{max-width:650px;margin-top:15px;margin-bottom:0}
+.contactSection .primary{flex-shrink:0;display:inline-flex;align-items:center;justify-content:center;gap:10px}
+@media(max-width:760px){.aboutContactSection,.contactSection{padding:45px 20px}.aboutContactGrid{grid-template-columns:1fr;gap:18px}.contactSection{flex-direction:column;align-items:flex-start}.contactSection .primary{max-width:100%;white-space:normal}}
