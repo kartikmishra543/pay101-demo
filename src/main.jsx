@@ -4,6 +4,7 @@ import {motion} from 'framer-motion';
 import {ArrowRight, Check, Globe2, ShieldCheck, Zap, Sparkles, Menu, X, CreditCard, BarChart3, Code2, LockKeyhole, Landmark, Send, WalletCards, Eye, EyeOff, Mail} from 'lucide-react';
 import {AreaChart, Area, ResponsiveContainer, Tooltip, XAxis} from 'recharts';
 import './style.css';
+import Pay101Bot from './Pay101Bot.jsx';
 
 const chart=[{m:'Jan',v:32},{m:'Feb',v:44},{m:'Mar',v:39},{m:'Apr',v:62},{m:'May',v:57},{m:'Jun',v:81},{m:'Jul',v:76},{m:'Aug',v:96}];
 const tx=[['Payment received','Merchant checkout','+$2,840.00 USD','Success'],['Payment sent','Vendor transfer','-R$ 1.280,00','Success'],['Money received','Bank account','+A$4,820.00 AUD','Settled']];
@@ -130,6 +131,7 @@ function App(){
 
    <section className="cta"><div className="ctaGlow"/><span className="kicker">READY TO MOVE MONEY?</span><h2>Build your payment flow<br/>with <em>Pay101.</em></h2><p>Bring payins, payouts and settlement operations together in one modern platform.</p><a className="primary" href="#contact">Get started with Pay101 <ArrowRight size={17}/></a></section>
   </main>
+  <Pay101Bot/>
 
   <footer><a className="brand" href="#" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a><span>© 2026 Pay101. Demo concept.</span><div><a href="#about">About</a><a href="mailto:support@pay101.uk?subject=Pay101%20Privacy%20Enquiry">Privacy</a><a href="mailto:support@pay101.uk?subject=Pay101%20Terms%20Enquiry">Terms</a><a href="#contact">Contact</a></div></footer>
  </div>
