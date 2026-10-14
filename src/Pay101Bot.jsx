@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle, X, Send, Bot, ExternalLink } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, ExternalLink, Trash2 } from 'lucide-react';
 import './pay101bot.css';
 
 // Verified website-demo information only. Update this knowledge base as Pay101 publishes details.
@@ -38,12 +38,13 @@ export default function Pay101Bot(){
  const [draft,setDraft]=React.useState('');
  const [messages,setMessages]=React.useState([{who:'bot',text:'Hi! I’m Pay101Bot. Ask me about Pay101 solutions, markets, payment methods or getting started.'}]);
  const listRef=React.useRef(null);
+ const clearChat=()=>{setMessages([{who:'bot',text:'Chat cleared. Hi! I’m Pay101Bot. What would you like to know about Pay101?'}]);setDraft('');};
  React.useEffect(()=>{if(open&&listRef.current)listRef.current.scrollTop=listRef.current.scrollHeight;},[messages,open]);
  function send(value){const q=(value||draft).trim();if(!q)return;const found=answer(q);setMessages(prev=>[...prev,{who:'user',text:q},{who:'bot',text:found.a,link:found.link}]);setDraft('');}
  return <div className="pay101botRoot">
   {open&&<section className="pay101botPanel" role="dialog" aria-label="Pay101Bot website assistant">
-   <header className="pay101botHeader"><div className="pay101botAvatar"><Bot size={21}/></div><div><strong>Pay101Bot</strong><small>Website information assistant</small></div><button onClick={()=>setOpen(false)} aria-label="Close Pay101Bot"><X size={20}/></button></header>
-   <div className="pay101botMessages" ref={listRef} aria-live="polite">{messages.map((m,i)=><div className={'pay101botBubble '+m.who} key={i}>{m.text}{m.link&&<a href={m.link} onClick={()=>setOpen(false)}>Explore section <ExternalLink size={13}/></a>}</div>)}</div>
+   <header className="pay101botHeader"><div className="pay101botAvatar"><Bot size={21}/></div><div><strong>Pay101Bot</strong><small>Website information assistant</small></div><div className="pay101botHeaderActions"><button type="button" onClick={clearChat} title="Clear conversation" aria-label="Clear conversation"><Trash2 size={18}/></button><button type="button" onClick={()=>setOpen(false)} aria-label="Close Pay101Bot"><X size={20}/></button></div></header>
+   <div className="pay101botMessages" ref={listRef} aria-live="polite">{messages.map((m,i)=><div className={'pay101botBubble '+(m.who==='user'?'fromUser':'fromBot')} key={i}>{m.text}{m.link&&<a href={m.link} onClick={()=>setOpen(false)}>Explore section <ExternalLink size={13}/></a>}</div>)}</div>
    {messages.length===1&&<div className="pay101botPrompts">{['What is Pay101?','Which markets are shown?','How do I get started?'].map(q=><button key={q} onClick={()=>send(q)}>{q}</button>)}</div>}
    <form className="pay101botInput" onSubmit={e=>{e.preventDefault();send();}}><input aria-label="Ask Pay101Bot" value={draft} onChange={e=>setDraft(e.target.value)} placeholder="Ask about Pay101..." maxLength={500}/><button type="submit" aria-label="Send message" disabled={!draft.trim()}><Send size={18}/></button></form>
    <p className="pay101botDisclaimer">Demo assistant · Answers based on website information, not live account data.</p>
