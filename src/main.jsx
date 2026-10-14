@@ -10,16 +10,16 @@ const tx=[['Payment received','Merchant checkout','+$2,840.00 USD','Success'],['
 const heroSlides=[{eyebrow:'PAYMENTS MADE SIMPLE',line1:'Make payments.',line2:'Make progress.',copy:'Accept money from customers, send payments to partners, and see what is happening in one clear place.',cta:'Explore Pay101'},{eyebrow:'LESS TIME CHASING PAYMENTS',line1:'Know what’s paid.',line2:'Know what’s next.',copy:'See incoming payments, outgoing transfers and when money is expected to reach your account.',cta:'See how it works'},{eyebrow:'PAYMENTS FOR MORE MARKETS',line1:'One clear view.',line2:'More ways to pay.',copy:'Explore familiar payment options and bank transfers for businesses serving customers in different markets.',cta:'Explore markets'}];
 
 const paymentMethods=[
- {name:'UPI',subtitle:'Instant bank payments',country:'India',flag:'🇮🇳',icon:<WalletCards size={23}/>},
- {name:'NPCI',subtitle:'Payments infrastructure',country:'India',flag:'🇮🇳',icon:<Landmark size={23}/>},
- {name:'Paytm',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/paytm.svg',subtitle:'Digital wallet & payments',country:'India',flag:'🇮🇳',icon:<CreditCard size={23}/>},
- {name:'PhonePe',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/phonepe.svg',subtitle:'UPI & digital payments',country:'India',flag:'🇮🇳',icon:<WalletCards size={23}/>},
- {name:'GPay',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/googlepay.svg',subtitle:'Google Pay · India',country:'India',flag:'🇮🇳',icon:<CreditCard size={23}/>},
- {name:'eSewa',subtitle:'Digital wallet',country:'Nepal',flag:'🇳🇵',icon:<WalletCards size={23}/>},
- {name:'bKash',subtitle:'Mobile financial services',country:'Bangladesh',flag:'🇧🇩',icon:<Send size={23}/>},
- {name:'Pix',subtitle:'Instant payments',country:'Brazil',flag:'🇧🇷',icon:<Zap size={23}/>},
- {name:'Apple Pay',subtitle:'Digital wallet',country:'International',flag:'🌐',icon:<CreditCard size={23}/>},
- {name:'Google Pay',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/googlepay.svg',subtitle:'Digital wallet',country:'International',flag:'🌐',icon:<CreditCard size={23}/>}
+ {name:'UPI',brand:'upi',subtitle:'Instant bank payments',country:'India',flag:'🇮🇳',icon:<WalletCards size={23}/>},
+ {name:'NPCI',brand:'npci',subtitle:'Payments infrastructure',country:'India',flag:'🇮🇳',icon:<Landmark size={23}/>},
+ {name:'Paytm',brand:'paytm',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/paytm.svg',subtitle:'Digital wallet & payments',country:'India',flag:'🇮🇳',icon:<CreditCard size={23}/>},
+ {name:'PhonePe',brand:'phonepe',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/phonepe.svg',subtitle:'UPI & digital payments',country:'India',flag:'🇮🇳',icon:<WalletCards size={23}/>},
+ {name:'GPay',brand:'googlepay',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/googlepay.svg',subtitle:'Google Pay · India',country:'India',flag:'🇮🇳',icon:<CreditCard size={23}/>},
+ {name:'eSewa',brand:'esewa',subtitle:'Digital wallet',country:'Nepal',flag:'🇳🇵',icon:<WalletCards size={23}/>},
+ {name:'bKash',brand:'bkash',subtitle:'Mobile financial services',country:'Bangladesh',flag:'🇧🇩',icon:<Send size={23}/>},
+ {name:'Pix',brand:'pix',subtitle:'Instant payments',country:'Brazil',flag:'🇧🇷',icon:<Zap size={23}/>},
+ {name:'Apple Pay',brand:'applepay',subtitle:'Digital wallet',country:'International',flag:'🌐',icon:<CreditCard size={23}/>},
+ {name:'Google Pay',brand:'googlepay',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/googlepay.svg',subtitle:'Digital wallet',country:'International',flag:'🌐',icon:<CreditCard size={23}/>}
 ];
 
 function App(){
@@ -84,7 +84,7 @@ function App(){
     <div className="paymentMethodsMarquee" aria-label="Illustrative payment methods moving left to right">
      <div className="paymentMethodsTrack">
       {[0,1].map(copy=><div className="paymentMethodsLoop" key={copy} aria-hidden={copy===1}>
-       {paymentMethods.map(item=><div className="paymentMethodCard" key={item.name}>
+       {paymentMethods.map(item=><div className={`paymentMethodCard paymentBrand-${item.brand}`} key={item.name}>
         <span className={`paymentMethodIcon ${item.logoSrc?"paymentBrandIcon":""}`}>{item.logoSrc?<img src={item.logoSrc} alt={`${item.name} logo`} loading="lazy"/>:item.icon}</span>
         {!item.logoSrc&&<b>{item.name}</b>}<small>{item.subtitle}</small>
        </div>)}
