@@ -12,14 +12,14 @@ const heroSlides=[{eyebrow:'PAYMENTS MADE SIMPLE',line1:'Make payments.',line2:'
 const paymentMethods=[
  {name:'UPI',subtitle:'Instant bank payments',country:'India',flag:'🇮🇳',icon:<WalletCards size={23}/>},
  {name:'NPCI',subtitle:'Payments infrastructure',country:'India',flag:'🇮🇳',icon:<Landmark size={23}/>},
- {name:'Paytm',subtitle:'Digital wallet & payments',country:'India',flag:'🇮🇳',icon:<CreditCard size={23}/>},
- {name:'PhonePe',subtitle:'UPI & digital payments',country:'India',flag:'🇮🇳',icon:<WalletCards size={23}/>},
- {name:'GPay',subtitle:'Google Pay · India',country:'India',flag:'🇮🇳',icon:<CreditCard size={23}/>},
+ {name:'Paytm',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/paytm.svg',subtitle:'Digital wallet & payments',country:'India',flag:'🇮🇳',icon:<CreditCard size={23}/>},
+ {name:'PhonePe',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/phonepe.svg',subtitle:'UPI & digital payments',country:'India',flag:'🇮🇳',icon:<WalletCards size={23}/>},
+ {name:'GPay',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/googlepay.svg',subtitle:'Google Pay · India',country:'India',flag:'🇮🇳',icon:<CreditCard size={23}/>},
  {name:'eSewa',subtitle:'Digital wallet',country:'Nepal',flag:'🇳🇵',icon:<WalletCards size={23}/>},
  {name:'bKash',subtitle:'Mobile financial services',country:'Bangladesh',flag:'🇧🇩',icon:<Send size={23}/>},
  {name:'Pix',subtitle:'Instant payments',country:'Brazil',flag:'🇧🇷',icon:<Zap size={23}/>},
  {name:'Apple Pay',subtitle:'Digital wallet',country:'International',flag:'🌐',icon:<CreditCard size={23}/>},
- {name:'Google Pay',subtitle:'Digital wallet',country:'International',flag:'🌐',icon:<CreditCard size={23}/>}
+ {name:'Google Pay',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/googlepay.svg',subtitle:'Digital wallet',country:'International',flag:'🌐',icon:<CreditCard size={23}/>}
 ];
 
 function App(){
@@ -85,8 +85,8 @@ function App(){
      <div className="paymentMethodsTrack">
       {[0,1].map(copy=><div className="paymentMethodsLoop" key={copy} aria-hidden={copy===1}>
        {paymentMethods.map(item=><div className="paymentMethodCard" key={item.name}>
-        <span className="paymentMethodIcon">{item.icon}</span>
-        <b>{item.name}</b><small>{item.subtitle}</small>
+        <span className={`paymentMethodIcon ${item.logoSrc?"paymentBrandIcon":""}`}>{item.logoSrc?<img src={item.logoSrc} alt={`${item.name} logo`} loading="lazy"/>:item.icon}</span>
+        {!item.logoSrc&&<b>{item.name}</b>}<small>{item.subtitle}</small>
        </div>)}
       </div>)}
      </div>
