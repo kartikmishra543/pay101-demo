@@ -44,12 +44,12 @@ function App(){
       </div>
      </div>}
     </div>
-    <a href="#markets">Markets</a><a href="#developers">How it works</a><a href="#security">Security</a>
+    <a href="#markets">Markets</a><a href="#developers">How it works</a><a href="#security">Security</a><a href="#about">About</a><a href="#contact">Contact</a>
    </div>
-   <div className="navActions"><a className="ghost" href="/login">Sign in</a><button className="primary small">Get started <ArrowRight size={15}/></button></div>
+   <div className="navActions"><a className="ghost" href="/login">Sign in</a><a className="primary small" href="#contact">Get started <ArrowRight size={15}/></a></div>
    <button className="mobileBtn" onClick={()=>setMenu(!menu)} aria-label="Toggle menu">{menu?<X/>:<Menu/>}</button>
   </nav>
-  {menu&&<div className="mobileMenu"><a href="#solutions">Solutions</a><a href="#markets">Markets</a><a href="#developers">How it works</a><a href="#security">Security</a><button className="primary">Get started</button></div>}
+  {menu&&<div className="mobileMenu"><a href="#solutions">Solutions</a><a href="#markets">Markets</a><a href="#developers">How it works</a><a href="#security">Security</a><a href="#about">About</a><a href="#contact">Contact</a><a className="primary" href="#contact">Get started</a></div>}
 
   <main>
    <section className="hero">
@@ -124,10 +124,13 @@ function App(){
 
    <section id="security" className="security"><div><span className="kicker">TRUST BY DESIGN</span><h2>Built with <em>security</em> in mind.</h2><p>Keep payment operations protected with access controls, transaction visibility and security-focused infrastructure.</p></div><div className="securityGrid"><Feature icon={<LockKeyhole/>} title="Secure access" text="Role-aware access and controlled payment operations."/><Feature icon={<ShieldCheck/>} title="Protected flows" text="Security-focused controls across payment workflows."/><Feature icon={<BarChart3/>} title="Full visibility" text="Track transactions, payouts and settlement activity in one place."/></div></section>
 
-   <section className="cta"><div className="ctaGlow"/><span className="kicker">READY TO MOVE MONEY?</span><h2>Build your payment flow<br/>with <em>Pay101.</em></h2><p>Bring payins, payouts and settlement operations together in one modern platform.</p><button className="primary">Get started with Pay101 <ArrowRight size={17}/></button></section>
+   <section id="about" className="aboutContactSection"><div className="aboutContactLabel">ABOUT PAY101</div><div className="aboutContactGrid"><div><h2>Payments made simpler for growing businesses.</h2></div><div><p>Pay101 brings the ideas of payins, payouts, settlement workflows and payment visibility into one connected experience. Explore payment options across markets and discover how a streamlined platform could support your business.</p><small>This website is a demonstration concept. Payment methods and integrations shown are illustrative and subject to confirmation.</small></div></div></section>
+   <section id="contact" className="contactSection"><div><span className="aboutContactLabel">CONTACT OUR TEAM</span><h2>Let's talk payments.</h2><p>Have questions about Pay101 or want to discuss payment solutions for your business? Get in touch with our team.</p></div><a className="primary" href="mailto:support@pay101.uk?subject=Pay101%20Business%20Enquiry">Email support@pay101.uk <ArrowRight size={17}/></a></section>
+
+   <section className="cta"><div className="ctaGlow"/><span className="kicker">READY TO MOVE MONEY?</span><h2>Build your payment flow<br/>with <em>Pay101.</em></h2><p>Bring payins, payouts and settlement operations together in one modern platform.</p><a className="primary" href="#contact">Get started with Pay101 <ArrowRight size={17}/></a></section>
   </main>
 
-  <footer><a className="brand" href="#" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a><span>© 2026 Pay101. Demo concept.</span><div><a>Privacy</a><a>Terms</a><a>Contact</a></div></footer>
+  <footer><a className="brand" href="#" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a><span>© 2026 Pay101. Demo concept.</span><div><a href="#about">About</a><a href="mailto:support@pay101.uk?subject=Pay101%20Privacy%20Enquiry">Privacy</a><a href="mailto:support@pay101.uk?subject=Pay101%20Terms%20Enquiry">Terms</a><a href="#contact">Contact</a></div></footer>
  </div>
 }
 
