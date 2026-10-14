@@ -576,3 +576,6 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
  .globeStage .globePinBhutan{left:8%;bottom:5%}
  .globeStage .globePinAustralia{right:125px;bottom:13%}
 }
+
+/* Preserve original multi-colour artwork for payment brands. */
+.paymentMethodsLoop .paymentMethodCard img{filter:none!important;opacity:1!important;mix-blend-mode:normal!important}
