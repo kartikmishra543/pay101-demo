@@ -465,3 +465,8 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
  .globeStage .globePinBhutan{left:0!important;bottom:18%!important}
  .globeStage .globePinAustralia{bottom:14%!important}
 }
+
+/* Tighten the empty space between the logo and country flag in globe badges */
+.globeStage .globePin{width:112px!important;min-width:112px!important;max-width:112px!important;height:60px!important;min-height:60px!important;padding:8px!important;gap:7px!important;justify-content:center!important}
+.globeStage .globePin .globeCountryFlag{margin-left:0!important}
+@media(max-width:650px){.globeStage .globePin{width:86px!important;min-width:86px!important;max-width:86px!important;height:44px!important;min-height:44px!important;padding:5px!important;gap:5px!important}}
