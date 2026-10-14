@@ -508,3 +508,14 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .paymentMethodsLoop .paymentBrand-googlepay .paymentBrandIcon img{filter:invert(48%) sepia(94%) saturate(1957%) hue-rotate(195deg) brightness(100%) contrast(92%)}
 .paymentMethodsLoop .paymentMethodCard small{color:#64788a}
 @media(max-width:550px){.paymentMethodsLoop .paymentMethodCard .paymentBrandIcon{width:64px;height:48px;flex-basis:48px;padding:10px}}
+
+/* Keep the Australia / PayID globe card clear of the fixed Pay101Bot launcher. */
+@media(min-width:901px){
+ .globePinAustralia{right:clamp(150px,17vw,220px);bottom:15%}
+}
+@media(min-width:551px) and (max-width:900px){
+ .globePinAustralia{right:clamp(150px,22vw,210px);bottom:13%}
+}
+@media(max-width:550px){
+ .globePinAustralia{right:125px;bottom:13%}
+}
