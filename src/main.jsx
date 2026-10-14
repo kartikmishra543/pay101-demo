@@ -33,6 +33,7 @@ function App(){
   <nav className="nav">
    <a className="brand" href="#" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a>
    <div className="navLinks">
+    <a href="#about">About</a>
     <div className="navDropdownWrap" onMouseEnter={()=>setSolutionsOpen(true)} onMouseLeave={()=>setSolutionsOpen(false)}>
      <button className={`navDropTrigger ${solutionsOpen?'isOpen':''}`} onClick={()=>setSolutionsOpen(v=>!v)} aria-expanded={solutionsOpen}>Solutions <span>⌄</span></button>
      {solutionsOpen&&<div className="solutionsDropdown">
@@ -44,12 +45,12 @@ function App(){
       </div>
      </div>}
     </div>
-    <a href="#markets">Markets</a><a href="#developers">How it works</a><a href="#security">Security</a><a href="#about">About</a><a href="#contact">Contact</a>
+    <a href="#markets">Markets</a><a href="#developers">How it works</a><a href="#security">Security</a><a href="#contact">Contact</a>
    </div>
    <div className="navActions"><a className="ghost" href="/login">Sign in</a><a className="primary small" href="#contact">Get started <ArrowRight size={15}/></a></div>
    <button className="mobileBtn" onClick={()=>setMenu(!menu)} aria-label="Toggle menu">{menu?<X/>:<Menu/>}</button>
   </nav>
-  {menu&&<div className="mobileMenu"><a href="#solutions">Solutions</a><a href="#markets">Markets</a><a href="#developers">How it works</a><a href="#security">Security</a><a href="#about">About</a><a href="#contact">Contact</a><a className="primary" href="#contact">Get started</a></div>}
+  {menu&&<div className="mobileMenu"><a href="#about">About</a><a href="#solutions">Solutions</a><a href="#markets">Markets</a><a href="#developers">How it works</a><a href="#security">Security</a><a href="#contact">Contact</a><a className="primary" href="#contact">Get started</a></div>}
 
   <main>
    <section className="hero">
