@@ -13,14 +13,14 @@ const heroSlides=[{eyebrow:'PAYMENTS MADE SIMPLE',line1:'Make payments.',line2:'
 const paymentMethods=[
  {name:'UPI',brand:'upi',logoSrc:'https://commons.wikimedia.org/wiki/Special:FilePath/UPI-Logo-vector.svg',subtitle:'Instant bank payments',country:'India',flag:'🇮🇳',icon:<WalletCards size={23}/>},
  {name:'NPCI',brand:'npci',subtitle:'Payments infrastructure',country:'India',flag:'🇮🇳',icon:<Landmark size={23}/>},
- {name:'Paytm',brand:'paytm',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/paytm.svg',subtitle:'Digital wallet & payments',country:'India',flag:'🇮🇳',icon:<CreditCard size={23}/>},
- {name:'PhonePe',brand:'phonepe',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/phonepe.svg',subtitle:'UPI & digital payments',country:'India',flag:'🇮🇳',icon:<WalletCards size={23}/>},
- {name:'GPay',brand:'googlepay',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/googlepay.svg',subtitle:'Google Pay · India',country:'India',flag:'🇮🇳',icon:<CreditCard size={23}/>},
+ {name:'Paytm',brand:'paytm',logoSrc:'https://commons.wikimedia.org/wiki/Special:FilePath/Paytm_Logo_(standalone).svg',subtitle:'Digital wallet & payments',country:'India',flag:'🇮🇳',icon:<CreditCard size={23}/>},
+ {name:'PhonePe',brand:'phonepe',logoSrc:'https://commons.wikimedia.org/wiki/Special:FilePath/PhonePe_Logo.svg',subtitle:'UPI & digital payments',country:'India',flag:'🇮🇳',icon:<WalletCards size={23}/>},
+ {name:'GPay',brand:'googlepay',logoSrc:'https://commons.wikimedia.org/wiki/Special:FilePath/Google_Pay_Logo_(2020).svg',subtitle:'Google Pay · India',country:'India',flag:'🇮🇳',icon:<CreditCard size={23}/>},
  {name:'eSewa',brand:'esewa',logoSrc:'https://commons.wikimedia.org/wiki/Special:FilePath/Esewa_logo.webp',subtitle:'Digital wallet',country:'Nepal',flag:'🇳🇵',icon:<WalletCards size={23}/>},
  {name:'bKash',brand:'bkash',subtitle:'Mobile financial services',country:'Bangladesh',flag:'🇧🇩',icon:<Send size={23}/>},
  {name:'Pix',brand:'pix',logoSrc:'https://www.bcb.gov.br/content/estabilidadefinanceira/piximg/logo_pix.png',subtitle:'Instant payments',country:'Brazil',flag:'🇧🇷',icon:<Zap size={23}/>},
  {name:'Apple Pay',brand:'applepay',subtitle:'Digital wallet',country:'International',flag:'🌐',icon:<CreditCard size={23}/>},
- {name:'Google Pay',brand:'googlepay',logoSrc:'https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/googlepay.svg',subtitle:'Digital wallet',country:'International',flag:'🌐',icon:<CreditCard size={23}/>}
+ {name:'Google Pay',brand:'googlepay',logoSrc:'https://commons.wikimedia.org/wiki/Special:FilePath/Google_Pay_Logo_(2020).svg',subtitle:'Digital wallet',country:'International',flag:'🌐',icon:<CreditCard size={23}/>}
 ];
 
 function App(){
