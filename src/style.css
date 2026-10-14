@@ -519,3 +519,13 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 @media(max-width:550px){
  .globePinAustralia{right:125px;bottom:13%}
 }
+
+/* Logo-only borderless payment method presentation */
+.paymentMethodsLoop .paymentMethodCard{border:0!important;background:transparent!important;box-shadow:none!important;min-height:110px;justify-content:center;padding:12px 14px}
+.paymentMethodsLoop .paymentMethodCard:hover{box-shadow:none!important;background:transparent!important}
+.paymentMethodsLoop .paymentMethodIcon,.paymentMethodsLoop .paymentMethodCard .paymentBrandIcon{width:100px!important;height:75px!important;flex:0 0 75px!important;padding:10px!important;border:0!important;border-radius:12px!important;background:transparent!important}
+.paymentMethodsLoop .paymentBrandIcon img{filter:none!important;opacity:1!important;object-fit:contain!important}
+.globePin{justify-content:center;min-width:85px;padding:9px!important}
+.globePin .globeMethodLogo{width:76px;max-width:100%;height:43px;flex:0 1 76px;background:transparent!important;border-radius:0!important}
+.globePin .globeBrandImage{display:block;width:100%;height:100%;object-fit:contain}
+@media(max-width:550px){.globePin{min-width:66px;padding:6px!important}.globePin .globeMethodLogo{width:58px;height:35px;flex-basis:58px}.paymentMethodsLoop .paymentMethodIcon,.paymentMethodsLoop .paymentMethodCard .paymentBrandIcon{width:76px!important;height:58px!important;flex-basis:58px!important}}
