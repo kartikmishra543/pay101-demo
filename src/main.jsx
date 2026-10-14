@@ -132,11 +132,11 @@ function App(){
 }
 
 const globeMethods=[
- {flag:'🇮🇳',country:'India',method:'UPI',iso:'in',logo:'UPI',pos:'globePinIndia'},
- {flag:'🇧🇷',country:'Brazil',method:'Pix',iso:'br',logo:'Pix',pos:'globePinBrazil'},
+ {flag:'🇮🇳',country:'India',method:'UPI',iso:'in',logo:'UPI',logoUrl:'https://commons.wikimedia.org/wiki/Special:FilePath/UPI-Logo-vector.svg',pos:'globePinIndia'},
+ {flag:'🇧🇷',country:'Brazil',method:'Pix',iso:'br',logo:'Pix',logoUrl:'https://www.bcb.gov.br/content/estabilidadefinanceira/piximg/logo_pix.png',pos:'globePinBrazil'},
  {flag:'🇺🇸',country:'United States',method:'Cards',iso:'us',logo:'Cards',pos:'globePinUSA'},
  {flag:'🇦🇺',country:'Australia',method:'PayID',iso:'au',logo:'PayID',pos:'globePinAustralia'},
- {flag:'🇳🇵',country:'Nepal',method:'eSewa',iso:'np',logo:'eSewa',pos:'globePinNepal'},
+ {flag:'🇳🇵',country:'Nepal',method:'eSewa',iso:'np',logo:'eSewa',logoUrl:'https://commons.wikimedia.org/wiki/Special:FilePath/Esewa_logo.webp',pos:'globePinNepal'},
  {flag:'🇧🇹',country:'Bhutan',method:'Bank transfer',iso:'bt',logo:'Bank',pos:'globePinBhutan'}
 ];
 function PaymentGlobe(){
@@ -146,7 +146,7 @@ function PaymentGlobe(){
   <div className="globeHalo"/>
   <div className="globeOrbit orbitOuter"/><div className="globeOrbit orbitInner"/>
   <div className="globeSphere"><div className="globeLatitude latOne"/><div className="globeLatitude latTwo"/><div className="globeLatitude latThree"/><div className="globeMeridian merOne"/><div className="globeMeridian merTwo"/><div className="globeMeridian merThree"/><div className="globeLand landAmericas"/><div className="globeLand landEurope"/><div className="globeLand landAsia"/><div className="globeLand landAfrica"/><div className="globeLand landAustralia"/><div className="globeSheen"/></div>
-  {globeMethods.map((item,i)=><button key={item.country} type="button" onClick={()=>setSelected(i)} className={`globePin ${item.pos} ${selected===i?'isSelected':''}`} aria-label={`${item.country}: ${item.method}`}><span className={`globeMethodLogo logo${item.logo}`} aria-hidden="true">{item.logo==='Cards'?<CreditCard size={22}/>:item.logo==='Bank'?<Landmark size={22}/>:<strong>{item.method}</strong>}</span><span className="globePinText"><b>{item.method}</b><small>{item.country}</small></span><img className="globeCountryFlag" src={`https://flagcdn.com/w40/${item.iso}.png`} alt={`${item.country} flag`} loading="lazy"/></button>)}
+  {globeMethods.map((item,i)=><button key={item.country} type="button" onClick={()=>setSelected(i)} className={`globePin ${item.pos} ${selected===i?'isSelected':''}`} aria-label={`${item.country}: ${item.method}`}><span className={`globeMethodLogo logo${item.logo}`} aria-hidden="true">{item.logoUrl?<img className="globeBrandImage" src={item.logoUrl} alt="" loading="lazy" referrerPolicy="no-referrer"/>:item.logo==='Cards'?<CreditCard size={22}/>:item.logo==='Bank'?<Landmark size={22}/>:<strong>{item.method}</strong>}</span><span className="globePinText"><b>{item.method}</b><small>{item.country}</small></span><img className="globeCountryFlag" src={`https://flagcdn.com/w40/${item.iso}.png`} alt={`${item.country} flag`} loading="lazy"/></button>)}
   <div className="globeCenterLabel"><Globe2 size={16}/><span>PAYMENTS WITHOUT BORDERS</span></div>
   <div className="globeFootnote">Concept illustration · Payment method availability subject to confirmation</div>
  </div>
