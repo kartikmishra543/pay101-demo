@@ -743,3 +743,7 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101FaqInner summary{font-size:15px}
 @media(max-width:900px){.dashboardShowcase{grid-template-columns:1fr!important;padding:46px 22px!important;gap:24px!important}.dashboardShowcase .dashboard{max-width:650px!important;margin:0 auto!important}.paymentMethodsSection{padding:40px 22px!important}}
 @media(max-width:550px){.globePay101Mark{width:65px;padding:5px}.paymentMethodsLoop .paymentMethodCard{width:148px!important;min-width:148px!important;flex-basis:148px!important;height:90px!important;min-height:90px!important}.paymentMethodsLoop .paymentMethodIcon img{height:62px!important}.p101FaqInner details{padding:14px 16px}}
+
+/* Larger Pay101 mark at the centre of the homepage globe */
+.globeSphere .globePay101Mark{width:clamp(120px,29%,190px)!important;max-height:95px!important;padding:12px 15px!important;border-radius:17px!important}
+@media(max-width:550px){.globeSphere .globePay101Mark{width:clamp(90px,31%,135px)!important;max-height:72px!important;padding:8px 10px!important}}
