@@ -759,3 +759,15 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 @keyframes p101IndustryScroll{to{transform:translateX(calc(-50% - 10px))}}
 @media(max-width:800px){.p101IndustryTrack .p101IndustryCard{flex-basis:280px;width:280px}.p101IndustryCarousel{max-width:100%}}
 @media(prefers-reduced-motion:reduce){.p101IndustryTrack{animation:none}.p101IndustryCarousel{overflow-x:auto;mask-image:none}}
+
+
+/* Futuristic holographic globe animation and side controls inspired by reference clip */
+.globeStage{isolation:isolate}.globeTechPanel{position:absolute;z-index:1;width:27%;height:41%;top:26%;border:1px solid #58baff80;border-radius:9px;background:linear-gradient(140deg,#083b7555,#6acfff12);box-shadow:inset 0 0 22px #5acaff35,0 0 28px #329fff24;backdrop-filter:blur(3px);pointer-events:none;animation:techPanelFloat 5s ease-in-out infinite;transform:perspective(480px) rotateY(19deg)}
+.globeTechLeft{left:5%;transform:perspective(480px) rotateY(25deg)}.globeTechRight{right:5%;animation-delay:-2.5s;transform:perspective(480px) rotateY(-25deg)}
+.techPanelHeading{position:absolute;top:11%;left:10%;font-size:8px;letter-spacing:1px;font-weight:800;color:#1789ff}.techPanelRing{position:absolute;left:22%;top:27%;width:55%;aspect-ratio:1;border:2px solid #55b8ff70;border-radius:50%;box-shadow:0 0 20px #67cfff75,inset 0 0 14px #64bdff66;animation:techRing 7s linear infinite}.techPanelRing:after{content:'';position:absolute;inset:20%;border:1px dashed #74d8ff;border-radius:50%}.techPanelLines{position:absolute;left:10%;right:10%;bottom:20%;height:2px;background:#56c7ff;box-shadow:0 8px #57bfff80,0 16px #57bfff40}.techPanelBars{position:absolute;bottom:4%;left:13%;color:#1286ff;font-size:14px;letter-spacing:3px}
+.globeControls{position:absolute;right:0;top:17%;z-index:8;display:flex;flex-direction:column;gap:8px;align-items:flex-end}.globeSideButton{display:flex;align-items:center;gap:8px;min-width:93px;padding:8px 10px;border-radius:13px;background:#ffffffed;border:1px solid #c5ddf8;color:#174d82;font-size:11px;font-weight:800;box-shadow:0 6px 16px #0a6ab022;cursor:pointer;transition:transform .2s,background .2s}.globeSideButton img{width:21px;height:15px;object-fit:cover;border-radius:2px}.globeSideButton.active{background:#0878f9;color:white;transform:translateX(-5px)}.globeSideButton:hover{transform:translateX(-5px)}.globeTechPanel{opacity:.75}.globeSphere{animation:globePulse 6s ease-in-out infinite}
+@keyframes techPanelFloat{0%,100%{translate:0 0;opacity:.5}50%{translate:0 -9px;opacity:.85}}
+@keyframes techRing{to{rotate:360deg}}
+@keyframes globePulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.12)}}
+@media(max-width:700px){.globeTechPanel{width:25%;height:31%;top:31%}.globeControls{right:0;top:8%;gap:5px}.globeSideButton{min-width:70px;padding:5px 7px;font-size:9px}.globeSideButton img{width:17px;height:12px}}
+@media(prefers-reduced-motion:reduce){.globeTechPanel,.techPanelRing,.globeSphere{animation:none}}
