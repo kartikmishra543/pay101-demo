@@ -820,3 +820,23 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101CompanyContact>a{display:flex;align-items:center;gap:6px;margin-top:auto;padding:12px 0 0;color:#087aff;font-size:14px;font-weight:750;text-decoration:none}
 .p101CompanyContact>a:hover{background:transparent}
 @media(max-width:850px){.p101CompanyNav>.p101Drop.p101CompanyDrop{position:static;left:auto;right:auto;transform:none;min-width:0;width:100%;grid-template-columns:1fr;box-shadow:none;margin-top:8px}.p101CompanyDrop:before{display:none}.p101CompanyContact{min-height:175px}}
+
+
+/* Marketing footer matched to the supplied five-column reference */
+.app > footer.p101ReferenceFooter{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:64px max(24px,calc((100vw - 1200px)/2)) 28px!important;background:#fff;border-top:1px solid #e1e9f2;box-sizing:border-box}
+.app > footer.p101ReferenceFooter > .p101FooterGrid{display:grid!important;grid-template-columns:minmax(240px,1.6fr) repeat(4,minmax(0,1fr))!important;gap:40px 32px!important;max-width:1200px;width:100%;margin:0 auto;align-items:start}
+.app > footer.p101ReferenceFooter .p101FooterBrand{grid-column:auto;min-width:0}
+.app > footer.p101ReferenceFooter .p101FooterBrand p{margin:14px 0 0;max-width:30ch;color:#5b6b7c;font-size:14.5px;line-height:1.65}
+.app > footer.p101ReferenceFooter .p101FooterCol{display:flex;flex-direction:column;gap:10px;min-width:0}
+.app > footer.p101ReferenceFooter .p101FooterCol h4{font-size:14px;font-weight:750;margin:0 0 4px;color:#0f1c2b}
+.app > footer.p101ReferenceFooter .p101FooterCol a{font-size:14.5px;color:#5b6b7c;line-height:1.55;text-decoration:none}
+.app > footer.p101ReferenceFooter .p101FooterCol a:hover{color:#0a74ff}
+.app > footer.p101ReferenceFooter .p101FooterSocial{display:flex;gap:8px;margin-top:20px}
+.app > footer.p101ReferenceFooter .p101FooterSocial span{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid #e1e9f2;color:#5b6b7c;font-size:15px;font-weight:700}
+.app > footer.p101ReferenceFooter .p101FooterCta{display:inline-flex;align-items:center;gap:8px;margin-top:24px;text-decoration:none}
+.app > footer.p101ReferenceFooter > .p101FooterBottom,.app > footer.p101ReferenceFooter > div:last-child{display:flex!important;width:100%!important;max-width:1200px;margin:56px auto 0!important;padding:24px 0 0!important;border-top:1px solid #e1e9f2;justify-content:space-between;align-items:center;gap:12px 32px;flex-wrap:wrap!important;flex-direction:row!important;font-size:13.5px;color:#5b6b7c}
+.app > footer.p101ReferenceFooter .p101FooterBottom > div{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.app > footer.p101ReferenceFooter .p101FooterBottom a{color:#5b6b7c;text-decoration:none}
+.app > footer.p101ReferenceFooter .p101FooterBottom a:hover{color:#0a74ff}
+@media(max-width:1023px){.app > footer.p101ReferenceFooter > .p101FooterGrid{grid-template-columns:repeat(4,minmax(0,1fr))!important}.app > footer.p101ReferenceFooter .p101FooterBrand{grid-column:1/-1}}
+@media(max-width:640px){.app > footer.p101ReferenceFooter{padding:48px 22px 24px!important}.app > footer.p101ReferenceFooter > .p101FooterGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:32px 20px!important}.app > footer.p101ReferenceFooter .p101FooterBrand{grid-column:1/-1}.app > footer.p101ReferenceFooter > .p101FooterBottom{margin-top:36px!important}}
