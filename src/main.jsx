@@ -129,27 +129,27 @@ function App(){
      <div className="p101IndustryCarousel" aria-label="Industries carousel">
       <div className="p101IndustryTrack">
       <a href="/industries/media-entertainment" className="p101IndustryCard">
-       <div className="p101IndustryArt mediaArt"><div className="p101MediaScreen"><span className="p101Play">▶</span><div className="p101MediaBottom"><span>▂▃▅▃▆</span><i/></div></div><span className="p101ArtPlus">+</span></div>
+       <div className="p101IndustryArt mediaArt"><img className="p101IndustryPhoto" src="/assets/media.jpeg" alt="Media and entertainment creator streaming setup" loading="lazy" onError={e=>{e.currentTarget.style.display='none'}}/><div className="p101MediaScreen"><span className="p101Play">▶</span><div className="p101MediaBottom"><span>▂▃▅▃▆</span><i/></div></div><span className="p101ArtPlus">+</span></div>
        <div className="p101IndustryInfo"><h3>Media &amp; Entertainment</h3><p>Subscriptions, streaming and creator payouts.</p></div>
       </a>
       <a href="/industries/gaming" className="p101IndustryCard">
-       <div className="p101IndustryArt gamingArt"><span className="p101GameTop"></span><div className="p101Controller"><span className="p101Dpad">+</span><div className="p101GameDots"><i/><i/><i/></div></div></div>
+       <div className="p101IndustryArt gamingArt"><img className="p101IndustryPhoto" src="/assets/gaming.jpeg" alt="Gaming desk with illuminated monitor" loading="lazy" onError={e=>{e.currentTarget.style.display='none'}}/><span className="p101GameTop"></span><div className="p101Controller"><span className="p101Dpad">+</span><div className="p101GameDots"><i/><i/><i/></div></div></div>
        <div className="p101IndustryInfo"><h3>Gaming</h3><p>Top-ups, wallets and player withdrawals.</p></div>
       </a>
       <a href="/industries/digital-businesses" className="p101IndustryCard">
-       <div className="p101IndustryArt commerceArt"><span className="p101Tick">✓</span><div className="p101Phone"><i/><i/><i/><b/></div><span className="p101PayChip">●</span></div>
+       <div className="p101IndustryArt commerceArt"><img className="p101IndustryPhoto" src="/assets/ecommerce-digital.jpeg" alt="E-commerce shopping on a smartphone" loading="lazy" onError={e=>{e.currentTarget.style.display='none'}}/><span className="p101Tick">✓</span><div className="p101Phone"><i/><i/><i/><b/></div><span className="p101PayChip">●</span></div>
        <div className="p101IndustryInfo"><h3>E-commerce &amp; Digital</h3><p>Smooth checkout and fast partner payouts.</p></div>
       </a>
       <a href="/industries/media-entertainment" className="p101IndustryCard">
-       <div className="p101IndustryArt mediaArt"><div className="p101MediaScreen"><span className="p101Play">▶</span><div className="p101MediaBottom"><span>▂▃▅▃▆</span><i/></div></div><span className="p101ArtPlus">+</span></div>
+       <div className="p101IndustryArt mediaArt"><img className="p101IndustryPhoto" src="/assets/media.jpeg" alt="Media and entertainment creator streaming setup" loading="lazy" onError={e=>{e.currentTarget.style.display='none'}}/><div className="p101MediaScreen"><span className="p101Play">▶</span><div className="p101MediaBottom"><span>▂▃▅▃▆</span><i/></div></div><span className="p101ArtPlus">+</span></div>
        <div className="p101IndustryInfo"><h3>Media &amp; Entertainment</h3><p>Subscriptions, streaming and creator payouts.</p></div>
       </a>
       <a href="/industries/gaming" className="p101IndustryCard">
-       <div className="p101IndustryArt gamingArt"><span className="p101GameTop"></span><div className="p101Controller"><span className="p101Dpad">+</span><div className="p101GameDots"><i/><i/><i/></div></div></div>
+       <div className="p101IndustryArt gamingArt"><img className="p101IndustryPhoto" src="/assets/gaming.jpeg" alt="Gaming desk with illuminated monitor" loading="lazy" onError={e=>{e.currentTarget.style.display='none'}}/><span className="p101GameTop"></span><div className="p101Controller"><span className="p101Dpad">+</span><div className="p101GameDots"><i/><i/><i/></div></div></div>
        <div className="p101IndustryInfo"><h3>Gaming</h3><p>Top-ups, wallets and player withdrawals.</p></div>
       </a>
       <a href="/industries/digital-businesses" className="p101IndustryCard">
-       <div className="p101IndustryArt commerceArt"><span className="p101Tick">✓</span><div className="p101Phone"><i/><i/><i/><b/></div><span className="p101PayChip">●</span></div>
+       <div className="p101IndustryArt commerceArt"><img className="p101IndustryPhoto" src="/assets/ecommerce-digital.jpeg" alt="E-commerce shopping on a smartphone" loading="lazy" onError={e=>{e.currentTarget.style.display='none'}}/><span className="p101Tick">✓</span><div className="p101Phone"><i/><i/><i/><b/></div><span className="p101PayChip">●</span></div>
        <div className="p101IndustryInfo"><h3>E-commerce &amp; Digital</h3><p>Smooth checkout and fast partner payouts.</p></div>
       </a>
       </div>
