@@ -645,3 +645,19 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 @media(min-width:901px) and (max-width:1150px){.p101FooterGrid{grid-template-columns:minmax(195px,1.35fr) repeat(4,minmax(110px,1fr));gap:20px}.p101Footer{padding-inline:28px}}
 @media(max-width:900px){.p101FooterGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}.p101FooterBrand{grid-column:1/-1}.p101FooterBottom{flex-wrap:wrap;gap:12px}}
 @media(max-width:550px){.p101Footer{padding:38px 20px 20px}.p101FooterGrid{gap:26px 18px}.p101FooterBottom{font-size:11px}.p101FooterBottom div{gap:14px;flex-wrap:wrap}}
+
+
+/* Match the supplied Pay101 reference footer composition */
+.p101Footer{padding:66px clamp(28px,7.3vw,110px) 26px;background:#fff}
+.p101FooterGrid{max-width:1200px;grid-template-columns:minmax(265px,1.45fr) repeat(4,minmax(120px,1fr));gap:clamp(28px,4vw,64px);align-items:start}
+.p101FooterBrand p{max-width:280px;margin:16px 0 18px;font-size:14px;line-height:1.65}
+.p101FooterBrand .primary{margin-top:20px}
+.p101Social{display:flex;align-items:center;gap:9px}
+.p101Social span{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid #e0e8f1;color:#5b6b7c;font-size:14px;font-weight:700;background:#fff}
+.p101FooterCol{gap:15px}
+.p101FooterCol h4{margin:0 0 6px;color:#0f1c2b}
+.p101FooterCol a{font-size:14px;color:#64748b}
+.p101FooterBottom{max-width:1200px;margin-top:62px;padding-top:24px;justify-content:space-between}
+@media(min-width:901px) and (max-width:1150px){.p101Footer{padding-inline:35px}.p101FooterGrid{grid-template-columns:minmax(205px,1.35fr) repeat(4,minmax(110px,1fr));gap:24px}}
+@media(max-width:900px){.p101FooterGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}.p101FooterBrand{grid-column:1/-1}.p101FooterBottom{margin-top:40px}}
+@media(max-width:550px){.p101Footer{padding:42px 22px 22px}.p101FooterGrid{gap:28px 18px}.p101FooterBottom{margin-top:32px}}
