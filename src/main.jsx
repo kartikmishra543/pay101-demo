@@ -105,6 +105,28 @@ function App(){
     </div>
    </section>
 
+   <section id="industries" className="p101Industries">
+    <div className="p101IndustriesInner">
+     <span className="kicker">INDUSTRIES</span>
+     <h2>Built for <em>digital-first</em><br/> businesses.</h2>
+     <p className="p101IndustriesLead">Flexible payment flows for teams that collect often, pay out often and need to see it all.</p>
+     <div className="p101IndustriesGrid">
+      <a href="/industries/media-entertainment" className="p101IndustryCard">
+       <div className="p101IndustryArt mediaArt"><div className="p101MediaScreen"><span className="p101Play">▶</span><div className="p101MediaBottom"><span>▂▃▅▃▆</span><i/></div></div><span className="p101ArtPlus">+</span></div>
+       <div className="p101IndustryInfo"><h3>Media &amp; Entertainment</h3><p>Subscriptions, streaming and creator payouts.</p></div>
+      </a>
+      <a href="/industries/gaming" className="p101IndustryCard">
+       <div className="p101IndustryArt gamingArt"><span className="p101GameTop"></span><div className="p101Controller"><span className="p101Dpad">+</span><div className="p101GameDots"><i/><i/><i/></div></div></div>
+       <div className="p101IndustryInfo"><h3>Gaming</h3><p>Top-ups, wallets and player withdrawals.</p></div>
+      </a>
+      <a href="/industries/digital-businesses" className="p101IndustryCard">
+       <div className="p101IndustryArt commerceArt"><span className="p101Tick">✓</span><div className="p101Phone"><i/><i/><i/><b/></div><span className="p101PayChip">●</span></div>
+       <div className="p101IndustryInfo"><h3>E-commerce &amp; Digital</h3><p>Smooth checkout and fast partner payouts.</p></div>
+      </a>
+     </div>
+    </div>
+   </section>
+
    <section className="split">
     <div className="splitVisual">
      <div className="miniCard"><div className="miniTop"><span>PAY101 PAYMENT HUB</span><span className="liveDot">● LIVE</span></div><strong>$248,920.42</strong><div className="miniChange">Illustrative multi-currency activity <small>demo view</small></div><div className="currencyChips"><span><b>Nu.</b> BTN</span><span><b>रू</b> NPR</span><span><b>R$</b> BRL</span><span><b>A$</b> AUD</span><span><b>$</b> USD</span></div><div className="miniBars">{[30,52,42,67,54,80,63,91,76,100].map((h,i)=><i key={i} style={{height:h+'%'}}/>)}</div></div>
