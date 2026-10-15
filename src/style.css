@@ -860,3 +860,9 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101WhatsAppContact{display:flex;align-items:center;justify-content:center;gap:8px;margin:15px 18px 18px;border-radius:30px;background:#25d366;color:white;text-decoration:none;padding:13px 12px;font-weight:700;font-size:14px}
 .p101WhatsAppContact:hover{background:#1fba58}
 @media(max-width:600px){.p101WhatsAppWidget{right:16px;bottom:98px}.p101WhatsAppTrigger{padding:11px}.p101WhatsAppTrigger span{display:none}.p101WhatsAppPanel{bottom:59px}}
+
+/* Compact WhatsApp icon-only launcher */
+.p101WhatsAppTrigger{width:46px;height:46px;padding:0!important;display:grid;place-items:center;border-radius:50%;gap:0;font-size:0}
+.p101WhatsAppTrigger svg{width:25px;height:25px}
+.p101WhatsAppWidget{right:24px;bottom:106px}
+@media(max-width:600px){.p101WhatsAppWidget{right:18px;bottom:100px}.p101WhatsAppTrigger{width:44px;height:44px}.p101WhatsAppTrigger svg{width:24px;height:24px}}
