@@ -26,33 +26,31 @@ const paymentMethods=[
 function App(){
  const [menu,setMenu]=React.useState(false);
  const [solutionsOpen,setSolutionsOpen]=React.useState(false);
- const [solutionTab,setSolutionTab]=React.useState('markets');
+ const [solutionTab,setSolutionTab]=React.useState('collect');
  const [activeSlide,setActiveSlide]=React.useState(0);
  React.useEffect(()=>{const timer=setInterval(()=>setActiveSlide(i=>(i+1)%heroSlides.length),5000);return ()=>clearInterval(timer)},[]);
  const slide=heroSlides[activeSlide];
  return <div className="app">
-  <nav className="nav">
-   <a className="brand" href="#" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a>
-   <div className="navLinks">
-    <a href="#about">About</a>
-    <div className="navDropdownWrap" onMouseEnter={()=>setSolutionsOpen(true)} onMouseLeave={()=>setSolutionsOpen(false)}>
-     <button className={`navDropTrigger ${solutionsOpen?'isOpen':''}`} onClick={()=>setSolutionsOpen(v=>!v)} aria-expanded={solutionsOpen}>Solutions <span>⌄</span></button>
-     {solutionsOpen&&<div className="solutionsDropdown">
-      <div className="solutionsTabs"><button className={solutionTab==='markets'?'selected':''} onClick={()=>setSolutionTab('markets')}>Local markets</button><button className={solutionTab==='industries'?'selected':''} onClick={()=>setSolutionTab('industries')}>Industries</button><button className={solutionTab==='features'?'selected':''} onClick={()=>setSolutionTab('features')}>Features</button></div>
-      <div className="solutionsPanel">
-       {solutionTab==='markets'&&<><span className="dropdownHeading">Explore markets</span><a href="#markets"><b>🇮🇳 India</b><small>UPI and bank transfers</small></a><a href="#markets"><b>🇳🇵 Nepal</b><small>Local payment options</small></a><a href="#markets"><b>🇧🇹 Bhutan</b><small>Regional payment options</small></a><a href="#markets"><b>🇧🇷 Brazil</b><small>Pix and BRL examples</small></a><a href="#markets"><b>🇦🇺 Australia</b><small>Australian dollar examples</small></a></>}
-       {solutionTab==='industries'&&<><span className="dropdownHeading">Who we help</span><a href="#solutions"><b>Online stores</b><small>Make checkout easier</small></a><a href="#solutions"><b>Marketplaces</b><small>Collect and send payments</small></a><a href="#solutions"><b>Digital services</b><small>Manage customer payments</small></a></>}
-       {solutionTab==='features'&&<><span className="dropdownHeading">What you can do</span><a href="#solutions"><b>Accept payments</b><small>Give customers easy ways to pay</small></a><a href="#solutions"><b>Send payouts</b><small>Pay vendors and partners</small></a><a href="#solutions"><b>Track your money</b><small>See payments and transfers clearly</small></a></>}
-      </div>
-     </div>}
-    </div>
-    <a href="#markets">Markets</a><a href="#developers">How it works</a><a href="#security">Security</a><a href="#contact">Contact</a>
+  <header className="p101Header">
+   <div className="p101HeaderInner">
+    <a className="brand" href="/" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a>
+    <nav className={`p101Nav ${menu?'mobileOpen':''}`} aria-label="Main navigation">
+     <div className="p101NavItem">
+      <button className="p101NavLink" onClick={()=>setSolutionsOpen(v=>!v)} onMouseEnter={()=>setSolutionsOpen(true)} aria-expanded={solutionsOpen}>Solutions <span>⌄</span></button>
+      {solutionsOpen&&<div className="p101Mega" onMouseLeave={()=>setSolutionsOpen(false)}>
+       <div className="p101MegaTabs">{[['collect','Collect','Accept customer payments'],['payout','Pay out','Move money to partners'],['settle','Settle','Know when funds arrive']].map(([key,label,sub])=><button key={key} className={solutionTab===key?'active':''} onMouseEnter={()=>setSolutionTab(key)} onClick={()=>setSolutionTab(key)}>{label}<small>{sub}</small></button>)}</div>
+       <div className="p101MegaPanel">{(solutionTab==='collect'?[['Payin Solutions','Accept customer payments online','#solutions'],['UPI Payments','Fast, familiar digital payments','#solutions']]:solutionTab==='payout'?[['Payout Solutions','Pay vendors, partners and customers','#solutions'],['IMPS Transfers','Quick bank-to-bank transfers','#solutions'],['NEFT & RTGS','Bank transfer workflows','#solutions']]:[['Instant Settlements','See when funds are available','#solutions']]).map(([title,description,url])=><a key={title} href={url} onClick={()=>{setSolutionsOpen(false);setMenu(false)}}><span className="p101MegaIcon"><ArrowRight size={18}/></span><span><strong>{title}</strong><small>{description}</small></span></a>)}</div>
+      </div>}
+     </div>
+     <div className="p101NavItem p101HoverDrop"><button className="p101NavLink">Industries <span>⌄</span></button><div className="p101Drop">{[['E-commerce','Online stores and marketplaces'],['Gaming','Top-ups and withdrawals'],['Media & Entertainment','Subscriptions and streaming'],['Travel','Bookings and payouts'],['Education','Fees and instalments']].map(([name,desc])=><a key={name} href="#solutions" onClick={()=>setMenu(false)}><strong>{name}</strong><small>{desc}</small></a>)}</div></div>
+     <div className="p101NavItem p101HoverDrop"><button className="p101NavLink">Markets <span>⌄</span></button><div className="p101Drop p101MarketsDrop">{[['India','in','UPI and bank transfers'],['Nepal','np','Local payment options'],['Bhutan','bt','Regional payment options'],['Brazil','br','Pix payment examples'],['Australia','au','AUD payment examples']].map(([name,iso,desc])=><a key={name} href="#markets" onClick={()=>setMenu(false)}><img src={`https://flagcdn.com/w40/${iso}.png`} alt="" loading="lazy"/><span><strong>{name}</strong><small>{desc}</small></span></a>)}<small className="p101DropNote">Markets shown for demonstration. Confirm availability with Pay101.</small></div></div>
+     <a className="p101NavLink" href="#developers" onClick={()=>setMenu(false)}>How it works</a>
+     <div className="p101NavItem p101HoverDrop"><button className="p101NavLink">Company <span>⌄</span></button><div className="p101Drop p101CompanyDrop"><a href="#about"><strong>About us</strong><small>Who we are and what we build</small></a><a href="#security"><strong>Security</strong><small>Security-focused payment operations</small></a><a href="#contact"><strong>Talk to our team</strong><small>Find payment options for your business</small></a></div></div>
+    </nav>
+    <div className="p101Actions"><a className="p101Signin" href="/login">Sign in</a><a className="primary small" href="#contact">Get started <ArrowRight size={15}/></a></div>
+    <button className="p101Burger" type="button" onClick={()=>setMenu(v=>!v)} aria-label="Toggle navigation" aria-expanded={menu}>{menu?<X/>:<Menu/>}</button>
    </div>
-   <div className="navActions"><a className="ghost" href="/login">Sign in</a><a className="primary small" href="#contact">Get started <ArrowRight size={15}/></a></div>
-   <button className="mobileBtn" onClick={()=>setMenu(!menu)} aria-label="Toggle menu">{menu?<X/>:<Menu/>}</button>
-  </nav>
-  {menu&&<div className="mobileMenu"><a href="#about">About</a><a href="#solutions">Solutions</a><a href="#markets">Markets</a><a href="#developers">How it works</a><a href="#security">Security</a><a href="#contact">Contact</a><a className="primary" href="#contact">Get started</a></div>}
-
+  </header>
   <main>
    <section className="hero">
     <div className="orb orb1"/><div className="orb orb2"/>
@@ -133,7 +131,7 @@ function App(){
   </main>
   <Pay101Bot/>
 
-  <footer><a className="brand" href="#" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a><span>© 2026 Pay101. Demo concept.</span><div><a href="#about">About</a><a href="mailto:support@pay101.uk?subject=Pay101%20Privacy%20Enquiry">Privacy</a><a href="mailto:support@pay101.uk?subject=Pay101%20Terms%20Enquiry">Terms</a><a href="#contact">Contact</a></div></footer>
+  <footer className="p101Footer"><div className="p101FooterGrid"><div className="p101FooterBrand"><a className="brand" href="/"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a><p>Accept customer payments, send payouts and keep payment operations in one clear place.</p><a className="primary small" href="#contact">Get started <ArrowRight size={15}/></a></div><div className="p101FooterCol"><h4>Solutions</h4><a href="#solutions">Payin Solutions</a><a href="#solutions">Payout Solutions</a><a href="#solutions">UPI Payments</a><a href="#solutions">IMPS Transfers</a><a href="#solutions">NEFT & RTGS</a><a href="#solutions">Instant Settlements</a></div><div className="p101FooterCol"><h4>Industries</h4><a href="#solutions">E-commerce</a><a href="#solutions">Gaming</a><a href="#solutions">Media & Entertainment</a><a href="#solutions">Travel</a><a href="#solutions">Education</a></div><div className="p101FooterCol"><h4>Markets</h4><a href="#markets">India</a><a href="#markets">Nepal</a><a href="#markets">Bhutan</a><a href="#markets">Brazil</a><a href="#markets">Australia</a></div><div className="p101FooterCol"><h4>Company</h4><a href="#about">About us</a><a href="#developers">How it works</a><a href="#security">Security</a><a href="#contact">Contact</a></div></div><div className="p101FooterBottom"><span>© 2026 Pay101. Demo concept.</span><div><a href="mailto:support@pay101.uk?subject=Privacy%20enquiry">Privacy policy</a><a href="mailto:support@pay101.uk?subject=Terms%20enquiry">Terms of service</a></div></div></footer>
  </div>
 }
 
