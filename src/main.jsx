@@ -137,7 +137,7 @@ function App(){
        <div className="p101IndustryInfo"><h3>Gaming</h3><p>Top-ups, wallets and player withdrawals.</p></div>
       </a>
       <a href="/industries/digital-businesses" className="p101IndustryCard">
-       <div className="p101IndustryArt commerceArt"><img className="p101IndustryPhoto" src="/assets/ecommerce-digital.jpeg" alt="E-commerce shopping on a smartphone" loading="lazy" onError={e=>{e.currentTarget.style.display='none'}}/><span className="p101Tick">✓</span><div className="p101Phone"><i/><i/><i/><b/></div><span className="p101PayChip">●</span></div>
+       <div className="p101IndustryArt commerceArt"><img className="p101IndustryPhoto" src="/assets/ecommerce%20and%20digital.jpeg" alt="E-commerce shopping on a smartphone" loading="lazy" onError={e=>{e.currentTarget.style.display='none'}}/><span className="p101Tick">✓</span><div className="p101Phone"><i/><i/><i/><b/></div><span className="p101PayChip">●</span></div>
        <div className="p101IndustryInfo"><h3>E-commerce &amp; Digital</h3><p>Smooth checkout and fast partner payouts.</p></div>
       </a>
       <a href="/industries/media-entertainment" className="p101IndustryCard">
@@ -149,7 +149,7 @@ function App(){
        <div className="p101IndustryInfo"><h3>Gaming</h3><p>Top-ups, wallets and player withdrawals.</p></div>
       </a>
       <a href="/industries/digital-businesses" className="p101IndustryCard">
-       <div className="p101IndustryArt commerceArt"><img className="p101IndustryPhoto" src="/assets/ecommerce-digital.jpeg" alt="E-commerce shopping on a smartphone" loading="lazy" onError={e=>{e.currentTarget.style.display='none'}}/><span className="p101Tick">✓</span><div className="p101Phone"><i/><i/><i/><b/></div><span className="p101PayChip">●</span></div>
+       <div className="p101IndustryArt commerceArt"><img className="p101IndustryPhoto" src="/assets/ecommerce%20and%20digital.jpeg" alt="E-commerce shopping on a smartphone" loading="lazy" onError={e=>{e.currentTarget.style.display='none'}}/><span className="p101Tick">✓</span><div className="p101Phone"><i/><i/><i/><b/></div><span className="p101PayChip">●</span></div>
        <div className="p101IndustryInfo"><h3>E-commerce &amp; Digital</h3><p>Smooth checkout and fast partner payouts.</p></div>
       </a>
       </div>
