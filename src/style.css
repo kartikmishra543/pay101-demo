@@ -801,3 +801,22 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101IndustriesDrop strong{display:block;font-size:14px;font-weight:750;line-height:1.35}
 .p101IndustriesDrop small{display:block;margin-top:4px;font-size:12px;line-height:1.55;color:#718299}
 @media(max-width:800px){.p101IndustriesNav>.p101Drop.p101IndustriesDrop{position:static;transform:none;width:100%;min-width:0;box-shadow:none;margin-top:5px}.p101IndustriesNav>.p101IndustriesDrop:before{display:none}}
+
+
+/* Company menu — reference layout: icon links left, contact panel right */
+.p101CompanyNav:hover>.p101NavLink,.p101CompanyNav:focus-within>.p101NavLink{color:#0878ff;background:transparent}
+.p101CompanyNav>.p101Drop.p101CompanyDrop{display:none;position:absolute;left:50%;right:auto;top:calc(100% + 5px);transform:translateX(-50%);width:520px;min-width:520px;padding:8px;border-radius:19px;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:8px;background:#fff;border:1px solid #e1e9f2;box-shadow:0 25px 55px #102e4d27}
+.p101CompanyNav:hover>.p101CompanyDrop,.p101CompanyNav:focus-within>.p101CompanyDrop{display:grid}
+.p101CompanyDrop:before{content:"";position:absolute;top:-7px;left:calc(50% - 7px);width:14px;height:14px;background:white;transform:rotate(45deg);border-top:1px solid #e1e9f2;border-left:1px solid #e1e9f2}
+.p101CompanyLinks{display:flex;flex-direction:column;gap:4px;padding:6px}
+.p101CompanyLinks>a{display:flex;align-items:center;gap:12px;padding:11px 8px;border-radius:12px;min-height:64px;text-decoration:none;color:#17283a}
+.p101CompanyLinks>a:hover{background:#f3f8ff}
+.p101CompanyIcon{width:42px;height:42px;flex-shrink:0;border-radius:13px;background:#e4f0ff;color:#08a990;display:grid;place-items:center}
+.p101CompanyLinks strong{display:block;font-size:14px;font-weight:750;line-height:1.4}
+.p101CompanyLinks small{display:block;color:#72849a;font-size:12px;line-height:1.5;margin-top:3px}
+.p101CompanyContact{background:#edf4ff;border-radius:15px;padding:17px 16px;display:flex;flex-direction:column;align-items:flex-start;min-height:207px}
+.p101CompanyMail{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:#fff;color:#0b7dff;margin-bottom:13px}
+.p101CompanyContact>strong{font-size:15px;color:#142538}.p101CompanyContact p{color:#72849a;font-size:13px;line-height:1.5;margin:8px 0 0}
+.p101CompanyContact>a{display:flex;align-items:center;gap:6px;margin-top:auto;padding:12px 0 0;color:#087aff;font-size:14px;font-weight:750;text-decoration:none}
+.p101CompanyContact>a:hover{background:transparent}
+@media(max-width:850px){.p101CompanyNav>.p101Drop.p101CompanyDrop{position:static;left:auto;right:auto;transform:none;min-width:0;width:100%;grid-template-columns:1fr;box-shadow:none;margin-top:8px}.p101CompanyDrop:before{display:none}.p101CompanyContact{min-height:175px}}
