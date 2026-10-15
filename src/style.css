@@ -722,3 +722,30 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101FaqInner details p{margin:12px 0 0;color:#60758a;line-height:1.65}
 @media(max-width:900px){.app > footer.p101Footer > .p101FooterGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:32px}.app > footer.p101Footer .p101FooterBrand{grid-column:1/-1}}
 @media(max-width:550px){.app > footer.p101Footer{padding:42px 22px 22px!important}.app > footer.p101Footer > .p101FooterGrid{gap:28px 18px}.p101FaqSection{padding:48px 20px}}
+
+
+/* Marketing demo: industries section from approved visual reference */
+.p101Industries{background:#f4f7fc;padding:72px 0 76px}
+.p101IndustriesInner{width:min(1200px,calc(100% - 88px));margin:0 auto}
+.p101Industries .kicker{display:block;letter-spacing:2px;font-size:11px;color:#127af3;font-weight:800}
+.p101Industries h2{font-size:clamp(35px,4vw,48px);line-height:1.12;letter-spacing:-1.8px;color:#0c1924;margin:14px 0 14px;font-weight:800}
+.p101Industries h2 em{color:#147afa;font-style:normal}
+.p101IndustriesLead{color:#758396;font-size:15px;line-height:1.6;max-width:570px;margin:0 0 36px}
+.p101IndustriesGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.p101IndustryCard{display:block;overflow:hidden;background:#fff;border:1px solid #dce5f0;border-radius:19px;text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s}
+.p101IndustryCard:hover{transform:translateY(-3px);box-shadow:0 14px 34px #22518715}
+.p101IndustryArt{height:185px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(145deg,#e7f2ff,#d7e8ff)}
+.p101IndustryInfo{padding:18px 20px 20px}.p101IndustryInfo h3{font-size:16px;color:#142335;font-weight:750;margin:0 0 5px}.p101IndustryInfo p{color:#8490a0;font-size:13px;line-height:1.5;margin:0}
+.p101MediaScreen{position:relative;width:166px;height:100px;border:1px solid #c8d9eb;border-radius:15px;background:#fff;display:flex;justify-content:center;align-items:center}
+.p101Play{display:grid;place-items:center;width:45px;height:45px;background:#0e80f6;border-radius:50%;color:white;font-size:23px;padding-left:4px}
+.p101MediaBottom{position:absolute;bottom:12px;left:20px;right:14px;display:flex;align-items:center;justify-content:space-between}
+.p101MediaBottom span{font-size:20px;color:#16a68e;font-weight:800;letter-spacing:1px}.p101MediaBottom i{height:12px;width:40px;border-radius:9px;background:#e4edfa}
+.p101ArtPlus{position:absolute;top:17px;left:71%;width:30px;height:30px;background:#ffd45a;border-radius:50%;display:grid;place-items:center;color:white;font-size:25px;line-height:1}
+.p101Controller{background:white;width:148px;height:69px;border-radius:45px;border:1px solid #c9d8ea;display:flex;align-items:center;justify-content:space-around;box-shadow:0 8px 20px #2673b110}
+.p101Dpad{font-size:53px;font-weight:900;color:#1283f9;line-height:1}.p101GameDots{display:flex;gap:8px;align-items:center}.p101GameDots i{width:15px;height:15px;background:#14a58b;border-radius:50%}.p101GameDots i:nth-child(2){background:#ffd65a;transform:translateY(12px)}.p101GameDots i:nth-child(3){background:#0e83f7;transform:translateY(5px)}
+.p101GameTop{position:absolute;top:21px;background:#13a789;border-radius:20px;width:50px;height:20px}.p101GameTop:after{content:'';display:block;width:23px;height:3px;background:white;border-radius:5px;margin:9px auto}
+.p101Phone{width:63px;height:123px;background:white;border:1px solid #cbd9e9;border-radius:15px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:15px 10px}
+.p101Phone i{display:block;width:38px;height:8px;border-radius:5px;background:#e6effb}.p101Phone i:nth-child(2){width:28px}.p101Phone i:nth-child(3){height:30px;width:38px}.p101Phone b{display:block;background:#0b82f6;width:38px;height:20px;border-radius:8px}
+.p101Tick{position:absolute;left:22%;top:38px;width:38px;height:38px;border-radius:50%;background:#16aa8c;color:#fff;font-size:29px;font-weight:800;text-align:center;line-height:38px}
+.p101PayChip{position:absolute;right:18%;top:85px;background:#fff;color:#ffd45a;border:1px solid #cbd9e9;border-radius:20px;width:48px;height:23px;font-size:21px;line-height:19px;padding-left:8px}
+@media(max-width:800px){.p101IndustriesInner{width:calc(100% - 44px)}.p101IndustriesGrid{grid-template-columns:1fr;max-width:460px}.p101IndustryArt{height:195px}.p101Industries{padding:50px 0}}
