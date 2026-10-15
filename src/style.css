@@ -790,3 +790,14 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101SegmentUseCases{padding-top:20px;padding-bottom:85px}.p101SegmentCards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:26px}.p101SegmentCards>div{background:white;border:1px solid #dce7f2;border-radius:16px;padding:23px;display:flex;align-items:center;gap:14px;font-weight:700;color:#243b52}.p101SegmentCards svg{color:#0a80f6;flex-shrink:0}
 .p101SegmentCTA{background:#e9f3ff;border-radius:24px;padding-top:44px;padding-bottom:44px;margin-bottom:75px}.p101SegmentCTA p{margin-bottom:25px}.p101SegmentPage .p101Footer{display:block!important;max-width:none!important;width:100%!important}.p101SegmentPage .p101FooterGrid{display:grid!important;grid-template-columns:1.5fr repeat(3,1fr)!important;max-width:1200px;margin:auto;gap:28px}.p101SegmentPage .p101FooterBottom{display:flex!important;max-width:1200px;margin:35px auto 0;border-top:1px solid #dce7f2;padding-top:20px}
 @media(max-width:760px){.p101SegmentNav{display:none}.p101SegmentHero{padding:65px 0}.p101SegmentContent,.p101SegmentCards{grid-template-columns:1fr}.p101SegmentContent{padding-top:40px;padding-bottom:40px}.p101SegmentUseCases{padding-bottom:50px}.p101SegmentBack{display:block;margin:20px 0 0}.p101SegmentPage .p101FooterGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.p101SegmentPage .p101FooterBrand{grid-column:1/-1}.p101SegmentCTA{margin-left:20px;margin-right:20px}}
+
+
+/* Industries dropdown matches the supplied Pay101 header reference */
+.p101IndustriesNav:hover>.p101NavLink,.p101IndustriesNav:focus-within>.p101NavLink{color:#0878ff;background:transparent}
+.p101IndustriesNav>.p101Drop.p101IndustriesDrop{left:50%;transform:translateX(-50%);top:calc(100% + 4px);width:300px;min-width:300px;padding:13px 9px;border-radius:19px;background:#fff;box-shadow:0 22px 45px rgba(25,54,88,.13);border:1px solid #e0e8f1}
+.p101IndustriesNav>.p101IndustriesDrop:before{content:"";position:absolute;top:-7px;left:calc(50% - 7px);width:14px;height:14px;background:white;transform:rotate(45deg);border-left:1px solid #e0e8f1;border-top:1px solid #e0e8f1}
+.p101IndustriesDrop a{display:block!important;padding:13px 14px!important;border-radius:10px;color:#15283a}
+.p101IndustriesDrop a:hover,.p101IndustriesDrop a:focus-visible{background:#eff6ff!important}
+.p101IndustriesDrop strong{display:block;font-size:14px;font-weight:750;line-height:1.35}
+.p101IndustriesDrop small{display:block;margin-top:4px;font-size:12px;line-height:1.55;color:#718299}
+@media(max-width:800px){.p101IndustriesNav>.p101Drop.p101IndustriesDrop{position:static;transform:none;width:100%;min-width:0;box-shadow:none;margin-top:5px}.p101IndustriesNav>.p101IndustriesDrop:before{display:none}}
