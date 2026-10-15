@@ -866,3 +866,9 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101WhatsAppTrigger svg{width:25px;height:25px}
 .p101WhatsAppWidget{right:24px;bottom:106px}
 @media(max-width:600px){.p101WhatsAppWidget{right:18px;bottom:100px}.p101WhatsAppTrigger{width:44px;height:44px}.p101WhatsAppTrigger svg{width:24px;height:24px}}
+
+
+/* Uploaded industry photographs cover the illustration when the asset is available. */
+.p101IndustryArt{position:relative;overflow:hidden}
+.p101IndustryArt .p101IndustryPhoto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:8;transition:transform .35s ease}
+.p101IndustryCard:hover .p101IndustryPhoto{transform:scale(1.045)}
