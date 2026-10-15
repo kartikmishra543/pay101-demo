@@ -47,7 +47,7 @@ function App(){
      <a className="p101NavLink" href="#rails" onClick={()=>setMenu(false)}>How it works</a>
      <div className="p101NavItem p101HoverDrop"><button className="p101NavLink">Company <span>⌄</span></button><div className="p101Drop p101CompanyDrop"><a href="#about"><strong>About us</strong><small>Who we are and what we build</small></a><a href="#security"><strong>Security</strong><small>Security-focused payment operations</small></a><a href="#contact"><strong>Talk to our team</strong><small>Find payment options for your business</small></a></div></div>
     </nav>
-    <div className="p101Actions"><a className="p101Signin" href="/login">Sign in</a><div className="p101Social" aria-label="Social media"><span title="LinkedIn">in</span><span title="X">𝕏</span><span title="Instagram">◎</span><span title="YouTube">▶</span></div><a className="primary small" href="#contact">Get started <ArrowRight size={15}/></a></div>
+    <div className="p101Actions"><div className="p101Social" aria-label="Social media"><span title="LinkedIn">in</span><span title="X">𝕏</span><span title="Instagram">◎</span><span title="YouTube">▶</span></div><a className="p101Signin" href="/login">Sign in</a><a className="primary small" href="/signup">Get started <ArrowRight size={15}/></a></div>
     <button className="p101Burger" type="button" onClick={()=>setMenu(v=>!v)} aria-label="Toggle navigation" aria-expanded={menu}>{menu?<X/>:<Menu/>}</button>
    </div>
   </header>
@@ -118,7 +118,7 @@ function App(){
    <section id="about" className="aboutContactSection"><div className="aboutContactLabel">ABOUT PAY101</div><div className="aboutContactGrid"><div><h2>Payments made simpler for growing businesses.</h2></div><div><p>Pay101 brings the ideas of payins, payouts, settlement workflows and payment visibility into one connected experience. Explore payment options across markets and discover how a streamlined platform could support your business.</p><small>This website is a demonstration concept. Payment methods and integrations shown are illustrative and subject to confirmation.</small></div></div></section>
    <section id="contact" className="contactSection"><div><span className="aboutContactLabel">CONTACT OUR TEAM</span><h2>Let's talk payments.</h2><p>Have questions about Pay101 or want to discuss payment solutions for your business? Get in touch with our team.</p></div><a className="primary" href="mailto:support@pay101.uk?subject=Pay101%20Business%20Enquiry">Email support@pay101.uk <ArrowRight size={17}/></a></section>
 
-   <section className="cta"><div className="ctaGlow"/><span className="kicker">READY TO MOVE MONEY?</span><h2>Build your payment flow<br/>with <em>Pay101.</em></h2><p>Bring payins, payouts and settlement operations together in one modern platform.</p><a className="primary" href="#contact">Get started with Pay101 <ArrowRight size={17}/></a></section>
+   <section className="cta"><div className="ctaGlow"/><span className="kicker">READY TO MOVE MONEY?</span><h2>Build your payment flow<br/>with <em>Pay101.</em></h2><p>Bring payins, payouts and settlement operations together in one modern platform.</p><a className="primary" href="/signup">Get started with Pay101 <ArrowRight size={17}/></a></section>
   </main>
   <Pay101Bot/>
 
@@ -191,7 +191,7 @@ function MerchantLogin(){
  const [message,setMessage]=React.useState('');
  function handleSubmit(e){e.preventDefault();setMessage('This is a UI preview. Connect the merchant authentication technical connection before using real accounts.');}
  return <div className="merchantPage">
-  <header className="merchantHeader"><a href="/" className="merchantBrand"><img src="/assets/pay101-logo.png" alt="Pay101"/></a><div className="merchantHeaderRight"><span>New to Pay101?</span><a href="mailto:support@pay101.uk?subject=Merchant%20account%20access">Contact our team <ArrowRight size={15}/></a></div></header>
+  <header className="merchantHeader"><a href="/" className="merchantBrand"><img src="/assets/pay101-logo.png" alt="Pay101"/></a><div className="merchantHeaderRight"><span>New to Pay101?</span><a href="/signup">Sign up <ArrowRight size={15}/></a></div></header>
   <main className="merchantLayout">
    <section className="merchantIntro"><div className="merchantEyebrow"><span/> MERCHANT PORTAL</div><h1>Your payments.<br/><em>Your business.</em></h1><p>Sign in to manage your payment activity, monitor settlements and keep track of your transactions in one place.</p>
     <div className="merchantPreview"><div className="previewTop"><div><span>ACCOUNT OVERVIEW</span><strong>Payment activity</strong></div><div className="previewAvatar">P</div></div><div className="previewStats"><div><span>Payment methods</span><strong>UPI · IMPS</strong><small>NEFT · RTGS</small></div><div><span>Portal access</span><strong>Merchant</strong><small>Account workspace</small></div></div><div className="previewLine"><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/><span/></div><div className="previewFoot"><span><i/> Payment monitoring</span><span>Pay101 Portal</span></div></div>
@@ -205,7 +205,7 @@ function MerchantLogin(){
      <button className="loginSubmit" type="submit">Sign in to merchant portal <ArrowRight size={17}/></button>
      {message&&<p className="loginNotice" role="status">{message}</p>}
     </form>
-    <div className="loginHelp">Need access to your merchant account? <a href="mailto:support@pay101.uk?subject=Merchant%20portal%20access">Contact support</a></div>
+    <div className="loginHelp">New merchant? <a href="/signup">Sign up for access</a></div><div className="loginHelp">Already need help? <a href="mailto:support@pay101.uk?subject=Merchant%20portal%20access">Contact support</a></div>
     <div className="loginSecurity"><LockKeyhole size={14}/> Never share your password or one-time codes.</div>
    </section>
   </main>
@@ -213,5 +213,17 @@ function MerchantLogin(){
  </div>
 }
 
+function MerchantSignup(){
+ React.useEffect(()=>{document.title='Merchant Sign Up | Pay101'},[]);
+ const [name,setName]=React.useState(''),[email,setEmail]=React.useState(''),[company,setCompany]=React.useState(''),[type,setType]=React.useState(''),[message,setMessage]=React.useState('');
+ function submit(e){e.preventDefault();setMessage('This is a demo sign-up form. No account has been created and no information has been submitted. Contact the Pay101 team to request access.')}
+ return <div className="merchantPage">
+  <header className="merchantHeader"><a href="/" className="merchantBrand"><img src="/assets/pay101-logo.png" alt="Pay101"/></a><div className="merchantHeaderRight"><span>Already have an account?</span><a href="/login">Sign in <ArrowRight size={15}/></a></div></header>
+  <main className="merchantLayout"><section className="merchantIntro"><div className="merchantEyebrow"><span/> MERCHANT PORTAL</div><h1>Start with Pay101.<br/><em>Grow with clarity.</em></h1><p>Request merchant access and explore payment collections, payouts and settlement visibility for your business.</p><div className="merchantBenefits"><span><ShieldCheck size={17}/> Payment visibility</span><span><LockKeyhole size={17}/> Merchant account access</span><span><BarChart3 size={17}/> Settlement overview</span></div></section>
+  <section className="loginPanel"><div className="loginPanelHead"><div className="loginIcon"><Mail size={21}/></div><span className="loginTag">MERCHANT SIGN UP</span><h2>Request access</h2><p>Share your business details to get started.</p></div>
+  <form className="loginForm" onSubmit={submit}><label htmlFor="signup-name">Full name</label><div className="loginInput"><input id="signup-name" value={name} onChange={e=>setName(e.target.value)} placeholder="Your name" autoComplete="name" required/></div><label htmlFor="signup-email">Work email</label><div className="loginInput"><Mail size={17}/><input id="signup-email" type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="you@company.com" autoComplete="email" required/></div><label htmlFor="signup-company">Business name</label><div className="loginInput"><input id="signup-company" value={company} onChange={e=>setCompany(e.target.value)} placeholder="Company name" required/></div><label htmlFor="signup-type">Business type</label><div className="loginInput"><input id="signup-type" value={type} onChange={e=>setType(e.target.value)} placeholder="e.g. E-commerce, Gaming, Media" required/></div><button className="loginSubmit" type="submit">Request merchant access <ArrowRight size={17}/></button>{message&&<p className="loginNotice" role="status">{message}</p>}</form><div className="loginHelp">Already registered? <a href="/login">Sign in to merchant portal</a></div><div className="loginSecurity"><LockKeyhole size={14}/> Demo only — account creation is not enabled.</div></section></main>
+  <footer className="merchantFooter"><span>© 2026 Pay101. Merchant portal preview.</span><div><a href="/">Pay101 home</a><a href="mailto:support@pay101.uk">Help & support</a></div></footer>
+ </div>
+}
 const isMerchantLogin=window.location.pathname==='/login'||window.location.hostname==='partner.pay101.uk';
-createRoot(document.getElementById('root')).render(isMerchantLogin?<MerchantLogin/>:<App/>);
+createRoot(document.getElementById('root')).render(window.location.pathname==='/signup'?<MerchantSignup/>:isMerchantLogin?<MerchantLogin/>:<App/>);
