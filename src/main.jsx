@@ -80,7 +80,7 @@ function App(){
    </section>
 
    <section id="rails" className="rails paymentMethodsSection">
-    <div className="paymentMethodsIntro"><span>PAYMENT SYSTEM</span><strong>Familiar ways to pay, across markets.</strong><p>Explore widely recognized payment networks, wallets and payment methods from around the world.</p><small>Illustrative examples only · Integration and availability are not confirmed.</small></div>
+    <div className="paymentMethodsIntro"><span>PAYMENT PARTNERS</span><strong>Payment Partners</strong><p>Explore widely recognized payment networks, wallets and payment methods from around the world.</p><small>Illustrative examples only · Integration and availability are not confirmed.</small></div>
     <div className="paymentMethodsMarquee" aria-label="Illustrative payment methods moving left to right">
      <div className="paymentMethodsTrack">
       {[0,1].map(copy=><div className="paymentMethodsLoop" key={copy} aria-hidden={copy===1}>
@@ -96,12 +96,12 @@ function App(){
    <section id="solutions" className="section">
     <div className="sectionHead"><div><span className="kicker">PAY101 SOLUTIONS</span><h2>Payment flows built for <em>business.</em></h2></div><p>Bring collections, payouts and settlement operations into a clear, connected payment experience.</p></div>
     <div className="featureGrid">
-     <Feature icon={<Zap/>} title="Instant Settlements" text="Streamline settlement workflows and get clearer visibility into when funds are available."/>
-     <Feature icon={<CreditCard/>} title="Payin Solutions" text="Accept customer payments through convenient digital payment flows designed for modern businesses."/>
-     <Feature icon={<Send/>} title="Payout Solutions" text="Move funds to vendors, partners and customers through a unified payout workflow."/>
-     <Feature icon={<WalletCards/>} title="UPI Payments" text="Support UPI payment flows for fast and familiar digital transactions."/>
-     <Feature icon={<Send/>} title="IMPS Transfers" text="Enable quick bank-to-bank transfers through the IMPS rail."/>
-     <Feature icon={<Landmark/>} title="NEFT & RTGS" text="Support bank transfer workflows through NEFT and RTGS."/>
+     <Feature icon={<Zap/>} title="Instant Settlements" text="Track settlement status, review expected availability, and simplify reconciliation from one place."/>
+     <Feature icon={<CreditCard/>} title="Payin Solutions" text="Offer convenient ways to collect customer payments and follow each transaction from initiation to status."/>
+     <Feature icon={<Send/>} title="Payout Solutions" text="Organize vendor and partner payouts, monitor transfer progress, and keep payment records together."/>
+     <Feature icon={<WalletCards/>} title="UPI Payments" text="Explore UPI-based checkout experiences for customers who prefer familiar bank-linked payments."/>
+     <Feature icon={<Send/>} title="IMPS Transfers" text="Explore IMPS transfer workflows for time-sensitive bank-to-bank payments in India."/>
+     <Feature icon={<Landmark/>} title="NEFT & RTGS" text="Understand NEFT and RTGS transfer options for business payments and higher-value bank transfers."/>
     </div>
    </section>
 
@@ -122,7 +122,7 @@ function App(){
   </main>
   <Pay101Bot/>
 
-  <section id="faqs" className="p101FaqSection"><div className="p101FaqInner"><span className="kicker">COMMON QUESTIONS</span><h2>Frequently asked <em>questions.</em></h2><details><summary>What is Pay101?</summary><p>Pay101 presents payment collection, payouts and settlement workflows in one connected experience. This website is a demo concept.</p></details><details><summary>Which payment methods are shown?</summary><p>The demo showcases methods such as UPI, Pix, PayID, cards and regional wallet or bank transfer options. Contact our team to confirm availability.</p></details><details><summary>How can I get started?</summary><p>Use the contact section to discuss your business needs and available payment options with the Pay101 team.</p></details></div></section>
+  <section id="faqs" className="p101FaqSection"><div className="p101FaqInner"><span className="kicker">COMMON QUESTIONS</span><h2>Frequently asked <em>questions.</em></h2><details><summary>What is Pay101?</summary><p>Pay101 presents payment collection, payouts and settlement workflows in one connected experience. This website is a demo concept.</p></details><details><summary>Which payment methods are shown?</summary><p>The demo showcases methods such as UPI, Pix, PayID, cards and regional wallet or bank transfer options. Contact our team to confirm availability.</p></details><details><summary>How can I get started?</summary><p>Use the contact section to discuss your business needs and available payment options with the Pay101 team.</p></details><details><summary>How do I request a Pay101 merchant account?</summary><p>Choose Get started to open the merchant registration demo, or contact the Pay101 team to discuss onboarding. Live account creation is not enabled in this demo.</p></details><details><summary>Can Pay101 support payins and payouts?</summary><p>The demo illustrates both customer collections and outgoing payment workflows. Ask the team to confirm which services are currently offered.</p></details><details><summary>Which countries and currencies are supported?</summary><p>India, Nepal, Bhutan, Brazil and Australia appear as illustrative market examples. Actual country and currency coverage must be confirmed with Pay101.</p></details><details><summary>How long do settlements take?</summary><p>Settlement timing depends on the payment method, banking partners and commercial arrangement. Contact Pay101 for verified timelines.</p></details><details><summary>Does Pay101 offer API integration?</summary><p>The website shows a conceptual developer integration experience. Request current API documentation and integration options from the Pay101 team.</p></details><details><summary>Are the dashboard figures real transaction data?</summary><p>No. All amounts, charts, success rates and transaction examples on this demo are illustrative, not live merchant performance metrics.</p></details><details><summary>How do I get help with payments or onboarding?</summary><p>Use the contact section or email support@pay101.uk with your business question.</p></details></div></section>
    <footer className="p101Footer">
     <div className="p101FooterGrid">
      <div className="p101FooterBrand"><a className="brand" href="/" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a><h3>Payments, simplified.</h3><p>Making payment experiences easier to navigate, one step at a time.</p></div>
@@ -149,7 +149,7 @@ function PaymentGlobe(){
  return <div className="globeStage" aria-label="Illustrative global payment methods">
   <div className="globeHalo"/>
   <div className="globeOrbit orbitOuter"/><div className="globeOrbit orbitInner"/>
-  <div className="globeSphere"><div className="globeLatitude latOne"/><div className="globeLatitude latTwo"/><div className="globeLatitude latThree"/><div className="globeMeridian merOne"/><div className="globeMeridian merTwo"/><div className="globeMeridian merThree"/><div className="globeLand landAmericas"/><div className="globeLand landEurope"/><div className="globeLand landAsia"/><div className="globeLand landAfrica"/><div className="globeLand landAustralia"/><div className="globeSheen"/></div>
+  <div className="globeSphere"><div className="globeLatitude latOne"/><div className="globeLatitude latTwo"/><div className="globeLatitude latThree"/><div className="globeMeridian merOne"/><div className="globeMeridian merTwo"/><div className="globeMeridian merThree"/><div className="globeLand landAmericas"/><div className="globeLand landEurope"/><div className="globeLand landAsia"/><div className="globeLand landAfrica"/><div className="globeLand landAustralia"/><div className="globeSheen"/><img className="globePay101Mark" src="/assets/pay101-logo.png" alt="Pay101"/></div>
   {globeMethods.map((item,i)=><button key={item.country} type="button" onClick={()=>setSelected(i)} className={`globePin ${item.pos} ${selected===i?'isSelected':''}`} aria-label={`${item.country}: ${item.method}`}><span className={`globeMethodLogo logo${item.logo}`} aria-hidden="true">{item.logoUrl?<img className="globeBrandImage" src={item.logoUrl} alt="" loading="lazy" referrerPolicy="no-referrer"/>:item.logo==='Cards'?<CreditCard size={22}/>:item.logo==='Bank'?<Landmark size={22}/>:<strong>{item.method}</strong>}</span><img className="globeCountryFlag" src={`https://flagcdn.com/w40/${item.iso}.png`} alt={`${item.country} flag`} loading="lazy"/></button>)}
   <div className="globeCenterLabel"><Globe2 size={16}/><span>PAYMENTS WITHOUT BORDERS</span></div>
   <div className="globeFootnote">Concept illustration · Payment method availability subject to confirmation</div>
