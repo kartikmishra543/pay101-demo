@@ -722,3 +722,24 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101FaqInner details p{margin:12px 0 0;color:#60758a;line-height:1.65}
 @media(max-width:900px){.app > footer.p101Footer > .p101FooterGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:32px}.app > footer.p101Footer .p101FooterBrand{grid-column:1/-1}}
 @media(max-width:550px){.app > footer.p101Footer{padding:42px 22px 22px!important}.app > footer.p101Footer > .p101FooterGrid{gap:28px 18px}.p101FaqSection{padding:48px 20px}}
+
+
+/* Oct 15: original-site design refinements requested by team */
+.globeSphere{position:relative}
+.globePay101Mark{position:absolute;z-index:7;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(58px,12%,92px);max-height:50px;object-fit:contain;padding:7px 9px;border:1px solid #ffffffbd;border-radius:12px;background:#ffffffde;box-shadow:0 5px 18px #166ab62b;pointer-events:none}
+.dashboardShowcase{display:grid!important;grid-template-columns:minmax(0,0.92fr) minmax(0,1.08fr)!important;gap:clamp(22px,3vw,48px)!important;align-items:center!important;max-width:1280px;margin:0 auto;padding:55px 28px!important}
+.dashboardShowcaseIntro{align-self:center!important;padding:0!important;margin:0!important}
+.dashboardShowcaseIntro p{max-width:470px;margin-bottom:0}
+.dashboardShowcase .dashboard{width:100%!important;max-width:610px!important;min-width:0!important;margin:0!important;border-radius:22px}
+.paymentMethodsSection{padding-top:48px!important;padding-bottom:48px!important;min-height:0!important;gap:24px!important;align-items:center!important}
+.paymentMethodsIntro strong{font-size:clamp(24px,2.4vw,36px);line-height:1.2}
+.paymentMethodsMarquee{min-height:125px!important;display:flex;align-items:center;overflow:hidden}
+.paymentMethodsLoop .paymentMethodCard{width:190px!important;min-width:190px!important;flex-basis:190px!important;height:115px!important;min-height:115px!important;max-height:115px!important;padding:8px 12px!important;background:transparent!important;border:none!important;box-shadow:none!important}
+.paymentMethodsLoop .paymentMethodIcon{width:100%!important;height:100%!important;max-width:none!important;flex:1!important;display:flex!important;align-items:center;justify-content:center;background:transparent!important;border:none!important;box-shadow:none!important}
+.paymentMethodsLoop .paymentMethodIcon img{width:100%!important;height:78px!important;max-width:165px!important;object-fit:contain!important;background:transparent!important;mix-blend-mode:multiply}
+.paymentMethodsLoop .paymentBrand-esewa .paymentMethodIcon img{mix-blend-mode:multiply}
+.p101FaqInner{max-width:1050px}
+.p101FaqInner details{padding:16px 22px;margin:9px 0}
+.p101FaqInner summary{font-size:15px}
+@media(max-width:900px){.dashboardShowcase{grid-template-columns:1fr!important;padding:46px 22px!important;gap:24px!important}.dashboardShowcase .dashboard{max-width:650px!important;margin:0 auto!important}.paymentMethodsSection{padding:40px 22px!important}}
+@media(max-width:550px){.globePay101Mark{width:65px;padding:5px}.paymentMethodsLoop .paymentMethodCard{width:148px!important;min-width:148px!important;flex-basis:148px!important;height:90px!important;min-height:90px!important}.paymentMethodsLoop .paymentMethodIcon img{height:62px!important}.p101FaqInner details{padding:14px 16px}}
