@@ -840,3 +840,23 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .app > footer.p101ReferenceFooter .p101FooterBottom a:hover{color:#0a74ff}
 @media(max-width:1023px){.app > footer.p101ReferenceFooter > .p101FooterGrid{grid-template-columns:repeat(4,minmax(0,1fr))!important}.app > footer.p101ReferenceFooter .p101FooterBrand{grid-column:1/-1}}
 @media(max-width:640px){.app > footer.p101ReferenceFooter{padding:48px 22px 24px!important}.app > footer.p101ReferenceFooter > .p101FooterGrid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:32px 20px!important}.app > footer.p101ReferenceFooter .p101FooterBrand{grid-column:1/-1}.app > footer.p101ReferenceFooter > .p101FooterBottom{margin-top:36px!important}}
+
+
+/* WhatsApp contact preview: independent of the existing Pay101Bot */
+.p101WhatsAppWidget{position:fixed;right:24px;bottom:104px;z-index:1001;font-family:inherit}
+.p101WhatsAppTrigger{display:flex;align-items:center;gap:9px;border:0;border-radius:40px;background:#25d366;color:#fff;padding:12px 17px;box-shadow:0 10px 28px #118b4a45;cursor:pointer;font:700 14px inherit;transition:transform .2s ease}
+.p101WhatsAppTrigger:hover{transform:translateY(-2px);background:#1dbd59}
+.p101WhatsAppTrigger svg{width:27px;height:27px;display:block}
+.p101WhatsAppPanel{position:absolute;bottom:65px;right:0;width:min(360px,calc(100vw - 28px));background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 20px 65px #102b3b3b;border:1px solid #e1e8e7}
+.p101WhatsAppPanelHead{display:flex;align-items:center;gap:11px;background:#075e54;color:#fff;padding:17px 16px}
+.p101WhatsAppLogoSmall{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#25d366}
+.p101WhatsAppLogoSmall svg{width:27px;height:27px}
+.p101WhatsAppPanelHead>div{display:flex;flex-direction:column;gap:3px;flex:1}
+.p101WhatsAppPanelHead strong{font-size:15px}.p101WhatsAppPanelHead small{font-size:12px;color:#ccefe4}
+.p101WhatsAppPanelHead button{border:0;background:transparent;color:#fff;cursor:pointer;padding:5px}
+.p101WhatsAppPanelBody{padding:22px 18px;background:#e9f4ed}
+.p101WhatsAppBubble{max-width:275px;background:#fff;padding:13px 15px;border-radius:4px 14px 14px 14px;font-size:14px;line-height:1.55;color:#223b34;box-shadow:0 2px 8px #0000000d}
+.p101WhatsAppPanelBody p{margin:16px 0 0;font-size:12px;line-height:1.55;color:#62786e}
+.p101WhatsAppContact{display:flex;align-items:center;justify-content:center;gap:8px;margin:15px 18px 18px;border-radius:30px;background:#25d366;color:white;text-decoration:none;padding:13px 12px;font-weight:700;font-size:14px}
+.p101WhatsAppContact:hover{background:#1fba58}
+@media(max-width:600px){.p101WhatsAppWidget{right:16px;bottom:98px}.p101WhatsAppTrigger{padding:11px}.p101WhatsAppTrigger span{display:none}.p101WhatsAppPanel{bottom:59px}}
