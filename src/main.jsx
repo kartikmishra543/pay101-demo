@@ -6,6 +6,23 @@ import {AreaChart, Area, ResponsiveContainer, Tooltip, XAxis} from 'recharts';
 import './style.css';
 import Pay101Bot from './Pay101Bot.jsx';
 
+
+// WhatsApp-styled contact preview. No phone number or external messaging connection configured.
+function WhatsAppPopup(){
+ const [open,setOpen]=React.useState(false);
+ return <div className="p101WhatsAppWidget">
+  {open&&<section className="p101WhatsAppPanel" role="dialog" aria-label="WhatsApp contact preview">
+   <div className="p101WhatsAppPanelHead"><span className="p101WhatsAppLogoSmall"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 2.5A13.4 13.4 0 0 0 4.5 22.8L2.6 29.5l6.9-1.8A13.5 13.5 0 1 0 16 2.5Zm0 24.5a11 11 0 0 1-5.6-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4A11 11 0 1 1 16 27Zm6.1-8.2c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1a9 9 0 0 1-4.4-3.9c-.3-.5.3-.5.9-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.8s1.2 3.1 1.3 3.3c.2.2 2.3 3.6 5.6 5 .8.4 1.5.6 2 .7.9.3 1.8.2 2.5.2.8-.1 1.8-.8 2.1-1.6.3-.8.3-1.5.2-1.6-.1-.1-.3-.2-.6-.4Z"/></svg></span><div><strong>Pay101 on WhatsApp</strong><small>Contact preview</small></div><button type="button" onClick={()=>setOpen(false)} aria-label="Close WhatsApp popup"><X size={18}/></button></div>
+   <div className="p101WhatsAppPanelBody"><div className="p101WhatsAppBubble">Hello! Welcome to Pay101 👋<br/>Have a question about payment solutions? Our team can help.</div><p>WhatsApp messaging is not connected yet. A business number will be required to start a real WhatsApp conversation.</p></div>
+   <a className="p101WhatsAppContact" href="mailto:support@pay101.uk?subject=Pay101%20WhatsApp%20Enquiry">Contact Pay101 by email <ArrowRight size={16}/></a>
+  </section>}
+  <button type="button" className="p101WhatsAppTrigger" onClick={()=>setOpen(v=>!v)} aria-expanded={open} aria-label={open?'Close WhatsApp contact popup':'Open WhatsApp contact popup'}>
+   <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 2.5A13.4 13.4 0 0 0 4.5 22.8L2.6 29.5l6.9-1.8A13.5 13.5 0 1 0 16 2.5Zm0 24.5a11 11 0 0 1-5.6-1.5l-.4-.2-4.1 1.1 1.1-4-.3-.4A11 11 0 1 1 16 27Zm6.1-8.2c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1a9 9 0 0 1-4.4-3.9c-.3-.5.3-.5.9-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.8s1.2 3.1 1.3 3.3c.2.2 2.3 3.6 5.6 5 .8.4 1.5.6 2 .7.9.3 1.8.2 2.5.2.8-.1 1.8-.8 2.1-1.6.3-.8.3-1.5.2-1.6-.1-.1-.3-.2-.6-.4Z"/></svg>
+   <span>WhatsApp</span>
+  </button>
+ </div>
+}
+
 const chart=[{m:'Jan',v:32},{m:'Feb',v:44},{m:'Mar',v:39},{m:'Apr',v:62},{m:'May',v:57},{m:'Jun',v:81},{m:'Jul',v:76},{m:'Aug',v:96}];
 const tx=[['Payment received','Merchant checkout','+$2,840.00 USD','Success'],['Payment sent','Vendor transfer','-R$ 1.280,00','Success'],['Money received','Bank account','+A$4,820.00 AUD','Settled']];
 const heroSlides=[{eyebrow:'PAYMENTS MADE SIMPLE',line1:'Make payments.',line2:'Make progress.',copy:'Accept money from customers, send payments to partners, and see what is happening in one clear place.',cta:'Explore Pay101'},{eyebrow:'LESS TIME CHASING PAYMENTS',line1:'Know what’s paid.',line2:'Know what’s next.',copy:'See incoming payments, outgoing transfers and when money is expected to reach your account.',cta:'See how it works'},{eyebrow:'PAYMENTS FOR MORE MARKETS',line1:'One clear view.',line2:'More ways to pay.',copy:'Explore familiar payment options and bank transfers for businesses serving customers in different markets.',cta:'Explore markets'}];
@@ -157,6 +174,7 @@ function App(){
    <section className="cta"><div className="ctaGlow"/><span className="kicker">READY TO MOVE MONEY?</span><h2>Build your payment flow<br/>with <em>Pay101.</em></h2><p>Bring payins, payouts and settlement operations together in one modern platform.</p><a className="primary" href="/signup">Get started with Pay101 <ArrowRight size={17}/></a></section>
   </main>
   <Pay101Bot/>
+  <WhatsAppPopup/>
 
   <section id="faqs" className="p101FaqSection"><div className="p101FaqInner"><span className="kicker">COMMON QUESTIONS</span><h2>Frequently asked <em>questions.</em></h2><details><summary>What is Pay101?</summary><p>Pay101 presents payment collection, payouts and settlement workflows in one connected experience. This website is a demo concept.</p></details><details><summary>Which payment methods are shown?</summary><p>The demo showcases methods such as UPI, Pix, PayID, cards and regional wallet or bank transfer options. Contact our team to confirm availability.</p></details><details><summary>How can I get started?</summary><p>Use the contact section to discuss your business needs and available payment options with the Pay101 team.</p></details></div></section>
    <footer className="p101Footer p101ReferenceFooter" id="footer">
