@@ -771,3 +771,13 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 @keyframes globePulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.12)}}
 @media(max-width:700px){.globeTechPanel{width:25%;height:31%;top:31%}.globeControls{right:0;top:8%;gap:5px}.globeSideButton{min-width:70px;padding:5px 7px;font-size:9px}.globeSideButton img{width:17px;height:12px}}
 @media(prefers-reduced-motion:reduce){.globeTechPanel,.techPanelRing,.globeSphere{animation:none}}
+
+
+/* Video hero: original reference clip replaces the CSS hologram illustration */
+.globeVideoStage{position:relative;overflow:hidden;border-radius:26px;background:#020d19;min-height:420px;box-shadow:0 24px 65px #0b315b30}
+.globeVideoStage .globeHeroVideo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.globeVideoStage .globeVideoFallback{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:18px;background:radial-gradient(circle at center,#123f67,#061523);color:#a5dfff;font-size:12px;font-weight:800;letter-spacing:2px}
+.globeVideoStage .globeVideoCaption{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:3;color:#d6f2ff;background:#00182bb8;border:1px solid #7cd8ff80;padding:8px 18px;border-radius:30px;white-space:nowrap;font-size:11px;letter-spacing:1.4px;font-weight:800}
+.globeVideoStage .globeFootnote{position:absolute;bottom:11px;left:0;right:0;text-align:center;z-index:3;color:#b5cde0;font-size:10px}
+@media(max-width:700px){.globeVideoStage{min-height:280px;border-radius:17px}.globeVideoStage .globeVideoCaption{bottom:33px;font-size:9px;padding:6px 10px}}
+@media(prefers-reduced-motion:reduce){.globeVideoStage .globeHeroVideo{animation:none}}
