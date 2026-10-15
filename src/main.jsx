@@ -159,14 +159,22 @@ function App(){
   <Pay101Bot/>
 
   <section id="faqs" className="p101FaqSection"><div className="p101FaqInner"><span className="kicker">COMMON QUESTIONS</span><h2>Frequently asked <em>questions.</em></h2><details><summary>What is Pay101?</summary><p>Pay101 presents payment collection, payouts and settlement workflows in one connected experience. This website is a demo concept.</p></details><details><summary>Which payment methods are shown?</summary><p>The demo showcases methods such as UPI, Pix, PayID, cards and regional wallet or bank transfer options. Contact our team to confirm availability.</p></details><details><summary>How can I get started?</summary><p>Use the contact section to discuss your business needs and available payment options with the Pay101 team.</p></details></div></section>
-   <footer className="p101Footer">
+   <footer className="p101Footer p101ReferenceFooter" id="footer">
     <div className="p101FooterGrid">
-     <div className="p101FooterBrand"><a className="brand" href="/" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a><h3>Payments, simplified.</h3><p>Making payment experiences easier to navigate, one step at a time.</p></div>
-     <div className="p101FooterCol"><h4>Explore</h4><a href="/">Home</a><a href="#solutions">Features</a><a href="#rails">How It Works</a><a href="#faqs">FAQs</a></div>
-     <div className="p101FooterCol"><h4>Legal</h4><a href="mailto:support@pay101.uk?subject=Privacy%20Policy%20Request">Privacy Policy</a><a href="mailto:support@pay101.uk?subject=Terms%20and%20Conditions%20Request">Terms &amp; Conditions</a></div>
-     <div className="p101FooterCol"><h4>Support</h4><a href="#contact">Contact Us</a><a href="mailto:support@pay101.uk?subject=Help%20and%20Support">Help &amp; Support</a></div>
+     <div className="p101FooterBrand">
+      <a className="brand" href="/" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a>
+      <p>Accept money from customers, send payments to partners, and see what is happening in one clear place.</p>
+      <div className="p101FooterSocial" aria-label="Social media icons">
+       <span aria-label="LinkedIn" title="LinkedIn">in</span><span aria-label="X" title="X">𝕏</span><span aria-label="Instagram" title="Instagram">◎</span><span aria-label="YouTube" title="YouTube">▶</span>
+      </div>
+      <a className="primary small p101FooterCta" href="/signup">Get started <ArrowRight size={16}/></a>
+     </div>
+     <div className="p101FooterCol"><h4>Solutions</h4><a href="/#solutions">Payin Solutions</a><a href="/#solutions">Payout Solutions</a><a href="/#solutions">UPI Payments</a><a href="/#solutions">IMPS Transfers</a><a href="/#solutions">NEFT &amp; RTGS</a><a href="/#solutions">Instant Settlements</a></div>
+     <div className="p101FooterCol"><h4>Industries</h4><a href="/#industries">E-commerce</a><a href="/#industries">Gaming</a><a href="/#industries">Media &amp; Entertainment</a><a href="/#industries">Travel</a><a href="/#industries">Education</a></div>
+     <div className="p101FooterCol"><h4>Markets</h4><a href="/#markets">India</a><a href="/#markets">Nepal</a><a href="/#markets">Bhutan</a><a href="/#markets">Brazil</a><a href="/#markets">Australia</a></div>
+     <div className="p101FooterCol"><h4>Company</h4><a href="/#about">About us</a><a href="/#rails">How it works</a><a href="/#security">Security</a><a href="/#blog">Blog</a><a href="/#contact">Contact</a></div>
     </div>
-    <div className="p101FooterBottom"><span>© 2026 Pay101. All rights reserved.</span></div>
+    <div className="p101FooterBottom"><span>© 2026 Pay101. All rights reserved.</span><div><a href="mailto:support@pay101.uk?subject=Privacy%20Policy%20Request">Privacy policy</a><a href="mailto:support@pay101.uk?subject=Terms%20of%20Service%20Request">Terms of service</a></div></div>
    </footer>
  </div>
 }
