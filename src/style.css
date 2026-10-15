@@ -661,3 +661,48 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 @media(min-width:901px) and (max-width:1150px){.p101Footer{padding-inline:35px}.p101FooterGrid{grid-template-columns:minmax(205px,1.35fr) repeat(4,minmax(110px,1fr));gap:24px}}
 @media(max-width:900px){.p101FooterGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}.p101FooterBrand{grid-column:1/-1}.p101FooterBottom{margin-top:40px}}
 @media(max-width:550px){.p101Footer{padding:42px 22px 22px}.p101FooterGrid{gap:28px 18px}.p101FooterBottom{margin-top:32px}}
+
+
+/* FIX: legacy global footer flex rules must not control the marketing footer. */
+.app > footer.p101Footer{
+ display:block!important;
+ width:100%!important;
+ max-width:none!important;
+ margin:0!important;
+ box-sizing:border-box;
+ padding:64px clamp(24px,7.3vw,110px) 26px!important;
+}
+.app > footer.p101Footer > .p101FooterGrid{
+ display:grid!important;
+ width:100%;
+ max-width:1200px;
+ margin:0 auto;
+ grid-template-columns:minmax(250px,1.45fr) repeat(4,minmax(115px,1fr));
+ gap:clamp(24px,3vw,52px);
+ align-items:start;
+}
+.app > footer.p101Footer > .p101FooterBottom,
+.app > footer.p101Footer > div:last-child{
+ display:flex!important;
+ width:100%!important;
+ max-width:1200px;
+ margin:58px auto 0!important;
+ padding:24px 0 0!important;
+ border-top:1px solid #e1e9f2;
+ align-items:center;
+ justify-content:space-between;
+ gap:20px;
+ flex-direction:row;
+ flex-wrap:nowrap;
+}
+.app > footer.p101Footer > .p101FooterBottom > div{
+ display:flex;align-items:center;gap:24px;white-space:nowrap;
+}
+@media(max-width:1000px){
+ .app > footer.p101Footer > .p101FooterGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}
+ .app > footer.p101Footer .p101FooterBrand{grid-column:1/-1}
+}
+@media(max-width:650px){
+ .app > footer.p101Footer{padding:42px 22px 22px!important}
+ .app > footer.p101Footer > .p101FooterBottom,.app > footer.p101Footer > div:last-child{flex-wrap:wrap;gap:12px;margin-top:34px!important}
+}
