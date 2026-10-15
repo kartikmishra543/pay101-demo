@@ -632,3 +632,16 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101FooterGrid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:550px){.p101HeaderInner{padding:0 14px}.p101Actions .primary{padding:9px 12px;font-size:12px}.p101Footer{padding:45px 22px 24px}.p101FooterGrid{gap:28px 18px}.p101FooterBottom{margin-top:32px}}
+
+
+/* Footer layout refinement: balanced columns and a full-width single-line legal bar */
+.p101Footer{width:100%;max-width:none;box-sizing:border-box;padding:52px clamp(28px,5vw,85px) 22px}
+.p101FooterGrid{width:100%;max-width:1440px;margin:0 auto;display:grid;grid-template-columns:minmax(230px,1.65fr) repeat(4,minmax(135px,1fr));gap:clamp(22px,3vw,48px);align-items:start}
+.p101FooterBrand{min-width:0}
+.p101FooterCol{min-width:0;gap:13px}
+.p101FooterBottom{max-width:1440px;width:100%;margin:38px auto 0;padding:19px 0 0;border-top:1px solid #e1e9f2;display:flex;flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:nowrap;gap:20px}
+.p101FooterBottom span{white-space:nowrap}
+.p101FooterBottom div{display:flex;align-items:center;flex-wrap:nowrap;gap:26px;white-space:nowrap}
+@media(min-width:901px) and (max-width:1150px){.p101FooterGrid{grid-template-columns:minmax(195px,1.35fr) repeat(4,minmax(110px,1fr));gap:20px}.p101Footer{padding-inline:28px}}
+@media(max-width:900px){.p101FooterGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}.p101FooterBrand{grid-column:1/-1}.p101FooterBottom{flex-wrap:wrap;gap:12px}}
+@media(max-width:550px){.p101Footer{padding:38px 20px 20px}.p101FooterGrid{gap:26px 18px}.p101FooterBottom{font-size:11px}.p101FooterBottom div{gap:14px;flex-wrap:wrap}}
