@@ -747,3 +747,26 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 /* Larger Pay101 mark at the centre of the homepage globe */
 .globeSphere .globePay101Mark{width:clamp(120px,29%,190px)!important;max-height:95px!important;padding:12px 15px!important;border-radius:17px!important}
 @media(max-width:550px){.globeSphere .globePay101Mark{width:clamp(90px,31%,135px)!important;max-height:72px!important;padding:8px 10px!important}}
+
+/* Larger payment logos with room for wide wordmarks. */
+.paymentMethodsLoop .paymentMethodCard{
+ width:230px!important;min-width:230px!important;max-width:230px!important;
+ flex-basis:230px!important;height:140px!important;min-height:140px!important;max-height:140px!important;
+ padding:8px!important;
+}
+.paymentMethodsLoop .paymentMethodIcon,
+.paymentMethodsLoop .paymentMethodCard .paymentBrandIcon{
+ width:100%!important;height:100%!important;flex:1 1 auto!important;padding:0!important;
+}
+.paymentMethodsLoop .paymentMethodIcon img{
+ width:100%!important;height:110px!important;max-width:210px!important;object-fit:contain!important;
+}
+.paymentMethodsLoop .paymentMethodIcon>svg{width:54px;height:54px}
+@media(max-width:550px){
+ .paymentMethodsLoop .paymentMethodCard{
+  width:184px!important;min-width:184px!important;max-width:184px!important;flex-basis:184px!important;
+  height:112px!important;min-height:112px!important;max-height:112px!important;
+ }
+ .paymentMethodsLoop .paymentMethodIcon img{height:88px!important;max-width:168px!important}
+ .paymentMethodsLoop .paymentMethodIcon>svg{width:44px;height:44px}
+}
