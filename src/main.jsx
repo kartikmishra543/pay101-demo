@@ -44,7 +44,7 @@ function App(){
      </div>
      <div className="p101NavItem p101HoverDrop"><button className="p101NavLink">Industries <span>⌄</span></button><div className="p101Drop">{[['E-commerce','Online stores and marketplaces'],['Gaming','Top-ups and withdrawals'],['Media & Entertainment','Subscriptions and streaming'],['Travel','Bookings and payouts'],['Education','Fees and instalments']].map(([name,desc])=><a key={name} href="#solutions" onClick={()=>setMenu(false)}><strong>{name}</strong><small>{desc}</small></a>)}</div></div>
      <div className="p101NavItem p101HoverDrop"><button className="p101NavLink">Markets <span>⌄</span></button><div className="p101Drop p101MarketsDrop">{[['India','in','UPI and bank transfers'],['Nepal','np','Local payment options'],['Bhutan','bt','Regional payment options'],['Brazil','br','Pix payment examples'],['Australia','au','AUD payment examples']].map(([name,iso,desc])=><a key={name} href="#markets" onClick={()=>setMenu(false)}><img src={`https://flagcdn.com/w40/${iso}.png`} alt="" loading="lazy"/><span><strong>{name}</strong><small>{desc}</small></span></a>)}<small className="p101DropNote">Markets shown for demonstration. Confirm availability with Pay101.</small></div></div>
-     <a className="p101NavLink" href="#developers" onClick={()=>setMenu(false)}>How it works</a>
+     <a className="p101NavLink" href="#rails" onClick={()=>setMenu(false)}>How it works</a>
      <div className="p101NavItem p101HoverDrop"><button className="p101NavLink">Company <span>⌄</span></button><div className="p101Drop p101CompanyDrop"><a href="#about"><strong>About us</strong><small>Who we are and what we build</small></a><a href="#security"><strong>Security</strong><small>Security-focused payment operations</small></a><a href="#contact"><strong>Talk to our team</strong><small>Find payment options for your business</small></a></div></div>
     </nav>
     <div className="p101Actions"><a className="p101Signin" href="/login">Sign in</a><div className="p101Social" aria-label="Social media"><span title="LinkedIn">in</span><span title="X">𝕏</span><span title="Instagram">◎</span><span title="YouTube">▶</span></div><a className="primary small" href="#contact">Get started <ArrowRight size={15}/></a></div>
@@ -113,15 +113,6 @@ function App(){
     <div className="splitCopy"><span className="kicker">ONE CONNECTED WORKFLOW</span><h2>From payment to <em>settlement.</em></h2><p>Keep your payment operations visible from collection through payout and settlement.</p><ul><li><Check/> Real-time transaction visibility</li><li><Check/> Payin and payout workflows</li><li><Check/> Settlement status tracking</li><li><Check/> Clear reporting for operations</li></ul><button className="textBtn">Explore Pay101 solutions <ArrowRight size={17}/></button></div>
    </section>
 
-   <section id="developers" className="devSection">
-    <div className="devCopy"><span className="kicker">FOR DEVELOPERS</span><h2>Payment infrastructure that is <em>easy to integrate.</em></h2><p>Build payment experiences with straightforward technical connections, clear integration patterns and transaction visibility.</p><div className="codeTabs"><span>Node.js</span><span>Python</span><span>cURL</span></div><div className="code"><div className="dots"><i/><i/><i/></div><pre><code><span>const</span> payment = <span>await</span> pay101.payments.create({'{'}
-  amount: <b>4999</b>,
-  currency: <b>'INR'</b>,
-  method: <b>'UPI'</b>
-{'}'});</code></pre></div></div>
-    <div className="apiCard"><Code2 size={24}/><span>TRANSACTION</span><strong>payment.succeeded</strong><div className="apiRow"><span>reference</span><b>PAY_101_8F21</b></div><div className="apiRow"><span>method</span><b>UPI</b></div><div className="apiRow"><span>status</span><b className="green">● succeeded</b></div></div>
-   </section>
-
    <section id="security" className="security"><div><span className="kicker">TRUST BY DESIGN</span><h2>Built with <em>security</em> in mind.</h2><p>Keep payment operations protected with access controls, transaction visibility and security-focused infrastructure.</p></div><div className="securityGrid"><Feature icon={<LockKeyhole/>} title="Secure access" text="Role-aware access and controlled payment operations."/><Feature icon={<ShieldCheck/>} title="Protected flows" text="Security-focused controls across payment workflows."/><Feature icon={<BarChart3/>} title="Full visibility" text="Track transactions, payouts and settlement activity in one place."/></div></section>
 
    <section id="about" className="aboutContactSection"><div className="aboutContactLabel">ABOUT PAY101</div><div className="aboutContactGrid"><div><h2>Payments made simpler for growing businesses.</h2></div><div><p>Pay101 brings the ideas of payins, payouts, settlement workflows and payment visibility into one connected experience. Explore payment options across markets and discover how a streamlined platform could support your business.</p><small>This website is a demonstration concept. Payment methods and integrations shown are illustrative and subject to confirmation.</small></div></div></section>
@@ -135,7 +126,7 @@ function App(){
    <footer className="p101Footer">
     <div className="p101FooterGrid">
      <div className="p101FooterBrand"><a className="brand" href="/" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a><h3>Payments, simplified.</h3><p>Making payment experiences easier to navigate, one step at a time.</p></div>
-     <div className="p101FooterCol"><h4>Explore</h4><a href="/">Home</a><a href="#solutions">Features</a><a href="#developers">How It Works</a><a href="#faqs">FAQs</a></div>
+     <div className="p101FooterCol"><h4>Explore</h4><a href="/">Home</a><a href="#solutions">Features</a><a href="#rails">How It Works</a><a href="#faqs">FAQs</a></div>
      <div className="p101FooterCol"><h4>Legal</h4><a href="mailto:support@pay101.uk?subject=Privacy%20Policy%20Request">Privacy Policy</a><a href="mailto:support@pay101.uk?subject=Terms%20and%20Conditions%20Request">Terms &amp; Conditions</a></div>
      <div className="p101FooterCol"><h4>Support</h4><a href="#contact">Contact Us</a><a href="mailto:support@pay101.uk?subject=Help%20and%20Support">Help &amp; Support</a></div>
     </div>
