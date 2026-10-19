@@ -994,3 +994,30 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
  .p101Header .p101HeaderInner{height:88px!important;gap:10px!important}
  .p101Header .p101NavLink{font-size:16px!important;padding:10px 7px!important}
 }
+
+/* Pay101 cinematic motion graphic — inspired by fintech motion design, independent original overlay */
+.globeVideoStage{isolation:isolate;overflow:hidden!important;background:#031527!important;border:1px solid rgba(113,206,255,.2)!important;box-shadow:0 30px 75px rgba(7,55,107,.2),inset 0 0 55px rgba(0,128,255,.15)!important}
+.globeVideoStage .globeHeroVideo{filter:saturate(1.18) contrast(1.08)!important}
+.globeVideoStage::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(3,18,38,.28),transparent 35%,transparent 70%,rgba(3,18,38,.3)),linear-gradient(0deg,rgba(1,13,32,.63),transparent 30%,transparent 75%,rgba(2,16,35,.28))}
+.p101MotionGrid{position:absolute;inset:0;z-index:2;pointer-events:none;opacity:.18;background-image:linear-gradient(rgba(88,203,255,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(88,203,255,.22) 1px,transparent 1px);background-size:54px 54px;mask-image:linear-gradient(to bottom,transparent,black 35%,black 80%,transparent)}
+.p101MotionSweep{position:absolute;inset:-50%;z-index:2;pointer-events:none;background:linear-gradient(110deg,transparent 45%,rgba(85,207,255,.12) 50%,transparent 55%);animation:p101Scan 9s ease-in-out infinite}
+.p101MotionChip{position:absolute;z-index:4;display:flex;align-items:center;gap:8px;border:1px solid rgba(134,216,255,.42);background:rgba(3,27,58,.7);backdrop-filter:blur(12px);color:#e9f9ff;border-radius:12px;box-shadow:0 10px 35px rgba(0,0,0,.23);pointer-events:none;letter-spacing:.06em}
+.p101MotionChipTop{top:6%;left:50%;transform:translateX(-50%);padding:9px 14px;font-size:10px;font-weight:800;white-space:nowrap;animation:p101ChipGlow 4s ease-in-out infinite}
+.p101MotionDot{width:7px;height:7px;background:#56f5bd;border-radius:50%;box-shadow:0 0 12px #56f5bd;animation:p101Pulse 2s infinite}
+.p101MotionBars{display:flex;align-items:end;gap:2px;height:13px;margin-left:5px}.p101MotionBars i{display:block;width:3px;height:5px;background:#55d4ff;border-radius:2px;animation:p101Bars 1.3s ease-in-out infinite alternate}.p101MotionBars i:nth-child(2){animation-delay:.2s;height:11px}.p101MotionBars i:nth-child(3){animation-delay:.5s;height:7px}.p101MotionBars i:nth-child(4){animation-delay:.8s;height:13px}
+.p101MotionChipLeft,.p101MotionChipRight{bottom:19%;padding:10px 13px;animation:p101Float 5s ease-in-out infinite}
+.p101MotionChipLeft{left:4%}.p101MotionChipRight{right:4%;animation-delay:-2.5s}
+.p101MotionChip strong{display:block;font-size:10px;font-weight:800}.p101MotionChip small{display:block;margin-top:3px;font-size:9px;color:#9bc9e5;letter-spacing:0}
+.p101MotionGlyph{display:grid;place-items:center;width:29px;height:29px;background:rgba(31,148,249,.28);border:1px solid rgba(85,204,255,.3);border-radius:9px;color:#8de9ff;font-size:19px}
+.p101MotionOrbit{position:absolute;z-index:2;top:50%;left:50%;width:55%;aspect-ratio:1;border:1px solid rgba(90,203,255,.16);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%) rotateX(65deg);box-shadow:0 0 35px rgba(47,165,255,.08)}
+.p101MotionOrbitTwo{width:75%;opacity:.6;animation:p101Orbit 18s linear infinite}
+.globeVideoStage .globeVideoCaption{z-index:5!important;bottom:44px!important;padding:8px 16px!important;letter-spacing:.12em!important;font-size:10px!important;background:rgba(2,32,63,.7)!important;backdrop-filter:blur(10px)}
+.globeVideoStage .globeFootnote{z-index:5!important;bottom:13px!important;font-size:9px!important}
+@keyframes p101Scan{0%,20%{transform:translateX(-55%)}75%,100%{transform:translateX(55%)}}
+@keyframes p101ChipGlow{0%,100%{box-shadow:0 0 12px rgba(29,149,250,.2)}50%{box-shadow:0 0 28px rgba(51,187,255,.38)}}
+@keyframes p101Pulse{50%{opacity:.45;transform:scale(.75)}}
+@keyframes p101Bars{to{height:3px;opacity:.5}}
+@keyframes p101Float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes p101Orbit{to{transform:translate(-50%,-50%) rotateX(65deg) rotate(360deg)}}
+@media(max-width:700px){.p101MotionChipTop{top:5%;padding:6px 9px;font-size:8px}.p101MotionChipLeft,.p101MotionChipRight{bottom:24%;padding:6px 8px}.p101MotionChip strong{font-size:8px}.p101MotionChip small{font-size:7px}.p101MotionGlyph{width:22px;height:22px;font-size:15px}.globeVideoStage .globeVideoCaption{bottom:36px!important;font-size:8px!important;padding:6px 9px!important}.globeVideoStage .globeFootnote{font-size:8px!important;bottom:8px!important}}
+@media(prefers-reduced-motion:reduce){.p101MotionSweep,.p101MotionChip,.p101MotionDot,.p101MotionBars i,.p101MotionOrbit{animation:none!important}}
