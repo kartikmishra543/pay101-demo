@@ -10,6 +10,14 @@ import Pay101Bot from './Pay101Bot.jsx';
 
 function ConsultationForm(){
  const [open,setOpen]=React.useState(false);
+ React.useEffect(()=>{
+  let shown=false;
+  try{shown=sessionStorage.getItem('pay101-consult-intro')==='shown';if(!shown)sessionStorage.setItem('pay101-consult-intro','shown')}catch(e){}
+  if(shown)return;
+  setOpen(true);
+  const timer=setTimeout(()=>setOpen(false),4000);
+  return()=>clearTimeout(timer);
+ },[]);
  const [fields,setFields]=React.useState({name:'',email:'',industry:'',location:'',phone:''});
  const [notice,setNotice]=React.useState('');
  const update=(key,value)=>setFields(prev=>({...prev,[key]:value}));
