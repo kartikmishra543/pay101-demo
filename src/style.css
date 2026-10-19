@@ -1021,3 +1021,10 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 @keyframes p101Orbit{to{transform:translate(-50%,-50%) rotateX(65deg) rotate(360deg)}}
 @media(max-width:700px){.p101MotionChipTop{top:5%;padding:6px 9px;font-size:8px}.p101MotionChipLeft,.p101MotionChipRight{bottom:24%;padding:6px 8px}.p101MotionChip strong{font-size:8px}.p101MotionChip small{font-size:7px}.p101MotionGlyph{width:22px;height:22px;font-size:15px}.globeVideoStage .globeVideoCaption{bottom:36px!important;font-size:8px!important;padding:6px 9px!important}.globeVideoStage .globeFootnote{font-size:8px!important;bottom:8px!important}}
 @media(prefers-reduced-motion:reduce){.p101MotionSweep,.p101MotionChip,.p101MotionDot,.p101MotionBars i,.p101MotionOrbit{animation:none!important}}
+
+/* Refined unified Pay101 trust mark replaces the old four overlapping spheres */
+.trust .avatars{position:relative!important;display:block!important;flex:none!important;width:54px!important;height:37px!important;margin-right:13px!important;border-right:1px solid #c7d8ea!important;padding-right:13px!important}
+.trust .avatars i{display:none!important}
+.trust .avatars::before{content:"";position:absolute;left:3px;top:3px;width:29px;height:29px;border-radius:10px;background:linear-gradient(145deg,#54caff,#0878f9 58%,#0646c7);transform:rotate(-16deg);box-shadow:0 6px 17px rgba(8,120,249,.24)}
+.trust .avatars::after{content:"";position:absolute;left:17px;top:9px;width:27px;height:17px;border:2px solid #a3dfff;border-left-color:transparent;border-radius:50%;transform:rotate(-32deg);box-shadow:0 0 0 2px rgba(255,255,255,.25)}
+.trust{align-items:center!important}
