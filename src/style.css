@@ -980,3 +980,17 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 /* Keep each field label directly above its input */
 .p101ConsultWidget .p101ConsultForm{display:flex!important;flex-direction:column!important;gap:7px!important}
 .p101ConsultWidget .p101ConsultForm label{margin-top:5px!important}
+
+/* Actual marketing header: larger bar and +2px navigation typography */
+@media(min-width:1101px){
+ .p101Header .p101HeaderInner{height:92px!important;max-width:1340px!important;gap:18px!important;padding:0 22px!important}
+ .p101Header .p101Nav{gap:0!important}
+ .p101Header .p101NavLink{font-size:16px!important;padding:12px 10px!important}
+ .p101Header .p101Actions{gap:7px!important}
+ .p101Header .p101Actions .primary,.p101Header .p101Actions .ghost{font-size:16px!important}
+ .p101Header .brandLogo{max-width:172px!important;max-height:54px!important}
+}
+@media(min-width:901px) and (max-width:1100px){
+ .p101Header .p101HeaderInner{height:88px!important;gap:10px!important}
+ .p101Header .p101NavLink{font-size:16px!important;padding:10px 7px!important}
+}
