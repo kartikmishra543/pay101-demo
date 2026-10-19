@@ -25,3 +25,24 @@
 .pay101botRoot .pay101botLauncher{width:46px!important;height:46px!important;min-width:46px!important;min-height:46px!important;padding:0!important;border-radius:50%!important;display:grid!important;place-items:center!important;gap:0!important}
 .pay101botRoot .pay101botLauncher svg{width:25px;height:25px}
 @media(max-width:600px){.pay101botRoot .pay101botLauncher{width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important}.pay101botRoot .pay101botLauncher svg{width:24px;height:24px}}
+
+/* Compact Pay101Bot popup: keep the floating launcher unchanged and reduce page overlap */
+.pay101botRoot .pay101botPanel{
+ width:min(325px,calc(100vw - 28px))!important;
+ height:min(390px,calc(100dvh - 235px))!important;
+ bottom:57px!important;
+ border-radius:17px!important;
+}
+.pay101botRoot .pay101botHeader{padding:11px 13px!important;gap:8px!important}
+.pay101botRoot .pay101botHeader .pay101botAvatar{width:32px;height:32px}
+.pay101botRoot .pay101botHeader strong{font-size:14px}
+.pay101botRoot .pay101botHeader small{font-size:10px}
+.pay101botRoot .pay101botMessages{gap:8px!important;padding:11px!important}
+.pay101botRoot .pay101botMessageRow .pay101botBubble{padding:9px 11px!important;font-size:12px!important;line-height:1.45!important}
+.pay101botRoot .pay101botPrompts{padding:6px 10px!important;gap:5px!important}
+.pay101botRoot .pay101botPrompts button{padding:5px 7px!important;font-size:10px!important}
+.pay101botRoot .pay101botInput{padding:9px!important}
+.pay101botRoot .pay101botDisclaimer{padding:0 9px 8px!important;font-size:9px!important}
+@media(max-width:600px){
+ .pay101botRoot .pay101botPanel{width:min(315px,calc(100vw - 24px))!important;height:min(380px,calc(100dvh - 225px))!important;bottom:55px!important}
+}
