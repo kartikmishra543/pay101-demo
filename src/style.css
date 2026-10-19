@@ -915,3 +915,20 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
  .paymentMethodsLoop .paymentMethodIcon,.paymentMethodsLoop .paymentMethodCard .paymentBrandIcon{width:100%!important;height:90px!important;flex-basis:90px!important}
  .paymentMethodsLoop .paymentBrandIcon img{max-width:145px!important;width:100%!important;height:100%!important}
 }
+
+/* Third floating action: consultation form above WhatsApp and Pay101Bot */
+.p101ConsultWidget{position:fixed;right:24px;bottom:166px;z-index:1002;font-family:Manrope,Arial,sans-serif}
+.p101ConsultTrigger{width:46px;height:46px;border:0;border-radius:50%;background:#0a78ef;color:white;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 28px #0757e54d}
+.p101ConsultTrigger:hover{background:#0865cf;transform:translateY(-2px)}
+.p101ConsultPanel{position:absolute;right:0;bottom:60px;width:min(380px,calc(100vw - 28px));max-height:min(660px,calc(100dvh - 105px));display:flex;flex-direction:column;overflow:hidden;background:#fff;border:1px solid #dce8f6;border-radius:20px;box-shadow:0 22px 65px #123f743b}
+.p101ConsultHeader{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:17px 19px;background:linear-gradient(110deg,#0a70ec,#0758d8);color:white}
+.p101ConsultHeader strong{display:block;font-size:17px}.p101ConsultHeader small{display:block;font-size:11px;color:#e4efff;margin-top:3px}
+.p101ConsultHeader button{background:none;border:0;color:white;cursor:pointer;display:grid;place-items:center}
+.p101ConsultForm{padding:17px 19px 19px;display:flex;flex-direction:column;gap:7px;overflow-y:auto}
+.p101ConsultForm label{font-size:12px;font-weight:750;color:#28425c;margin-top:4px}
+.p101ConsultForm input,.p101ConsultForm select{box-sizing:border-box;width:100%;min-height:39px;border:1px solid #d5e2f0;border-radius:10px;padding:9px 11px;background:white;color:#17334e;font:500 13px Manrope,Arial,sans-serif}
+.p101ConsultForm input:focus,.p101ConsultForm select:focus{outline:2px solid #b2d6ff;border-color:#0878f9}
+.p101ConsultNote{font-size:10px;line-height:1.5;color:#72859b;margin:8px 0 3px}
+.p101ConsultSubmit{display:flex;justify-content:center;align-items:center;gap:8px;min-height:42px;border:0;border-radius:11px;background:#0878f9;color:#fff;font:700 12px Manrope,Arial,sans-serif;cursor:pointer}
+.p101ConsultNotice{font-size:11px;line-height:1.5;color:#1666b5;margin:4px 0}
+@media(max-width:600px){.p101ConsultWidget{right:18px;bottom:158px}.p101ConsultTrigger{width:44px;height:44px}.p101ConsultPanel{bottom:55px;max-height:calc(100dvh - 95px)}}
