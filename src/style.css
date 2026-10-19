@@ -932,3 +932,7 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101ConsultSubmit{display:flex;justify-content:center;align-items:center;gap:8px;min-height:42px;border:0;border-radius:11px;background:#0878f9;color:#fff;font:700 12px Manrope,Arial,sans-serif;cursor:pointer}
 .p101ConsultNotice{font-size:11px;line-height:1.5;color:#1666b5;margin:4px 0}
 @media(max-width:600px){.p101ConsultWidget{right:18px;bottom:158px}.p101ConsultTrigger{width:44px;height:44px}.p101ConsultPanel{bottom:55px;max-height:calc(100dvh - 95px)}}
+
+/* Swap Pay101Bot and consultation launcher positions; keep WhatsApp centered */
+@media(min-width:601px){.p101ConsultWidget{bottom:22px!important}.pay101botRoot{bottom:166px!important}}
+@media(max-width:600px){.p101ConsultWidget{bottom:14px!important}.pay101botRoot{bottom:158px!important}}
