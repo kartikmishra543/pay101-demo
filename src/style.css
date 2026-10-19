@@ -1049,3 +1049,6 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101PricingInner>a{display:inline-flex;align-items:center;gap:10px}
 .p101PricingInner>small{display:block;margin-top:18px;color:#6e8093;font-size:12px}
 @media(max-width:650px){.p101PricingSection{padding:60px 18px}.p101PricingFeatures{flex-direction:column;align-items:center}}
+
+/* Markets menu: globe icon for additional countries */
+.p101MarketsDrop .p101MarketMoreGlyph{width:34px;height:28px;display:flex;align-items:center;justify-content:center;color:#1766b8;flex:none}
