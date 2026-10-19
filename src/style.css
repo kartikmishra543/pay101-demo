@@ -951,3 +951,28 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
  .nav{min-height:86px!important}
  .navLinks,.navDropTrigger,.navLinks>a{font-size:16px!important}
 }
+
+/* Prominent, responsive consultation modal; initial preview closes after 4 seconds */
+.p101ConsultWidget:has(.p101ConsultPanel){z-index:10020!important}
+.p101ConsultBackdrop{position:fixed;inset:0;background:rgba(9,29,53,.46);backdrop-filter:blur(3px);z-index:0}
+.p101ConsultWidget .p101ConsultPanel{
+ position:fixed!important;top:50%!important;left:50%!important;right:auto!important;bottom:auto!important;
+ transform:translate(-50%,-50%)!important;
+ width:min(780px,calc(100vw - 40px))!important;
+ max-height:min(790px,calc(100dvh - 44px))!important;
+ height:auto!important;z-index:1!important;
+ border-radius:22px!important;
+ box-shadow:0 30px 100px rgba(5,27,55,.35)!important;
+}
+.p101ConsultWidget .p101ConsultHeader{padding:20px 26px}
+.p101ConsultWidget .p101ConsultForm{padding:22px 28px 26px;display:grid;grid-template-columns:1fr 1fr;column-gap:22px;row-gap:9px}
+.p101ConsultWidget .p101ConsultForm label{margin-top:2px}
+.p101ConsultWidget .p101ConsultForm input,.p101ConsultWidget .p101ConsultForm select{min-height:44px}
+.p101ConsultWidget .p101ConsultNote,.p101ConsultWidget .p101ConsultSubmit,.p101ConsultWidget .p101ConsultNotice{grid-column:1/-1}
+.p101ConsultWidget .p101ConsultForm label{grid-column:1/-1}
+@media(max-width:600px){
+ .p101ConsultWidget .p101ConsultPanel{width:calc(100vw - 26px)!important;max-height:calc(100dvh - 30px)!important}
+ .p101ConsultWidget .p101ConsultForm{display:flex;flex-direction:column;gap:6px;padding:14px 18px 20px}
+ .p101ConsultWidget .p101ConsultHeader{padding:15px 18px}
+ .p101ConsultWidget .p101ConsultForm input,.p101ConsultWidget .p101ConsultForm select{min-height:40px}
+}
