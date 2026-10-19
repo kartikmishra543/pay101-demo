@@ -251,6 +251,12 @@ function PaymentGlobe(){
  const [videoReady,setVideoReady]=React.useState(true);
  return <div className="globeStage globeVideoStage" aria-label="Animated holographic global payments video">
   {videoReady?<video className="globeHeroVideo" autoPlay muted loop playsInline preload="metadata" aria-label="Holographic globe and digital payment interface animation" onError={()=>setVideoReady(false)}><source src="/assets/pay101-holographic-globe.mp4" type="video/mp4"/></video>:<div className="globeVideoFallback"><Globe2 size={88}/><span>GLOBAL PAYMENT NETWORK</span></div>}
+  <div className="p101MotionGrid" aria-hidden="true"/>
+  <div className="p101MotionSweep" aria-hidden="true"/>
+  <div className="p101MotionChip p101MotionChipTop" aria-hidden="true"><span className="p101MotionDot"/>GLOBAL NETWORK <span className="p101MotionBars"><i/><i/><i/><i/></span></div>
+  <div className="p101MotionChip p101MotionChipLeft" aria-hidden="true"><span className="p101MotionGlyph">↗</span><span><strong>PAYINS</strong><small>Collect seamlessly</small></span></div>
+  <div className="p101MotionChip p101MotionChipRight" aria-hidden="true"><span className="p101MotionGlyph">⇄</span><span><strong>PAYOUTS</strong><small>Move money globally</small></span></div>
+  <div className="p101MotionOrbit p101MotionOrbitOne" aria-hidden="true"/><div className="p101MotionOrbit p101MotionOrbitTwo" aria-hidden="true"/>
   <div className="globeVideoCaption">PAYMENTS WITHOUT BORDERS</div>
   <div className="globeFootnote">Concept visualization · Payment method availability subject to confirmation</div>
  </div>
