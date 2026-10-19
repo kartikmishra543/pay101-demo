@@ -936,3 +936,18 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 /* Swap Pay101Bot and consultation launcher positions; keep WhatsApp centered */
 @media(min-width:601px){.p101ConsultWidget{bottom:22px!important}.pay101botRoot{bottom:166px!important}}
 @media(max-width:600px){.p101ConsultWidget{bottom:14px!important}.pay101botRoot{bottom:158px!important}}
+
+/* Larger main Pay101 navigation header (not consultation popup) */
+@media(min-width:1101px){
+ .nav{height:90px!important;max-width:1320px!important;padding-left:24px!important;padding-right:24px!important}
+ .navLinks{font-size:16px!important;gap:clamp(15px,2vw,26px)!important}
+ .navDropTrigger{font-size:16px!important}
+ .navLinks>a{font-size:16px!important}
+ .navActions{gap:8px!important;align-items:center}
+ .navActions .ghost,.navActions .primary{font-size:16px!important}
+ .navActions .ghost{padding-left:7px!important;padding-right:7px!important}
+}
+@media(min-width:701px) and (max-width:1100px){
+ .nav{min-height:86px!important}
+ .navLinks,.navDropTrigger,.navLinks>a{font-size:16px!important}
+}
