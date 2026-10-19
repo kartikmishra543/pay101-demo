@@ -877,26 +877,3 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101IndustryArt:has(.p101IndustryPhoto:not([style*="display: none"])) > :not(.p101IndustryPhoto){display:none!important}
 .p101IndustryArt .p101IndustryPhoto{z-index:9;object-position:center center}
 .p101IndustryCard:hover .p101IndustryPhoto{transform:scale(1.025)}
-
-/* Compact boxed About section for 1080p desktop displays */
-.aboutContactSection{
-  box-sizing:border-box;
-  width:calc(100% - 48px);
-  max-width:1080px;
-  margin:28px auto 38px;
-  padding:38px 44px;
-  border:1px solid #dbe8f5;
-  border-radius:12px;
-  background:#fff;
-  box-shadow:0 12px 32px rgba(19,72,118,.055);
-}
-.aboutContactSection .aboutContactLabel{margin-bottom:16px}
-.aboutContactSection .aboutContactGrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px;align-items:center}
-.aboutContactSection .aboutContactGrid h2{font-size:clamp(28px,2.8vw,42px);line-height:1.14}
-.aboutContactSection .aboutContactGrid p{font-size:15px;line-height:1.55;margin-bottom:12px}
-.aboutContactSection .aboutContactGrid small{font-size:11px;line-height:1.45}
-@media(max-width:700px){
- .aboutContactSection{width:calc(100% - 28px);padding:26px 22px;margin:18px auto 26px}
- .aboutContactSection .aboutContactGrid{grid-template-columns:1fr;gap:16px}
- .aboutContactSection .aboutContactGrid h2{font-size:clamp(28px,7vw,36px)}
-}
