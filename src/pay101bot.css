@@ -20,3 +20,8 @@
 .pay101botRoot .pay101botMessageRow .pay101botBubble{display:block;flex:0 1 auto;width:max-content;max-width:88%;min-width:0;min-height:0;height:auto;padding:12px 14px;font-size:13px;line-height:1.6;overflow-wrap:break-word;word-break:normal;white-space:pre-wrap}
 .pay101botRoot .pay101botMessageRow.sent .pay101botBubble{background:#0878f9;color:white;border:0;border-radius:15px 15px 4px 15px}
 .pay101botRoot .pay101botMessageRow.received .pay101botBubble{background:white;color:#213b55;border:1px solid #e0eafb;border-radius:15px 15px 15px 4px}
+
+/* Match WhatsApp's compact round floating launcher */
+.pay101botRoot .pay101botLauncher{width:46px!important;height:46px!important;min-width:46px!important;min-height:46px!important;padding:0!important;border-radius:50%!important;display:grid!important;place-items:center!important;gap:0!important}
+.pay101botRoot .pay101botLauncher svg{width:25px;height:25px}
+@media(max-width:600px){.pay101botRoot .pay101botLauncher{width:44px!important;height:44px!important;min-width:44px!important;min-height:44px!important}.pay101botRoot .pay101botLauncher svg{width:24px;height:24px}}
