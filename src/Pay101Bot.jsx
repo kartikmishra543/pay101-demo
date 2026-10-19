@@ -49,6 +49,6 @@ export default function Pay101Bot(){
    <form className="pay101botInput" onSubmit={e=>{e.preventDefault();send();}}><input aria-label="Ask Pay101Bot" value={draft} onChange={e=>setDraft(e.target.value)} placeholder="Ask about Pay101..." maxLength={500}/><button type="submit" aria-label="Send message" disabled={!draft.trim()}><Send size={18}/></button></form>
    <p className="pay101botDisclaimer">Demo assistant · Answers based on website information, not live account data.</p>
   </section>}
-  <button className="pay101botLauncher" onClick={()=>setOpen(v=>!v)} aria-label={open?'Close Pay101Bot':'Chat with Pay101Bot'} aria-expanded={open}>{open?<X size={24}/>:<><MessageCircle size={23}/><span>Pay101Bot</span></>}</button>
+  <button className="pay101botLauncher" onClick={()=>setOpen(v=>!v)} aria-label={open?'Close Pay101Bot':'Chat with Pay101Bot'} aria-expanded={open}>{open?<X size={24}/>:<><MessageCircle size={25}/></>}</button>
  </div>;
 }
