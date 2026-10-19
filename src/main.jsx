@@ -99,7 +99,7 @@ function App(){
        <div className="p101MegaPanel">{(solutionTab==='collect'?[['Payin Solutions','Accept customer payments online','#solutions'],['UPI Payments','Fast, familiar digital payments','#solutions']]:solutionTab==='payout'?[['Payout Solutions','Pay vendors, partners and customers','#solutions'],['IMPS Transfers','Quick bank-to-bank transfers','#solutions'],['NEFT & RTGS','Bank transfer workflows','#solutions']]:[['Instant Settlements','See when funds are available','#solutions']]).map(([title,description,url])=><a key={title} href={url} onClick={()=>{setSolutionsOpen(false);setMenu(false)}}><span className="p101MegaIcon"><ArrowRight size={18}/></span><span><strong>{title}</strong><small>{description}</small></span></a>)}</div>
       </div>}
      </div>
-     <div className="p101NavItem p101HoverDrop p101IndustriesNav"><button className="p101NavLink">Industries <span>⌄</span></button><div className="p101Drop p101IndustriesDrop">{[['E-commerce','Online stores and marketplaces','/industries/digital-businesses'],['Gaming','Top-ups, wallets and withdrawals','/industries/gaming'],['Media & Entertainment','Subscriptions, streaming and creator payouts','/industries/media-entertainment'],['Digital Businesses','Online services and partner payouts','/industries/digital-businesses']].map(([name,desc,url])=><a key={name} href={url} onClick={()=>setMenu(false)}><span><strong>{name}</strong><small>{desc}</small></span></a>)}</div></div>
+     
      <div className="p101NavItem p101HoverDrop"><button className="p101NavLink">Markets <span>⌄</span></button><div className="p101Drop p101MarketsDrop">{[['India','in','UPI and bank transfers'],['Nepal','np','Local payment options'],['Bhutan','bt','Regional payment options'],['Brazil','br','Pix payment examples'],['Australia','au','AUD payment examples']].map(([name,iso,desc])=><a key={name} href="#markets" onClick={()=>setMenu(false)}><img src={`https://flagcdn.com/w40/${iso}.png`} alt="" loading="lazy"/><span><strong>{name}</strong><small>{desc}</small></span></a>)}<a href="#markets" onClick={()=>setMenu(false)}><span className="p101MarketMoreGlyph"><Globe2 size={21}/></span><span><strong>Many more</strong><small>Ask us about additional markets</small></span></a><small className="p101DropNote">Markets shown for demonstration. Confirm availability with Pay101.</small></div></div>
      <a className="p101NavLink" href="/how-it-works" onClick={()=>setMenu(false)}>How it works</a>
      <a className="p101NavLink" href="/pricing" onClick={()=>setMenu(false)}>Pricing</a>
@@ -165,41 +165,7 @@ function App(){
     </div>
    </section>
 
-   <section id="industries" className="p101Industries">
-    <div className="p101IndustriesInner">
-     <span className="kicker">INDUSTRIES</span>
-     <h2>Built for <em>digital-first</em><br/> businesses.</h2>
-     <p className="p101IndustriesLead">Flexible payment flows for teams that collect often, pay out often and need to see it all.</p>
-     <div className="p101IndustryCarousel" aria-label="Industries carousel">
-      <div className="p101IndustryTrack">
-      <a href="/industries/media-entertainment" className="p101IndustryCard">
-       <div className="p101IndustryArt mediaArt"><img className="p101IndustryPhoto" src="/assets/media.jpeg" alt="Media and entertainment creator streaming setup" loading="lazy" onError={e=>{e.currentTarget.style.display='none'}}/><div className="p101MediaScreen"><span className="p101Play">▶</span><div className="p101MediaBottom"><span>▂▃▅▃▆</span><i/></div></div><span className="p101ArtPlus">+</span></div>
-       <div className="p101IndustryInfo"><h3>Media &amp; Entertainment</h3><p>Subscriptions, streaming and creator payouts.</p></div>
-      </a>
-      <a href="/industries/gaming" className="p101IndustryCard">
-       <div className="p101IndustryArt gamingArt"><img className="p101IndustryPhoto" src="/assets/gaming.jpeg" alt="Gaming desk with illuminated monitor" loading="lazy" onError={e=>{e.currentTarget.style.display='none'}}/><span className="p101GameTop"></span><div className="p101Controller"><span className="p101Dpad">+</span><div className="p101GameDots"><i/><i/><i/></div></div></div>
-       <div className="p101IndustryInfo"><h3>Gaming</h3><p>Top-ups, wallets and player withdrawals.</p></div>
-      </a>
-      <a href="/industries/digital-businesses" className="p101IndustryCard">
-       <div className="p101IndustryArt commerceArt"><img className="p101IndustryPhoto" src="/assets/ecommerce%20and%20digital.jpeg" alt="E-commerce shopping on a smartphone" loading="lazy" onError={e=>{e.currentTarget.style.display='none'}}/><span className="p101Tick">✓</span><div className="p101Phone"><i/><i/><i/><b/></div><span className="p101PayChip">●</span></div>
-       <div className="p101IndustryInfo"><h3>E-commerce &amp; Digital</h3><p>Smooth checkout and fast partner payouts.</p></div>
-      </a>
-      <a href="/industries/media-entertainment" className="p101IndustryCard">
-       <div className="p101IndustryArt mediaArt"><img className="p101IndustryPhoto" src="/assets/media.jpeg" alt="Media and entertainment creator streaming setup" loading="lazy" onError={e=>{e.currentTarget.style.display='none'}}/><div className="p101MediaScreen"><span className="p101Play">▶</span><div className="p101MediaBottom"><span>▂▃▅▃▆</span><i/></div></div><span className="p101ArtPlus">+</span></div>
-       <div className="p101IndustryInfo"><h3>Media &amp; Entertainment</h3><p>Subscriptions, streaming and creator payouts.</p></div>
-      </a>
-      <a href="/industries/gaming" className="p101IndustryCard">
-       <div className="p101IndustryArt gamingArt"><img className="p101IndustryPhoto" src="/assets/gaming.jpeg" alt="Gaming desk with illuminated monitor" loading="lazy" onError={e=>{e.currentTarget.style.display='none'}}/><span className="p101GameTop"></span><div className="p101Controller"><span className="p101Dpad">+</span><div className="p101GameDots"><i/><i/><i/></div></div></div>
-       <div className="p101IndustryInfo"><h3>Gaming</h3><p>Top-ups, wallets and player withdrawals.</p></div>
-      </a>
-      <a href="/industries/digital-businesses" className="p101IndustryCard">
-       <div className="p101IndustryArt commerceArt"><img className="p101IndustryPhoto" src="/assets/ecommerce%20and%20digital.jpeg" alt="E-commerce shopping on a smartphone" loading="lazy" onError={e=>{e.currentTarget.style.display='none'}}/><span className="p101Tick">✓</span><div className="p101Phone"><i/><i/><i/><b/></div><span className="p101PayChip">●</span></div>
-       <div className="p101IndustryInfo"><h3>E-commerce &amp; Digital</h3><p>Smooth checkout and fast partner payouts.</p></div>
-      </a>
-      </div>
-     </div>
-    </div>
-   </section>
+   
 
    <section className="split">
     <div className="splitVisual">
