@@ -894,3 +894,24 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
  .dashboardShowcase{grid-template-columns:1fr!important;gap:22px!important}
  .dashboardShowcase .dashboard{width:min(100%,510px)!important;max-width:510px!important;margin:0 auto!important}
 }
+
+/* Larger payment-system heading and scrolling brand logos */
+@media(min-width:901px){
+ .paymentMethodsSection{grid-template-columns:minmax(300px,370px) minmax(0,1fr)!important;gap:30px!important;padding-top:46px!important;padding-bottom:46px!important}
+ .paymentMethodsIntro strong{font-size:clamp(30px,2.8vw,42px)!important;line-height:1.18!important;margin:12px 0 16px!important}
+ .paymentMethodsIntro p{font-size:16px!important;line-height:1.65!important}
+ .paymentMethodsIntro>small{font-size:12px!important;line-height:1.5!important}
+ .paymentMethodsIntro>span{font-size:13px!important}
+ .paymentMethodsMarquee{min-height:150px!important;padding:12px 0!important}
+ .paymentMethodsLoop{gap:20px!important}
+ .paymentMethodsLoop .paymentMethodCard{flex:0 0 205px!important;width:205px!important;min-width:205px!important;height:145px!important;min-height:145px!important;max-height:145px!important;padding:6px!important}
+ .paymentMethodsLoop .paymentMethodIcon,.paymentMethodsLoop .paymentMethodCard .paymentBrandIcon{width:100%!important;height:120px!important;flex:0 0 120px!important;padding:4px!important}
+ .paymentMethodsLoop .paymentBrandIcon img{width:100%!important;height:100%!important;max-width:195px!important;object-fit:contain!important}
+}
+@media(max-width:900px){
+ .paymentMethodsIntro strong{font-size:clamp(28px,5vw,36px)!important}
+ .paymentMethodsIntro p{font-size:15px!important}
+ .paymentMethodsLoop .paymentMethodCard{min-width:155px!important;width:155px!important;flex-basis:155px!important}
+ .paymentMethodsLoop .paymentMethodIcon,.paymentMethodsLoop .paymentMethodCard .paymentBrandIcon{width:100%!important;height:90px!important;flex-basis:90px!important}
+ .paymentMethodsLoop .paymentBrandIcon img{max-width:145px!important;width:100%!important;height:100%!important}
+}
