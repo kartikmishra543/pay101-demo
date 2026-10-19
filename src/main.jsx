@@ -7,6 +7,37 @@ import './style.css';
 import Pay101Bot from './Pay101Bot.jsx';
 
 
+
+function ConsultationForm(){
+ const [open,setOpen]=React.useState(false);
+ const [fields,setFields]=React.useState({name:'',email:'',industry:'',location:'',phone:''});
+ const [notice,setNotice]=React.useState('');
+ const update=(key,value)=>setFields(prev=>({...prev,[key]:value}));
+ function submit(e){
+  e.preventDefault();
+  const body=['Consultation request for Pay101','','Name: '+fields.name,'Email: '+fields.email,'Industry: '+fields.industry,'Location: '+fields.location,'Phone: '+fields.phone].join('\\n');
+  const url='mailto:support@pay101.uk?subject='+encodeURIComponent('Pay101 consultation request')+'&body='+encodeURIComponent(body);
+  setNotice('Your email app will open with the consultation request. Please send the email to complete your enquiry.');
+  window.location.href=url;
+ }
+ return <div className="p101ConsultWidget">
+  {open&&<section className="p101ConsultPanel" role="dialog" aria-label="Request a consultation">
+   <header className="p101ConsultHeader"><div><strong>Book a consultation</strong><small>Tell us about your business</small></div><button type="button" onClick={()=>setOpen(false)} aria-label="Close consultation form"><X size={20}/></button></header>
+   <form className="p101ConsultForm" onSubmit={submit}>
+    <label htmlFor="consult-name">Name</label><input id="consult-name" autoComplete="name" value={fields.name} onChange={e=>update('name',e.target.value)} placeholder="Your full name" maxLength={100} required/>
+    <label htmlFor="consult-email">Email</label><input id="consult-email" type="email" autoComplete="email" value={fields.email} onChange={e=>update('email',e.target.value)} placeholder="you@company.com" maxLength={150} required/>
+    <label htmlFor="consult-industry">Industry</label><select id="consult-industry" value={fields.industry} onChange={e=>update('industry',e.target.value)} required><option value="">Select industry</option><option>E-commerce & Digital</option><option>Gaming</option><option>Media & Entertainment</option><option>Fintech & Payments</option><option>Other</option></select>
+    <label htmlFor="consult-location">Location</label><input id="consult-location" autoComplete="address-level2" value={fields.location} onChange={e=>update('location',e.target.value)} placeholder="City, Country" maxLength={120} required/>
+    <label htmlFor="consult-phone">Phone number</label><input id="consult-phone" type="tel" autoComplete="tel" value={fields.phone} onChange={e=>update('phone',e.target.value)} placeholder="+91 98765 43210" pattern="[+0-9() .-]{7,22}" title="Enter a valid phone number" required/>
+    <p className="p101ConsultNote">Submitting opens your email app with these details. Nothing is sent until you send the email.</p>
+    <button className="p101ConsultSubmit" type="submit">Prepare consultation request <ArrowRight size={17}/></button>
+    {notice&&<p className="p101ConsultNotice" role="status">{notice}</p>}
+   </form>
+  </section>}
+  <button className="p101ConsultTrigger" type="button" onClick={()=>setOpen(v=>!v)} aria-label={open?'Close consultation form':'Open consultation form'} aria-expanded={open} title="Book a consultation"><Mail size={24}/></button>
+ </div>;
+}
+
 // WhatsApp-styled contact preview. No phone number or external messaging connection configured.
 function WhatsAppPopup(){
  const [open,setOpen]=React.useState(false);
@@ -175,6 +206,7 @@ function App(){
   </main>
   <Pay101Bot/>
   <WhatsAppPopup/>
+  <ConsultationForm/>
 
   <section id="faqs" className="p101FaqSection"><div className="p101FaqInner"><span className="kicker">COMMON QUESTIONS</span><h2>Frequently asked <em>questions.</em></h2><details><summary>What is Pay101?</summary><p>Pay101 presents payment collection, payouts and settlement workflows in one connected experience. This website is a demo concept.</p></details><details><summary>Which payment methods are shown?</summary><p>The demo showcases methods such as UPI, Pix, PayID, cards and regional wallet or bank transfer options. Contact our team to confirm availability.</p></details><details><summary>How can I get started?</summary><p>Use the contact section to discuss your business needs and available payment options with the Pay101 team.</p></details></div></section>
    <footer className="p101Footer p101ReferenceFooter" id="footer">
