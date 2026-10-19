@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing | Pay101</title>
+<meta name="description" content="Pay101 pricing: Basic, Entrepreneur and Custom plans for media, gaming and digital businesses. Share your volume and get a clear, itemised quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+:root{--ink:#0f1c2b;--muted:#5b6b7c;--line:#e1e9f2;--bg:#f4f8fc;--surface:#fff;--blue:#0a74ff;--blue-dark:#0862d8;--blue-soft:#e3effe;--green:#12a87a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+.pr-section{padding:64px 0}
+.pr-eyebrow{display:block;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-dark);margin-bottom:14px}
+.pr-h2{font-size:clamp(30px,4vw,46px);line-height:1.08;letter-spacing:-.03em;font-weight:800;margin:0}
+.pr-h2 em,.pr-hero h1 em{font-style:normal;color:var(--blue)}
+.pr-sub{margin:14px 0 0;max-width:60ch;color:var(--muted);font-size:17px}
+.pr-head{margin-bottom:36px}
+.pr-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:12px;background:var(--blue-dark);color:#fff;font-weight:700;font-size:15px;border:1px solid var(--blue-dark);box-shadow:0 10px 24px -12px rgba(10,116,255,.7);text-decoration:none;cursor:pointer;font-family:inherit}
+.pr-btn:hover{background:#0752b8}
+.pr-ghost{background:#fff;color:var(--ink);border-color:var(--line);box-shadow:none}
+.pr-ghost:hover{background:#fff;border-color:var(--blue);color:var(--blue-dark)}
+.pr-btn .ico{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.pr-hero{padding:72px 0 24px;background:radial-gradient(60% 80% at 85% 10%,#dcebff 0,transparent 70%),radial-gradient(40% 50% at 0 100%,#e8f3ff 0,transparent 70%)}
+.pr-hero h1{font-size:clamp(38px,6vw,66px);line-height:1.04;letter-spacing:-.03em;font-weight:800;margin:0;max-width:16ch}
+.pr-lead{margin:20px 0 0;max-width:56ch;color:var(--muted);font-size:18px}
+.pr-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.pr-chips{list-style:none;padding:0;margin:28px 0 0;display:flex;flex-wrap:wrap;gap:10px}
+.pr-chips li{padding:8px 16px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:14px;font-weight:600}
+/* plans */
+.pr-plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.pr-card{display:flex;flex-direction:column;gap:18px;padding:32px;background:var(--surface);border:1px solid var(--line);border-radius:24px}
+.pr-card.pr-feature{border:2px solid var(--blue);box-shadow:0 30px 60px -36px rgba(10,116,255,.5)}
+.pr-card h3{margin:0;font-size:24px;font-weight:800}
+@media (min-width:1024px){.pr-card>div:first-child{min-height:84px}}
+.pr-for{margin:4px 0 0;color:var(--muted);font-size:15px}
+.pr-rate{font-size:20px;font-weight:800;color:var(--blue-dark);margin:0}
+.pr-rate small{display:block;font-size:13px;font-weight:500;color:var(--muted)}
+.pr-list{list-style:none;padding:0;margin:0;display:grid;gap:12px;font-size:15px}
+.pr-list li{display:flex;gap:10px;align-items:flex-start}
+.pr-list svg{flex:none;width:18px;height:18px;margin-top:3px;fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.pr-card .pr-btn{margin-top:auto;justify-content:center}
+.pr-note{margin:20px 0 0;font-size:13.5px;color:var(--muted)}
+/* table */
+.pr-table-wrap{overflow-x:auto;background:#fff;border:1px solid var(--line);border-radius:20px}
+.pr-table{width:100%;border-collapse:collapse;min-width:720px;font-size:15px}
+.pr-table th,.pr-table td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--line)}
+.pr-table thead th{font-size:14px;font-weight:800;background:#f8fbff}
+.pr-table tbody th{font-weight:600;width:34%}
+.pr-table tr:last-child th,.pr-table tr:last-child td{border-bottom:0}
+.pr-table .yes svg{width:20px;height:20px;fill:none;stroke:var(--green);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+/* steps and two-up */
+.pr-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pr-step{padding:28px;background:#fff;border:1px solid var(--line);border-radius:22px}
+.pr-num{width:40px;height:40px;border-radius:12px;background:var(--blue-soft);color:var(--blue-dark);font-weight:800;display:grid;place-items:center;margin-bottom:16px}
+.pr-step h3{margin:0 0 6px;font-size:19px}.pr-step p{margin:0;color:var(--muted);font-size:15px}
+.pr-two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pr-panel{padding:32px;background:#fff;border:1px solid var(--line);border-radius:24px}
+.pr-panel h3{margin:0 0 6px;font-size:22px}.pr-panel>p{margin:0 0 18px;color:var(--muted);font-size:15px}
+/* faq */
+.pr-faq{display:grid;gap:12px;max-width:860px}
+.pr-faq details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:0 22px}
+.pr-faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:700;font-size:16px;display:flex;justify-content:space-between;gap:16px}
+.pr-faq summary::-webkit-details-marker{display:none}
+.pr-faq summary::after{content:"+";font-size:22px;color:var(--blue-dark);line-height:1}
+.pr-faq details[open] summary::after{content:"\2212"}
+.pr-faq p{margin:0 0 18px;color:var(--muted);font-size:15.5px}
+/* form */
+.pr-quote{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start;padding:44px;border-radius:28px;background:#fff;border:1px solid var(--line)}
+.pr-quote ul{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}
+.pr-quote li{display:flex;gap:10px;font-weight:600;font-size:15px}
+.pr-quote li svg{flex:none;width:18px;height:18px;margin-top:3px;fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.pr-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pr-field{display:grid;gap:6px}.pr-field.pr-full{grid-column:1 / -1}
+.pr-field label{font-size:13.5px;font-weight:700}
+.pr-field input,.pr-field select{height:50px;width:100%;padding:13px 14px;border:1px solid #c8d6e6;border-radius:12px;font:inherit;font-size:15px;background:#fff;color:var(--ink)}
+.pr-field input:focus,.pr-field select:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:var(--blue)}
+.pr-form .pr-btn{grid-column:1 / -1;justify-content:center}
+.pr-msg{grid-column:1 / -1;margin:0;font-size:14.5px;min-height:1.4em}
+.pr-msg.ok{color:#0b7a58;font-weight:600}.pr-msg.err{color:#b42318;font-weight:600}
+.pr-small{margin:0;font-size:12.5px;color:var(--muted);grid-column:1 / -1}
+@media (max-width:1023px){.pr-plans,.pr-steps,.pr-two,.pr-quote{grid-template-columns:1fr}.pr-quote{padding:28px;gap:28px}}
+@media (max-width:640px){.pr-form{grid-template-columns:1fr}.pr-section{padding:44px 0}.pr-hero{padding-top:44px}}
+.pr-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.pr-qcard{background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:0 40px 80px -36px rgba(10,116,255,.4)}
+.pr-qtop{display:flex;justify-content:space-between;align-items:center;gap:12px;font-weight:800;font-size:16px;margin-bottom:8px}
+.pr-qtop small{font-size:11.5px;font-weight:700;color:var(--muted);background:var(--bg);padding:4px 10px;border-radius:999px}
+.pr-qrow{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.pr-qrow span:last-child{color:var(--blue-dark);font-weight:700;text-align:right}
+.pr-qrow:last-of-type{border-bottom:0}
+.pr-qfoot{margin:14px 0 0;padding:12px 14px;border-radius:12px;background:var(--blue-soft);color:var(--ink);font-size:13.5px;font-weight:600}
+@media (max-width:1023px){.pr-hero-grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ===== Shared Pay101 header and footer (same as homepage) ===== */
+:root{--header-h:72px}
+html{scroll-padding-top:84px}
+.site-header,.site-footer,.backdrop{--ink:#0f1c2b;--muted:#5b6b7c;--line:#e1e9f2;--bg:#f4f8fc;--surface:#fff;--blue:#0a74ff;--blue-soft:#e3effe;--green:#12a87a;--panel:#eef4fe;--radius:18px;--gap:24px;
+  font-family:Manrope,system-ui,sans-serif;line-height:1.5;color:var(--ink)}
+:where(.site-header,.site-footer,.backdrop) *{box-sizing:border-box;margin:0}
+:where(.site-header,.site-footer) button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:where(.site-header,.site-footer) a{color:inherit;text-decoration:none}
+.site-header .ico,.site-footer .ico{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.site-header :focus-visible,.site-footer :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:8px}
+.hf-container{max-width:1200px;margin:0 auto;padding:0 24px}
+.nav-link[aria-current="page"]{color:var(--blue)}
+/* ---------- Header ---------- */
+.site-header{position:sticky;top:0;z-index:50;height:var(--header-h);
+  background:rgba(244,248,252,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.site-header .hf-container{height:100%;display:flex;align-items:center;gap:32px}
+.logo{font-weight:800;font-size:26px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+.logo i{width:30px;height:30px;border-radius:9px;background:var(--blue);display:grid;place-items:center;color:#fff;font-style:normal;font-size:17px}
+.nav{display:flex;gap:4px;margin-inline:auto}
+.nav > li{list-style:none;position:relative}
+.nav-link{display:flex;align-items:center;gap:6px;padding:10px 14px;border-radius:10px;font-size:15px;font-weight:500;color:var(--muted)}
+.nav-link:hover,.nav-link[aria-expanded="true"]{color:var(--blue)}
+.nav-link .chev{width:14px;height:14px;transition:transform .2s}
+.nav-link[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.actions{display:flex;align-items:center;gap:8px}
+.nav-link,.hf-btn,.signin{white-space:nowrap}
+.signin{padding:10px 14px;font-weight:600;font-size:15px}
+.hf-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;background:var(--blue);color:#fff;font-weight:700;font-size:15px;box-shadow:0 8px 20px -8px rgba(10,116,255,.6)}
+.hf-btn:hover{background:#0862d8}
+
+/* ---------- Mega menu ---------- */
+.mega{position:absolute;top:calc(100% + 14px);left:-16px;width:640px;display:grid;grid-template-columns:200px 1fr;gap:8px;
+  padding:10px;background:var(--surface);border:1px solid var(--line);border-radius:22px;
+  box-shadow:0 30px 60px -24px rgba(15,28,43,.28);
+  opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s}
+.mega.open{opacity:1;visibility:visible;transform:none}
+.mega::before{content:"";position:absolute;left:44px;top:-7px;width:12px;height:12px;background:var(--surface);
+  border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}
+.mm-tabs{display:flex;flex-direction:column;gap:4px;padding:4px}
+.mm-tab{text-align:left;padding:12px 14px;border-radius:12px;font-weight:600;font-size:15px;color:var(--ink)}
+.mm-tab small{display:block;font-weight:400;font-size:12.5px;color:var(--muted)}
+.mm-tab[aria-selected="true"]{background:var(--blue-soft);color:var(--blue)}
+.mm-panel{display:none;background:var(--panel);border-radius:16px;padding:12px;min-height:236px}
+.mm-panel.on{display:block}
+.mm-panel a{display:flex;gap:12px;padding:12px;border-radius:12px;align-items:flex-start}
+.mm-panel a:hover{background:#fff}
+.mm-panel .ico-box{flex:none;width:36px;height:36px;border-radius:10px;background:#fff;color:var(--green);display:grid;place-items:center}
+.mm-panel strong{display:block;font-size:15px}
+.mm-panel span{font-size:13px;color:var(--muted)}
+/* ---------- Industries dropdown (flat list) ---------- */
+.drop{position:absolute;top:calc(100% + 14px);left:-16px;width:300px;padding:8px;
+  background:var(--surface);border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 30px 60px -24px rgba(15,28,43,.28);
+  opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s}
+.drop.open{opacity:1;visibility:visible;transform:none}
+.drop::before{content:"";position:absolute;left:44px;top:-7px;width:12px;height:12px;background:var(--surface);
+  border-left:1px solid var(--line);border-top:1px solid var(--line);transform:rotate(45deg)}
+.drop a{display:block;padding:12px 14px;border-radius:12px}
+.drop a:hover{background:var(--blue-soft)}
+.drop strong{display:block;font-size:15px}
+.drop span{font-size:13px;color:var(--muted)}
+.drop-wide{width:340px}
+.drop-wide a{display:flex;gap:12px;align-items:center}
+.flag-box{flex:none;width:44px;height:44px;border-radius:12px;background:var(--blue-soft);display:grid;place-items:center}
+.flag{width:28px;height:19px;border-radius:3px;box-shadow:0 0 0 1px rgba(15,28,43,.12)}
+.flag-box.globe{color:var(--ink)}
+.drop-note{padding:8px 14px 6px;font-size:11.5px;color:var(--muted);line-height:1.4}
+.drop-company{width:520px;left:auto;right:-8px}
+.drop-company::before{left:auto;right:56px}
+.co-grid{display:grid;grid-template-columns:1fr 190px;gap:8px}
+.co-links a{display:flex;gap:12px;align-items:center}
+.co-links .ico-box{flex:none;width:40px;height:40px;border-radius:12px;background:var(--blue-soft);color:var(--green);display:grid;place-items:center}
+.drop a.co-cta{display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:14px;background:var(--panel)}
+.drop a.co-cta:hover{background:var(--blue-soft)}
+.co-cta .ico-box{width:40px;height:40px;border-radius:12px;background:#fff;color:var(--blue);display:grid;place-items:center;margin-bottom:6px}
+.co-cta em{margin-top:auto;display:flex;align-items:center;gap:6px;font-style:normal;font-weight:700;font-size:14px;color:var(--blue)}
+.co-cta em .ico{width:16px;height:16px}
+.backdrop{position:fixed;inset:var(--header-h) 0 0;background:rgba(15,28,43,.18);opacity:0;visibility:hidden;transition:.18s;z-index:40}
+.backdrop.on{opacity:1;visibility:visible}
+
+/* ---------- Mobile menu ---------- */
+.burger{display:none;width:44px;height:44px;border-radius:12px;place-items:center;margin-left:auto}
+@media (max-width:900px){
+  .burger{display:grid}
+  .actions .signin{display:none}
+  .actions{margin-left:0}
+  .nav{display:none;position:absolute;top:var(--header-h);left:0;right:0;flex-direction:column;gap:0;margin:0;padding:8px 24px 20px;
+    background:var(--bg);border-bottom:1px solid var(--line);max-height:calc(100vh - var(--header-h));overflow:auto}
+  .nav.open{display:flex}
+  .nav-link{width:100%;justify-content:space-between;padding:14px 4px;font-size:16px;border-bottom:1px solid var(--line);border-radius:0}
+  /* mega menu becomes an accordion */
+  .mega{position:static;width:100%;display:none;grid-template-columns:1fr;opacity:1;visibility:visible;transform:none;
+    box-shadow:none;border:0;border-radius:0;padding:4px 0;background:transparent}
+  .mega.open{display:grid}
+  .mega::before,.drop::before{display:none}
+  .drop{position:static;width:100%;display:none;opacity:1;visibility:visible;transform:none;
+    box-shadow:none;border:0;border-radius:0;padding:4px 0 8px 8px;background:transparent}
+  .drop.open{display:block}
+  .drop a:hover{background:#fff}
+  .drop-wide,.drop-company{width:100%;right:auto}
+  .co-grid{grid-template-columns:1fr}
+  .drop a.co-cta{margin:6px 0 0}
+  .mm-tabs{display:none}
+  .mm-panel,.mm-panel.on{display:block;min-height:0;padding:4px 0 4px 8px;background:transparent}
+  .mm-panel::before{content:attr(data-title);display:block;padding:10px 12px 2px;font-size:12.5px;font-weight:700;color:var(--muted)}
+  .backdrop{display:none}
+}
+/* ---------- Footer ---------- */
+.site-footer{background:var(--surface);border-top:1px solid var(--line);padding:64px 0 28px}
+.footer-grid{display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:40px 32px}
+.footer-brand p{margin-top:14px;max-width:30ch;font-size:14.5px;color:var(--muted)}
+.social{display:flex;gap:8px;margin-top:20px}
+.social a{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:var(--muted);border:1px solid var(--line);transition:color .15s,border-color .15s,background .15s}
+.social a:hover{color:var(--blue);border-color:var(--blue);background:var(--blue-soft)}
+.social .ico{width:18px;height:18px}
+.footer-cta{margin-top:24px;color:#fff}
+.footer-col h4{font-size:14px;font-weight:700;margin-bottom:14px}
+.footer-col ul{list-style:none;padding:0;display:grid;gap:10px}
+.footer-col a{font-size:14.5px;color:var(--muted);transition:color .15s}
+.footer-col a:hover{color:var(--blue)}
+.footer-bottom{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;font-size:13.5px;color:var(--muted)}
+.footer-bottom nav{display:flex;gap:24px}
+.footer-bottom a:hover{color:var(--blue)}
+@media (max-width:1023px){
+  .footer-grid{grid-template-columns:repeat(4,1fr)}
+  .footer-brand{grid-column:1 / -1}
+}
+@media (max-width:640px){
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+  .site-footer{padding-top:48px}
+}
+@media (min-width:901px) and (max-width:1100px){
+  .site-header .hf-container{gap:16px}
+  .nav-link{padding:10px 8px;font-size:14px}
+  .signin{display:none}
+}
+@media (max-width:520px){
+  .site-header .hf-container{gap:12px}
+  .logo{font-size:22px}
+  .actions .hf-btn{padding:10px 14px;font-size:14px}
+  .actions .hf-btn .ico{display:none}
+}
+
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 3 5 13.5h6L10 21l8-10.5h-6z"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h3"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10 14M21 3l-6.5 18-3.5-7-7-3.5z"/></symbol>
+  <symbol id="i-upi" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3M9.5 10l2.5 2.5L15 8"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h14l-3-3M20 16H6l3 3"/></symbol>
+  <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 9.5 12 4l9 5.5M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20.5h18"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16zM13.5 6.5l4 4"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v5.5c0 4.3 2.9 7.6 7 9.5 4.1-1.9 7-5.2 7-9.5V6z"/><path d="m9 12 2.2 2.2L15 10.5"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="m4 8 8 5.5L20 8"/></symbol>
+  <symbol id="s-linkedin" viewBox="0 0 24 24"><circle cx="6.5" cy="6.5" r="1.7" fill="currentColor" stroke="none"/><path fill="currentColor" stroke="none" d="M5 9.5h3v9H5zM10.5 9.5h2.9v1.3c.5-.9 1.6-1.5 3-1.5 2.7 0 3.6 1.7 3.6 4.2v5h-3v-4.5c0-1.2-.4-2-1.6-2-1.1 0-1.9.8-1.9 2v4.5h-3z"/></symbol>
+  <symbol id="s-x" viewBox="0 0 24 24"><path d="M4.5 4h4l11 16h-4zM19.5 4l-6.8 7.6M4.5 20l6.8-7.6"/></symbol>
+  <symbol id="s-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17" cy="7" r=".6" fill="currentColor"/></symbol>
+  <symbol id="s-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path fill="currentColor" d="m10 9.2 5 2.8-5 2.8z"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+</svg>
+<header class="site-header">
+  <div class="hf-container">
+    <a href="/" class="logo" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" style="width:155px;max-width:100%;height:auto;display:block"></a>
+
+    <nav aria-label="Main">
+      <ul class="nav" id="nav">
+        <li>
+          <button class="nav-link" id="solBtn" aria-expanded="false" aria-controls="mega" aria-haspopup="true">
+            Solutions <svg class="ico chev"><use href="#i-chev"/></svg>
+          </button>
+
+          <div class="mega" id="mega">
+            <div class="mm-tabs" role="tablist" aria-label="Solution groups">
+              <button class="mm-tab" role="tab" aria-selected="true" data-p="collect">Collect<small>Accept customer payments</small></button>
+              <button class="mm-tab" role="tab" aria-selected="false" data-p="payout">Pay out<small>Move money to partners</small></button>
+              <button class="mm-tab" role="tab" aria-selected="false" data-p="settle">Settle<small>Know when funds arrive</small></button>
+            </div>
+
+            <div class="mm-panel on" id="p-collect" role="tabpanel" data-title="Collect">
+              <a href="/#payin"><span class="ico-box"><svg class="ico"><use href="#i-card"/></svg></span><div><strong>Payin Solutions</strong><span>Accept customer payments online</span></div></a>
+              <a href="/#upi"><span class="ico-box"><svg class="ico"><use href="#i-upi"/></svg></span><div><strong>UPI Payments</strong><span>Fast, familiar digital payments</span></div></a>
+            </div>
+            <div class="mm-panel" id="p-payout" role="tabpanel" data-title="Pay out">
+              <a href="/#payout"><span class="ico-box"><svg class="ico"><use href="#i-send"/></svg></span><div><strong>Payout Solutions</strong><span>Pay vendors, partners and customers</span></div></a>
+              <a href="/#imps"><span class="ico-box"><svg class="ico"><use href="#i-swap"/></svg></span><div><strong>IMPS Transfers</strong><span>Quick bank-to-bank transfers</span></div></a>
+              <a href="/#neft"><span class="ico-box"><svg class="ico"><use href="#i-bank"/></svg></span><div><strong>NEFT &amp; RTGS</strong><span>Bank transfers for larger amounts</span></div></a>
+            </div>
+            <div class="mm-panel" id="p-settle" role="tabpanel" data-title="Settle">
+              <a href="/#settlements"><span class="ico-box"><svg class="ico"><use href="#i-zap"/></svg></span><div><strong>Instant Settlements</strong><span>See when funds are available</span></div></a>
+            </div>
+          </div>
+        </li>
+        <li class="has-drop">
+          <button class="nav-link" aria-expanded="false" aria-haspopup="true">
+            Industries <svg class="ico chev"><use href="#i-chev"/></svg>
+          </button>
+          <div class="drop">
+            <a href="/#ecommerce"><strong>E-commerce</strong><span>Online stores and marketplaces</span></a>
+            <a href="/#gaming"><strong>Gaming</strong><span>Top-ups, wallets and withdrawals</span></a>
+            <a href="/#media-entertainment"><strong>Media &amp; Entertainment</strong><span>Subscriptions, streaming and creator payouts</span></a>
+            <a href="/#travel"><strong>Travel</strong><span>Bookings and partner payouts</span></a>
+            <a href="/#education"><strong>Education</strong><span>Fees and instalments</span></a>
+          </div>
+        </li>
+        <li class="has-drop">
+          <button class="nav-link" aria-expanded="false" aria-haspopup="true">
+            Markets <svg class="ico chev"><use href="#i-chev"/></svg>
+          </button>
+          <div class="drop drop-wide">
+            <a href="/#market-in"><span class="flag-box"><svg class="flag" viewBox="0 0 36 24"><rect width="36" height="8" fill="#ff9933"/><rect y="8" width="36" height="8" fill="#fff"/><rect y="16" width="36" height="8" fill="#138808"/><circle cx="18" cy="12" r="3" fill="none" stroke="#000a8c" stroke-width="1"/></svg></span><div><strong>India</strong><span>UPI and bank transfers</span></div></a>
+            <a href="/#market-np"><span class="flag-box"><svg class="flag" viewBox="0 0 36 24"><rect width="36" height="24" fill="#fff"/><path d="M10 2v20h18L10 2zm0 0 14 9H10" fill="#dc143c" stroke="#003893" stroke-width="1.6" stroke-linejoin="round"/></svg></span><div><strong>Nepal</strong><span>Explore local payment options</span></div></a>
+            <a href="/#market-bt"><span class="flag-box"><svg class="flag" viewBox="0 0 36 24"><rect width="36" height="24" fill="#ff8000"/><path d="M0 0h36L0 24z" fill="#ffd520"/><ellipse cx="18" cy="12" rx="6" ry="2.6" fill="#fff" transform="rotate(-34 18 12)"/></svg></span><div><strong>Bhutan</strong><span>Explore local payment options</span></div></a>
+            <a href="/#market-br"><span class="flag-box"><svg class="flag" viewBox="0 0 36 24"><rect width="36" height="24" fill="#009b3a"/><path d="M18 3 33 12 18 21 3 12z" fill="#fedf00"/><circle cx="18" cy="12" r="4.6" fill="#002776"/></svg></span><div><strong>Brazil</strong><span>BRL and Pix examples</span></div></a>
+            <a href="/#market-au"><span class="flag-box"><svg class="flag" viewBox="0 0 36 24"><rect width="36" height="24" fill="#00247d"/><path d="M0 0l16 10M16 0 0 10" stroke="#fff" stroke-width="2.4"/><path d="M8 0v10M0 5h16" stroke="#fff" stroke-width="4"/><path d="M8 0v10M0 5h16" stroke="#cf142b" stroke-width="2"/><circle cx="12" cy="18" r="1.6" fill="#fff"/><circle cx="26" cy="7" r="1.2" fill="#fff"/><circle cx="29" cy="14" r="1.2" fill="#fff"/><circle cx="24" cy="19" r="1.2" fill="#fff"/></svg></span><div><strong>Australia</strong><span>AUD currency examples</span></div></a>
+            <a href="/#markets"><span class="flag-box globe"><svg class="ico"><use href="#i-globe"/></svg></span><div><strong>Many more</strong><span>Ask us about additional markets</span></div></a>
+            <p class="drop-note">Market examples are for demonstration. Confirm availability with Pay101.</p>
+          </div>
+        </li>
+        <li><a class="nav-link" href="/pricing" aria-current="page">Pricing</a></li>
+        <li><a class="nav-link" href="/how-it-works">How it works</a></li>
+        <li class="has-drop">
+          <button class="nav-link" aria-expanded="false" aria-haspopup="true">
+            Company <svg class="ico chev"><use href="#i-chev"/></svg>
+          </button>
+          <div class="drop drop-company">
+            <div class="co-grid">
+              <div class="co-links">
+                <a href="/#about"><span class="ico-box"><svg class="ico"><use href="#i-info"/></svg></span><div><strong>About us</strong><span>Who we are and what we build</span></div></a>
+                <a href="/#blog"><span class="ico-box"><svg class="ico"><use href="#i-pen"/></svg></span><div><strong>Blog</strong><span>Payment guides and product news</span></div></a>
+                <a href="/#security"><span class="ico-box"><svg class="ico"><use href="#i-shield"/></svg></span><div><strong>Security</strong><span>How we protect your money</span></div></a>
+              </div>
+              <a class="co-cta" href="#contact">
+                <span class="ico-box"><svg class="ico"><use href="#i-mail"/></svg></span>
+                <strong>Talk to our team</strong>
+                <span>Ask which payment options fit your business.</span>
+                <em>Contact us <svg class="ico"><use href="#i-arrow"/></svg></em>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="actions">
+      <a class="signin" href="/signin">Sign in</a>
+      <a class="hf-btn" href="/get-started">Get started <svg class="ico"><use href="#i-arrow"/></svg></a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+<div class="backdrop" id="backdrop"></div>
+
+<main>
+<section class="pr-hero"><div class="hf-container pr-hero-grid">
+  <div>
+  <span class="pr-eyebrow">Pricing</span>
+  <h1>Clear pricing, <em>built around your business.</em></h1>
+  <p class="pr-lead">Every business collects and pays out differently. Tell us your industry, markets and monthly volume, and we will send you a clear, itemised quote.</p>
+  <div class="pr-actions"><a class="pr-btn" href="#quote">Get a quote <svg class="ico"><use href="#i-arrow"/></svg></a><a class="pr-btn pr-ghost" href="#compare">See what is included</a></div>
+  <ul class="pr-chips"><li>Media &amp; Entertainment</li><li>Gaming</li><li>Digital businesses</li></ul>
+  </div>
+  <div class="pr-qcard" role="img" aria-label="Sample layout of an itemised Pay101 quote">
+    <div class="pr-qtop"><span>Your quote</span><small>Sample layout, not real rates</small></div>
+    <div class="pr-qrow"><span>Per-transaction rate</span><span>As quoted</span></div>
+    <div class="pr-qrow"><span>Setup fee</span><span>If applicable</span></div>
+    <div class="pr-qrow"><span>Monthly or platform fee</span><span>If applicable</span></div>
+    <div class="pr-qrow"><span>Payout charges</span><span>As quoted</span></div>
+    <div class="pr-qrow"><span>Currency conversion</span><span>Where it applies</span></div>
+    <div class="pr-qrow"><span>Taxes</span><span>As applicable</span></div>
+    <p class="pr-qfoot">Every fee is listed, so you can compare line by line.</p>
+  </div>
+</div></section>
+
+<section class="pr-section" id="plans"><div class="hf-container">
+  <div class="pr-head"><span class="pr-eyebrow">Plans</span><h2 class="pr-h2">Three plans. <em>One platform.</em></h2><p class="pr-sub">Start with what you need today and move up as your volume and markets grow. Each plan includes the full Collect, Pay out and Settle flow.</p></div>
+  <div class="pr-plans">
+    <article class="pr-card "><div><h3>Basic</h3><p class="pr-for">For businesses getting started</p></div><p class="pr-rate">Quote-based<small>Rate confirmed in your quote</small></p><ul class="pr-list"><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Collect payments through local methods available in your market</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Simple payouts to partners and vendors</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Settlement records and status tracking</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>One dashboard for all payment activity</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Standard support</span></li></ul><a class="pr-btn pr-ghost" href="#quote">Get a quote</a></article>
+    <article class="pr-card pr-feature"><div><h3>Entrepreneur</h3><p class="pr-for">For growing businesses with more markets and volume</p></div><p class="pr-rate">Quote-based<small>Rate confirmed in your quote</small></p><ul class="pr-list"><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Everything in Basic</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>More markets and payment methods</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Integrate by API, hosted payment page or payment link</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Payout tracking with status updates where supported</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Priority support</span></li></ul><a class="pr-btn " href="#quote">Get a quote</a></article>
+    <article class="pr-card "><div><h3>Custom</h3><p class="pr-for">For high volume or special requirements</p></div><p class="pr-rate">Custom, volume-based<small>Tailored to how you operate</small></p><ul class="pr-list"><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Everything in Entrepreneur</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Rates shaped around your monthly volume</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Markets and methods tailored to your business</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Integration guidance from our team</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>A dedicated contact</span></li></ul><a class="pr-btn pr-ghost" href="#quote">Talk to sales</a></article>
+  </div>
+  <p class="pr-note">Plan contents are a starting point. We confirm exact features, markets and rates for your business in your quote.</p>
+</div></section>
+
+<section class="pr-section" id="compare"><div class="hf-container">
+  <div class="pr-head"><span class="pr-eyebrow">Compare</span><h2 class="pr-h2">What is included in <em>each plan.</em></h2></div>
+  <div class="pr-table-wrap"><table class="pr-table">
+    <thead><tr><th scope="col">Feature</th><th scope="col">Basic</th><th scope="col">Entrepreneur</th><th scope="col">Custom</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Collect customer payments</th><td><span class="yes" aria-label="Included"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span></td><td><span class="yes" aria-label="Included"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span></td><td><span class="yes" aria-label="Included"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span></td></tr>
+      <tr><th scope="row">Pay out to partners and vendors</th><td>Simple payouts</td><td><span class="yes" aria-label="Included"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span></td><td><span class="yes" aria-label="Included"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span></td></tr>
+      <tr><th scope="row">Settlement records and status</th><td><span class="yes" aria-label="Included"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span></td><td><span class="yes" aria-label="Included"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span></td><td><span class="yes" aria-label="Included"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span></td></tr>
+      <tr><th scope="row">Dashboard</th><td><span class="yes" aria-label="Included"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span></td><td><span class="yes" aria-label="Included"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span></td><td><span class="yes" aria-label="Included"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span></td></tr>
+      <tr><th scope="row">Payment methods and markets</th><td>Core</td><td>Expanded</td><td>Tailored</td></tr>
+      <tr><th scope="row">Integration options</th><td>Payment link</td><td>API, hosted page, payment link</td><td>All options, with guidance</td></tr>
+      <tr><th scope="row">Support</th><td>Standard</td><td>Priority</td><td>Dedicated contact</td></tr>
+      <tr><th scope="row">Pricing</th><td>Quote-based</td><td>Quote-based</td><td>Custom, volume-based</td></tr>
+    </tbody></table></div>
+  <p class="pr-note">Payment methods and country availability depend on your market and setup, and must be confirmed with Pay101.</p>
+</div></section>
+
+<section class="pr-section" id="how-pricing"><div class="hf-container">
+  <div class="pr-head"><span class="pr-eyebrow">How pricing works</span><h2 class="pr-h2">From question to <em>quote</em> in three steps.</h2></div>
+  <div class="pr-steps">
+    <div class="pr-step"><div class="pr-num">1</div><h3>Tell us about your business</h3><p>Share your industry, the markets you sell in and your expected monthly volume.</p></div>
+    <div class="pr-step"><div class="pr-num">2</div><h3>We review your needs</h3><p>We check which payment methods, markets and plan fit your business best.</p></div>
+    <div class="pr-step"><div class="pr-num">3</div><h3>Get your quote</h3><p>You receive an itemised quote and a clear next step to get started.</p></div>
+  </div>
+</div></section>
+
+<section class="pr-section" id="quote-details"><div class="hf-container">
+  <div class="pr-two">
+    <div class="pr-panel"><h3>What is on every quote</h3><p>So you can compare us with any other provider, each of these is stated clearly.</p>
+      <ul class="pr-list"><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Per-transaction rate for each payment method</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Setup fee, if there is one</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Monthly or platform fee, if there is one</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Payout and transfer charges</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Currency conversion, where it applies</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Taxes that apply to your business</span></li></ul></div>
+    <div class="pr-panel"><h3>What affects your rate</h3><p>Rates are not one-size-fits-all. These are the main factors.</p>
+      <ul class="pr-list"><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Your industry, since some carry more risk than others</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>The markets you sell in and the payment methods you need</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Your monthly volume and average payment size</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>Your settlement and payout needs</span></li></ul></div>
+  </div>
+</div></section>
+
+<section class="pr-section" id="faq"><div class="hf-container">
+  <div class="pr-head"><span class="pr-eyebrow">FAQ</span><h2 class="pr-h2">Questions about <em>pricing.</em></h2></div>
+  <div class="pr-faq">
+    <details><summary>Why is there no price on the page?</summary><p>Rates depend on your industry, markets, payment methods and volume. A quote gives you the real number for your business, instead of a headline rate that may not apply to you.</p></details>
+    <details><summary>Are there setup or monthly fees?</summary><p>That depends on your plan. Any setup or monthly fee is listed in your quote before you decide.</p></details>
+    <details><summary>Do you support my industry?</summary><p>We work with media and entertainment, gaming and digital businesses. Tell us about your business in the form below and we will confirm what we can offer.</p></details>
+    <details><summary>Which payment methods and countries are available?</summary><p>Availability depends on your market and setup. We confirm the options for your business in your quote.</p></details>
+    <details><summary>How quickly can I get started?</summary><p>After you accept your quote, our team guides you through onboarding. Timing depends on verification and the integration you choose.</p></details>
+    <details><summary>What happens when my volume grows?</summary><p>Talk to us and we will review your plan and rates, including a move to the Custom plan if it suits you.</p></details>
+    <details><summary>Can I compare your quote with other providers?</summary><p>Yes. Every quote lists each type of fee, so you can compare like for like.</p></details>
+  </div>
+</div></section>
+
+<section class="pr-section" id="quote"><div class="hf-container">
+  <div class="pr-quote">
+    <div>
+      <span class="pr-eyebrow">Get a quote</span>
+      <h2 class="pr-h2">Tell us about your business. <em>We will do the rest.</em></h2>
+      <p class="pr-sub">Four quick details are enough to start. We aim to reply within 24 hours.</p>
+      <ul><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>An itemised quote for your markets and volume</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>A clear recommendation on which plan fits</span></li><li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg><span>No obligation to continue</span></li></ul>
+    </div>
+    <!-- Connect this form: set data-endpoint to your form service or CRM URL (it receives a JSON POST). -->
+    <form class="pr-form" id="quote-form" data-endpoint="" novalidate>
+      <div class="pr-field"><label for="q-name">Name</label><input id="q-name" name="name" autocomplete="name" required></div>
+      <div class="pr-field"><label for="q-email">Work email</label><input id="q-email" name="email" type="email" autocomplete="email" required></div>
+      <div class="pr-field"><label for="q-type">Business type</label>
+        <select id="q-type" name="business_type" required><option value="">Select one</option><option>Media &amp; Entertainment</option><option>Gaming</option><option>Digital business</option><option>E-commerce</option><option>Other</option></select></div>
+      <div class="pr-field"><label for="q-vol">Monthly volume</label><input id="q-vol" name="monthly_volume" placeholder="Estimated amount" required></div>
+      <button class="pr-btn" type="submit">Request my quote <svg class="ico"><use href="#i-arrow"/></svg></button>
+      <p class="pr-msg" id="quote-msg" role="status" aria-live="polite"></p>
+      <p class="pr-small">We use these details only to prepare your quote and contact you about it.</p>
+    </form>
+  </div>
+</div></section>
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="hf-container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" style="width:155px;max-width:100%;height:auto;display:block"></a>
+        <p>Accept money from customers, send payments to partners, and see what is happening in one clear place.</p>
+        <div class="social" aria-label="Pay101 on social media">
+          <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ico"><use href="#s-linkedin"/></svg></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="X"><svg class="ico"><use href="#s-x"/></svg></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ico"><use href="#s-instagram"/></svg></a>
+          <a href="#" target="_blank" rel="noopener" aria-label="YouTube"><svg class="ico"><use href="#s-youtube"/></svg></a>
+        </div>
+        <a class="hf-btn footer-cta" href="/get-started">Get started <svg class="ico"><use href="#i-arrow"/></svg></a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="/#payin">Payin Solutions</a></li>
+          <li><a href="/#payout">Payout Solutions</a></li>
+          <li><a href="/#upi">UPI Payments</a></li>
+          <li><a href="/#imps">IMPS Transfers</a></li>
+          <li><a href="/#neft">NEFT &amp; RTGS</a></li>
+          <li><a href="/#settlements">Instant Settlements</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="/#ecommerce">E-commerce</a></li>
+          <li><a href="/#gaming">Gaming</a></li>
+          <li><a href="/#media-entertainment">Media &amp; Entertainment</a></li>
+          <li><a href="/#travel">Travel</a></li>
+          <li><a href="/#education">Education</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Markets</h4>
+        <ul>
+          <li><a href="/#market-in">India</a></li>
+          <li><a href="/#market-np">Nepal</a></li>
+          <li><a href="/#market-bt">Bhutan</a></li>
+          <li><a href="/#market-br">Brazil</a></li>
+          <li><a href="/#market-au">Australia</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/#about">About us</a></li>
+          <li><a href="/how-it-works">How it works</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/#security">Security</a></li>
+          <li><a href="/#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Pay101. All rights reserved.</span>
+      <nav aria-label="Legal">
+        <a href="/#privacy">Privacy policy</a>
+        <a href="/#terms">Terms of service</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var btn=document.getElementById('solBtn'), mega=document.getElementById('mega'),
+      backdrop=document.getElementById('backdrop'), burger=document.getElementById('burger'),
+      nav=document.getElementById('nav'), tabs=[].slice.call(document.querySelectorAll('.mm-tab')),
+      panels=[].slice.call(document.querySelectorAll('.mm-panel')),
+      drops=[].slice.call(document.querySelectorAll('.has-drop')), t;
+  var desktop=function(){return window.matchMedia('(min-width:901px)').matches};
+
+  /* Solutions mega-menu */
+  function paintMenu(open){
+    btn.setAttribute('aria-expanded',open);
+    mega.classList.toggle('open',open);
+    backdrop.classList.toggle('on',open&&desktop());
+  }
+  function setMenu(open){ paintMenu(open); if(open)closeDrops(); }
+
+  /* Industries and Markets dropdowns (any li.has-drop) */
+  function paintDrop(li,open){
+    li.querySelector('.nav-link').setAttribute('aria-expanded',open);
+    li.querySelector('.drop').classList.toggle('open',open);
+  }
+  function closeDrops(except){drops.forEach(function(li){if(li!==except)paintDrop(li,false)})}
+  function setDrop(li,open){ paintDrop(li,open); if(open){closeDrops(li);paintMenu(false)} }
+
+  drops.forEach(function(li){
+    var b=li.querySelector('.nav-link'), d=li.querySelector('.drop'), timer;
+    b.addEventListener('click',function(){setDrop(li,desktop()?true:b.getAttribute('aria-expanded')!=='true')});
+    li.addEventListener('mouseenter',function(){if(desktop()){clearTimeout(timer);setDrop(li,true)}});
+    li.addEventListener('mouseleave',function(){if(desktop()){timer=setTimeout(function(){paintDrop(li,false)},150)}});
+    d.addEventListener('click',function(e){if(e.target.closest('a'))paintDrop(li,false)});
+  });
+
+  function showTab(name){
+    tabs.forEach(function(x){x.setAttribute('aria-selected',x.dataset.p===name)});
+    panels.forEach(function(p){p.classList.toggle('on',p.id==='p-'+name)});
+  }
+  btn.addEventListener('click',function(){setMenu(desktop()?true:btn.getAttribute('aria-expanded')!=='true')});
+  tabs.forEach(function(x){
+    x.addEventListener('click',function(){showTab(x.dataset.p)});
+    x.addEventListener('mouseenter',function(){if(desktop())showTab(x.dataset.p)});
+  });
+
+  // Hover to open on desktop, with a short delay so the pointer can travel into the panel
+  var item=btn.parentNode;
+  item.addEventListener('mouseenter',function(){if(desktop()){clearTimeout(t);setMenu(true)}});
+  item.addEventListener('mouseleave',function(){if(desktop()){t=setTimeout(function(){paintMenu(false)},150)}});
+
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape')return;
+    var openLi=drops.filter(function(li){return li.querySelector('.drop').classList.contains('open')})[0];
+    var f=openLi?openLi.querySelector('.nav-link'):btn;
+    paintMenu(false);closeDrops();f.focus();
+  });
+  document.addEventListener('click',function(e){
+    if(!item.contains(e.target))paintMenu(false);
+    drops.forEach(function(li){if(!li.contains(e.target))paintDrop(li,false)});
+  });
+  mega.addEventListener('click',function(e){if(e.target.closest('a'))paintMenu(false)});
+
+  burger.addEventListener('click',function(){
+    var o=!nav.classList.contains('open');
+    nav.classList.toggle('open',o);
+    burger.setAttribute('aria-expanded',o);
+  });
+  window.addEventListener('resize',function(){paintMenu(false);closeDrops();nav.classList.remove('open')});
+})();
+</script>
+<script>
+(function(){
+  var f=document.getElementById('quote-form'), m=document.getElementById('quote-msg');
+  function say(t,c){m.textContent=t;m.className='pr-msg '+(c||'')}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var d={};new FormData(f).forEach(function(v,k){d[k]=String(v).trim()});
+    if(!d.name||!d.email||!d.business_type||!d.monthly_volume){say('Please fill in all four fields.','err');return}
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)){say('Please enter a valid work email.','err');return}
+    var url=f.getAttribute('data-endpoint');
+    if(!url){say('This form is not connected yet. Add your form or CRM address to data-endpoint in the page.','err');return}
+    say('Sending...');
+    fetch(url,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){if(!r.ok)throw new Error();f.reset();say('Thank you. We will be in touch within 24 hours.','ok')})
+      .catch(function(){say('Something went wrong. Please try again or contact us another way.','err')});
+  });
+})();
+</script>
+</body>
+</html>
