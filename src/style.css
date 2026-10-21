@@ -1239,3 +1239,10 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 /* Add breathing room between Sign in and Get started in the header. */
 .p101Header .p101Actions{gap:22px!important}
 @media(max-width:600px){.p101Header .p101Actions{gap:14px!important}}
+
+/* Match main navigation labels to the prominence of Get started. */
+.p101Header .p101UnifiedNav .p101UnifiedTrigger{
+ font-size:16px!important;
+ font-weight:600!important;
+}
+@media(max-width:1100px){.p101Header .p101UnifiedNav .p101UnifiedTrigger{font-size:15px!important;padding:10px 8px!important}}
