@@ -362,12 +362,47 @@ function MerchantSignup(){
 }
 
 function DevelopersPage(){
+ const [menu,setMenu]=React.useState(false);
+ const [solutionsOpen,setSolutionsOpen]=React.useState(false);
+ const [solutionTab,setSolutionTab]=React.useState('solutions');
  return <div className="app p101DeveloperPage">
-  <header className="p101Header"><div className="p101HeaderInner">
-   <a className="brand" href="/" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a>
-   <nav className="p101DeveloperPageNav" aria-label="Main navigation"><a href="/">Home</a><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/developers" aria-current="page">Developers</a></nav>
-   <div className="p101Actions"><a className="p101Signin" href="/login">Sign in</a><a className="primary small" href="/signup">Get started <ArrowRight size={15}/></a></div>
-  </div></header>
+  <header className="p101Header">
+   <div className="p101HeaderInner">
+    <a className="brand" href="/" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a>
+    <nav className={`p101Nav p101UnifiedNav ${menu?'mobileOpen':''}`} aria-label="Main navigation" onMouseLeave={()=>setSolutionsOpen(false)}>
+     {[
+      ['solutions','Solutions'],
+      ['markets','Markets'],
+      ['about','About us'],
+      ['contact','Get in Touch']
+     ].map(([key,label])=><button type="button" key={key} className={`p101NavLink p101UnifiedTrigger ${solutionsOpen&&solutionTab===key?'active':''}`} aria-expanded={solutionsOpen&&solutionTab===key} onMouseEnter={()=>{setSolutionTab(key);setSolutionsOpen(true)}} onFocus={()=>{setSolutionTab(key);setSolutionsOpen(true)}} onClick={()=>{setSolutionTab(key);setSolutionsOpen(v=>solutionTab===key?!v:true)}}>{label} <span aria-hidden="true">⌄</span></button>)}
+     {solutionsOpen&&<div className="p101UnifiedMega">
+      <div className="p101UnifiedGrid">
+       {(solutionTab==='solutions'?[
+        ['Accept Payments',[['Accept Payments','Accept online payments securely and seamlessly.','/#solutions'],['UPI & Payment Methods','Explore payment collection options','/#solutions']]],
+        ['Payouts',[['Payouts','Send money to partners, vendors, and customers.','/#solutions'],['Bank Transfers','IMPS, NEFT and RTGS workflows','/#solutions']]],
+        ['Settlements & Reconciliation',[['Settlements & Reconciliation','Track settlements and reconcile transactions with ease.','/#solutions'],['How it works','Understand the payment workflow','/how-it-works']]]
+       ]:solutionTab==='markets'?[
+        ['Asia',[['India','UPI and bank transfers','/#markets'],['Nepal','Local payment options','/#markets'],['Bhutan','Regional payment options','/#markets']]],
+        ['International',[['Brazil','Pix payment examples','/#markets'],['Australia','AUD payment examples','/#markets']]],
+        ['Explore',[['More Markets','Ask about additional markets','/#markets'],['Contact our team','Confirm country availability','/#contact']]]
+       ]:solutionTab==='about'?[
+        ['Company',[['About us','Learn about Pay101','/#about'],['Security','How we approach payment security','/#security']]],
+        ['Resources',[['Blog','Payment guides and news','/blog'],['FAQs','Frequently asked questions','/#faqs']]],
+        ['For developers',[['Developers','Integration overview','/developers'],['How it works','Understand the platform','/how-it-works']]]
+       ]:[
+        ['Contact',[['Get in Touch','Talk to our team','/#contact'],['Request a Consultation','Discuss your payment needs','/#contact']]],
+        ['Support',[['Frequently Asked Questions','Find quick answers','/#faqs'],['How it works','Explore the platform','/how-it-works']]],
+        ['Explore Pay101',[['Developers','Learn about integrations','/developers'],['Pricing','View pricing information','/pricing']]]
+       ]).map(([heading,items])=><div className="p101UnifiedColumn" key={heading}><div className="p101UnifiedHeading">{heading}</div>{items.map(([title,description,url])=><a href={url} key={title} onClick={()=>{setSolutionsOpen(false);setMenu(false)}}><span className="p101UnifiedLinkIcon"><ArrowRight size={16}/></span><span><strong>{title}</strong><small>{description}</small></span></a>)}</div>)}
+      </div>
+      {solutionTab==='markets'&&<p className="p101UnifiedNote">Markets shown are illustrative. Confirm service availability with Pay101.</p>}
+     </div>}
+    </nav>
+    <div className="p101Actions"><a className="p101Signin" href="/login">Sign in</a><a className="primary small" href="/signup">Get started <ArrowRight size={15}/></a></div>
+    <button className="p101Burger" type="button" onClick={()=>setMenu(v=>!v)} aria-label="Toggle navigation" aria-expanded={menu}>{menu?<X/>:<Menu/>}</button>
+   </div>
+  </header>
   <main>
    <div className="p101DeveloperPageHero"><span className="kicker">PAY101 FOR DEVELOPERS</span><h1>Developer integrations</h1><p>Explore integration possibilities and discuss technical requirements with the Pay101 team.</p></div>
    <section id="developer-overview" className="p101DeveloperSection" aria-labelledby="p101DeveloperTitle">
