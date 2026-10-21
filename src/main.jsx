@@ -131,11 +131,11 @@ function App(){
        ]:solutionTab==='about'?[
         ['Company',[['About us','Learn about Pay101','#about'],['Security','How we approach payment security','#security']]],
         ['Resources',[['Blog','Payment guides and news','/blog'],['FAQs','Frequently asked questions','#faqs']]],
-        ['For developers',[['Developers','Integration overview','#developers'],['How it works','Understand the platform','/how-it-works']]]
+        ['For developers',[['Developers','Integration overview','/developers'],['How it works','Understand the platform','/how-it-works']]]
        ]:[
         ['Contact',[['Get in Touch','Talk to our team','#contact'],['Request a Consultation','Discuss your payment needs','#contact']]],
         ['Support',[['Frequently Asked Questions','Find quick answers','#faqs'],['How it works','Explore the platform','/how-it-works']]],
-        ['Explore Pay101',[['Developers','Learn about integrations','#developers'],['Pricing','View pricing information','/pricing']]]
+        ['Explore Pay101',[['Developers','Learn about integrations','/developers'],['Pricing','View pricing information','/pricing']]]
        ]).map(([heading,items])=><div className="p101UnifiedColumn" key={heading}><div className="p101UnifiedHeading">{heading}</div>{items.map(([title,description,url])=><a href={url} key={title} onClick={()=>{setSolutionsOpen(false);setMenu(false)}}><span className="p101UnifiedLinkIcon"><ArrowRight size={16}/></span><span><strong>{title}</strong><small>{description}</small></span></a>)}</div>)}
       </div>
       {solutionTab==='markets'&&<p className="p101UnifiedNote">Markets shown are illustrative. Confirm service availability with Pay101.</p>}
@@ -213,29 +213,7 @@ function App(){
    </section>
 
 
-   <section id="developers" className="p101DeveloperSection" aria-labelledby="p101DeveloperTitle">
-    <div className="p101DeveloperInner">
-     <div className="p101DeveloperIntro">
-      <span className="kicker">FOR DEVELOPERS</span>
-      <h2 id="p101DeveloperTitle">Build payment experiences <em>with confidence.</em></h2>
-      <p>Explore how a developer-friendly Pay101 integration could connect payment collection, payouts, and transaction updates with your application.</p>
-      <div className="p101DeveloperActions">
-       <a className="primary" href="mailto:support@pay101.uk?subject=Pay101%20Developer%20Integration%20Enquiry">Request API access <ArrowRight size={17}/></a>
-       <a className="p101DeveloperSecondary" href="/how-it-works">How it works <ArrowRight size={16}/></a>
-      </div>
-      <small>Integration preview only. Production APIs, credentials, webhooks and documentation are available only if confirmed by the Pay101 team.</small>
-     </div>
-     <div className="p101DeveloperPanel">
-      <div className="p101DeveloperPanelHead"><Code2 size={21}/><strong>Integration workflow</strong><span>CONCEPT</span></div>
-      <div className="p101DeveloperSteps">
-       <div><span>01</span><div><strong>Discuss your use case</strong><p>Tell us your business model, region and payment requirements.</p></div></div>
-       <div><span>02</span><div><strong>Confirm integration options</strong><p>Review supported methods, security requirements and available documentation with our team.</p></div></div>
-       <div><span>03</span><div><strong>Plan testing and launch</strong><p>Agree on test access, transaction status handling and go-live checks when supported.</p></div></div>
-      </div>
-      <div className="p101DeveloperPanelFoot"><ShieldCheck size={17}/> No live credentials or endpoints are published in this preview.</div>
-     </div>
-    </div>
-   </section>
+
    <section id="security" className="security"><div><span className="kicker">TRUST BY DESIGN</span><h2>Built with <em>security</em> in mind.</h2><p>Keep payment operations protected with access controls, transaction visibility and security-focused infrastructure.</p></div><div className="securityGrid"><Feature icon={<LockKeyhole/>} title="Secure access" text="Role-aware access and controlled payment operations."/><Feature icon={<ShieldCheck/>} title="Protected flows" text="Security-focused controls across payment workflows."/><Feature icon={<BarChart3/>} title="Full visibility" text="Track transactions, payouts and settlement activity in one place."/></div></section>
 
    <section id="contact" className="contactSection"><div><span className="aboutContactLabel">CONTACT OUR TEAM</span><h2>Let's talk payments.</h2><p>Have questions about Pay101 or want to discuss payment solutions for your business? Get in touch with our team.</p></div><a className="primary" href="mailto:support@pay101.uk?subject=Pay101%20Business%20Enquiry">Email support@pay101.uk <ArrowRight size={17}/></a></section>
@@ -382,6 +360,43 @@ function MerchantSignup(){
   <footer className="merchantFooter"><span>© 2026 Pay101. Merchant portal preview.</span><div><a href="/">Pay101 home</a><a href="mailto:support@pay101.uk">Help & support</a></div></footer>
  </div>
 }
+
+function DevelopersPage(){
+ return <div className="app p101DeveloperPage">
+  <header className="p101Header"><div className="p101HeaderInner">
+   <a className="brand" href="/" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a>
+   <nav className="p101DeveloperPageNav" aria-label="Main navigation"><a href="/">Home</a><a href="/how-it-works">How it works</a><a href="/pricing">Pricing</a><a href="/developers" aria-current="page">Developers</a></nav>
+   <div className="p101Actions"><a className="p101Signin" href="/login">Sign in</a><a className="primary small" href="/signup">Get started <ArrowRight size={15}/></a></div>
+  </div></header>
+  <main>
+   <div className="p101DeveloperPageHero"><span className="kicker">PAY101 FOR DEVELOPERS</span><h1>Developer integrations</h1><p>Explore integration possibilities and discuss technical requirements with the Pay101 team.</p></div>
+   <section id="developer-overview" className="p101DeveloperSection" aria-labelledby="p101DeveloperTitle">
+    <div className="p101DeveloperInner">
+     <div className="p101DeveloperIntro">
+      <span className="kicker">FOR DEVELOPERS</span>
+      <h2 id="p101DeveloperTitle">Build payment experiences <em>with confidence.</em></h2>
+      <p>Explore how a developer-friendly Pay101 integration could connect payment collection, payouts, and transaction updates with your application.</p>
+      <div className="p101DeveloperActions">
+       <a className="primary" href="mailto:support@pay101.uk?subject=Pay101%20Developer%20Integration%20Enquiry">Request API access <ArrowRight size={17}/></a>
+       <a className="p101DeveloperSecondary" href="/how-it-works">How it works <ArrowRight size={16}/></a>
+      </div>
+      <small>Integration preview only. Production APIs, credentials, webhooks and documentation are available only if confirmed by the Pay101 team.</small>
+     </div>
+     <div className="p101DeveloperPanel">
+      <div className="p101DeveloperPanelHead"><Code2 size={21}/><strong>Integration workflow</strong><span>CONCEPT</span></div>
+      <div className="p101DeveloperSteps">
+       <div><span>01</span><div><strong>Discuss your use case</strong><p>Tell us your business model, region and payment requirements.</p></div></div>
+       <div><span>02</span><div><strong>Confirm integration options</strong><p>Review supported methods, security requirements and available documentation with our team.</p></div></div>
+       <div><span>03</span><div><strong>Plan testing and launch</strong><p>Agree on test access, transaction status handling and go-live checks when supported.</p></div></div>
+      </div>
+      <div className="p101DeveloperPanelFoot"><ShieldCheck size={17}/> No live credentials or endpoints are published in this preview.</div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer className="merchantFooter"><span>© 2026 Pay101</span><div><a href="/">Home</a><a href="/how-it-works">How it works</a><a href="mailto:support@pay101.uk">Contact</a></div></footer>
+ </div>
+}
 const isMerchantLogin=window.location.pathname==='/login'||window.location.hostname==='partner.pay101.uk';
-if(window.location.pathname==='/how-it-works'){import('./how-it-works.jsx')}else{createRoot(document.getElementById('root')).render(window.location.pathname==='/signup'?<MerchantSignup/>:isMerchantLogin?<MerchantLogin/>:window.location.pathname==='/blog'?<MarketingBlog/>:segmentPages[window.location.pathname]?<SegmentLanding segment={segmentPages[window.location.pathname]}/>:<App/>);
+if(window.location.pathname==='/how-it-works'){import('./how-it-works.jsx')}else{createRoot(document.getElementById('root')).render(window.location.pathname==='/signup'?<MerchantSignup/>:isMerchantLogin?<MerchantLogin/>:window.location.pathname==='/blog'?<MarketingBlog/>:window.location.pathname==='/developers'?<DevelopersPage/>:segmentPages[window.location.pathname]?<SegmentLanding segment={segmentPages[window.location.pathname]}/>:<App/>);
 }
