@@ -208,7 +208,7 @@ function App(){
 
    <section className="cta"><div className="ctaGlow"/><span className="kicker">READY TO MOVE MONEY?</span><h2>Build your payment flow<br/>with <em>Pay101.</em></h2><p>Bring payins, payouts and settlement operations together in one modern platform.</p><a className="primary" href="/signup">Get started with Pay101 <ArrowRight size={17}/></a></section>
   </main>
-  <div className="p101SocialRail" aria-label="Social media icons; official links pending">
+  <div className="p101SocialRail p101SocialBar" aria-label="Social media bar; official profile links pending">
     <span className="p101SocialRailItem" title="LinkedIn — link pending"><span className="p101SocialGlyph p101Linkedin">in</span></span>
     <span className="p101SocialRailItem" title="Instagram — link pending"><span className="p101SocialGlyph p101Instagram">◎</span></span>
     <span className="p101SocialRailItem" title="X — link pending"><span className="p101SocialGlyph p101X">𝕏</span></span>
