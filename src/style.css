@@ -1219,3 +1219,19 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101UnifiedColumn small{display:block;font-size:12px;line-height:1.45;color:#65748a;margin-top:4px}
 .p101UnifiedNote{font-size:12px;color:#64748b;margin:15px 0 0}
 @media(max-width:900px){.p101UnifiedNav{gap:10px!important}.p101UnifiedMega{position:static!important;padding:14px!important;box-shadow:none!important;max-height:65vh;overflow:auto}.p101UnifiedGrid{grid-template-columns:1fr;gap:10px}.p101UnifiedColumn{border-right:0;border-bottom:1px dashed #d5dfed;padding:10px 4px}.p101UnifiedColumn:last-child{border-bottom:0}.p101UnifiedTrigger.active:after{display:none}}
+
+/* Restore original Pay101 header typography after mega-menu redesign. */
+.p101UnifiedNav .p101UnifiedTrigger{
+ font-family:inherit!important;
+ font-size:14px!important;
+ font-weight:600!important;
+ line-height:normal!important;
+ letter-spacing:normal!important;
+ color:#506378;
+ padding:12px 13px!important;
+ border-radius:10px!important;
+ text-transform:none!important;
+}
+.p101UnifiedNav .p101UnifiedTrigger:hover,
+.p101UnifiedNav .p101UnifiedTrigger:focus-visible{color:#0878f9!important;background:#eaf3ff!important}
+.p101UnifiedNav .p101UnifiedTrigger span{font-size:16px!important;font-weight:inherit!important}
