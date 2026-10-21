@@ -1131,3 +1131,14 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101DeveloperSteps p{color:#60758b;font-size:13px;line-height:1.65;margin:6px 0 0}
 .p101DeveloperPanelFoot{display:flex;gap:9px;align-items:center;background:#f5f9ff;padding:16px 26px;font-size:12px;color:#55718d}
 @media(max-width:800px){.p101DeveloperSection{padding:64px 20px}.p101DeveloperInner{grid-template-columns:1fr;gap:30px}.p101DeveloperPanelHead,.p101DeveloperSteps,.p101DeveloperPanelFoot{padding-left:18px;padding-right:18px}}
+
+/* Social media rail beside existing WhatsApp, Pay101Bot and consultation controls */
+.p101SocialRail{position:fixed;right:24px;bottom:230px;z-index:999;display:flex;flex-direction:column;gap:9px;align-items:center}
+.p101SocialRailItem{display:grid;place-items:center;width:45px;height:45px;border-radius:50%;background:#fff;border:1px solid #dce8f7;box-shadow:0 6px 19px rgba(9,45,90,.15);color:#1c3655}
+.p101SocialGlyph{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;font-weight:800;font-size:16px}
+.p101Linkedin{background:#e9f3ff;color:#0a66c2;font-size:14px}
+.p101Instagram{background:linear-gradient(135deg,#ffdc80,#f77737,#c13584,#833ab4);color:white;font-size:27px;font-weight:500}
+.p101X{background:#141923;color:white;font-size:17px}
+.p101Youtube{background:#fff0f0;color:#e62117;font-size:17px}
+@media(max-width:600px){.p101SocialRail{right:18px;bottom:218px;gap:7px}.p101SocialRailItem{width:42px;height:42px}.p101SocialGlyph{width:32px;height:32px}}
+@media(max-height:680px){.p101SocialRail{gap:4px;bottom:215px}.p101SocialRailItem{width:36px;height:36px}.p101SocialGlyph{width:28px;height:28px}}
