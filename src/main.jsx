@@ -85,6 +85,26 @@ function App(){
  const [solutionsOpen,setSolutionsOpen]=React.useState(false);
  const [solutionTab,setSolutionTab]=React.useState('collect');
  const [activeSlide,setActiveSlide]=React.useState(0);
+ const [socialRailVisible,setSocialRailVisible]=React.useState(true);
+ React.useEffect(()=>{
+  let lastY=window.scrollY;
+  let ticking=false;
+  const onScroll=()=>{
+   if(ticking)return;
+   ticking=true;
+   window.requestAnimationFrame(()=>{
+    const y=window.scrollY;
+    const delta=y-lastY;
+    if(y<120)setSocialRailVisible(true);
+    else if(delta>5)setSocialRailVisible(false);
+    else if(delta< -5)setSocialRailVisible(true);
+    lastY=y;
+    ticking=false;
+   });
+  };
+  window.addEventListener('scroll',onScroll,{passive:true});
+  return()=>window.removeEventListener('scroll',onScroll);
+ },[]);
  React.useEffect(()=>{const timer=setInterval(()=>setActiveSlide(i=>(i+1)%heroSlides.length),5000);return ()=>clearInterval(timer)},[]);
  const slide=heroSlides[activeSlide];
  return <div className="app">
@@ -208,7 +228,7 @@ function App(){
 
    <section className="cta"><div className="ctaGlow"/><span className="kicker">READY TO MOVE MONEY?</span><h2>Build your payment flow<br/>with <em>Pay101.</em></h2><p>Bring payins, payouts and settlement operations together in one modern platform.</p><a className="primary" href="/signup">Get started with Pay101 <ArrowRight size={17}/></a></section>
   </main>
-  <div className="p101SocialRail p101SocialBar" aria-label="Social media bar; official profile links pending">
+  <div className={"p101SocialRail p101SocialBar" + (socialRailVisible ? "" : " p101SocialBarHidden")} aria-label="Social media bar; official profile links pending">
     <span className="p101SocialRailItem" title="LinkedIn — link pending"><span className="p101SocialGlyph p101Linkedin">in</span></span>
     <span className="p101SocialRailItem" title="Instagram — link pending"><span className="p101SocialGlyph p101Instagram">◎</span></span>
     <span className="p101SocialRailItem" title="X — link pending"><span className="p101SocialGlyph p101X">𝕏</span></span>
