@@ -103,6 +103,7 @@ function App(){
      
      <div className="p101NavItem p101HoverDrop"><button className="p101NavLink">Markets <span>⌄</span></button><div className="p101Drop p101MarketsDrop">{[['India','in','UPI and bank transfers'],['Nepal','np','Local payment options'],['Bhutan','bt','Regional payment options'],['Brazil','br','Pix payment examples'],['Australia','au','AUD payment examples']].map(([name,iso,desc])=><a key={name} href="#markets" onClick={()=>setMenu(false)}><img src={`https://flagcdn.com/w40/${iso}.png`} alt="" loading="lazy"/><span><strong>{name}</strong><small>{desc}</small></span></a>)}<a href="#markets" onClick={()=>setMenu(false)}><span className="p101MarketMoreGlyph"><Globe2 size={21}/></span><span><strong>Many more</strong><small>Ask us about additional markets</small></span></a><small className="p101DropNote">Markets shown for demonstration. Confirm availability with Pay101.</small></div></div>
      <a className="p101NavLink" href="/how-it-works" onClick={()=>setMenu(false)}>How it works</a>
+     <a className="p101NavLink" href="#developers" onClick={()=>setMenu(false)}>Developers</a>
      <a className="p101NavLink" href="/pricing" onClick={()=>setMenu(false)}>Pricing</a>
      <div className="p101NavItem p101HoverDrop p101CompanyNav"><button className="p101NavLink">Company <span>⌄</span></button><div className="p101Drop p101CompanyDrop"><div className="p101CompanyLinks"><a href="/blog" onClick={()=>setMenu(false)}><span className="p101CompanyIcon"><Code2 size={19}/></span><span><strong>Blog</strong><small>Payment guides and product news</small></span></a><a href="#security" onClick={()=>setMenu(false)}><span className="p101CompanyIcon"><ShieldCheck size={19}/></span><span><strong>Security</strong><small>How we protect your money</small></span></a></div><div className="p101CompanyContact"><span className="p101CompanyMail"><Mail size={20}/></span><strong>Talk to our team</strong><p>Ask which payment options fit your business.</p><a href="#contact" onClick={()=>setMenu(false)}>Contact us <ArrowRight size={15}/></a></div></div></div>
     </nav>
@@ -177,6 +178,30 @@ function App(){
     <div className="splitCopy"><span className="kicker">ONE CONNECTED WORKFLOW</span><h2>From payment to <em>settlement.</em></h2><p>Keep your payment operations visible from collection through payout and settlement.</p><ul><li><Check/> Real-time transaction visibility</li><li><Check/> Payin and payout workflows</li><li><Check/> Settlement status tracking</li><li><Check/> Clear reporting for operations</li></ul><button className="textBtn">Explore Pay101 solutions <ArrowRight size={17}/></button></div>
    </section>
 
+
+   <section id="developers" className="p101DeveloperSection" aria-labelledby="p101DeveloperTitle">
+    <div className="p101DeveloperInner">
+     <div className="p101DeveloperIntro">
+      <span className="kicker">FOR DEVELOPERS</span>
+      <h2 id="p101DeveloperTitle">Build payment experiences <em>with confidence.</em></h2>
+      <p>Explore how a developer-friendly Pay101 integration could connect payment collection, payouts, and transaction updates with your application.</p>
+      <div className="p101DeveloperActions">
+       <a className="primary" href="mailto:support@pay101.uk?subject=Pay101%20Developer%20Integration%20Enquiry">Request API access <ArrowRight size={17}/></a>
+       <a className="p101DeveloperSecondary" href="/how-it-works">How it works <ArrowRight size={16}/></a>
+      </div>
+      <small>Integration preview only. Production APIs, credentials, webhooks and documentation are available only if confirmed by the Pay101 team.</small>
+     </div>
+     <div className="p101DeveloperPanel">
+      <div className="p101DeveloperPanelHead"><Code2 size={21}/><strong>Integration workflow</strong><span>CONCEPT</span></div>
+      <div className="p101DeveloperSteps">
+       <div><span>01</span><div><strong>Discuss your use case</strong><p>Tell us your business model, region and payment requirements.</p></div></div>
+       <div><span>02</span><div><strong>Confirm integration options</strong><p>Review supported methods, security requirements and available documentation with our team.</p></div></div>
+       <div><span>03</span><div><strong>Plan testing and launch</strong><p>Agree on test access, transaction status handling and go-live checks when supported.</p></div></div>
+      </div>
+      <div className="p101DeveloperPanelFoot"><ShieldCheck size={17}/> No live credentials or endpoints are published in this preview.</div>
+     </div>
+    </div>
+   </section>
    <section id="security" className="security"><div><span className="kicker">TRUST BY DESIGN</span><h2>Built with <em>security</em> in mind.</h2><p>Keep payment operations protected with access controls, transaction visibility and security-focused infrastructure.</p></div><div className="securityGrid"><Feature icon={<LockKeyhole/>} title="Secure access" text="Role-aware access and controlled payment operations."/><Feature icon={<ShieldCheck/>} title="Protected flows" text="Security-focused controls across payment workflows."/><Feature icon={<BarChart3/>} title="Full visibility" text="Track transactions, payouts and settlement activity in one place."/></div></section>
 
    <section id="contact" className="contactSection"><div><span className="aboutContactLabel">CONTACT OUR TEAM</span><h2>Let's talk payments.</h2><p>Have questions about Pay101 or want to discuss payment solutions for your business? Get in touch with our team.</p></div><a className="primary" href="mailto:support@pay101.uk?subject=Pay101%20Business%20Enquiry">Email support@pay101.uk <ArrowRight size={17}/></a></section>
@@ -201,7 +226,7 @@ function App(){
      <div className="p101FooterCol"><h4>Solutions</h4><a href="/#solutions">Payin Solutions</a><a href="/#solutions">Payout Solutions</a><a href="/#solutions">UPI Payments</a><a href="/#solutions">IMPS Transfers</a><a href="/#solutions">NEFT &amp; RTGS</a><a href="/#solutions">Instant Settlements</a></div>
      <div className="p101FooterCol"><h4>Industries</h4><a href="/#industries">E-commerce</a><a href="/#industries">Gaming</a><a href="/#industries">Media &amp; Entertainment</a><a href="/#industries">Travel</a><a href="/#industries">Education</a></div>
      <div className="p101FooterCol"><h4>Markets</h4><a href="/#markets">India</a><a href="/#markets">Nepal</a><a href="/#markets">Bhutan</a><a href="/#markets">Brazil</a><a href="/#markets">Australia</a></div>
-     <div className="p101FooterCol"><h4>Company</h4><a href="/#about">About us</a><a href="/how-it-works">How it works</a><a href="/#security">Security</a><a href="/#blog">Blog</a><a href="/#contact">Contact</a></div>
+     <div className="p101FooterCol"><h4>Company</h4><a href="/#about">About us</a><a href="/how-it-works">How it works</a><a href="/#developers">Developers</a><a href="/#security">Security</a><a href="/#blog">Blog</a><a href="/#contact">Contact</a></div>
     </div>
     <div className="p101FooterBottom"><span>© 2026 Pay101. All rights reserved.</span><div><a href="mailto:support@pay101.uk?subject=Privacy%20Policy%20Request">Privacy policy</a><a href="mailto:support@pay101.uk?subject=Terms%20of%20Service%20Request">Terms of service</a></div></div>
    </footer>
