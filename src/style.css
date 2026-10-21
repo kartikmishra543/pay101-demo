@@ -1052,3 +1052,19 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 
 /* Markets menu: globe icon for additional countries */
 .p101MarketsDrop .p101MarketMoreGlyph{width:34px;height:28px;display:flex;align-items:center;justify-content:center;color:#1766b8;flex:none}
+
+
+/* Full-bleed cinematic Pay101 hero using uploaded 1080p video */
+.hero.p101FullVideoHero{max-width:none!important;width:100%!important;min-height:650px!important;display:flex!important;align-items:center!important;overflow:hidden!important;isolation:isolate!important;padding:76px max(7%,calc((100vw - 1220px)/2))!important;background:#071b37!important}
+.p101FullHeroBackground{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;z-index:-2!important;pointer-events:none!important}
+.p101FullHeroShade{position:absolute!important;inset:0!important;z-index:-1!important;background:linear-gradient(90deg,rgba(4,19,40,.90) 0%,rgba(5,24,50,.76) 36%,rgba(5,22,45,.18) 75%,rgba(5,22,45,.12) 100%)!important;pointer-events:none!important}
+.p101FullVideoHero .heroCopy{width:min(610px,100%)!important;max-width:100%!important;z-index:2!important}
+.p101FullVideoHero .heroHeadline{color:#fff!important;font-size:clamp(45px,5.3vw,80px)!important;line-height:1.07!important}
+.p101FullVideoHero .heroHeadline em{color:#64baff!important}
+.p101FullVideoHero .heroDescription{color:#e3eefc!important}
+.p101FullVideoHero .eyebrow{color:#b9dfff!important;border-color:rgba(159,212,255,.4)!important;background:rgba(6,44,90,.52)!important}
+.p101FullVideoHero .heroCtas .play,.p101FullVideoHero .trust,.p101FullVideoHero .trust span{color:#e3eefc!important}
+.p101FullVideoHero .trust{border-color:rgba(255,255,255,.25)!important}
+.p101FullVideoHero .orb{display:none!important}
+@media(max-width:700px){.hero.p101FullVideoHero{min-height:650px!important;padding:64px 24px!important;align-items:center!important}.p101FullHeroShade{background:linear-gradient(90deg,rgba(4,19,40,.91),rgba(4,19,40,.58))!important}.p101FullVideoHero .heroHeadline{font-size:clamp(43px,10vw,65px)!important}}
+@media(prefers-reduced-motion:reduce){.p101FullHeroBackground{display:none!important}}
