@@ -111,7 +111,9 @@ function App(){
    </div>
   </header>
   <main>
-   <section className="hero">
+   <section className="hero p101FullVideoHero">
+    <video className="p101FullHeroBackground" autoPlay muted loop playsInline preload="metadata" aria-hidden="true"><source src="/assets/pay101_hero_cropped_1080p.mp4" type="video/mp4"/></video>
+    <div className="p101FullHeroShade" aria-hidden="true"/>
     <div className="orb orb1"/><div className="orb orb2"/>
     <div className="heroCopy">
      <div className="eyebrow"><span className="pulse"/> {slide.eyebrow}</div>
@@ -121,7 +123,6 @@ function App(){
      <div className="heroSlider" aria-label="Choose hero slide">{heroSlides.map((item,i)=><button key={item.eyebrow} className={`heroDot ${i===activeSlide?'active':''}`} onClick={()=>setActiveSlide(i)} aria-label={`Show slide ${i+1}`} aria-pressed={i===activeSlide}/>)}</div>
      <div className="trust"><div className="avatars"><i/><i/><i/><i/></div><span><b>One platform</b> for your payment operations</span></div>
     </div>
-    <PaymentGlobe/>
    </section>
    <section id="about" className="aboutContactSection"><div className="aboutContactLabel">ABOUT PAY101</div><div className="aboutContactGrid"><div><h2>Payments made simpler for growing businesses.</h2></div><div><p>Pay101 brings the ideas of payins, payouts, settlement workflows and payment visibility into one connected experience. Explore payment options across markets and discover how a streamlined platform could support your business.</p><small>This website is a demonstration concept. Payment methods and integrations shown are illustrative and subject to confirmation.</small></div></div></section>
 
