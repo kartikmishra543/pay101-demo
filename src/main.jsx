@@ -107,7 +107,7 @@ function App(){
      <a className="p101NavLink" href="/pricing" onClick={()=>setMenu(false)}>Pricing</a>
      <div className="p101NavItem p101HoverDrop p101CompanyNav"><button className="p101NavLink">Company <span>⌄</span></button><div className="p101Drop p101CompanyDrop"><div className="p101CompanyLinks"><a href="/blog" onClick={()=>setMenu(false)}><span className="p101CompanyIcon"><Code2 size={19}/></span><span><strong>Blog</strong><small>Payment guides and product news</small></span></a><a href="#security" onClick={()=>setMenu(false)}><span className="p101CompanyIcon"><ShieldCheck size={19}/></span><span><strong>Security</strong><small>How we protect your money</small></span></a></div><div className="p101CompanyContact"><span className="p101CompanyMail"><Mail size={20}/></span><strong>Talk to our team</strong><p>Ask which payment options fit your business.</p><a href="#contact" onClick={()=>setMenu(false)}>Contact us <ArrowRight size={15}/></a></div></div></div>
     </nav>
-    <div className="p101Actions"><div className="p101Social" aria-label="Social media"><span title="LinkedIn">in</span><span title="X">𝕏</span><span title="Instagram">◎</span><span title="YouTube">▶</span></div><a className="p101Signin" href="/login">Sign in</a><a className="primary small" href="/signup">Get started <ArrowRight size={15}/></a></div>
+    <div className="p101Actions"><a className="p101Signin" href="/login">Sign in</a><a className="primary small" href="/signup">Get started <ArrowRight size={15}/></a></div>
     <button className="p101Burger" type="button" onClick={()=>setMenu(v=>!v)} aria-label="Toggle navigation" aria-expanded={menu}>{menu?<X/>:<Menu/>}</button>
    </div>
   </header>
@@ -208,6 +208,12 @@ function App(){
 
    <section className="cta"><div className="ctaGlow"/><span className="kicker">READY TO MOVE MONEY?</span><h2>Build your payment flow<br/>with <em>Pay101.</em></h2><p>Bring payins, payouts and settlement operations together in one modern platform.</p><a className="primary" href="/signup">Get started with Pay101 <ArrowRight size={17}/></a></section>
   </main>
+  <div className="p101SocialRail" aria-label="Social media icons; official links pending">
+    <span className="p101SocialRailItem" title="LinkedIn — link pending"><span className="p101SocialGlyph p101Linkedin">in</span></span>
+    <span className="p101SocialRailItem" title="Instagram — link pending"><span className="p101SocialGlyph p101Instagram">◎</span></span>
+    <span className="p101SocialRailItem" title="X — link pending"><span className="p101SocialGlyph p101X">𝕏</span></span>
+    <span className="p101SocialRailItem" title="YouTube — link pending"><span className="p101SocialGlyph p101Youtube">▶</span></span>
+   </div>
   <Pay101Bot/>
   <WhatsAppPopup/>
   <ConsultationForm/>
