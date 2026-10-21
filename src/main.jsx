@@ -133,7 +133,7 @@ function App(){
   </header>
   <main>
    <section className="hero p101FullVideoHero">
-    <video className="p101FullHeroBackground" autoPlay muted loop playsInline preload="metadata" aria-hidden="true"><source src="/assets/pay101_hero_cropped_1080p.mp4" type="video/mp4"/></video>
+    <video className="p101FullHeroBackground" autoPlay muted loop playsInline preload="metadata" aria-hidden="true"><source src="/assets/WhatsApp%20Video%202026-10-21%20at%2016.11.26.mp4" type="video/mp4"/></video>
     <div className="p101FullHeroShade" aria-hidden="true"/>
     <div className="orb orb1"/><div className="orb orb2"/>
     <div className="heroCopy">
