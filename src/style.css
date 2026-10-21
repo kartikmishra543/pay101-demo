@@ -1186,3 +1186,17 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
  .p101SocialRail.p101SocialBar{left:0!important;right:auto!important;border-radius:0 12px 12px 0!important}
 }
 @media(prefers-reduced-motion:reduce){.p101SocialBar .p101SocialRailItem:hover{transform:none!important}}
+
+/* Hide social bar while scrolling down; reveal on upward scroll. */
+.p101SocialRail.p101SocialBar{
+ transition:transform .38s cubic-bezier(.22,1,.36,1),opacity .3s ease!important;
+ opacity:1!important;
+}
+.p101SocialRail.p101SocialBar.p101SocialBarHidden{
+ transform:translate(-110%,-50%)!important;
+ opacity:0!important;
+ pointer-events:none!important;
+}
+@media(prefers-reduced-motion:reduce){
+ .p101SocialRail.p101SocialBar{transition:none!important}
+}
