@@ -1142,3 +1142,27 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101Youtube{background:#fff0f0;color:#e62117;font-size:17px}
 @media(max-width:600px){.p101SocialRail{right:18px;bottom:218px;gap:7px}.p101SocialRailItem{width:42px;height:42px}.p101SocialGlyph{width:32px;height:32px}}
 @media(max-height:680px){.p101SocialRail{gap:4px;bottom:215px}.p101SocialRailItem{width:36px;height:36px}.p101SocialGlyph{width:28px;height:28px}}
+
+/* Compact edge-attached social bar inspired by modern fintech floating rails. */
+.p101SocialRail.p101SocialBar{
+ position:fixed!important;top:50%!important;bottom:auto!important;right:0!important;
+ transform:translateY(-50%);display:flex!important;flex-direction:column!important;
+ align-items:stretch!important;gap:0!important;padding:6px 5px!important;
+ background:#fff!important;border:1px solid #dbe6f4!important;border-right:0!important;
+ border-radius:15px 0 0 15px!important;
+ box-shadow:0 10px 32px rgba(6,34,72,.16)!important;z-index:999!important;
+}
+.p101SocialBar .p101SocialRailItem{
+ width:43px!important;height:45px!important;border:0!important;border-radius:9px!important;
+ background:transparent!important;box-shadow:none!important;cursor:default;
+ transition:background .22s ease,transform .22s ease!important;
+}
+.p101SocialBar .p101SocialRailItem+.p101SocialRailItem{border-top:1px solid #edf2f8!important;border-radius:0!important}
+.p101SocialBar .p101SocialRailItem:hover{background:#edf5ff!important;transform:translateX(-2px)}
+.p101SocialBar .p101SocialGlyph{width:31px!important;height:31px!important}
+@media(max-width:600px){
+ .p101SocialRail.p101SocialBar{top:40%!important;padding:4px 2px!important;border-radius:12px 0 0 12px!important}
+ .p101SocialBar .p101SocialRailItem{width:34px!important;height:36px!important}
+ .p101SocialBar .p101SocialGlyph{width:26px!important;height:26px!important;font-size:13px!important}
+}
+@media(prefers-reduced-motion:reduce){.p101SocialBar .p101SocialRailItem{transition:none!important;transform:none!important}}
