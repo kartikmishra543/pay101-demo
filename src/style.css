@@ -1166,3 +1166,23 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
  .p101SocialBar .p101SocialGlyph{width:26px!important;height:26px!important;font-size:13px!important}
 }
 @media(prefers-reduced-motion:reduce){.p101SocialBar .p101SocialRailItem{transition:none!important;transform:none!important}}
+
+/* Left-side transparent social bar; keep support widgets on the right. */
+.p101SocialRail.p101SocialBar{
+ left:0!important;
+ right:auto!important;
+ background:rgba(255,255,255,.12)!important;
+ border:1px solid rgba(180,207,239,.35)!important;
+ border-left:0!important;
+ border-right:1px solid rgba(180,207,239,.35)!important;
+ border-radius:0 15px 15px 0!important;
+ box-shadow:0 8px 24px rgba(8,34,72,.09)!important;
+ -webkit-backdrop-filter:blur(10px);
+ backdrop-filter:blur(10px);
+}
+.p101SocialBar .p101SocialRailItem{background:transparent!important}
+.p101SocialBar .p101SocialRailItem:hover{background:rgba(225,239,255,.26)!important;transform:translateX(2px)!important}
+@media(max-width:600px){
+ .p101SocialRail.p101SocialBar{left:0!important;right:auto!important;border-radius:0 12px 12px 0!important}
+}
+@media(prefers-reduced-motion:reduce){.p101SocialBar .p101SocialRailItem:hover{transform:none!important}}
