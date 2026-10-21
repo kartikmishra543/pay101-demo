@@ -1072,3 +1072,41 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 /* Improve contrast of One platform trust caption over video */
 .p101FullVideoHero .trust span,.p101FullVideoHero .trust span b{color:#f3f9ff!important;text-shadow:0 1px 5px rgba(0,12,30,.85)!important}
 .p101FullVideoHero .trust span b{font-weight:750!important}
+
+
+/* Motion polish (2026-10-21): restrained GPU-friendly movement; retain existing design. */
+.p101FullHeroBackground,.globeVideoStage .globeHeroVideo{
+  transform:none!important;
+  filter:none!important;
+  backface-visibility:hidden;
+}
+.p101FullVideoHero .heroCopy{
+  transform:translateZ(0);
+}
+.p101MotionSweep{
+  animation-duration:16s!important;
+  opacity:.55;
+  will-change:transform;
+}
+.p101MotionChipLeft,.p101MotionChipRight{
+  animation-duration:8s!important;
+  animation-timing-function:ease-in-out!important;
+}
+.p101MotionOrbitTwo{animation-duration:32s!important;opacity:.35}
+.p101MotionBars i{animation-duration:2.4s!important}
+.p101MotionDot{animation-duration:3s!important}
+.p101MotionChipTop{animation-duration:7s!important}
+.p101MotionChip{
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+}
+@media(max-width:700px){
+  .p101MotionSweep,.p101MotionOrbitTwo{display:none!important}
+  .p101MotionChip{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(3,27,58,.88)}
+}
+@media(prefers-reduced-motion:reduce){
+  .p101MotionSweep,.p101MotionChip,.p101MotionDot,.p101MotionBars i,.p101MotionOrbitTwo{
+    animation:none!important;
+  }
+  .p101FullHeroBackground,.globeVideoStage .globeHeroVideo{display:none!important}
+}
