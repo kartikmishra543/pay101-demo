@@ -111,21 +111,35 @@ function App(){
   <header className="p101Header">
    <div className="p101HeaderInner">
     <a className="brand" href="/" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a>
-    <nav className={`p101Nav ${menu?'mobileOpen':''}`} aria-label="Main navigation">
-     <a className="p101NavLink" href="#about" onClick={()=>setMenu(false)}>About us</a>
-     <div className="p101NavItem">
-      <button className="p101NavLink" onClick={()=>setSolutionsOpen(v=>!v)} onMouseEnter={()=>setSolutionsOpen(true)} aria-expanded={solutionsOpen}>Solutions <span>⌄</span></button>
-      {solutionsOpen&&<div className="p101Mega" onMouseLeave={()=>setSolutionsOpen(false)}>
-       <div className="p101MegaTabs">{[['collect','Accept Payments','Accept online payments securely and seamlessly.'],['payout','Payouts','Send money to partners, vendors, and customers.'],['settle','Settlements & Reconciliation','Track settlements and reconcile transactions with ease.']].map(([key,label,sub])=><button key={key} className={solutionTab===key?'active':''} onMouseEnter={()=>setSolutionTab(key)} onClick={()=>setSolutionTab(key)}>{label}<small>{sub}</small></button>)}</div>
-       <div className="p101MegaPanel">{(solutionTab==='collect'?[['Accept Payments','Accept online payments securely and seamlessly.','#solutions']]:solutionTab==='payout'?[['Payouts','Send money to partners, vendors, and customers.','#solutions']]:[['Settlements & Reconciliation','Track settlements and reconcile transactions with ease.','#solutions']]).map(([title,description,url])=><a key={title} href={url} onClick={()=>{setSolutionsOpen(false);setMenu(false)}}><span className="p101MegaIcon"><ArrowRight size={18}/></span><span><strong>{title}</strong><small>{description}</small></span></a>)}</div>
-      </div>}
-     </div>
-     
-     <div className="p101NavItem p101HoverDrop"><button className="p101NavLink">Markets <span>⌄</span></button><div className="p101Drop p101MarketsDrop">{[['India','in','UPI and bank transfers'],['Nepal','np','Local payment options'],['Bhutan','bt','Regional payment options'],['Brazil','br','Pix payment examples'],['Australia','au','AUD payment examples']].map(([name,iso,desc])=><a key={name} href="#markets" onClick={()=>setMenu(false)}><img src={`https://flagcdn.com/w40/${iso}.png`} alt="" loading="lazy"/><span><strong>{name}</strong><small>{desc}</small></span></a>)}<a href="#markets" onClick={()=>setMenu(false)}><span className="p101MarketMoreGlyph"><Globe2 size={21}/></span><span><strong>Many more</strong><small>Ask us about additional markets</small></span></a><small className="p101DropNote">Markets shown for demonstration. Confirm availability with Pay101.</small></div></div>
-     <a className="p101NavLink" href="/how-it-works" onClick={()=>setMenu(false)}>How it works</a>
-     <a className="p101NavLink" href="#developers" onClick={()=>setMenu(false)}>Developers</a>
-     <a className="p101NavLink" href="/pricing" onClick={()=>setMenu(false)}>Pricing</a>
-     <div className="p101NavItem p101HoverDrop p101CompanyNav"><button className="p101NavLink">Company <span>⌄</span></button><div className="p101Drop p101CompanyDrop"><div className="p101CompanyLinks"><a href="/blog" onClick={()=>setMenu(false)}><span className="p101CompanyIcon"><Code2 size={19}/></span><span><strong>Blog</strong><small>Payment guides and product news</small></span></a><a href="#security" onClick={()=>setMenu(false)}><span className="p101CompanyIcon"><ShieldCheck size={19}/></span><span><strong>Security</strong><small>How we protect your money</small></span></a></div><div className="p101CompanyContact"><span className="p101CompanyMail"><Mail size={20}/></span><strong>Talk to our team</strong><p>Ask which payment options fit your business.</p><a href="#contact" onClick={()=>setMenu(false)}>Contact us <ArrowRight size={15}/></a></div></div></div>
+    <nav className={`p101Nav p101UnifiedNav ${menu?'mobileOpen':''}`} aria-label="Main navigation" onMouseLeave={()=>setSolutionsOpen(false)}>
+     {[
+      ['solutions','Solutions'],
+      ['markets','Markets'],
+      ['about','About us'],
+      ['contact','Get in Touch']
+     ].map(([key,label])=><button type="button" key={key} className={`p101NavLink p101UnifiedTrigger ${solutionsOpen&&solutionTab===key?'active':''}`} aria-expanded={solutionsOpen&&solutionTab===key} onMouseEnter={()=>{setSolutionTab(key);setSolutionsOpen(true)}} onFocus={()=>{setSolutionTab(key);setSolutionsOpen(true)}} onClick={()=>{setSolutionTab(key);setSolutionsOpen(v=>solutionTab===key?!v:true)}}>{label} <span aria-hidden="true">⌄</span></button>)}
+     {solutionsOpen&&<div className="p101UnifiedMega">
+      <div className="p101UnifiedGrid">
+       {(solutionTab==='solutions'?[
+        ['Accept Payments',[['Accept Payments','Accept online payments securely and seamlessly.','#solutions'],['UPI & Payment Methods','Explore payment collection options','#solutions']]],
+        ['Payouts',[['Payouts','Send money to partners, vendors, and customers.','#solutions'],['Bank Transfers','IMPS, NEFT and RTGS workflows','#solutions']]],
+        ['Settlements & Reconciliation',[['Settlements & Reconciliation','Track settlements and reconcile transactions with ease.','#solutions'],['How it works','Understand the payment workflow','/how-it-works']]]
+       ]:solutionTab==='markets'?[
+        ['Asia',[['India','UPI and bank transfers','#markets'],['Nepal','Local payment options','#markets'],['Bhutan','Regional payment options','#markets']]],
+        ['International',[['Brazil','Pix payment examples','#markets'],['Australia','AUD payment examples','#markets']]],
+        ['Explore',[['More Markets','Ask about additional markets','#markets'],['Contact our team','Confirm country availability','#contact']]]
+       ]:solutionTab==='about'?[
+        ['Company',[['About us','Learn about Pay101','#about'],['Security','How we approach payment security','#security']]],
+        ['Resources',[['Blog','Payment guides and news','/blog'],['FAQs','Frequently asked questions','#faqs']]],
+        ['For developers',[['Developers','Integration overview','#developers'],['How it works','Understand the platform','/how-it-works']]]
+       ]:[
+        ['Contact',[['Get in Touch','Talk to our team','#contact'],['Request a Consultation','Discuss your payment needs','#contact']]],
+        ['Support',[['Frequently Asked Questions','Find quick answers','#faqs'],['How it works','Explore the platform','/how-it-works']]],
+        ['Explore Pay101',[['Developers','Learn about integrations','#developers'],['Pricing','View pricing information','/pricing']]]
+       ]).map(([heading,items])=><div className="p101UnifiedColumn" key={heading}><div className="p101UnifiedHeading">{heading}</div>{items.map(([title,description,url])=><a href={url} key={title} onClick={()=>{setSolutionsOpen(false);setMenu(false)}}><span className="p101UnifiedLinkIcon"><ArrowRight size={16}/></span><span><strong>{title}</strong><small>{description}</small></span></a>)}</div>)}
+      </div>
+      {solutionTab==='markets'&&<p className="p101UnifiedNote">Markets shown are illustrative. Confirm service availability with Pay101.</p>}
+     </div>}
     </nav>
     <div className="p101Actions"><a className="p101Signin" href="/login">Sign in</a><a className="primary small" href="/signup">Get started <ArrowRight size={15}/></a></div>
     <button className="p101Burger" type="button" onClick={()=>setMenu(v=>!v)} aria-label="Toggle navigation" aria-expanded={menu}>{menu?<X/>:<Menu/>}</button>
