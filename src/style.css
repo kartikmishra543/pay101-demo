@@ -1246,3 +1246,15 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
  font-weight:600!important;
 }
 @media(max-width:1100px){.p101Header .p101UnifiedNav .p101UnifiedTrigger{font-size:15px!important;padding:10px 8px!important}}
+
+/* Dedicated developer page, replacing the homepage developer section. */
+.p101DeveloperPage{min-height:100vh;background:#f7faff}
+.p101DeveloperPageHero{text-align:center;padding:78px 24px 42px;background:linear-gradient(180deg,#eaf4ff,#f7faff)}
+.p101DeveloperPageHero h1{font-size:clamp(36px,5vw,64px);color:#102d58;margin:16px 0}
+.p101DeveloperPageHero p{max-width:690px;margin:0 auto;color:#526780;font-size:18px;line-height:1.7}
+.p101DeveloperPage .p101DeveloperSection{padding-top:35px;padding-bottom:95px}
+.p101DeveloperPageNav{display:flex;gap:25px;align-items:center}
+.p101DeveloperPageNav a{color:#506378;text-decoration:none;font-size:16px;font-weight:600}
+.p101DeveloperPageNav a:hover,.p101DeveloperPageNav a[aria-current]{color:#0878f9}
+@media(max-width:850px){.p101DeveloperPageNav{gap:10px}.p101DeveloperPageNav a{font-size:13px}.p101DeveloperPageHero{padding:55px 18px 28px}}
+@media(max-width:600px){.p101DeveloperPageNav{flex-wrap:wrap;justify-content:center;gap:8px 14px}.p101DeveloperPage .p101HeaderInner{flex-wrap:wrap;justify-content:center}.p101DeveloperPageHero p{font-size:16px}}
