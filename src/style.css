@@ -1068,3 +1068,7 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101FullVideoHero .orb{display:none!important}
 @media(max-width:700px){.hero.p101FullVideoHero{min-height:650px!important;padding:64px 24px!important;align-items:center!important}.p101FullHeroShade{background:linear-gradient(90deg,rgba(4,19,40,.91),rgba(4,19,40,.58))!important}.p101FullVideoHero .heroHeadline{font-size:clamp(43px,10vw,65px)!important}}
 @media(prefers-reduced-motion:reduce){.p101FullHeroBackground{display:none!important}}
+
+/* Improve contrast of One platform trust caption over video */
+.p101FullVideoHero .trust span,.p101FullVideoHero .trust span b{color:#f3f9ff!important;text-shadow:0 1px 5px rgba(0,12,30,.85)!important}
+.p101FullVideoHero .trust span b{font-weight:750!important}
