@@ -1110,3 +1110,24 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
   }
   .p101FullHeroBackground,.globeVideoStage .globeHeroVideo{display:none!important}
 }
+
+/* Developer section — marketing-industries */
+.p101DeveloperSection{padding:90px 24px;background:linear-gradient(135deg,#f4f9ff 0%,#eaf3ff 100%);scroll-margin-top:100px}
+.p101DeveloperInner{max-width:1220px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,88px);align-items:center}
+.p101DeveloperIntro h2{font-size:clamp(32px,4vw,52px);line-height:1.13;letter-spacing:-1.6px;color:#102235;margin:18px 0}
+.p101DeveloperIntro h2 em{font-style:normal;color:#0878f9}
+.p101DeveloperIntro>p{font-size:16px;line-height:1.75;color:#536b83;max-width:580px}
+.p101DeveloperActions{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin:26px 0 18px}
+.p101DeveloperSecondary{display:inline-flex;gap:8px;align-items:center;color:#1766b8;font-weight:750}
+.p101DeveloperIntro>small{display:block;max-width:560px;line-height:1.6;color:#6c7d90}
+.p101DeveloperPanel{border:1px solid #d4e3f7;border-radius:22px;background:#fff;box-shadow:0 18px 55px rgba(13,67,130,.09);overflow:hidden}
+.p101DeveloperPanelHead{display:flex;align-items:center;gap:11px;padding:22px 26px;border-bottom:1px solid #e5edf7;color:#14395f}
+.p101DeveloperPanelHead>span{margin-left:auto;font-size:10px;letter-spacing:.1em;color:#4776a7;background:#eaf3ff;padding:6px 9px;border-radius:20px;font-weight:800}
+.p101DeveloperSteps{padding:10px 26px}
+.p101DeveloperSteps>div{display:flex;gap:18px;padding:19px 0;border-bottom:1px solid #edf2f8}
+.p101DeveloperSteps>div:last-child{border-bottom:0}
+.p101DeveloperSteps>div>span{display:grid;place-items:center;flex:0 0 37px;height:37px;border-radius:11px;background:#e8f3ff;color:#0878f9;font-weight:800}
+.p101DeveloperSteps strong{color:#183a5d}
+.p101DeveloperSteps p{color:#60758b;font-size:13px;line-height:1.65;margin:6px 0 0}
+.p101DeveloperPanelFoot{display:flex;gap:9px;align-items:center;background:#f5f9ff;padding:16px 26px;font-size:12px;color:#55718d}
+@media(max-width:800px){.p101DeveloperSection{padding:64px 20px}.p101DeveloperInner{grid-template-columns:1fr;gap:30px}.p101DeveloperPanelHead,.p101DeveloperSteps,.p101DeveloperPanelFoot{padding-left:18px;padding-right:18px}}
