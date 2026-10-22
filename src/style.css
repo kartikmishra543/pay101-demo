@@ -1263,3 +1263,39 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101Header .p101UnifiedMega{top:100%!important}
 .p101Header .p101UnifiedNav{overflow:visible!important}
 .p101Header .p101UnifiedMega a{position:relative;z-index:1}
+
+/* Mobile-first header: prevent desktop mega-navigation from overflowing phones. */
+@media(max-width:900px){
+ .p101Header{position:relative;z-index:1200}
+ .p101Header .p101HeaderInner{height:68px!important;min-height:68px!important;padding:0 16px!important;gap:10px!important;flex-wrap:nowrap!important;justify-content:space-between!important;max-width:100%!important}
+ .p101Header .brand{min-width:0;flex:0 1 auto}
+ .p101Header .brandLogo{width:clamp(110px,30vw,145px)!important;max-width:145px!important;max-height:43px!important}
+ .p101Header .p101Burger{display:flex!important;flex:0 0 auto;align-items:center;justify-content:center;order:3;margin:0!important;width:40px;height:40px;color:#1b365a}
+ .p101Header .p101Actions{margin-left:auto!important;gap:8px!important;flex:0 0 auto}
+ .p101Header .p101Actions .primary{font-size:12px!important;padding:9px 11px!important;white-space:nowrap}
+ .p101Header .p101Signin{display:none!important}
+ .p101Header .p101UnifiedNav{display:none!important;position:absolute!important;top:100%!important;left:0!important;right:0!important;width:100%!important;max-height:calc(100dvh - 68px)!important;overflow-y:auto!important;overflow-x:hidden!important;z-index:1300!important;background:#fff!important;padding:12px 16px 20px!important;margin:0!important;gap:3px!important;flex-direction:column!important;align-items:stretch!important;box-shadow:0 15px 28px rgba(12,43,79,.14)}
+ .p101Header .p101UnifiedNav.mobileOpen{display:flex!important}
+ .p101Header .p101UnifiedTrigger{width:100%!important;display:flex!important;justify-content:space-between!important;align-items:center!important;text-align:left!important;padding:13px 10px!important;font-size:15px!important;min-height:44px}
+ .p101Header .p101UnifiedMega{position:static!important;top:auto!important;left:auto!important;right:auto!important;width:100%!important;max-width:100%!important;padding:12px!important;border-radius:12px!important;box-shadow:none!important;backdrop-filter:none!important}
+ .p101Header .p101UnifiedGrid{grid-template-columns:1fr!important;gap:4px!important}
+ .p101Header .p101UnifiedColumn{border-right:0!important;border-bottom:1px solid #e6edf6!important;padding:8px 4px!important}
+ .p101Header .p101UnifiedColumn:last-child{border-bottom:0!important}
+ .p101Header .p101UnifiedColumn>a{min-height:44px;padding:10px 4px}
+ .p101Header .p101UnifiedTrigger.active:after{display:none!important}
+}
+@media(max-width:420px){
+ .p101Header .p101HeaderInner{padding:0 10px!important;gap:6px!important}
+ .p101Header .brandLogo{width:112px!important}
+ .p101Header .p101Actions .primary{font-size:11px!important;padding:9px 9px!important}
+ .p101Header .p101Burger{width:36px;height:38px}
+}
+@media(max-width:600px){
+ .p101FullVideoHero{min-width:0!important;overflow:hidden}
+ .p101FullVideoHero .heroCopy{max-width:100%;min-width:0}
+ .p101FullVideoHero .heroHeadline{font-size:clamp(36px,10vw,56px)!important;line-height:1.12!important;overflow-wrap:break-word}
+ .p101FullVideoHero .heroDescription{font-size:clamp(15px,4vw,18px)!important;line-height:1.6!important;max-width:100%}
+ .p101FullVideoHero .heroCtas{flex-wrap:wrap;gap:12px}
+ .p101FullVideoHero .heroCtas .primary{max-width:100%;white-space:normal;text-align:center}
+ .p101SocialRail.p101SocialBar{max-width:48px!important}
+}
