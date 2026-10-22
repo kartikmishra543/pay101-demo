@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Pay101 Developer Portal: explore API integration, payment workflows, testing guidance and developer support.">
+<title>Developer Portal | Pay101</title>
+<style>
+:root{--navy:#101b34;--blue:#315efb;--blue-dark:#2448d9;--ink:#1b2942;--muted:#64748b;--line:#e3e9f2;--pale:#f5f8fc;--green:#0b9b72}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font:15px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:#fff}a{text-decoration:none;color:inherit}.container{width:min(1180px,calc(100% - 40px));margin:auto}.topbar{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:24px;background:#fff}.logo{display:flex;align-items:center;gap:10px;font-size:24px;font-weight:850;letter-spacing:-1px}.logo-mark{display:grid;place-items:center;width:35px;height:35px;background:var(--blue);color:#fff;border-radius:10px;font-weight:900;box-shadow:0 5px 14px #315efb35}.navlinks{display:flex;align-items:center;gap:27px;color:#52617a;font-size:13px}.navlinks a:hover{color:var(--blue)}.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 16px;border-radius:9px;font-size:13px;font-weight:750;border:1px solid var(--line);background:#fff;cursor:pointer}.button.primary{background:var(--blue);color:#fff;border-color:var(--blue)}.button.primary:hover{background:var(--blue-dark)}.hamb{display:none;padding:8px 11px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:18px}
+.hero{background:linear-gradient(120deg,#f4f7ff 0%,#fff 60%,#effcf8 100%);padding:72px 0 62px;border-bottom:1px solid var(--line)}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #dce5ff;background:#fff;border-radius:50px;padding:6px 11px;color:#3152c9;text-transform:uppercase;font-size:10px;letter-spacing:1px;font-weight:850}.eyebrow:before{content:"";width:7px;height:7px;background:#12ad80;border-radius:50%}h1{font-size:clamp(42px,5vw,61px);line-height:1.07;letter-spacing:-2.7px;margin:19px 0 18px;max-width:640px}h1 em{font-style:normal;color:var(--blue)}.hero p{font-size:16px;color:var(--muted);max-width:590px;margin:0 0 24px}.actions{display:flex;gap:10px;flex-wrap:wrap}.hero-note{font-size:12px;color:#6d7b90;margin-top:18px}.hero-note b{color:var(--green)}.quick-card{background:white;border:1px solid #e0e7f1;border-radius:17px;padding:22px;box-shadow:0 20px 60px #233c6817}.card-title{display:flex;justify-content:space-between;align-items:center;padding-bottom:15px;border-bottom:1px solid var(--line);font-size:13px;font-weight:800}.badge{font-size:10px;color:#087b5d;background:#e3faf2;padding:5px 8px;border-radius:6px}.quick-steps{display:grid;gap:0;padding-top:7px}.quick-step{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:13px 0;border-bottom:1px solid #eef1f6}.quick-step:last-child{border-bottom:0}.num{height:30px;width:30px;border-radius:9px;background:#eef2ff;color:var(--blue);display:grid;place-items:center;font-weight:850;font-size:12px}.quick-step strong{display:block;font-size:13px}.quick-step small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.section{padding:72px 0}.section.soft{background:var(--pale)}.section-heading{max-width:700px;margin:0 auto 35px;text-align:center}.kicker{font-size:10px;text-transform:uppercase;letter-spacing:1.6px;color:var(--blue);font-weight:850}.section h2{font-size:clamp(29px,3.5vw,39px);line-height:1.17;letter-spacing:-1.3px;margin:9px 0 12px}.section-heading p{color:var(--muted);font-size:14px;margin:0}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.doc-card{border:1px solid var(--line);border-radius:14px;padding:22px;background:#fff;transition:.18s}.doc-card:hover{border-color:#bfcdfd;box-shadow:0 12px 32px #213a6910;transform:translateY(-2px)}.icon{width:39px;height:39px;display:grid;place-items:center;border-radius:11px;background:#eef2ff;color:var(--blue);font-size:19px;margin-bottom:15px}.doc-card h3{font-size:16px;margin:0 0 6px}.doc-card p{font-size:12px;color:var(--muted);margin:0 0 14px}.link{color:var(--blue);font-size:12px;font-weight:800}.tag{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#7b8799;font-weight:800;margin-bottom:8px}
+.split{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start}.split-copy p{color:var(--muted);font-size:14px}.prereq{border:1px solid var(--line);border-radius:15px;overflow:hidden}.prereq-head{padding:16px 20px;background:#f7f9fd;border-bottom:1px solid var(--line);font-weight:800;font-size:14px}.prereq-row{padding:15px 20px;display:flex;gap:13px;border-bottom:1px solid var(--line);font-size:13px}.prereq-row:last-child{border-bottom:0}.check{color:var(--green);font-weight:900}.prereq-row small{display:block;color:var(--muted);font-size:12px}
+.workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.workflow article{border:1px solid var(--line);background:#fff;padding:20px;border-radius:13px}.workflow .n{font-size:11px;color:var(--blue);font-weight:900;letter-spacing:1px}.workflow h3{font-size:14px;margin:8px 0 6px}.workflow p{font-size:12px;color:var(--muted);margin:0}
+.code-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;align-items:center}.code-copy p{color:var(--muted);font-size:14px}.codebox{border-radius:15px;background:#101b31;color:#dbe7ff;overflow:hidden;box-shadow:0 20px 50px #172b4d1a}.code-head{display:flex;align-items:center;justify-content:space-between;padding:13px 17px;background:#172541;border-bottom:1px solid #2b3a57;font-size:11px;color:#b9c8e2}.lights{display:flex;gap:5px}.lights i{height:7px;width:7px;border-radius:50%;background:#fb7185}.lights i:nth-child(2){background:#fbbf24}.lights i:nth-child(3){background:#34d399}.codebox pre{margin:0;padding:22px;overflow:auto;font:12px/1.9 ui-monospace,SFMono-Regular,Menlo,monospace}.comment{color:#7e91b2}.key{color:#9bc2ff}.str{color:#9be7c6}.method{color:#ffc98a}.code-bottom{padding:10px 17px;border-top:1px solid #2b3a57;color:#8ea2c5;font-size:10px}
+.faq{max-width:820px;margin:auto}.faq-item{border-bottom:1px solid var(--line)}.faq-button{width:100%;border:0;background:transparent;padding:19px 0;display:flex;justify-content:space-between;gap:20px;text-align:left;font-size:14px;font-weight:750;color:var(--ink);cursor:pointer}.faq-button b{font-size:19px;color:var(--blue)}.faq-answer{display:none;color:var(--muted);font-size:13px;padding:0 35px 18px 0}.faq-item.open .faq-answer{display:block}
+.final-cta{padding:0 0 70px}.cta-box{border-radius:19px;padding:40px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:25px}.cta-box h2{font-size:30px;letter-spacing:-1px;line-height:1.2;margin:0 0 9px}.cta-box p{margin:0;color:#b9c7dd;font-size:13px}.cta-box .button{white-space:nowrap}.foot{border-top:1px solid var(--line);padding:24px 0;color:#7b8799;font-size:11px}.footrow{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.footlinks{display:flex;gap:18px;flex-wrap:wrap}.note{margin-top:14px;max-width:920px;color:#8995a6;font-size:10px}
+@media(max-width:850px){.hero-grid,.split,.code-layout{grid-template-columns:1fr;gap:30px}.navlinks{display:none;position:absolute;z-index:5;top:76px;left:20px;right:20px;background:white;padding:20px;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 35px #182b4c18;align-items:flex-start;flex-direction:column}.navlinks.show{display:flex}.hamb{display:block}.nav>.button{display:none}.grid3{grid-template-columns:repeat(2,1fr)}.workflow{grid-template-columns:repeat(2,1fr)}.hero{padding:55px 0}.cta-box{align-items:flex-start;flex-direction:column}}
+@media(max-width:560px){.container{width:calc(100% - 30px)}.topbar{height:68px}.navlinks{top:68px}.logo{font-size:21px}h1{letter-spacing:-1.8px}.grid3,.workflow{grid-template-columns:1fr}.section{padding:56px 0}.quick-card{padding:17px}.cta-box{padding:28px 22px}.cta-box h2{font-size:26px}.cta-box .button{width:100%}}
+</style>
+</head>
+<body>
+<header class="container topbar">
+  <a class="logo" href="/"><span class="logo-mark">P</span>pay101 <span style="font-size:11px;font-weight:650;color:#8b97aa;letter-spacing:0;margin-left:2px">DEVELOPERS</span></a>
+  <nav class="navlinks" id="navlinks"><a href="#quickstart">Quick start</a><a href="#api">API resources</a><a href="#prerequisites">Prerequisites</a><a href="#faq">FAQs</a></nav>
+  <a class="button primary" href="#contact">Request API access ↗</a><button class="hamb" id="hamb" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+</header>
+<main>
+<section class="hero">
+ <div class="container hero-grid">
+  <div><div class="eyebrow">Developer portal</div>
+   <h1>Everything you need to <em>integrate Pay101</em></h1>
+   <p>Explore the integration journey for Pay101 payment workflows. Find the technical guidance, preparation steps, and support your team needs to move from development towards launch.</p>
+   <div class="actions"><a class="button primary" href="#quickstart">Get started →</a><a class="button" href="#api">Explore API resources ↗</a></div>
+   <div class="hero-note"><b>✓</b> Built for developers, product teams, and technical partners</div>
+  </div>
+  <aside class="quick-card" id="quickstart">
+   <div class="card-title"><span>Quick start guide</span><span class="badge">4 STEPS</span></div>
+   <div class="quick-steps">
+    <div class="quick-step"><span class="num">01</span><div><strong>Define your use case</strong><small>Identify the payment flow and your platform requirements.</small></div></div>
+    <div class="quick-step"><span class="num">02</span><div><strong>Request API access</strong><small>Contact Pay101 to confirm eligibility, credentials, and documentation.</small></div></div>
+    <div class="quick-step"><span class="num">03</span><div><strong>Integrate and test</strong><small>Build against approved specifications and validate test scenarios.</small></div></div>
+    <div class="quick-step"><span class="num">04</span><div><strong>Complete launch review</strong><small>Finish applicable checks before production activation.</small></div></div>
+   </div>
+  </aside>
+ </div>
+</section>
+<section class="section" id="api"><div class="container">
+ <div class="section-heading"><div class="kicker">Documentation & tools</div><h2>Developer resources</h2><p>Find the right technical starting point for your integration. Resource links can be connected to Pay101's approved documentation as it becomes available.</p></div>
+ <div class="grid3">
+  <article class="doc-card"><div class="icon">⌘</div><div class="tag">Reference</div><h3>API documentation</h3><p>Review endpoint details, request parameters, response formats, and error handling.</p><a class="link" href="#contact">Request API reference →</a></article>
+  <article class="doc-card"><div class="icon">⇄</div><div class="tag">Payment flow</div><h3>PayIn integration</h3><p>Plan how your application initiates incoming payments and records the result.</p><a class="link" href="#contact">Discuss PayIn →</a></article>
+  <article class="doc-card"><div class="icon">↗</div><div class="tag">Disbursement</div><h3>Payout integration</h3><p>Explore outgoing payment workflows, status handling, and reconciliation needs.</p><a class="link" href="#contact">Discuss Payout →</a></article>
+  <article class="doc-card"><div class="icon">⌁</div><div class="tag">Testing</div><h3>Sandbox & testing</h3><p>Ask about test credentials, simulated responses, and the available test environment.</p><a class="link" href="#prerequisites">Prepare for testing →</a></article>
+  <article class="doc-card"><div class="icon">◉</div><div class="tag">Notifications</div><h3>Webhooks & callbacks</h3><p>Plan secure handling of payment events, duplicate notifications, and final status checks.</p><a class="link" href="#contact">Ask about webhooks →</a></article>
+  <article class="doc-card"><div class="icon">⚙</div><div class="tag">Troubleshooting</div><h3>Errors & support</h3><p>Prepare useful request references and logs to help diagnose integration issues.</p><a class="link" href="#contact">Contact integration team →</a></article>
+ </div>
+</div></section>
+<section class="section soft" id="prerequisites"><div class="container split">
+ <div class="split-copy"><div class="kicker">Before you begin</div><h2>Prepare your integration</h2><p>Payment APIs usually require business onboarding and account-specific access. Use this list to prepare, then confirm exact requirements with the Pay101 integration team.</p><a class="button primary" href="#contact">Request technical onboarding ↗</a></div>
+ <div class="prereq"><div class="prereq-head">Integration prerequisites</div>
+  <div class="prereq-row"><span class="check">✓</span><div><strong>Business and use-case details</strong><small>Company, website or app, payment flow, and expected transaction needs.</small></div></div>
+  <div class="prereq-row"><span class="check">✓</span><div><strong>Approved API credentials</strong><small>Request the appropriate credentials through Pay101's approved process. Never share secret keys publicly.</small></div></div>
+  <div class="prereq-row"><span class="check">✓</span><div><strong>Server and callback details</strong><small>Prepare your backend environment and any required callback or webhook URLs.</small></div></div>
+  <div class="prereq-row"><span class="check">✓</span><div><strong>Testing and launch plan</strong><small>Agree test cases, technical contacts, and launch-readiness checks.</small></div></div>
+ </div>
+</div></section>
+<section class="section"><div class="container">
+ <div class="section-heading"><div class="kicker">Implementation journey</div><h2>From first request to production</h2><p>A simple process helps keep business, technical, and operational teams aligned.</p></div>
+ <div class="workflow">
+  <article><div class="n">STEP 01</div><h3>Share requirements</h3><p>Explain your business model, use case, platform, and required payment workflows.</p></article>
+  <article><div class="n">STEP 02</div><h3>Get documentation</h3><p>Confirm account access, API specifications, authentication, and supported features.</p></article>
+  <article><div class="n">STEP 03</div><h3>Build & validate</h3><p>Implement the flow and test success, failure, pending, timeout, and duplicate-event cases.</p></article>
+  <article><div class="n">STEP 04</div><h3>Review & launch</h3><p>Complete required checks and get production activation confirmed by Pay101.</p></article>
+ </div>
+</div></section>
+<section class="section soft"><div class="container code-layout">
+ <div class="code-copy"><div class="kicker">Integration concept</div><h2>Designed around your backend</h2><p>Use the official Pay101 API specification for the real endpoint, authentication method, request fields, and response handling. The example shown is illustrative and is not a live API call.</p><a class="link" href="#contact">Request a verified code sample →</a></div>
+ <div class="codebox"><div class="code-head"><span class="lights"><i></i><i></i><i></i></span><span>Illustrative request · JSON</span><span>API</span></div><pre><span class="comment">// Example structure only — not a live endpoint</span>
+<span class="method">POST</span> <span class="str">/your-approved-payment-endpoint</span>
+
+{
+  <span class="key">"reference"</span>: <span class="str">"ORDER_12345"</span>,
+  <span class="key">"amount"</span>: <span class="str">"1000.00"</span>,
+  <span class="key">"currency"</span>: <span class="str">"INR"</span>,
+  <span class="key">"return_url"</span>: <span class="str">"https://your-site.example/return"</span>
+}
+
+<span class="comment">// Use the endpoint and fields provided in Pay101's docs.</span></pre><div class="code-bottom">Illustrative sample · Replace with verified Pay101 API details before publishing</div></div>
+</div></section>
+<section class="section" id="faq"><div class="container">
+ <div class="section-heading"><div class="kicker">Help centre</div><h2>Frequently asked questions</h2><p>Answers to common questions before starting an integration.</p></div>
+ <div class="faq">
+  <div class="faq-item"><button class="faq-button" aria-expanded="false"><span>How can I get Pay101 API documentation?</span><b>+</b></button><div class="faq-answer">Use the contact option on this page to request the current API documentation and confirm the access process for your business.</div></div>
+  <div class="faq-item"><button class="faq-button" aria-expanded="false"><span>Does Pay101 provide a sandbox environment?</span><b>+</b></button><div class="faq-answer">Sandbox availability and test credentials should be confirmed with Pay101. Do not use production credentials for test activity unless explicitly instructed by the provider.</div></div>
+  <div class="faq-item"><button class="faq-button" aria-expanded="false"><span>What information should I prepare?</span><b>+</b></button><div class="faq-answer">Prepare your business and platform details, use case, expected payment flow, backend contact, callback requirements, and any questions about reconciliation or reporting.</div></div>
+  <div class="faq-item"><button class="faq-button" aria-expanded="false"><span>Can I integrate both PayIn and Payout?</span><b>+</b></button><div class="faq-answer">This page covers both workflow categories. Ask Pay101 to confirm which services, payment methods, markets, and permissions are available for your account.</div></div>
+  <div class="faq-item"><button class="faq-button" aria-expanded="false"><span>How should my application handle payment notifications?</span><b>+</b></button><div class="faq-answer">Follow the official Pay101 specification for notification verification and status checks. As general practice, validate incoming events, handle duplicates safely, and verify the final status server-side.</div></div>
+ </div>
+</div></section>
+<section class="final-cta" id="contact"><div class="container"><div class="cta-box"><div><h2>Let's get your integration moving.</h2><p>Share your use case and connect with the Pay101 team for the next technical steps.</p></div><a class="button primary" style="background:#fff;color:#2448d9;border-color:#fff" href="mailto:support@pay101.uk?subject=Pay101%20API%20Integration%20Request">Request API access ↗</a></div></div></section>
+</main>
+<footer class="foot"><div class="container"><div class="footrow"><a class="logo" style="font-size:18px" href="#"><span class="logo-mark" style="width:28px;height:28px;font-size:15px">P</span>pay101</a><div class="footlinks"><a href="#quickstart">Quick start</a><a href="#api">API resources</a><a href="#prerequisites">Prerequisites</a><a href="#faq">FAQs</a></div><span>© <span id="year"></span> Pay101</span></div><div class="note">Concept prototype based on common developer-portal patterns from the supplied reference sites. Confirm Pay101's actual products, credentials, sandbox availability, endpoints, supported methods, security claims, and contact details before publishing. All code shown is illustrative.</div></div></footer>
+<script>
+const menu=document.getElementById('hamb'),nav=document.getElementById('navlinks');
+menu.addEventListener('click',()=>{let open=nav.classList.toggle('show');menu.setAttribute('aria-expanded',String(open));});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('show');menu.setAttribute('aria-expanded','false')}));
+document.querySelectorAll('.faq-button').forEach(b=>b.addEventListener('click',()=>{const item=b.closest('.faq-item');const open=item.classList.toggle('open');b.setAttribute('aria-expanded',String(open))}));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
