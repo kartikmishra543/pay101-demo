@@ -17,11 +17,21 @@
 .final-cta{padding:0 0 70px}.cta-box{border-radius:19px;padding:40px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:25px}.cta-box h2{font-size:30px;letter-spacing:-1px;line-height:1.2;margin:0 0 9px}.cta-box p{margin:0;color:#b9c7dd;font-size:13px}.cta-box .button{white-space:nowrap}.foot{border-top:1px solid var(--line);padding:24px 0;color:#7b8799;font-size:11px}.footrow{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}.footlinks{display:flex;gap:18px;flex-wrap:wrap}.note{margin-top:14px;max-width:920px;color:#8995a6;font-size:10px}
 @media(max-width:850px){.hero-grid,.split,.code-layout{grid-template-columns:1fr;gap:30px}.navlinks{display:none;position:absolute;z-index:5;top:76px;left:20px;right:20px;background:white;padding:20px;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 35px #182b4c18;align-items:flex-start;flex-direction:column}.navlinks.show{display:flex}.hamb{display:block}.nav>.button{display:none}.grid3{grid-template-columns:repeat(2,1fr)}.workflow{grid-template-columns:repeat(2,1fr)}.hero{padding:55px 0}.cta-box{align-items:flex-start;flex-direction:column}}
 @media(max-width:560px){.container{width:calc(100% - 30px)}.topbar{height:68px}.navlinks{top:68px}.logo{font-size:21px}h1{letter-spacing:-1.8px}.grid3,.workflow{grid-template-columns:1fr}.section{padding:56px 0}.quick-card{padding:17px}.cta-box{padding:28px 22px}.cta-box h2{font-size:26px}.cta-box .button{width:100%}}
+
+/* Match Pay101 homepage logo and navigation typography */
+.topbar .logo{gap:10px;letter-spacing:normal;text-decoration:none;flex-shrink:0}
+.pay101-original-logo{display:block;width:155px;max-width:100%;height:auto;object-fit:contain}
+.developer-label{font-size:11px;font-weight:650;color:#8b97aa;letter-spacing:0}
+.topbar .navlinks{font-size:16px;font-weight:600;gap:27px;color:#506378}
+.topbar .navlinks a{font-size:16px;font-weight:600;line-height:normal;color:#506378}
+.topbar .navlinks a:hover{color:#0878f9}
+@media(max-width:1050px){.topbar .navlinks{gap:14px}.topbar .navlinks a{font-size:15px}.pay101-original-logo{width:140px}}
+@media(max-width:560px){.pay101-original-logo{width:130px}.developer-label{font-size:10px}}
 </style>
 </head>
 <body>
 <header class="container topbar">
-  <a class="logo" href="/"><span class="logo-mark">P</span>pay101 <span style="font-size:11px;font-weight:650;color:#8b97aa;letter-spacing:0;margin-left:2px">DEVELOPERS</span></a>
+  <a class="logo" href="/" aria-label="Pay101 home"><img class="pay101-original-logo" src="/assets/pay101-logo.png" alt="Pay101"><span class="developer-label">DEVELOPERS</span></a>
   <nav class="navlinks" id="navlinks"><a href="#quickstart">Quick start</a><a href="#api">API resources</a><a href="#prerequisites">Prerequisites</a><a href="#faq">FAQs</a></nav>
   <a class="button primary" href="#contact">Request API access ↗</a><button class="hamb" id="hamb" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 </header>
