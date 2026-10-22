@@ -108,10 +108,10 @@ function App(){
  React.useEffect(()=>{const timer=setInterval(()=>setActiveSlide(i=>(i+1)%heroSlides.length),5000);return ()=>clearInterval(timer)},[]);
  const slide=heroSlides[activeSlide];
  return <div className="app">
-  <header className="p101Header">
+  <header className="p101Header" onMouseLeave={()=>setSolutionsOpen(false)}>
    <div className="p101HeaderInner">
     <a className="brand" href="/" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a>
-    <nav className={`p101Nav p101UnifiedNav ${menu?'mobileOpen':''}`} aria-label="Main navigation" onMouseLeave={()=>setSolutionsOpen(false)}>
+    <nav className={`p101Nav p101UnifiedNav ${menu?'mobileOpen':''}`} aria-label="Main navigation">
      {[
       ['solutions','Solutions'],
       ['markets','Markets'],
@@ -339,7 +339,7 @@ const segmentPages={
 function SegmentLanding({segment}){
  React.useEffect(()=>{document.title=segment.title+' | Pay101';const meta=document.querySelector('meta[name="description"]');if(meta)meta.content=segment.pain},[segment]);
  return <div className="app p101SegmentPage">
- <header className="p101Header"><div className="p101HeaderInner"><a className="brand" href="/"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a><nav className="p101SegmentNav"><a href="/">Home</a><a href="/#solutions">Solutions</a><a href="/#industries">Industries</a></nav><a className="primary small" href="mailto:support@pay101.uk?subject=Pay101%20Sales%20Enquiry">Talk to sales <ArrowRight size={16}/></a></div></header>
+ <header className="p101Header" onMouseLeave={()=>setSolutionsOpen(false)}><div className="p101HeaderInner"><a className="brand" href="/"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a><nav className="p101SegmentNav"><a href="/">Home</a><a href="/#solutions">Solutions</a><a href="/#industries">Industries</a></nav><a className="primary small" href="mailto:support@pay101.uk?subject=Pay101%20Sales%20Enquiry">Talk to sales <ArrowRight size={16}/></a></div></header>
  <main><section className="p101SegmentHero"><div className="p101SegmentWrap"><span className="kicker">{segment.label}</span><h1>{segment.title}</h1><p>Explore clearer payment journeys and operational visibility for {segment.label.toLowerCase()}.</p><a className="primary" href={'mailto:support@pay101.uk?subject='+encodeURIComponent('Pay101 sales enquiry - '+segment.label)}>Talk to sales <ArrowRight size={17}/></a><a className="p101SegmentBack" href="/#industries">Explore other industries →</a></div></section>
  <section className="p101SegmentWrap p101SegmentContent"><div className="p101SegmentBlock"><span className="kicker">ONE PAIN POINT</span><h2>The challenge</h2><p>{segment.pain}</p></div><div className="p101SegmentBlock"><span className="kicker">ONE PROOF POINT</span><h2>Example payment workflow</h2><p>{segment.proof}</p><small>Illustrative concept only; not a verified customer result or performance metric.</small></div></section>
  <section className="p101SegmentWrap p101SegmentUseCases"><span className="kicker">USE CASES</span><h2>What this could support</h2><div className="p101SegmentCards">{segment.points.map(p=><div key={p}><Check size={20}/><span>{p}</span></div>)}</div></section>
@@ -347,7 +347,7 @@ function SegmentLanding({segment}){
  <footer className="p101Footer"><div className="p101FooterGrid"><div className="p101FooterBrand"><a className="brand" href="/"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a><h3>Payments, simplified.</h3><p>Making payment experiences easier to navigate, one step at a time.</p></div><div className="p101FooterCol"><h4>Explore</h4><a href="/">Home</a><a href="/#solutions">Solutions</a><a href="/#industries">Industries</a></div><div className="p101FooterCol"><h4>Industries</h4><a href="/industries/media-entertainment">Media &amp; Entertainment</a><a href="/industries/gaming">Gaming</a><a href="/industries/digital-businesses">Digital Businesses</a></div><div className="p101FooterCol"><h4>Support</h4><a href="mailto:support@pay101.uk">Contact Us</a><a href="mailto:support@pay101.uk?subject=Help">Help &amp; Support</a></div></div><div className="p101FooterBottom"><span>© 2026 Pay101. All rights reserved.</span></div></footer></div>
 }
 
-function MarketingBlog(){return <div className="app p101SegmentPage"><header className="p101Header"><div className="p101HeaderInner"><a className="brand" href="/"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a><a className="p101NavLink" href="/">← Back to home</a></div></header><main><section className="p101SegmentHero"><div className="p101SegmentWrap"><span className="kicker">RESOURCES</span><h1>Pay101 Blog</h1><p>Payment guides and product updates are being prepared for this marketing demo.</p><a className="primary" href="mailto:support@pay101.uk?subject=Pay101%20Blog%20Enquiry">Contact our team <ArrowRight size={17}/></a></div></section></main></div>}
+function MarketingBlog(){return <div className="app p101SegmentPage"><header className="p101Header" onMouseLeave={()=>setSolutionsOpen(false)}><div className="p101HeaderInner"><a className="brand" href="/"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a><a className="p101NavLink" href="/">← Back to home</a></div></header><main><section className="p101SegmentHero"><div className="p101SegmentWrap"><span className="kicker">RESOURCES</span><h1>Pay101 Blog</h1><p>Payment guides and product updates are being prepared for this marketing demo.</p><a className="primary" href="mailto:support@pay101.uk?subject=Pay101%20Blog%20Enquiry">Contact our team <ArrowRight size={17}/></a></div></section></main></div>}
 function MerchantSignup(){
  React.useEffect(()=>{document.title='Merchant Sign Up | Pay101'},[]);
  const [name,setName]=React.useState(''),[email,setEmail]=React.useState(''),[company,setCompany]=React.useState(''),[type,setType]=React.useState(''),[message,setMessage]=React.useState('');
@@ -366,10 +366,10 @@ function DevelopersPage(){
  const [solutionsOpen,setSolutionsOpen]=React.useState(false);
  const [solutionTab,setSolutionTab]=React.useState('solutions');
  return <div className="app p101DeveloperPage">
-  <header className="p101Header">
+  <header className="p101Header" onMouseLeave={()=>setSolutionsOpen(false)}>
    <div className="p101HeaderInner">
     <a className="brand" href="/" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a>
-    <nav className={`p101Nav p101UnifiedNav ${menu?'mobileOpen':''}`} aria-label="Main navigation" onMouseLeave={()=>setSolutionsOpen(false)}>
+    <nav className={`p101Nav p101UnifiedNav ${menu?'mobileOpen':''}`} aria-label="Main navigation">
      {[
       ['solutions','Solutions'],
       ['markets','Markets'],
