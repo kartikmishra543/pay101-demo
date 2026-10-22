@@ -1258,3 +1258,8 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101DeveloperPageNav a:hover,.p101DeveloperPageNav a[aria-current]{color:#0878f9}
 @media(max-width:850px){.p101DeveloperPageNav{gap:10px}.p101DeveloperPageNav a{font-size:13px}.p101DeveloperPageHero{padding:55px 18px 28px}}
 @media(max-width:600px){.p101DeveloperPageNav{flex-wrap:wrap;justify-content:center;gap:8px 14px}.p101DeveloperPage .p101HeaderInner{flex-wrap:wrap;justify-content:center}.p101DeveloperPageHero p{font-size:16px}}
+
+/* Keep mega menu open as the pointer moves from the trigger into its links. */
+.p101Header .p101UnifiedMega{top:100%!important}
+.p101Header .p101UnifiedNav{overflow:visible!important}
+.p101Header .p101UnifiedMega a{position:relative;z-index:1}
