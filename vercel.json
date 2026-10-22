@@ -14,7 +14,7 @@
     },
     {
       "source": "/developers",
-      "destination": "/"
+      "destination": "/developers.html"
     }
   ]
 }
