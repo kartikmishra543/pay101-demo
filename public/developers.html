@@ -28,7 +28,7 @@
 @media(max-width:1050px){.topbar .navlinks{gap:14px}.topbar .navlinks a{font-size:15px}.pay101-original-logo{width:140px}}
 @media(max-width:560px){.pay101-original-logo{width:130px}.developer-label{font-size:10px}}
 </style>
-<link rel="stylesheet" href="/pay101-menu.css"></head>
+<link rel="stylesheet" href="/pay101-menu.css"><link rel="stylesheet" href="/pay101-footer.css"></head>
 <body>
 <header class="container topbar">
   <a class="logo" href="/" aria-label="Pay101 home"><img class="pay101-original-logo" src="/assets/pay101-logo.png" alt="Pay101"><span class="developer-label">DEVELOPERS</span></a>
@@ -110,7 +110,23 @@
 </div></section>
 <section class="final-cta" id="contact"><div class="container"><div class="cta-box"><div><h2>Let's get your integration moving.</h2><p>Share your use case and connect with the Pay101 team for the next technical steps.</p></div><a class="button primary" style="background:#fff;color:#2448d9;border-color:#fff" href="mailto:support@pay101.uk?subject=Pay101%20API%20Integration%20Request">Request API access ↗</a></div></div></section>
 </main>
-<footer class="foot"><div class="container"><div class="footrow"><a class="logo" href="/" aria-label="Pay101 home"><img class="pay101-original-logo" style="width:135px;height:auto" src="/assets/pay101-logo.png" alt="Pay101"></a><div class="footlinks"><a href="#quickstart">Quick start</a><a href="#api">API resources</a><a href="#prerequisites">Prerequisites</a><a href="#faq">FAQs</a></div><span>© <span id="year"></span> Pay101</span></div><div class="note">Concept prototype based on common developer-portal patterns from the supplied reference sites. Confirm Pay101's actual products, credentials, sandbox availability, endpoints, supported methods, security claims, and contact details before publishing. All code shown is illustrative.</div></div></footer>
+<footer class="p101Footer p101ReferenceFooter" id="footer">
+    <div class="p101FooterGrid">
+     <div class="p101FooterBrand">
+      <a class="brand" href="/" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" class="brandLogo"></a>
+      <p>Accept money from customers, send payments to partners, and see what is happening in one clear place.</p>
+      <div class="p101FooterSocial" aria-label="Social media icons">
+       <span aria-label="LinkedIn" title="LinkedIn">in</span><span aria-label="X" title="X">𝕏</span><span aria-label="Instagram" title="Instagram">◎</span><span aria-label="YouTube" title="YouTube">▶</span>
+      </div>
+      <a class="primary small p101FooterCta" href="/signup">Get started <span aria-hidden="true">→</span></a>
+     </div>
+     <div class="p101FooterCol"><h4>Solutions</h4><a href="/#solutions">Payin Solutions</a><a href="/#solutions">Payout Solutions</a><a href="/#solutions">UPI Payments</a><a href="/#solutions">IMPS Transfers</a><a href="/#solutions">NEFT &amp; RTGS</a><a href="/#solutions">Instant Settlements</a></div>
+     <div class="p101FooterCol"><h4>Industries</h4><a href="/#industries">E-commerce</a><a href="/#industries">Gaming</a><a href="/#industries">Media &amp; Entertainment</a><a href="/#industries">Travel</a><a href="/#industries">Education</a></div>
+     <div class="p101FooterCol"><h4>Markets</h4><a href="/#markets">India</a><a href="/#markets">Nepal</a><a href="/#markets">Bhutan</a><a href="/#markets">Brazil</a><a href="/#markets">Australia</a></div>
+     <div class="p101FooterCol"><h4>Company</h4><a href="/#about">About us</a><a href="/how-it-works">How it works</a><a href="/#developers">Developers</a><a href="/#security">Security</a><a href="/#blog">Blog</a><a href="/#contact">Contact</a></div>
+    </div>
+    <div class="p101FooterBottom"><span>© 2026 Pay101. All rights reserved.</span><div><a href="mailto:support@pay101.uk?subject=Privacy%20Policy%20Request">Privacy policy</a><a href="mailto:support@pay101.uk?subject=Terms%20of%20Service%20Request">Terms of service</a></div></div>
+   </footer>
 <script>
 const menu=document.getElementById('hamb'),nav=document.getElementById('navlinks');
 menu.addEventListener('click',()=>{let open=nav.classList.toggle('show');menu.setAttribute('aria-expanded',String(open));});
