@@ -468,70 +468,24 @@ html{scroll-padding-top:84px}
 </footer>
 <script>
 (function(){
-  var btn=document.getElementById('solBtn'), mega=document.getElementById('mega'),
-      backdrop=document.getElementById('backdrop'), burger=document.getElementById('burger'),
-      nav=document.getElementById('nav'), tabs=[].slice.call(document.querySelectorAll('.mm-tab')),
-      panels=[].slice.call(document.querySelectorAll('.mm-panel')),
-      drops=[].slice.call(document.querySelectorAll('.has-drop')), t;
-  var desktop=function(){return window.matchMedia('(min-width:901px)').matches};
-
-  /* Solutions mega-menu */
-  function paintMenu(open){
-    btn.setAttribute('aria-expanded',open);
-    mega.classList.toggle('open',open);
-    backdrop.classList.toggle('on',open&&desktop());
-  }
-  function setMenu(open){ paintMenu(open); if(open)closeDrops(); }
-
-  /* Industries and Markets dropdowns (any li.has-drop) */
-  function paintDrop(li,open){
-    li.querySelector('.nav-link').setAttribute('aria-expanded',open);
-    li.querySelector('.drop').classList.toggle('open',open);
-  }
-  function closeDrops(except){drops.forEach(function(li){if(li!==except)paintDrop(li,false)})}
-  function setDrop(li,open){ paintDrop(li,open); if(open){closeDrops(li);paintMenu(false)} }
-
-  drops.forEach(function(li){
-    var b=li.querySelector('.nav-link'), d=li.querySelector('.drop'), timer;
-    b.addEventListener('click',function(){setDrop(li,desktop()?true:b.getAttribute('aria-expanded')!=='true')});
-    li.addEventListener('mouseenter',function(){if(desktop()){clearTimeout(timer);setDrop(li,true)}});
-    li.addEventListener('mouseleave',function(){if(desktop()){timer=setTimeout(function(){paintDrop(li,false)},150)}});
-    d.addEventListener('click',function(e){if(e.target.closest('a'))paintDrop(li,false)});
-  });
-
-  function showTab(name){
-    tabs.forEach(function(x){x.setAttribute('aria-selected',x.dataset.p===name)});
-    panels.forEach(function(p){p.classList.toggle('on',p.id==='p-'+name)});
-  }
-  btn.addEventListener('click',function(){setMenu(desktop()?true:btn.getAttribute('aria-expanded')!=='true')});
-  tabs.forEach(function(x){
-    x.addEventListener('click',function(){showTab(x.dataset.p)});
-    x.addEventListener('mouseenter',function(){if(desktop())showTab(x.dataset.p)});
-  });
-
-  // Hover to open on desktop, with a short delay so the pointer can travel into the panel
-  var item=btn.parentNode;
-  item.addEventListener('mouseenter',function(){if(desktop()){clearTimeout(t);setMenu(true)}});
-  item.addEventListener('mouseleave',function(){if(desktop()){t=setTimeout(function(){paintMenu(false)},150)}});
-
-  document.addEventListener('keydown',function(e){
-    if(e.key!=='Escape')return;
-    var openLi=drops.filter(function(li){return li.querySelector('.drop').classList.contains('open')})[0];
-    var f=openLi?openLi.querySelector('.nav-link'):btn;
-    paintMenu(false);closeDrops();f.focus();
-  });
-  document.addEventListener('click',function(e){
-    if(!item.contains(e.target))paintMenu(false);
-    drops.forEach(function(li){if(!li.contains(e.target))paintDrop(li,false)});
-  });
-  mega.addEventListener('click',function(e){if(e.target.closest('a'))paintMenu(false)});
-
-  burger.addEventListener('click',function(){
-    var o=!nav.classList.contains('open');
-    nav.classList.toggle('open',o);
-    burger.setAttribute('aria-expanded',o);
-  });
-  window.addEventListener('resize',function(){paintMenu(false);closeDrops();nav.classList.remove('open')});
+ const nav=document.getElementById('nav'),burger=document.getElementById('burger'),drops=Array.from(document.querySelectorAll('.p101PricingHeader .has-drop'));
+ const desktop=()=>window.matchMedia('(min-width:901px)').matches;
+ function toggle(li,open){
+  li.querySelector('.nav-link').setAttribute('aria-expanded',String(open));
+  li.querySelector('.drop').classList.toggle('open',open);
+ }
+ function closeAll(except){drops.forEach(li=>{if(li!==except)toggle(li,false)})}
+ drops.forEach(li=>{
+  const button=li.querySelector('.nav-link');
+  button.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')!=='true';closeAll(li);toggle(li,open)});
+  li.addEventListener('mouseenter',()=>{if(desktop()){closeAll(li);toggle(li,true)}});
+  li.addEventListener('mouseleave',()=>{if(desktop())toggle(li,false)});
+  li.querySelector('.drop').addEventListener('click',e=>{if(e.target.closest('a')){closeAll();nav.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
+ });
+ burger.addEventListener('click',()=>{const open=!nav.classList.contains('open');nav.classList.toggle('open',open);burger.setAttribute('aria-expanded',String(open));if(!open)closeAll()});
+ document.addEventListener('click',e=>{if(!e.target.closest('.p101PricingHeader')){closeAll();nav.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeAll();nav.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.focus()}});
+ window.addEventListener('resize',()=>{closeAll();nav.classList.remove('open');burger.setAttribute('aria-expanded','false')});
 })();
 </script>
 <script>
