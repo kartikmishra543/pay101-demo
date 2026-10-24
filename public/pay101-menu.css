@@ -6,3 +6,9 @@
 /* Keep only the four navigation tabs, with no extra menu button or New badges. */
 .pay101MenuMobileToggle,.pay101MegaNew{display:none!important}
 @media(max-width:900px){.pay101MegaTabs{display:flex;position:static;flex-direction:row;flex-wrap:wrap;align-items:center;background:transparent;border:0;box-shadow:none;padding:0}.pay101MegaNav{flex:1;order:initial}.pay101MegaPanel,.p101Header .pay101MegaPanel{top:calc(100% + 12px)}}
+
+/* Prevent pointer falling through the space between menu tabs and dropdown. */
+.pay101MegaPanel::before{content:"";position:absolute;left:0;right:0;top:-24px;height:26px;background:transparent;pointer-events:auto}
+.pay101MegaNav{isolation:isolate}
+.pay101MegaPanel{z-index:9999!important}
+@media(min-width:901px){.pay101MegaPanel{top:calc(100% + 8px)!important}.pay101MegaPanel::before{top:-18px;height:20px}}
