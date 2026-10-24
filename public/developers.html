@@ -28,7 +28,7 @@
 @media(max-width:1050px){.topbar .navlinks{gap:14px}.topbar .navlinks a{font-size:15px}.pay101-original-logo{width:140px}}
 @media(max-width:560px){.pay101-original-logo{width:130px}.developer-label{font-size:10px}}
 </style>
-</head>
+<link rel="stylesheet" href="/pay101-menu.css"></head>
 <body>
 <header class="container topbar">
   <a class="logo" href="/" aria-label="Pay101 home"><img class="pay101-original-logo" src="/assets/pay101-logo.png" alt="Pay101"><span class="developer-label">DEVELOPERS</span></a>
@@ -118,5 +118,5 @@ nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classLi
 document.querySelectorAll('.faq-button').forEach(b=>b.addEventListener('click',()=>{const item=b.closest('.faq-item');const open=item.classList.toggle('open');b.setAttribute('aria-expanded',String(open))}));
 document.getElementById('year').textContent=new Date().getFullYear();
 </script>
-</body>
+<script src="/pay101-menu.js" defer></script></body>
 </html>
