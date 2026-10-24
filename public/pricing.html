@@ -239,6 +239,23 @@ html{scroll-padding-top:84px}
   .actions .hf-btn .ico{display:none}
 }
 
+
+/* Match the React homepage header on the standalone Pricing page. */
+.p101PricingHeader{height:92px;background:#f4f7fc;border-bottom:1px solid #dfe7f1;backdrop-filter:none}
+.p101PricingHeader .hf-container{max-width:none;padding:0 28px;gap:32px}
+.p101PricingHeader .logo{margin-right:auto;flex:0 0 auto}
+.p101PricingHeader .logo img{width:155px;max-height:52px;height:auto;object-fit:contain;display:block}
+.p101PricingHeader .nav{align-items:center;gap:12px}
+.p101PricingHeader .nav-link{font-size:15px;font-weight:600;color:#526985;padding:12px 10px;gap:8px;white-space:nowrap}
+.p101PricingHeader .nav-link span{font-size:17px;line-height:1}
+.p101PricingHeader .actions{margin-left:auto;gap:16px;flex:0 0 auto}
+.p101PricingHeader .signin{font-size:14px;padding:10px 4px;color:#263c59}
+.p101PricingHeader .hf-btn{background:#086fff;color:white;font-size:14px;padding:13px 21px;border-radius:12px;box-shadow:0 8px 22px #0878f92d}
+.p101PricingHeader .drop{top:100%;left:0}
+.p101PricingHeader .drop::before{display:none}
+.p101PricingHeader .has-drop:hover .drop,.p101PricingHeader .has-drop:focus-within .drop{opacity:1;visibility:visible;transform:none}
+@media(max-width:900px){.p101PricingHeader{height:76px}.p101PricingHeader .hf-container{padding:0 18px;gap:12px}.p101PricingHeader .logo img{width:142px}.p101PricingHeader .nav{top:76px;gap:0}.p101PricingHeader .nav-link{font-size:16px}.p101PricingHeader .drop{display:none;position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;width:100%;padding:4px 0 10px}.p101PricingHeader .drop.open{display:block}.p101PricingHeader .has-drop:hover .drop,.p101PricingHeader .has-drop:focus-within .drop{display:none}.p101PricingHeader .has-drop .drop.open{display:block}.p101PricingHeader .actions{margin-left:auto}.p101PricingHeader .burger{display:grid;margin-left:0}}
+@media(max-width:520px){.p101PricingHeader .logo img{width:125px}.p101PricingHeader .hf-btn{padding:11px 12px;font-size:12px}.p101PricingHeader .actions{gap:4px}}
 </style>
 </head>
 <body>
@@ -261,86 +278,18 @@ html{scroll-padding-top:84px}
   <symbol id="s-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path fill="currentColor" d="m10 9.2 5 2.8-5 2.8z"/></symbol>
   <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
 </svg>
-<header class="site-header">
-  <div class="hf-container">
-    <a href="/" class="logo" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" style="width:155px;max-width:100%;height:auto;display:block"></a>
-
-    <nav aria-label="Main">
-      <ul class="nav" id="nav">
-        <li>
-          <button class="nav-link" id="solBtn" aria-expanded="false" aria-controls="mega" aria-haspopup="true">
-            Solutions <svg class="ico chev"><use href="#i-chev"/></svg>
-          </button>
-
-          <div class="mega" id="mega">
-            <div class="mm-tabs" role="tablist" aria-label="Solution groups">
-              <button class="mm-tab" role="tab" aria-selected="true" data-p="collect">Collect<small>Accept customer payments</small></button>
-              <button class="mm-tab" role="tab" aria-selected="false" data-p="payout">Pay out<small>Move money to partners</small></button>
-              <button class="mm-tab" role="tab" aria-selected="false" data-p="settle">Settle<small>Know when funds arrive</small></button>
-            </div>
-
-            <div class="mm-panel on" id="p-collect" role="tabpanel" data-title="Collect">
-              <a href="/#payin"><span class="ico-box"><svg class="ico"><use href="#i-card"/></svg></span><div><strong>Payin Solutions</strong><span>Accept customer payments online</span></div></a>
-              <a href="/#upi"><span class="ico-box"><svg class="ico"><use href="#i-upi"/></svg></span><div><strong>UPI Payments</strong><span>Fast, familiar digital payments</span></div></a>
-            </div>
-            <div class="mm-panel" id="p-payout" role="tabpanel" data-title="Pay out">
-              <a href="/#payout"><span class="ico-box"><svg class="ico"><use href="#i-send"/></svg></span><div><strong>Payout Solutions</strong><span>Pay vendors, partners and customers</span></div></a>
-              <a href="/#imps"><span class="ico-box"><svg class="ico"><use href="#i-swap"/></svg></span><div><strong>IMPS Transfers</strong><span>Quick bank-to-bank transfers</span></div></a>
-              <a href="/#neft"><span class="ico-box"><svg class="ico"><use href="#i-bank"/></svg></span><div><strong>NEFT &amp; RTGS</strong><span>Bank transfers for larger amounts</span></div></a>
-            </div>
-            <div class="mm-panel" id="p-settle" role="tabpanel" data-title="Settle">
-              <a href="/#settlements"><span class="ico-box"><svg class="ico"><use href="#i-zap"/></svg></span><div><strong>Instant Settlements</strong><span>See when funds are available</span></div></a>
-            </div>
-          </div>
-        </li>
-        
-        <li class="has-drop">
-          <button class="nav-link" aria-expanded="false" aria-haspopup="true">
-            Markets <svg class="ico chev"><use href="#i-chev"/></svg>
-          </button>
-          <div class="drop drop-wide">
-            <a href="/#market-in"><span class="flag-box"><svg class="flag" viewBox="0 0 36 24"><rect width="36" height="8" fill="#ff9933"/><rect y="8" width="36" height="8" fill="#fff"/><rect y="16" width="36" height="8" fill="#138808"/><circle cx="18" cy="12" r="3" fill="none" stroke="#000a8c" stroke-width="1"/></svg></span><div><strong>India</strong><span>UPI and bank transfers</span></div></a>
-            <a href="/#market-np"><span class="flag-box"><svg class="flag" viewBox="0 0 36 24"><rect width="36" height="24" fill="#fff"/><path d="M10 2v20h18L10 2zm0 0 14 9H10" fill="#dc143c" stroke="#003893" stroke-width="1.6" stroke-linejoin="round"/></svg></span><div><strong>Nepal</strong><span>Explore local payment options</span></div></a>
-            <a href="/#market-bt"><span class="flag-box"><svg class="flag" viewBox="0 0 36 24"><rect width="36" height="24" fill="#ff8000"/><path d="M0 0h36L0 24z" fill="#ffd520"/><ellipse cx="18" cy="12" rx="6" ry="2.6" fill="#fff" transform="rotate(-34 18 12)"/></svg></span><div><strong>Bhutan</strong><span>Explore local payment options</span></div></a>
-            <a href="/#market-br"><span class="flag-box"><svg class="flag" viewBox="0 0 36 24"><rect width="36" height="24" fill="#009b3a"/><path d="M18 3 33 12 18 21 3 12z" fill="#fedf00"/><circle cx="18" cy="12" r="4.6" fill="#002776"/></svg></span><div><strong>Brazil</strong><span>BRL and Pix examples</span></div></a>
-            <a href="/#market-au"><span class="flag-box"><svg class="flag" viewBox="0 0 36 24"><rect width="36" height="24" fill="#00247d"/><path d="M0 0l16 10M16 0 0 10" stroke="#fff" stroke-width="2.4"/><path d="M8 0v10M0 5h16" stroke="#fff" stroke-width="4"/><path d="M8 0v10M0 5h16" stroke="#cf142b" stroke-width="2"/><circle cx="12" cy="18" r="1.6" fill="#fff"/><circle cx="26" cy="7" r="1.2" fill="#fff"/><circle cx="29" cy="14" r="1.2" fill="#fff"/><circle cx="24" cy="19" r="1.2" fill="#fff"/></svg></span><div><strong>Australia</strong><span>AUD currency examples</span></div></a>
-            <a href="/#markets"><span class="flag-box globe"><svg class="ico"><use href="#i-globe"/></svg></span><div><strong>Many more</strong><span>Ask us about additional markets</span></div></a>
-            <p class="drop-note">Market examples are for demonstration. Confirm availability with Pay101.</p>
-          </div>
-        </li>
-        <li><a class="nav-link" href="/pricing" aria-current="page">Pricing</a></li>
-        <li><a class="nav-link" href="/how-it-works">How it works</a></li>
-        <li class="has-drop">
-          <button class="nav-link" aria-expanded="false" aria-haspopup="true">
-            Company <svg class="ico chev"><use href="#i-chev"/></svg>
-          </button>
-          <div class="drop drop-company">
-            <div class="co-grid">
-              <div class="co-links">
-                <a href="/#about"><span class="ico-box"><svg class="ico"><use href="#i-info"/></svg></span><div><strong>About us</strong><span>Who we are and what we build</span></div></a>
-                <a href="/#blog"><span class="ico-box"><svg class="ico"><use href="#i-pen"/></svg></span><div><strong>Blog</strong><span>Payment guides and product news</span></div></a>
-                <a href="/#security"><span class="ico-box"><svg class="ico"><use href="#i-shield"/></svg></span><div><strong>Security</strong><span>How we protect your money</span></div></a>
-              </div>
-              <a class="co-cta" href="#contact">
-                <span class="ico-box"><svg class="ico"><use href="#i-mail"/></svg></span>
-                <strong>Talk to our team</strong>
-                <span>Ask which payment options fit your business.</span>
-                <em>Contact us <svg class="ico"><use href="#i-arrow"/></svg></em>
-              </a>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </nav>
-
-    <div class="actions">
-      <a class="signin" href="/signin">Sign in</a>
-      <a class="hf-btn" href="/get-started">Get started <svg class="ico"><use href="#i-arrow"/></svg></a>
-    </div>
-    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
-      <svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
-  </div>
+<header class="site-header p101PricingHeader">
+ <div class="hf-container">
+  <a href="/" class="logo" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101"></a>
+  <nav aria-label="Main navigation"><ul class="nav" id="nav">
+   <li class="has-drop"><button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Solutions <span aria-hidden="true">⌄</span></button><div class="drop"><a href="/#solutions"><strong>Accept Payments</strong><span>Payins and payment methods</span></a><a href="/#solutions"><strong>Payouts</strong><span>Send payments to partners</span></a><a href="/how-it-works"><strong>How it works</strong><span>Explore payment workflows</span></a></div></li>
+   <li class="has-drop"><button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Markets <span aria-hidden="true">⌄</span></button><div class="drop"><a href="/#markets"><strong>India</strong><span>UPI and bank transfers</span></a><a href="/#markets"><strong>Nepal, Bhutan and more</strong><span>Explore available markets</span></a><a href="/#markets"><strong>Brazil and Australia</strong><span>International examples</span></a></div></li>
+   <li class="has-drop"><button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">About us <span aria-hidden="true">⌄</span></button><div class="drop"><a href="/#about"><strong>About us</strong><span>Learn about Pay101</span></a><a href="/#security"><strong>Security</strong><span>Payment security</span></a><a href="/developers"><strong>Developers</strong><span>Integration overview</span></a></div></li>
+   <li class="has-drop"><button type="button" class="nav-link" aria-expanded="false" aria-haspopup="true">Get in Touch <span aria-hidden="true">⌄</span></button><div class="drop"><a href="/#contact"><strong>Contact us</strong><span>Talk to our team</span></a><a href="/pricing#contact"><strong>Request a quote</strong><span>Discuss pricing</span></a><a href="/pricing"><strong>Pricing</strong><span>Explore plans</span></a></div></li>
+  </ul></nav>
+  <div class="actions"><a class="signin" href="/login">Sign in</a><a class="hf-btn" href="/signup">Get started <svg class="ico"><use href="#i-arrow"/></svg></a></div>
+  <button class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav"><svg class="ico" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+ </div>
 </header>
 <div class="backdrop" id="backdrop"></div>
 
