@@ -2,3 +2,7 @@
 .pay101MenuMobileToggle{display:none;border:0;background:#e7efff;border-radius:10px;padding:10px 14px;color:#0a58e0;font:700 14px Manrope,system-ui,sans-serif;cursor:pointer}
 .p101Header .pay101MegaNav{overflow:visible;min-width:0}.p101Header .pay101MegaPanel{top:calc(100% + 14px)}
 @media(max-width:900px){.pay101MenuMobileToggle{display:block}.pay101MegaNav{flex:0 0 auto;order:initial}.pay101MegaTabs{display:none;position:absolute;top:100%;left:10px;right:10px;background:white;border:1px solid #e0e9f8;border-radius:14px;padding:10px;box-shadow:0 12px 35px #14284a20}.pay101MegaTabs.mobileOpen{display:flex;flex-direction:column;align-items:stretch}.pay101MegaPanel{position:absolute;top:calc(100% + 210px);left:50%;max-height:55vh;overflow:auto}.p101Header .pay101MegaPanel{top:calc(100% + 210px)}}
+
+/* Keep only the four navigation tabs, with no extra menu button or New badges. */
+.pay101MenuMobileToggle,.pay101MegaNew{display:none!important}
+@media(max-width:900px){.pay101MegaTabs{display:flex;position:static;flex-direction:row;flex-wrap:wrap;align-items:center;background:transparent;border:0;box-shadow:none;padding:0}.pay101MegaNav{flex:1;order:initial}.pay101MegaPanel,.p101Header .pay101MegaPanel{top:calc(100% + 12px)}}
