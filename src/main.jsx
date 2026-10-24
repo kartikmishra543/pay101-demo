@@ -1,3 +1,6 @@
+
+const PAY101_MENU_GROUPS={"Solutions":[["Accept payments",[["Accept Payments","Accept online payments securely and seamlessly.","/#solutions"],["UPI & Payment Methods","Explore payment collection options.","/#solutions"],["How it works","Understand the payment workflow.","/how-it-works"]]],["Payouts & settlements",[["Payouts","Send money to partners, vendors, and customers.","/#solutions"],["Bank Transfers","IMPS, NEFT and RTGS workflows.","/#solutions"],["Settlements & Reconciliation","Track settlements and reconcile transactions with ease.","/#solutions"]]],["For your business",[["Gaming","Top-ups, in-game purchases and player payouts.","/#solutions","New"],["Media & Entertainment","Subscriptions, pay-per-view and creator payouts.","/#solutions","New"],["Digital Services","Software, online services and marketplaces.","/#solutions","New"]]]],"Markets":[["Asia",[["India","UPI and bank transfers.","/#markets"],["Nepal","Local payment options.","/#markets"],["Bhutan","Regional payment options.","/#markets"]]],["International",[["Brazil","Pix payment examples.","/#markets"],["Australia","AUD payment examples.","/#markets"]]],["Other countries",[["More Markets","Ask about additional markets.","/#markets"],["Check availability","Confirm service in your country with our team.","mailto:support@pay101.uk?subject=Market%20availability"]]]],"About us":[["Company",[["About us","Learn about Pay101.","/#about"],["Security","How we approach payment security.","/#security"],["Case studies","Merchant stories with real results.","/#about","New"]]],["Resources",[["Blog","Payment guides and news.","/#about"]]],["For developers",[["Developers","Integration overview and API docs.","/developers"]]]],"Get in Touch":[["Contact",[["Get in Touch","Talk to our team.","/#contact"],["Request a Consultation","Discuss your payment needs.","mailto:support@pay101.uk?subject=Consultation"]]],["Support",[["Frequently Asked Questions","Find quick answers.","/pricing#faq"],["Merchant onboarding checklist","Documents needed and expected timeline.","/#contact","New"]]],["Explore Pay101",[["Pricing","View pricing information.","/pricing"]]]]};
+function Pay101SharedMenu(){const [active,setActive]=React.useState(null);const [mobile,setMobile]=React.useState(false);const names=Object.keys(PAY101_MENU_GROUPS);return <nav className="pay101MegaNav" aria-label="Main navigation" onMouseLeave={()=>setActive(null)}><button type="button" className="pay101MenuMobileToggle" onClick={()=>setMobile(!mobile)} aria-expanded={mobile}>Menu ☰</button><div className={mobile?'pay101MegaTabs mobileOpen':'pay101MegaTabs'}>{names.map((name,i)=><button key={name} type="button" className="pay101MegaTab" aria-expanded={active===i} onMouseEnter={()=>setActive(i)} onFocus={()=>setActive(i)} onClick={()=>setActive(active===i?null:i)}>{name} <span aria-hidden="true">⌄</span></button>)}</div>{active!==null&&<div className="pay101MegaPanel"><div className="pay101MegaCols">{PAY101_MENU_GROUPS[names[active]].map(([heading,items])=><div className="pay101MegaCol" key={heading}><h3>{heading}</h3>{items.map(([name,desc,url,tag])=><a key={name} href={url} onClick={()=>{setActive(null);setMobile(false)}}><span className="pay101MegaArrow">→</span><span><strong>{name} {tag&&<span className="pay101MegaNew">{tag}</span>}</strong><small>{desc}</small></span></a>)}</div>)}</div></div>}</nav>}
 import React from 'react';
 import {createRoot} from 'react-dom/client';
 import {motion} from 'framer-motion';
@@ -111,36 +114,7 @@ function App(){
   <header className="p101Header" onMouseLeave={()=>setSolutionsOpen(false)}>
    <div className="p101HeaderInner">
     <a className="brand" href="/" aria-label="Pay101 home"><img src="/assets/pay101-logo.png" alt="Pay101" className="brandLogo"/></a>
-    <nav className={`p101Nav p101UnifiedNav ${menu?'mobileOpen':''}`} aria-label="Main navigation">
-     {[
-      ['solutions','Solutions'],
-      ['markets','Markets'],
-      ['about','About us'],
-      ['contact','Get in Touch']
-     ].map(([key,label])=><button type="button" key={key} className={`p101NavLink p101UnifiedTrigger ${solutionsOpen&&solutionTab===key?'active':''}`} aria-expanded={solutionsOpen&&solutionTab===key} onMouseEnter={()=>{setSolutionTab(key);setSolutionsOpen(true)}} onFocus={()=>{setSolutionTab(key);setSolutionsOpen(true)}} onClick={()=>{setSolutionTab(key);setSolutionsOpen(v=>solutionTab===key?!v:true)}}>{label} <span aria-hidden="true">⌄</span></button>)}
-     {solutionsOpen&&<div className="p101UnifiedMega">
-      <div className="p101UnifiedGrid">
-       {(solutionTab==='solutions'?[
-        ['Accept Payments',[['Accept Payments','Accept online payments securely and seamlessly.','#solutions'],['UPI & Payment Methods','Explore payment collection options','#solutions']]],
-        ['Payouts',[['Payouts','Send money to partners, vendors, and customers.','#solutions'],['Bank Transfers','IMPS, NEFT and RTGS workflows','#solutions']]],
-        ['Settlements & Reconciliation',[['Settlements & Reconciliation','Track settlements and reconcile transactions with ease.','#solutions'],['How it works','Understand the payment workflow','/how-it-works']]]
-       ]:solutionTab==='markets'?[
-        ['Asia',[['India','UPI and bank transfers','#markets'],['Nepal','Local payment options','#markets'],['Bhutan','Regional payment options','#markets']]],
-        ['International',[['Brazil','Pix payment examples','#markets'],['Australia','AUD payment examples','#markets']]],
-        ['Explore',[['More Markets','Ask about additional markets','#markets'],['Contact our team','Confirm country availability','#contact']]]
-       ]:solutionTab==='about'?[
-        ['Company',[['About us','Learn about Pay101','#about'],['Security','How we approach payment security','#security']]],
-        ['Resources',[['Blog','Payment guides and news','/blog'],['FAQs','Frequently asked questions','#faqs']]],
-        ['For developers',[['Developers','Integration overview','/developers'],['How it works','Understand the platform','/how-it-works']]]
-       ]:[
-        ['Contact',[['Get in Touch','Talk to our team','#contact'],['Request a Consultation','Discuss your payment needs','#contact']]],
-        ['Support',[['Frequently Asked Questions','Find quick answers','#faqs'],['How it works','Explore the platform','/how-it-works']]],
-        ['Explore Pay101',[['Developers','Learn about integrations','/developers'],['Pricing','View pricing information','/pricing']]]
-       ]).map(([heading,items])=><div className="p101UnifiedColumn" key={heading}><div className="p101UnifiedHeading">{heading}</div>{items.map(([title,description,url])=><a href={url} key={title} onClick={()=>{setSolutionsOpen(false);setMenu(false)}}><span className="p101UnifiedLinkIcon"><ArrowRight size={16}/></span><span><strong>{title}</strong><small>{description}</small></span></a>)}</div>)}
-      </div>
-      {solutionTab==='markets'&&<p className="p101UnifiedNote">Markets shown are illustrative. Confirm service availability with Pay101.</p>}
-     </div>}
-    </nav>
+    <Pay101SharedMenu/>
     <div className="p101Actions"><a className="p101Signin" href="/login">Sign in</a><a className="primary small" href="/signup">Get started <ArrowRight size={15}/></a></div>
     <button className="p101Burger" type="button" onClick={()=>setMenu(v=>!v)} aria-label="Toggle navigation" aria-expanded={menu}>{menu?<X/>:<Menu/>}</button>
    </div>
