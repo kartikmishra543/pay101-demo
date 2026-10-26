@@ -13,6 +13,15 @@ import Pay101Bot from './Pay101Bot.jsx';
 
 function ConsultationForm(){
  const [open,setOpen]=React.useState(false);
+ const introTimer=React.useRef(null);
+ React.useEffect(()=>{
+  let shown=false;
+  try{shown=sessionStorage.getItem('pay101-consult-intro')==='shown';if(!shown)sessionStorage.setItem('pay101-consult-intro','shown')}catch(e){}
+  if(shown)return;
+  setOpen(true);
+  introTimer.current=setTimeout(()=>setOpen(false),4000);
+  return()=>clearTimeout(introTimer.current);
+ },[]);
  const [fields,setFields]=React.useState({name:'',email:'',industry:'',location:'',phone:''});
  const [notice,setNotice]=React.useState('');
  const update=(key,value)=>setFields(prev=>({...prev,[key]:value}));
@@ -38,7 +47,7 @@ function ConsultationForm(){
     {notice&&<p className="p101ConsultNotice" role="status">{notice}</p>}
    </form>
   </section>}
-  <button className="p101ConsultTrigger" type="button" onClick={()=>{setOpen(v=>!v)}} aria-label={open?'Close consultation form':'Open consultation form'} aria-expanded={open} title="Book a consultation"><Mail size={24}/></button>
+  <button className="p101ConsultTrigger" type="button" onClick={()=>{clearTimeout(introTimer.current);setOpen(v=>!v)}} aria-label={open?'Close consultation form':'Open consultation form'} aria-expanded={open} title="Book a consultation"><Mail size={24}/></button>
  </div>;
 }
 
