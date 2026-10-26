@@ -920,11 +920,11 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101ConsultWidget{position:fixed;right:24px;bottom:166px;z-index:1002;font-family:Manrope,Arial,sans-serif}
 .p101ConsultTrigger{width:46px;height:46px;border:0;border-radius:50%;background:#0a78ef;color:white;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 28px #0757e54d}
 .p101ConsultTrigger:hover{background:#0865cf;transform:translateY(-2px)}
-.p101ConsultPanel{position:absolute;right:0;bottom:60px;width:min(280px,calc(100vw - 28px));max-height:min(410px,calc(100dvh - 105px));display:flex;flex-direction:column;overflow:hidden;background:#fff;border:1px solid #dce8f6;border-radius:20px;box-shadow:0 22px 65px #123f743b}
-.p101ConsultHeader{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 12px;background:linear-gradient(110deg,#0a70ec,#0758d8);color:white}
+.p101ConsultPanel{position:absolute;right:0;bottom:60px;width:min(260px,calc(100vw - 28px));max-height:min(320px,calc(100dvh - 105px));display:flex;flex-direction:column;overflow:hidden;background:#fff;border:1px solid #dce8f6;border-radius:20px;box-shadow:0 22px 65px #123f743b}
+.p101ConsultHeader{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 10px;background:linear-gradient(110deg,#0a70ec,#0758d8);color:white}
 .p101ConsultHeader strong{display:block;font-size:17px}.p101ConsultHeader small{display:block;font-size:11px;color:#e4efff;margin-top:3px}
 .p101ConsultHeader button{background:none;border:0;color:white;cursor:pointer;display:grid;place-items:center}
-.p101ConsultForm{padding:8px 12px 10px;display:flex;flex-direction:column;gap:4px;overflow-y:auto}
+.p101ConsultForm{padding:7px 10px 9px;display:flex;flex-direction:column;gap:3px;overflow-y:auto}
 .p101ConsultForm label{font-size:12px;font-weight:750;color:#28425c;margin-top:4px}
 .p101ConsultForm input,.p101ConsultForm select{box-sizing:border-box;width:100%;min-height:30px;border:1px solid #d5e2f0;border-radius:10px;padding:9px 11px;background:white;color:#17334e;font:500 13px Manrope,Arial,sans-serif}
 .p101ConsultForm input:focus,.p101ConsultForm select:focus{outline:2px solid #b2d6ff;border-color:#0878f9}
