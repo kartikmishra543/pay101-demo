@@ -1264,42 +1264,6 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101Header .p101UnifiedNav{overflow:visible!important}
 .p101Header .p101UnifiedMega a{position:relative;z-index:1}
 
-/* Mobile-first header: prevent desktop mega-navigation from overflowing phones. */
-@media(max-width:900px){
- .p101Header{position:relative;z-index:1200}
- .p101Header .p101HeaderInner{height:68px!important;min-height:68px!important;padding:0 16px!important;gap:10px!important;flex-wrap:nowrap!important;justify-content:space-between!important;max-width:100%!important}
- .p101Header .brand{min-width:0;flex:0 1 auto}
- .p101Header .brandLogo{width:clamp(110px,30vw,145px)!important;max-width:145px!important;max-height:43px!important}
- .p101Header .p101Burger{display:flex!important;flex:0 0 auto;align-items:center;justify-content:center;order:3;margin:0!important;width:40px;height:40px;color:#1b365a}
- .p101Header .p101Actions{margin-left:auto!important;gap:8px!important;flex:0 0 auto}
- .p101Header .p101Actions .primary{font-size:12px!important;padding:9px 11px!important;white-space:nowrap}
- .p101Header .p101Signin{display:none!important}
- .p101Header .p101UnifiedNav{display:none!important;position:absolute!important;top:100%!important;left:0!important;right:0!important;width:100%!important;max-height:calc(100dvh - 68px)!important;overflow-y:auto!important;overflow-x:hidden!important;z-index:1300!important;background:#fff!important;padding:12px 16px 20px!important;margin:0!important;gap:3px!important;flex-direction:column!important;align-items:stretch!important;box-shadow:0 15px 28px rgba(12,43,79,.14)}
- .p101Header .p101UnifiedNav.mobileOpen{display:flex!important}
- .p101Header .p101UnifiedTrigger{width:100%!important;display:flex!important;justify-content:space-between!important;align-items:center!important;text-align:left!important;padding:13px 10px!important;font-size:15px!important;min-height:44px}
- .p101Header .p101UnifiedMega{position:static!important;top:auto!important;left:auto!important;right:auto!important;width:100%!important;max-width:100%!important;padding:12px!important;border-radius:12px!important;box-shadow:none!important;backdrop-filter:none!important}
- .p101Header .p101UnifiedGrid{grid-template-columns:1fr!important;gap:4px!important}
- .p101Header .p101UnifiedColumn{border-right:0!important;border-bottom:1px solid #e6edf6!important;padding:8px 4px!important}
- .p101Header .p101UnifiedColumn:last-child{border-bottom:0!important}
- .p101Header .p101UnifiedColumn>a{min-height:44px;padding:10px 4px}
- .p101Header .p101UnifiedTrigger.active:after{display:none!important}
-}
-@media(max-width:420px){
- .p101Header .p101HeaderInner{padding:0 10px!important;gap:6px!important}
- .p101Header .brandLogo{width:112px!important}
- .p101Header .p101Actions .primary{font-size:11px!important;padding:9px 9px!important}
- .p101Header .p101Burger{width:36px;height:38px}
-}
-@media(max-width:600px){
- .p101FullVideoHero{min-width:0!important;overflow:hidden}
- .p101FullVideoHero .heroCopy{max-width:100%;min-width:0}
- .p101FullVideoHero .heroHeadline{font-size:clamp(36px,10vw,56px)!important;line-height:1.12!important;overflow-wrap:break-word}
- .p101FullVideoHero .heroDescription{font-size:clamp(15px,4vw,18px)!important;line-height:1.6!important;max-width:100%}
- .p101FullVideoHero .heroCtas{flex-wrap:wrap;gap:12px}
- .p101FullVideoHero .heroCtas .primary{max-width:100%;white-space:normal;text-align:center}
- .p101SocialRail.p101SocialBar{max-width:48px!important}
-}
-
 /* Two-column demo enquiry CTA inspired by Paykassma's contact fields. */
 .cta.p101DemoCta{max-width:none;display:flex;flex-direction:column;align-items:center;gap:32px;text-align:left;padding:85px max(28px,calc((100vw - 1200px)/2)) 72px;overflow:hidden}.p101DemoGrid{position:relative;z-index:1;width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:65px;align-items:center}.p101DemoCopy h2{font-size:clamp(38px,4.4vw,65px);line-height:1.07;letter-spacing:-2.6px;margin:20px 0}.p101DemoCopy p{font-size:17px;line-height:1.65;color:#708598;max-width:490px}.p101DemoForm{background:#fff;border:1px solid #dce8f8;border-radius:24px;padding:28px;box-shadow:0 22px 55px #153b7014;color:#15263a}.p101DemoForm h3{font-size:25px;letter-spacing:-.7px}.p101DemoForm>p{font-size:14px;color:#687d91;line-height:1.5;margin:8px 0 22px}.p101DemoFields{display:grid;grid-template-columns:1fr 1fr;gap:14px}.p101DemoFields label{display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:700;color:#465c70}.p101DemoFields input,.p101DemoFields select,.p101DemoFields textarea{width:100%;min-width:0;border:1px solid #d9e3ef;background:#f8fbff;border-radius:10px;padding:12px;font:500 13px Manrope,sans-serif;color:#1a3047;outline:none}.p101DemoFields input:focus,.p101DemoFields select:focus,.p101DemoFields textarea:focus{border-color:#0878f9;box-shadow:0 0 0 3px #0878f91a}.p101DemoFull{grid-column:1/-1}.p101DemoFields textarea{resize:vertical}.p101DemoSubmit{margin-top:18px;background:#0878f9;color:white;border:0;border-radius:11px;padding:13px 18px;display:inline-flex;align-items:center;gap:10px;font:700 14px Manrope,sans-serif;cursor:pointer}.p101DemoForm>small{display:block;font-size:11px;line-height:1.5;color:#7b8da0;margin-top:10px}.cta.p101DemoCta .p101DemoBottom{position:relative;z-index:1;align-self:center;text-align:center;margin:5px auto 0}.cta.p101DemoCta .p101DemoCopy{text-align:left}@media(max-width:850px){.cta.p101DemoCta{padding:65px 22px}.p101DemoGrid{grid-template-columns:1fr;gap:30px}.p101DemoCopy{text-align:center!important}.p101DemoCopy p{margin-left:auto;margin-right:auto}.p101DemoForm{width:100%;max-width:620px;margin:auto}}@media(max-width:480px){.p101DemoFields{grid-template-columns:1fr}.p101DemoForm{padding:20px}.p101DemoCopy h2{font-size:39px}}
 
@@ -1358,26 +1322,6 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
 .pay101CountryEmpty,.pay101CountryInfo p{font:400 14px/1.65 Manrope,system-ui,sans-serif;color:#5d6b87}
 .pay101CountryEnquiry,.pay101CountryInfo a{display:inline-block;color:#0868ef;font:700 14px Manrope,system-ui,sans-serif;text-decoration:none;margin-top:12px}
 @media(max-width:900px){.pay101ContinentMenu{grid-template-columns:1fr}.pay101CountryList,.pay101CountryInfo{border-left:0;border-top:1px dashed #cdd9ef;padding-top:16px;margin-top:12px}}
-
-/* Mobile social links occupy their own row below the header, never overlay hero text. */
-@media(max-width:900px){
- .p101SocialRail.p101SocialBar,
- .p101SocialRail.p101SocialBar.p101SocialBarHidden{
-  position:relative!important;
-  top:auto!important;bottom:auto!important;left:auto!important;right:auto!important;
-  transform:none!important;opacity:1!important;pointer-events:auto!important;
-  display:flex!important;flex-direction:row!important;justify-content:center!important;align-items:center!important;
-  width:max-content!important;max-width:calc(100% - 24px)!important;
-  margin:10px auto!important;padding:4px 8px!important;
-  gap:4px!important;background:rgba(255,255,255,.94)!important;
-  border:1px solid #dbe6f4!important;border-radius:30px!important;
-  box-shadow:0 3px 12px rgba(8,34,72,.07)!important;
-  backdrop-filter:none!important;transition:none!important;
- }
- .p101SocialBar .p101SocialRailItem{width:38px!important;height:38px!important;border:0!important;border-radius:50%!important}
- .p101SocialBar .p101SocialRailItem+.p101SocialRailItem{border-top:0!important}
- .p101SocialBar .p101SocialGlyph{width:29px!important;height:29px!important;font-size:14px!important}
-}
 
 /* Mobile only: restore the original left-side floating social rail.
    Keep it small, translucent and out of the main reading area. */
