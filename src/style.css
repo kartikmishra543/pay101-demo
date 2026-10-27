@@ -1361,3 +1361,27 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
  }
  .p101SocialBar .p101SocialGlyph svg{width:16px!important;height:16px!important}
 }
+
+/* Mobile social icons belong below the four hamburger-menu categories. */
+.p101MobileSocial{display:none}
+@media(max-width:900px){
+ .p101SocialRail.p101SocialBar{display:none!important}
+ .p101Header .p101UnifiedNav.mobileOpen .p101MobileSocial{
+  display:flex!important;position:relative!important;flex-direction:row!important;
+  align-items:center!important;justify-content:center!important;
+  gap:14px!important;width:100%!important;margin:12px 0 4px!important;
+  padding:16px 10px 6px!important;border-top:1px solid #e5edf6!important;
+  background:transparent!important;
+ }
+ .p101MobileSocial .p101SocialRailItem{
+  display:grid!important;place-items:center!important;
+  width:42px!important;height:42px!important;flex:0 0 42px!important;
+  border:1px solid #e3eaf5!important;border-radius:50%!important;
+  background:#fff!important;box-shadow:none!important;
+ }
+ .p101MobileSocial .p101SocialGlyph{
+  display:grid!important;place-items:center!important;
+  width:32px!important;height:32px!important;
+ }
+ .p101MobileSocial .p101SocialGlyph svg{max-width:21px;max-height:21px}
+}
