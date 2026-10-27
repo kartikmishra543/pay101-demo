@@ -1378,3 +1378,42 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
  .p101SocialBar .p101SocialRailItem+.p101SocialRailItem{border-top:0!important}
  .p101SocialBar .p101SocialGlyph{width:29px!important;height:29px!important;font-size:14px!important}
 }
+
+/* Mobile only: restore the original left-side floating social rail.
+   Keep it small, translucent and out of the main reading area. */
+@media(max-width:900px){
+ .p101SocialRail.p101SocialBar,
+ .p101SocialRail.p101SocialBar.p101SocialBarHidden{
+  position:fixed!important;
+  top:50%!important;bottom:auto!important;left:0!important;right:auto!important;
+  transform:translateY(-50%)!important;
+  display:flex!important;flex-direction:column!important;
+  align-items:center!important;justify-content:center!important;
+  width:30px!important;max-width:30px!important;
+  margin:0!important;padding:5px 1px!important;gap:3px!important;
+  background:rgba(240,247,255,.15)!important;
+  border:1px solid rgba(205,223,246,.2)!important;border-left:0!important;
+  border-radius:0 10px 10px 0!important;
+  box-shadow:none!important;
+  -webkit-backdrop-filter:blur(3px)!important;backdrop-filter:blur(3px)!important;
+  opacity:.48!important;
+  transition:opacity .2s ease,transform .38s ease!important;
+  pointer-events:none!important;
+  z-index:90!important;
+ }
+ .p101SocialRail.p101SocialBar.p101SocialBarHidden{
+  transform:translate(-110%,-50%)!important;
+  opacity:0!important;
+ }
+ .p101SocialBar .p101SocialRailItem,
+ .p101SocialBar .p101SocialRailItem+.p101SocialRailItem{
+  width:26px!important;height:29px!important;
+  min-width:0!important;border:0!important;
+  background:transparent!important;box-shadow:none!important;
+  border-radius:5px!important;
+ }
+ .p101SocialBar .p101SocialGlyph{
+  width:23px!important;height:23px!important;font-size:12px!important;
+ }
+ .p101SocialBar .p101SocialGlyph svg{width:16px!important;height:16px!important}
+}
