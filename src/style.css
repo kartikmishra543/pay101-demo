@@ -1358,3 +1358,23 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
 .pay101CountryEmpty,.pay101CountryInfo p{font:400 14px/1.65 Manrope,system-ui,sans-serif;color:#5d6b87}
 .pay101CountryEnquiry,.pay101CountryInfo a{display:inline-block;color:#0868ef;font:700 14px Manrope,system-ui,sans-serif;text-decoration:none;margin-top:12px}
 @media(max-width:900px){.pay101ContinentMenu{grid-template-columns:1fr}.pay101CountryList,.pay101CountryInfo{border-left:0;border-top:1px dashed #cdd9ef;padding-top:16px;margin-top:12px}}
+
+/* Mobile social links occupy their own row below the header, never overlay hero text. */
+@media(max-width:900px){
+ .p101SocialRail.p101SocialBar,
+ .p101SocialRail.p101SocialBar.p101SocialBarHidden{
+  position:relative!important;
+  top:auto!important;bottom:auto!important;left:auto!important;right:auto!important;
+  transform:none!important;opacity:1!important;pointer-events:auto!important;
+  display:flex!important;flex-direction:row!important;justify-content:center!important;align-items:center!important;
+  width:max-content!important;max-width:calc(100% - 24px)!important;
+  margin:10px auto!important;padding:4px 8px!important;
+  gap:4px!important;background:rgba(255,255,255,.94)!important;
+  border:1px solid #dbe6f4!important;border-radius:30px!important;
+  box-shadow:0 3px 12px rgba(8,34,72,.07)!important;
+  backdrop-filter:none!important;transition:none!important;
+ }
+ .p101SocialBar .p101SocialRailItem{width:38px!important;height:38px!important;border:0!important;border-radius:50%!important}
+ .p101SocialBar .p101SocialRailItem+.p101SocialRailItem{border-top:0!important}
+ .p101SocialBar .p101SocialGlyph{width:29px!important;height:29px!important;font-size:14px!important}
+}
