@@ -37,3 +37,17 @@ main h3{font-size:var(--p101-type-h3)!important;font-weight:700!important}
 
 /* Brand-blue emphasis for selected title phrases. */
 .p101-accent{color:#0868ef!important;-webkit-text-fill-color:#0868ef!important}
+
+/* Continent-first Markets dropdown */
+.pay101ContinentMenu{display:grid;grid-template-columns:1fr 1.1fr .9fr;min-height:290px}
+.pay101ContinentList,.pay101CountryList,.pay101CountryInfo{padding:0 24px}
+.pay101CountryList,.pay101CountryInfo{border-left:1px dashed #cdd9ef}
+.pay101ContinentMenu h3{font:700 14px Manrope,system-ui,sans-serif;color:#5d6b87;margin:0 0 16px}
+.pay101ContinentChoice{display:flex;width:100%;align-items:center;justify-content:space-between;text-align:left;border:0;background:transparent;border-radius:9px;color:#243656;font:700 15px Manrope,system-ui,sans-serif;padding:11px 13px;cursor:pointer}
+.pay101ContinentChoice:hover,.pay101ContinentChoice.selected{background:#e7efff;color:#0868ef}
+.pay101CountryList>a:not(.pay101CountryEnquiry){display:flex;align-items:flex-start;gap:12px;margin-bottom:17px;text-decoration:none;color:#111c3c}
+.pay101CountryList strong{display:block;font:700 16px Manrope,system-ui,sans-serif}
+.pay101CountryList small{display:block;color:#5d6b87;font:400 13px Manrope,system-ui,sans-serif;margin-top:4px}
+.pay101CountryEmpty,.pay101CountryInfo p{font:400 14px/1.65 Manrope,system-ui,sans-serif;color:#5d6b87}
+.pay101CountryEnquiry,.pay101CountryInfo a{display:inline-block;color:#0868ef;font:700 14px Manrope,system-ui,sans-serif;text-decoration:none;margin-top:12px}
+@media(max-width:900px){.pay101ContinentMenu{grid-template-columns:1fr}.pay101CountryList,.pay101CountryInfo{border-left:0;border-top:1px dashed #cdd9ef;padding-top:16px;margin-top:12px}}
