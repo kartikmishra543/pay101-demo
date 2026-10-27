@@ -1341,3 +1341,6 @@ main h1{font-size:var(--p101-type-h1);font-weight:700;line-height:1.16;letter-sp
 main h2{font-size:var(--p101-type-h2);font-weight:700;line-height:1.23;letter-spacing:-.025em}
 main h3{font-size:var(--p101-type-h3);font-weight:700}
 @media(max-width:720px){:root{--p101-type-h1:clamp(32px,7vw,43px);--p101-type-h2:clamp(25px,5.5vw,31px)}}
+
+/* Brand-blue emphasis for selected title phrases. */
+.p101-accent{color:#0868ef!important;-webkit-text-fill-color:#0868ef!important}
