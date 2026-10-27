@@ -378,6 +378,13 @@ function DevelopersPage(){
       </div>
       {solutionTab==='markets'&&<p className="p101UnifiedNote">Markets shown are illustrative. Confirm service availability with Pay101.</p>}
      </div>}
+
+     <div className="p101MobileSocial" aria-label="Social media icons; official links pending">
+    <span className="p101SocialRailItem" title="LinkedIn — link pending"><span className="p101SocialGlyph p101Linkedin">in</span></span>
+    <span className="p101SocialRailItem" title="Instagram — link pending"><span className="p101SocialGlyph p101Instagram"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor" stroke="none"/></svg></span></span>
+    <span className="p101SocialRailItem" title="X — link pending"><span className="p101SocialGlyph p101X">𝕏</span></span>
+    <span className="p101SocialRailItem" title="YouTube — link pending"><span className="p101SocialGlyph p101Youtube"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L16 12l-6.4 3.6Z"/></svg></span></span>
+        </div>
     </nav>
     <div className="p101Actions"><a className="p101Signin" href="/login">Sign in</a><a className="primary small" href="/signup">Get started <ArrowRight size={15}/></a></div>
     <button className="p101Burger" type="button" onClick={()=>setMenu(v=>!v)} aria-label="Toggle navigation" aria-expanded={menu}>{menu?<X/>:<Menu/>}</button>
