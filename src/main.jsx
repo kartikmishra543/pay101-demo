@@ -68,7 +68,7 @@ function WhatsAppPopup(){
 
 const chart=[{m:'Jan',v:32},{m:'Feb',v:44},{m:'Mar',v:39},{m:'Apr',v:62},{m:'May',v:57},{m:'Jun',v:81},{m:'Jul',v:76},{m:'Aug',v:96}];
 const tx=[['Payment received','Merchant checkout','+$2,840.00 USD','Success'],['Payment sent','Vendor transfer','-R$ 1.280,00','Success'],['Money received','Bank account','+A$4,820.00 AUD','Settled']];
-const heroSlides=[{eyebrow:'PAYMENTS MADE SIMPLE',line1:'Make payments.',line2:'Make progress.',copy:'Accept money from customers, send payments to partners, and see what is happening in one clear place.',cta:'Explore Pay101'},{eyebrow:'LESS TIME CHASING PAYMENTS',line1:'Know what’s paid.',line2:'Know what’s next.',copy:'See incoming payments, outgoing transfers and when money is expected to reach your account.',cta:'See how it works'},{eyebrow:'PAYMENTS FOR MORE MARKETS',line1:'One clear view.',line2:'More ways to pay.',copy:'Explore familiar payment options and bank transfers for businesses serving customers in different markets.',cta:'Explore markets'}];
+const heroSlides=[{eyebrow:'PAYMENTS MADE SIMPLE',line1:'Make payments',line2:'Make progress',copy:'Accept money from customers, send payments to partners, and see what is happening in one clear place.',cta:'Explore Pay101'},{eyebrow:'LESS TIME CHASING PAYMENTS',line1:'Know what’s paid.',line2:'Know what’s next.',copy:'See incoming payments, outgoing transfers and when money is expected to reach your account.',cta:'See how it works'},{eyebrow:'PAYMENTS FOR MORE MARKETS',line1:'One clear view.',line2:'More ways to pay.',copy:'Explore familiar payment options and bank transfers for businesses serving customers in different markets.',cta:'Explore markets'}];
 
 const paymentMethods=[
  {name:'UPI',brand:'upi',logoSrc:'https://commons.wikimedia.org/wiki/Special:FilePath/UPI-Logo-vector.svg',subtitle:'Instant bank payments',country:'India',flag:'🇮🇳',icon:<WalletCards size={23}/>},
@@ -135,7 +135,7 @@ function App(){
    </section>
    <section id="about" className="aboutContactSection"><div className="aboutContactLabel">ABOUT PAY101</div><div className="aboutContactGrid"><div><h2>Payments Made Simpler for <span className="p101-accent">Growing Businesses</span></h2></div><div><p>Pay101 brings the ideas of payins, payouts, settlement workflows and payment visibility into one connected experience. Explore payment options across markets and discover how a streamlined platform could support your business.</p><small>This website is a demonstration concept. Payment methods and integrations shown are illustrative and subject to confirmation.</small></div></div></section>
 
-   <section className="dashboardShowcase"><div className="dashboardShowcaseIntro"><span className="kicker">GLOBAL PAYMENT EXPERIENCE</span><h2>One Platform. <em>More Possibilities</em></h2><p>Explore a sample multi-currency payment dashboard with illustrative transaction activity and monitoring insights.</p></div><Dashboard/></section>
+   <section className="dashboardShowcase"><div className="dashboardShowcaseIntro"><span className="kicker">GLOBAL PAYMENT EXPERIENCE</span><h2>One Platform <em>More Possibilities</em></h2><p>Explore a sample multi-currency payment dashboard with illustrative transaction activity and monitoring insights.</p></div><Dashboard/></section>
 
    <section id="markets" className="marketsSection">
     <div className="marketsIntro"><span className="kicker">EXPLORE MARKETS</span><h2>Payments That Feel <em>Local</em></h2><p>Customers like to pay in familiar ways. Explore the markets we are considering and ask our team which options are available for your business.</p></div>
@@ -151,7 +151,7 @@ function App(){
    </section>
 
    <section id="rails" className="rails paymentMethodsSection">
-    <div className="paymentMethodsIntro"><span>PAYMENT SYSTEM</span><strong>Familiar ways to pay, across markets.</strong><p>Explore widely recognized payment networks, wallets and payment methods from around the world.</p><small>Illustrative examples only · Integration and availability are not confirmed.</small></div>
+    <div className="paymentMethodsIntro"><span>PAYMENT SYSTEM</span><strong>Familiar ways to pay, across markets</strong><p>Explore widely recognized payment networks, wallets and payment methods from around the world.</p><small>Illustrative examples only · Integration and availability are not confirmed.</small></div>
     <div className="paymentMethodsMarquee" aria-label="Illustrative payment methods moving left to right">
      <div className="paymentMethodsTrack">
       {[0,1].map(copy=><div className="paymentMethodsLoop" key={copy} aria-hidden={copy===1}>
