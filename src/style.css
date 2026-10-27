@@ -1334,3 +1334,10 @@ main h1{font-family:Manrope,Arial,sans-serif;font-size:var(--p101-type-h1);font-
 main h2{font-family:Manrope,Arial,sans-serif;font-size:var(--p101-type-h2);font-weight:800;line-height:1.16;letter-spacing:-.035em}
 main h3{font-family:Manrope,Arial,sans-serif;font-size:var(--p101-type-h3);font-weight:750;letter-spacing:-.02em}
 @media(max-width:720px){:root{--p101-type-h1:clamp(38px,9vw,52px);--p101-type-h2:clamp(28px,7vw,35px)}}
+
+/* Refined heading scale: keep homepage headings in proportion to subpages. */
+:root{--p101-type-h1:clamp(36px,4.2vw,58px);--p101-type-h2:clamp(27px,2.8vw,36px);--p101-type-h3:18px}
+main h1{font-size:var(--p101-type-h1);font-weight:700;line-height:1.16;letter-spacing:-.035em}
+main h2{font-size:var(--p101-type-h2);font-weight:700;line-height:1.23;letter-spacing:-.025em}
+main h3{font-size:var(--p101-type-h3);font-weight:700}
+@media(max-width:720px){:root{--p101-type-h1:clamp(32px,7vw,43px);--p101-type-h2:clamp(25px,5.5vw,31px)}}
