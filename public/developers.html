@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Explore Pay101 PayIn and PayOut integration workflows, security prerequisites and partner onboarding. Detailed API documentation is available to authorized integration partners.">
+<meta name="description" content="Connect your platform to Pay101 for PayIn and PayOut. Approved partners can request API documentation and technical onboarding.">
 <title>Developer Portal | Pay101</title>
 <style>
 :root{--navy:#101b34;--blue:#315efb;--blue-dark:#2448d9;--ink:#1b2942;--muted:#64748b;--line:#e3e9f2;--pale:#f5f8fc;--green:#0b9b72}
@@ -29,87 +29,25 @@
 @media(max-width:560px){.pay101-original-logo{width:130px}.developer-label{font-size:10px}}
 .partner-access{margin-top:26px;border:1px solid #d6e2f6;border-radius:16px;background:#fff;padding:26px;display:flex;align-items:center;justify-content:space-between;gap:24px}.partner-access h3{font-size:20px;margin:7px 0}.partner-access p{max-width:690px;color:var(--muted);font-size:13px;margin:0}.partner-access .button{flex-shrink:0}@media(max-width:760px){.partner-access{flex-direction:column;align-items:flex-start}.partner-access .button{width:100%}}
 </style>
-<link rel="stylesheet" href="/pay101-menu.css"><link rel="stylesheet" href="/pay101-footer.css"></head>
+<link rel="stylesheet" href="/pay101-menu.css"><link rel="stylesheet" href="/pay101-footer.css"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
+.dev-page{font-family:Manrope,Inter,system-ui,sans-serif;color:#111c3c;background:#fff}.dev-wrap{max-width:1120px;margin:auto;padding:0 24px}.dev-hero{background:linear-gradient(180deg,#eef4ff,#f7faff);padding:30px 0 62px}.dev-crumb{font-size:13px;color:#64748b;margin:0 0 25px}.dev-hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:42px;align-items:center}.dev-hero h1{font-size:clamp(34px,4vw,52px);line-height:1.12;letter-spacing:-.04em;margin:0 0 17px}.dev-lead{font-size:17px;color:#5d6b87;max-width:620px}.dev-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.dev-btn,.dev-outline{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:11px;padding:12px 20px;font-size:14px;font-weight:750}.dev-btn{color:white;background:#1a73ff;box-shadow:0 7px 18px #1a73ff28}.dev-outline{border:1px solid #1a73ff;color:#0a58e0;background:white}.dev-glance{background:white;border:1px solid #dfe8f8;border-radius:20px;padding:25px;box-shadow:0 15px 40px #1a46a015}.dev-glance h3{font-size:14px;text-transform:uppercase;color:#64748b;letter-spacing:.05em;margin:0 0 12px}.dev-glance dl{margin:0}.dev-glance dt{font-size:12px;color:#64748b;margin-top:12px;font-weight:700}.dev-glance dd{font-size:14px;margin:0;font-weight:700}.dev-section{padding-top:57px}.dev-section:last-child{padding-bottom:72px}.dev-section h2{font-size:clamp(25px,3vw,33px);letter-spacing:-.03em;margin:0 0 8px}.dev-sub{color:#5d6b87;margin:0 0 23px}.dev-cards,.dev-index{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.dev-cards article,.dev-index article{border:1px solid #dfe8f8;border-radius:17px;background:#fff;padding:22px;box-shadow:0 8px 28px #1a46a00a}.dev-cards h3{margin:10px 0 5px;font-size:18px}.dev-cards p,.dev-index span{font-size:14px;color:#5d6b87;margin:0}.dev-symbol{display:grid;place-items:center;width:44px;height:44px;background:#e7efff;color:#0a58e0;border-radius:12px;font-size:22px}.dev-index article{display:flex;flex-direction:column;gap:5px}.dev-index b{font-size:15px}.dev-flow{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}.dev-flow span{background:#1a73ff;color:white;padding:16px 10px;border-radius:11px;text-align:center;font-size:12px;font-weight:750}.dev-flow span:nth-child(4){background:#13204a}.dev-flow span:last-child{background:#e4f7ea;color:#14532d}.dev-security{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 30px}.dev-security p{margin:0;font-size:15px}.dev-gate{background:#e7efff;border-radius:20px;padding:34px;display:flex;align-items:center;justify-content:space-between;gap:25px}.dev-gate h2{margin:0 0 8px}.dev-gate h3{margin:0 0 6px;font-size:19px}.dev-gate p{margin:0;color:#425575;max-width:580px;font-size:14px}.dev-gate .dev-btn{flex-shrink:0}.dev-section details{border-bottom:1px solid #dfe8f8;padding:16px 0}.dev-section summary{cursor:pointer;font-size:16px;font-weight:750}.dev-section details p{color:#5d6b87;font-size:14px}@media(max-width:900px){.dev-flow{grid-template-columns:repeat(4,1fr)}}@media(max-width:720px){.dev-hero-grid{grid-template-columns:1fr}.dev-cards,.dev-index,.dev-security{grid-template-columns:1fr}.dev-flow{grid-template-columns:repeat(2,1fr)}.dev-gate{flex-direction:column;align-items:flex-start}.dev-gate .dev-btn{width:100%}.dev-section{padding-top:45px}}
+</style></head>
 <body>
 <header class="container topbar">
   <a class="logo" href="/" aria-label="Pay101 home"><img class="pay101-original-logo" src="/assets/pay101-logo.png" alt="Pay101"><span class="developer-label">DEVELOPERS</span></a>
   <nav class="navlinks" id="navlinks"><a href="#quickstart">Quick start</a><a href="#api">API resources</a><a href="#prerequisites">Prerequisites</a><a href="#faq">FAQs</a></nav>
   <a class="button primary" href="/signup">Get started →</a><button class="hamb" id="hamb" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 </header>
-<main>
-<section class="hero">
- <div class="container hero-grid">
-  <div><div class="eyebrow">Developer portal · API reference v1.0 overview</div>
-   <h1>Everything you need to <em>integrate Pay101</em></h1>
-   <p>Explore PayIn collection and PayOut disbursement workflows, server-side verification, authentication, and launch preparation. Detailed API specifications are shared with authorized integration partners.</p>
-   <div class="actions"><a class="button primary" href="#quickstart">Get started →</a><a class="button" href="#api">Explore API resources ↗</a></div>
-   <div class="hero-note"><b>✓</b> Built for developers, product teams, and technical partners</div>
-  </div>
-  <aside class="quick-card" id="quickstart">
-   <div class="card-title"><span>Quick start guide</span><span class="badge">4 STEPS</span></div>
-   <div class="quick-steps">
-    <div class="quick-step"><span class="num">01</span><div><strong>Define your use case</strong><small>Identify the payment flow and your platform requirements.</small></div></div>
-    <div class="quick-step"><span class="num">02</span><div><strong>Request API access</strong><small>Contact Pay101 to confirm eligibility, credentials, and documentation.</small></div></div>
-    <div class="quick-step"><span class="num">03</span><div><strong>Integrate and test</strong><small>Build against approved specifications and validate test scenarios.</small></div></div>
-    <div class="quick-step"><span class="num">04</span><div><strong>Complete launch review</strong><small>Finish applicable checks before production activation.</small></div></div>
-   </div>
-  </aside>
- </div>
-</section>
-<section class="section" id="api"><div class="container">
- <div class="section-heading"><div class="kicker">Documentation & tools</div><h2>Developer resources</h2><p>Find the right technical starting point for your integration. The API Integration Documentation v1.0 is partner-confidential. Request authorized access to detailed specifications from the integration team.</p></div>
- <div class="grid3">
-  <article class="doc-card"><div class="icon">⌘</div><div class="tag">Reference</div><h3>API documentation</h3><p>Partner documentation v1.0 covers merchant login, authentication, PayIn, PayOut, status checks, and IP whitelisting.</p><a class="link" href="#contact">Request API reference →</a></article>
-  <article class="doc-card"><div class="icon">⇄</div><div class="tag">Payment flow</div><h3>PayIn integration</h3><p>Create payment orders, receive payment callbacks, and independently verify the result server-side.</p><a class="link" href="#contact">Discuss PayIn →</a></article>
-  <article class="doc-card"><div class="icon">↗</div><div class="tag">Disbursement</div><h3>Payout integration</h3><p>Initiate beneficiary transfers and check payout status before recording a completed payment.</p><a class="link" href="#contact">Discuss Payout →</a></article>
-  <article class="doc-card"><div class="icon">⌁</div><div class="tag">Testing</div><h3>Sandbox & testing</h3><p>Request authorized test access and confirm your server’s approved outbound IP addresses before testing.</p><a class="link" href="#prerequisites">Prepare for testing →</a></article>
-  <article class="doc-card"><div class="icon">◉</div><div class="tag">Notifications</div><h3>Webhooks & callbacks</h3><p>Configure HTTPS callback URLs and confirm final payment status through approved server-side verification.</p><a class="link" href="#contact">Ask about webhooks →</a></article>
-  <article class="doc-card"><div class="icon">⚙</div><div class="tag">Troubleshooting</div><h3>Errors & support</h3><p>Track merchant order references and payment statuses, and share sanitized diagnostics with support.</p><a class="link" href="#contact">Contact integration team →</a></article>
- </div>
-</div></section>
-<section class="section soft" id="prerequisites"><div class="container split">
- <div class="split-copy"><div class="kicker">Before you begin</div><h2>Prepare your integration</h2><p>Pay101’s partner reference describes merchant authentication, server-side credentials, HTTPS callbacks, and IP whitelisting. Prepare these with the integration team before testing.</p><a class="button primary" href="#contact">Request technical onboarding ↗</a></div>
- <div class="prereq"><div class="prereq-head">Integration prerequisites</div>
-  <div class="prereq-row"><span class="check">✓</span><div><strong>Business and use-case details</strong><small>Company, website or app, payment flow, and expected transaction needs.</small></div></div>
-  <div class="prereq-row"><span class="check">✓</span><div><strong>Approved API credentials</strong><small>Request the appropriate credentials through Pay101's approved process. Never share secret keys publicly.</small></div></div>
-  <div class="prereq-row"><span class="check">✓</span><div><strong>Server and callback details</strong><small>Prepare your backend, HTTPS callback URLs, and outbound server IP addresses for whitelisting.</small></div></div>
-  <div class="prereq-row"><span class="check">✓</span><div><strong>Testing and launch plan</strong><small>Confirm IP whitelisting, approved testing access, technical contacts, and launch-readiness checks.</small></div></div>
- </div>
-</div></section>
-<section class="section"><div class="container">
- <div class="section-heading"><div class="kicker">Implementation journey</div><h2>From first request to production</h2><p>A simple process helps keep business, technical, and operational teams aligned.</p></div>
- <div class="workflow">
-  <article><div class="n">STEP 01</div><h3>Share requirements</h3><p>Explain your business model, use case, platform, and required payment workflows.</p></article>
-  <article><div class="n">STEP 02</div><h3>Get documentation</h3><p>Confirm account access, API specifications, authentication, and supported features.</p></article>
-  <article><div class="n">STEP 03</div><h3>Build & validate</h3><p>Implement the flow and test success, failure, pending, timeout, and duplicate-event cases.</p></article>
-  <article><div class="n">STEP 04</div><h3>Review & launch</h3><p>Complete required checks and get production activation confirmed by Pay101.</p></article>
- </div>
-</div></section>
-<section class="section soft" id="integration-overview"><div class="container">
- <div class="section-heading"><div class="kicker">Pay101 API Integration Documentation · v1.0</div><h2>How the integration works</h2><p>A public overview of the integration stages described in Pay101’s April 2026 partner documentation. Detailed API paths, headers, request schemas, cryptographic parameters, and examples are shared only with authorized integration partners.</p></div>
- <div class="grid3">
-  <article class="doc-card"><div class="icon">🔑</div><div class="tag">01 · Merchant access</div><h3>Authenticate securely</h3><p>Authorized merchants obtain an access token and use account-specific credentials for protected API requests. Keep all credentials on your server.</p></article>
-  <article class="doc-card"><div class="icon">↙</div><div class="tag">02 · PayIn</div><h3>Collect payments</h3><p>Initiate an encrypted payment order and provide a secure callback destination. After receiving a notification, verify the payment independently before crediting a customer.</p></article>
-  <article class="doc-card"><div class="icon">↗</div><div class="tag">03 · PayOut</div><h3>Disburse funds</h3><p>Submit an authorized payout to a beneficiary, then check its final status using your order reference. Do not treat pending payouts as successful.</p></article>
-  <article class="doc-card"><div class="icon">✓</div><div class="tag">04 · Status confirmation</div><h3>Verify the outcome</h3><p>Use approved server-side status verification for incoming payments and payout status checks for outgoing transfers before updating your records.</p></article>
-  <article class="doc-card"><div class="icon">◈</div><div class="tag">05 · Security</div><h3>Protect sensitive data</h3><p>Use HTTPS, server-side credential storage, and the approved encryption process for PayIn. Never place merchant secrets or access tokens in browser code.</p></article>
-  <article class="doc-card"><div class="icon">⌁</div><div class="tag">06 · Go-live readiness</div><h3>Arrange IP whitelisting</h3><p>Submit your server’s outbound IP addresses for approval, including staging and production environments, before making authorized API calls.</p></article>
- </div>
- <div class="partner-access"><div><div class="kicker">Restricted partner documentation</div><h3>Need endpoint details and implementation examples?</h3><p>The full Pay101 API Integration Documentation v1.0 is confidential and is not hosted on this public page. Contact the Pay101 team to request access and confirm the current approved version.</p></div><a class="button primary" href="mailto:support@pay101.uk?subject=Authorized%20Partner%20API%20Documentation%20Request">Request partner documentation ↗</a></div>
-</div></section>
-<section class="section" id="faq"><div class="container">
- <div class="section-heading"><div class="kicker">Help centre</div><h2>Frequently asked questions</h2><p>Answers to common questions before starting an integration.</p></div>
- <div class="faq">
-  <div class="faq-item"><button class="faq-button" aria-expanded="false"><span>How can I get Pay101 API documentation?</span><b>+</b></button><div class="faq-answer">The API Integration Documentation v1.0 is restricted to authorized integration partners. Request access through the Pay101 integration team using the contact option on this page.</div></div>
-  <div class="faq-item"><button class="faq-button" aria-expanded="false"><span>Does Pay101 provide a sandbox environment?</span><b>+</b></button><div class="faq-answer">Sandbox availability and test credentials should be confirmed with Pay101. Do not use production credentials for test activity unless explicitly instructed by the provider.</div></div>
-  <div class="faq-item"><button class="faq-button" aria-expanded="false"><span>What information should I prepare?</span><b>+</b></button><div class="faq-answer">Prepare your business and platform details, use case, expected payment flow, backend contact, callback requirements, and any questions about reconciliation or reporting.</div></div>
-  <div class="faq-item"><button class="faq-button" aria-expanded="false"><span>Can I integrate both PayIn and Payout?</span><b>+</b></button><div class="faq-answer">This page covers both workflow categories. Ask Pay101 to confirm which services, payment methods, markets, and permissions are available for your account.</div></div>
-  <div class="faq-item"><button class="faq-button" aria-expanded="false"><span>How should my application handle payment notifications?</span><b>+</b></button><div class="faq-answer">The partner documentation requires independent server-side PayIn verification after a callback. Do not credit a customer based solely on the callback; confirm the final payment status first.</div></div>
-  <div class="faq-item"><button class="faq-button" aria-expanded="false"><span>Is IP whitelisting required?</span><b>+</b></button><div class="faq-answer">Yes. The partner documentation requires approval of your outbound server IP addresses before authorized API access. Confirm whitelisting with Pay101 before testing.</div></div>
- </div>
-</div></section>
-<section class="final-cta" id="contact"><div class="container"><div class="cta-box"><div><h2>Let's get your integration moving.</h2><p>Share your use case and connect with the Pay101 team for the next technical steps.</p></div><a class="button primary" style="background:#fff;color:#2448d9;border-color:#fff" href="mailto:support@pay101.uk?subject=Pay101%20API%20Integration%20Request">Request API access ↗</a></div></div></section>
-</main>
+<main class="dev-page">
+<section class="dev-hero" id="quickstart"><div class="dev-wrap"><p class="dev-crumb">About us › For developers › Developers</p><div class="dev-hero-grid"><div><h1>Connect Pay101 to your platform</h1><p class="dev-lead">Accept payments and send payouts from your own website or app. Approved partners receive the full integration guide, credentials and support from our team.</p><div class="dev-actions"><a class="dev-btn" href="mailto:support@pay101.uk?subject=Pay101%20API%20Access%20Request">Request API access →</a><a class="dev-outline" href="#documentation">Explore documentation</a></div></div><aside class="dev-glance"><h3>At a glance</h3><dl><dt>Services</dt><dd>PayIn (collect) and PayOut (send)</dd><dt>Connection</dt><dd>Secure JSON over HTTPS</dd><dt>Payout modes</dt><dd>IMPS, NEFT, RTGS</dd><dt>Access</dt><dd>Approved partners only</dd><dt>Documentation</dt><dd>Shared after approval</dd></dl></aside></div></div></section>
+<div class="dev-wrap">
+<section class="dev-section" id="api"><h2>What you can do</h2><p class="dev-sub">Two services, one connection.</p><div class="dev-cards"><article><span class="dev-symbol">↘</span><h3>Accept payments</h3><p>Create an order for your customer, receive the result on your server and confirm the final status before you credit them.</p></article><article><span class="dev-symbol">↗</span><h3>Send payouts</h3><p>Pay partners, vendors or customers to their bank accounts by IMPS, NEFT or RTGS.</p></article><article><span class="dev-symbol">✓</span><h3>Check every result</h3><p>Verify payments and check payout status with your own order ID, so your records match.</p></article></div></section>
+<section class="dev-section" id="documentation"><h2>What’s inside the documentation</h2><p class="dev-sub">Approved partners get a full guide with these sections.</p><div class="dev-index"><article><b>Getting started</b><span>Onboarding and credentials</span></article><article><b>Authentication</b><span>Signing in to your account</span></article><article><b>PayIn</b><span>Collect payments, step by step</span></article><article><b>PayOut</b><span>Send money to bank accounts</span></article><article><b>Server access</b><span>Approving your server addresses</span></article><article><b>Go-live checklist</b><span>What to check before launch</span></article></div></section>
+<section class="dev-section" id="prerequisites"><h2>How to get access</h2><p class="dev-sub">Access is provided to approved partners, step by step.</p><div class="dev-flow"><span>1. Request access</span><span>2. Business review</span><span>3. Agreement</span><span>4. Credentials & guide</span><span>5. IP approval</span><span>6. Integration testing</span><span>7. Go live</span></div></section>
+<section class="dev-section"><h2>Built with security in mind</h2><p class="dev-sub">Protect customer payments and merchant credentials throughout the integration.</p><div class="dev-security"><p>✓ Secure, encrypted connections</p><p>✓ Token-based merchant authentication</p><p>✓ Encrypted payment requests</p><p>✓ Approved server IP addresses</p><p>✓ Server-to-server status confirmation</p><p>✓ Partner-restricted credentials</p></div></section>
+<section class="dev-section"><div class="dev-gate"><div><h2>Full documentation</h2><h3>Shared with approved partners only</h3><p>The complete integration guide, technical details and implementation examples are shared after partner approval. Confidential API details are not published on this page.</p></div><a class="dev-btn" href="mailto:support@pay101.uk?subject=Authorized%20Partner%20API%20Documentation%20Request">Request partner documentation →</a></div></section>
+<section class="dev-section" id="faq"><h2>Questions developers ask</h2><details><summary>Who can get API access?</summary><p>Access is subject to Pay101’s partner review and approval. Contact the team to discuss your business requirements.</p></details><details><summary>Is there a test environment?</summary><p>Contact the integration team to confirm test environment availability and approved testing access.</p></details><details><summary>How long does approval take?</summary><p>Approval timelines depend on business review and documentation requirements. Ask the team for an estimate.</p></details><details><summary>Where do I get help?</summary><p>Contact <a href="mailto:support@pay101.uk">support@pay101.uk</a> to discuss integration support.</p></details></section>
+</div></main>
 <footer class="p101Footer p101ReferenceFooter" id="footer">
     <div class="p101FooterGrid">
      <div class="p101FooterBrand">
@@ -123,7 +61,7 @@
      <div class="p101FooterCol"><h4>Solutions</h4><a href="/#solutions">Payin Solutions</a><a href="/#solutions">Payout Solutions</a><a href="/#solutions">UPI Payments</a><a href="/#solutions">IMPS Transfers</a><a href="/#solutions">NEFT &amp; RTGS</a><a href="/#solutions">Instant Settlements</a></div>
      <div class="p101FooterCol"><h4>Industries</h4><a href="/#industries">E-commerce</a><a href="/#industries">Gaming</a><a href="/#industries">Media &amp; Entertainment</a><a href="/#industries">Travel</a><a href="/#industries">Education</a></div>
      <div class="p101FooterCol"><h4>Markets</h4><a href="/#markets">India</a><a href="/#markets">Nepal</a><a href="/#markets">Bhutan</a><a href="/#markets">Brazil</a><a href="/#markets">Australia</a></div>
-     <div class="p101FooterCol"><h4>Company</h4><a href="/#about">About us</a><a href="/how-it-works">How it works</a><a href="/developers">Developers</a><a href="/#security">Security</a><a href="/#blog">Blog</a><a href="/#contact">Contact</a></div>
+     <div class="p101FooterCol"><h4>Company</h4><a href="/#about">About us</a><a href="/how-it-works">How it works</a><a href="/developers">Developers</a><a href="/#security">Security</a><a href="/#blog">Blog</a><a href="/#contact">Contact</a><a href="mailto:support@pay101.uk?subject=Pay101%20Integration%20Request" style="color:#0868ef;font-weight:700">Request Integration →</a></div>
     </div>
     <div class="p101FooterBottom"><span>© 2026 Pay101. All rights reserved.</span><div><a href="mailto:support@pay101.uk?subject=Privacy%20Policy%20Request">Privacy policy</a><a href="mailto:support@pay101.uk?subject=Terms%20of%20Service%20Request">Terms of service</a></div></div>
    </footer>
@@ -132,7 +70,7 @@ const menu=document.getElementById('hamb'),nav=document.getElementById('navlinks
 menu.addEventListener('click',()=>{let open=nav.classList.toggle('show');menu.setAttribute('aria-expanded',String(open));});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('show');menu.setAttribute('aria-expanded','false')}));
 document.querySelectorAll('.faq-button').forEach(b=>b.addEventListener('click',()=>{const item=b.closest('.faq-item');const open=item.classList.toggle('open');b.setAttribute('aria-expanded',String(open))}));
-document.getElementById('year').textContent=new Date().getFullYear();
+
 </script>
 <script src="/pay101-menu.js" defer></script></body>
 </html>
