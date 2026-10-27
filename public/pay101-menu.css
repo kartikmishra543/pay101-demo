@@ -23,3 +23,10 @@ main h3{font-family:Manrope,Arial,sans-serif!important;font-size:var(--p101-type
 main p,main li{font-family:Manrope,Arial,sans-serif}
 main button,main input,main select,main textarea{font-family:Manrope,Arial,sans-serif}
 @media(max-width:720px){:root{--p101-type-h1:clamp(38px,9vw,52px);--p101-type-h2:clamp(28px,7vw,35px)}}
+
+/* Refined heading scale: compact, lighter headings on static pages. */
+:root{--p101-type-h1:clamp(36px,4.2vw,58px);--p101-type-h2:clamp(27px,2.8vw,36px);--p101-type-h3:18px}
+main h1{font-size:var(--p101-type-h1)!important;font-weight:700!important;line-height:1.16!important;letter-spacing:-.035em!important}
+main h2{font-size:var(--p101-type-h2)!important;font-weight:700!important;line-height:1.23!important;letter-spacing:-.025em!important}
+main h3{font-size:var(--p101-type-h3)!important;font-weight:700!important}
+@media(max-width:720px){:root{--p101-type-h1:clamp(32px,7vw,43px);--p101-type-h2:clamp(25px,5.5vw,31px)}}
