@@ -12,3 +12,14 @@
 .pay101MegaNav{isolation:isolate}
 .pay101MegaPanel{z-index:9999!important}
 @media(min-width:901px){.pay101MegaPanel{top:calc(100% + 8px)!important}.pay101MegaPanel::before{top:-18px;height:20px}}
+
+
+/* Shared type scale for Pay101 static pages; preserve header and footer styling. */
+:root{--p101-type-body:16px;--p101-type-lead:17px;--p101-type-h1:clamp(48px,5.8vw,78px);--p101-type-h2:clamp(32px,3.6vw,44px);--p101-type-h3:19px}
+body{font-family:Manrope,Arial,sans-serif!important;font-size:var(--p101-type-body)}
+main h1{font-family:Manrope,Arial,sans-serif!important;font-size:var(--p101-type-h1)!important;font-weight:800!important;line-height:1.08!important;letter-spacing:-.045em!important}
+main h2{font-family:Manrope,Arial,sans-serif!important;font-size:var(--p101-type-h2)!important;font-weight:800!important;line-height:1.16!important;letter-spacing:-.035em!important}
+main h3{font-family:Manrope,Arial,sans-serif!important;font-size:var(--p101-type-h3)!important;font-weight:750!important;letter-spacing:-.02em!important}
+main p,main li{font-family:Manrope,Arial,sans-serif}
+main button,main input,main select,main textarea{font-family:Manrope,Arial,sans-serif}
+@media(max-width:720px){:root{--p101-type-h1:clamp(38px,9vw,52px);--p101-type-h2:clamp(28px,7vw,35px)}}
