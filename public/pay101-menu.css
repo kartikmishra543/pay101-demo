@@ -30,3 +30,7 @@ main h1{font-size:var(--p101-type-h1)!important;font-weight:700!important;line-h
 main h2{font-size:var(--p101-type-h2)!important;font-weight:700!important;line-height:1.23!important;letter-spacing:-.025em!important}
 main h3{font-size:var(--p101-type-h3)!important;font-weight:700!important}
 @media(max-width:720px){:root{--p101-type-h1:clamp(32px,7vw,43px);--p101-type-h2:clamp(25px,5.5vw,31px)}}
+
+/* Highlight the Developers link in About us mega menu. */
+.pay101MegaCol a[href="/developers"] strong{color:#0868ef!important}
+.pay101MegaCol a[href="/developers"]:hover strong{color:#004fc4!important}
