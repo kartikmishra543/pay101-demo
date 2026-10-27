@@ -34,3 +34,6 @@ main h3{font-size:var(--p101-type-h3)!important;font-weight:700!important}
 /* Highlight the Developers link in About us mega menu. */
 .pay101MegaCol a[href="/developers"] strong{color:#0868ef!important}
 .pay101MegaCol a[href="/developers"]:hover strong{color:#004fc4!important}
+
+/* Brand-blue emphasis for selected title phrases. */
+.p101-accent{color:#0868ef!important;-webkit-text-fill-color:#0868ef!important}
