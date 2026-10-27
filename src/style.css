@@ -1325,3 +1325,12 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
  .p101Header .p101Actions{margin-left:auto!important}
  .p101Header .p101Burger{display:flex!important;flex-shrink:0!important}
 }
+
+
+/* Shared typography scale with Pay101 static subpages. */
+:root{--p101-type-body:16px;--p101-type-lead:17px;--p101-type-h1:clamp(48px,5.8vw,78px);--p101-type-h2:clamp(32px,3.6vw,44px);--p101-type-h3:19px}
+body{font-size:var(--p101-type-body)}
+main h1{font-family:Manrope,Arial,sans-serif;font-size:var(--p101-type-h1);font-weight:800;line-height:1.08;letter-spacing:-.045em}
+main h2{font-family:Manrope,Arial,sans-serif;font-size:var(--p101-type-h2);font-weight:800;line-height:1.16;letter-spacing:-.035em}
+main h3{font-family:Manrope,Arial,sans-serif;font-size:var(--p101-type-h3);font-weight:750;letter-spacing:-.02em}
+@media(max-width:720px){:root{--p101-type-h1:clamp(38px,9vw,52px);--p101-type-h2:clamp(28px,7vw,35px)}}
