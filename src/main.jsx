@@ -196,9 +196,21 @@ function App(){
    
 
    <section className="split">
-    <div className="splitVisual">
-     <div className="miniCard"><div className="miniTop"><span>PAY101 PAYMENT HUB</span><span className="liveDot">● LIVE</span></div><strong>$248,920.42</strong><div className="miniChange">Illustrative multi-currency activity <small>demo view</small></div><div className="currencyChips"><span><b>Nu.</b> BTN</span><span><b>रू</b> NPR</span><span><b>R$</b> BRL</span><span><b>A$</b> AUD</span><span><b>$</b> USD</span></div><div className="miniBars">{[30,52,42,67,54,80,63,91,76,100].map((h,i)=><i key={i} style={{height:h+'%'}}/>)}</div></div>
-     <div className="floatTag tag1"><Check size={15}/> Settlement initiated</div><div className="floatTag tag2">UPI · Bank transfers</div>
+    <div className="splitVisual p101WorkflowVisual" aria-label="Illustrative Pay101 merchant dashboard with settlement and transaction information">
+      <div className="p101WorkflowPill p101WorkflowPill1"><span>▣</span>Multiple<br/>Payment Methods</div>
+      <div className="p101WorkflowPill p101WorkflowPill2"><span>♢</span>Smart<br/>Routing</div>
+      <div className="p101WorkflowPill p101WorkflowPill3"><span>ϟ</span>Real-time<br/>Settlement</div>
+      <div className="p101WorkflowMain">
+       <div className="p101WorkflowBrand"><b>Pay101</b><span>Merchant Dashboard</span><small><Check size={12}/> Settlement initiated</small></div>
+       <div className="p101WorkflowCaption">Total Volume <span title="Illustrative demo volume">ⓘ</span></div>
+       <div className="p101WorkflowTotal">₹ 2,48,920.42</div>
+       <div className="p101WorkflowGrowth">↑ 12.5% <span>vs. last 7 days</span></div>
+       <div className="p101WorkflowCurrencies"><span>🇮🇳 INR</span><span>🇺🇸 USD</span><span>🇪🇺 EUR</span><span>🇬🇧 GBP</span><span>🇦🇪 AED</span></div>
+       <div className="p101WorkflowBars"><b>Transaction Volume <small>ⓘ</small></b><div className="p101WorkflowBarPlot">{[34,42,61,59,78,65,84,98].map((h,i)=><div className="p101WorkflowBarItem" key={i}><i style={{height:h+'%'}}/><small>{12+i} Apr</small></div>)}</div></div>
+      </div>
+      <div className="p101WorkflowRate"><b>Payment Success Rate</b><div className="p101WorkflowDonut"><strong>98.7%</strong><small>↑ 1.2%</small></div></div>
+      <div className="p101WorkflowTransactions"><div className="p101WorkflowTransactionsTitle"><b>Recent Transactions</b><span>View all →</span></div>{[['▣','UPI Collection','₹ 18,450.00','10:24 AM'],['▤','Bank Transfer','₹ 75,000.00','09:12 AM'],['▣','Card Payment','₹ 12,300.00','08:47 AM']].map(([icon,name,amount,time])=><div className="p101WorkflowTx" key={name}><span className="p101WorkflowTxIcon">{icon}</span><span><b>{name}</b><small>{amount}</small></span><em>Success</em><time>{time}</time></div>)}</div>
+      <span className="p101WorkflowDemoLabel">Illustrative dashboard · Sample data</span>
     </div>
     <div className="splitCopy"><span className="kicker">ONE CONNECTED WORKFLOW</span><h2>From Payment to <em>Settlement</em></h2><p>Keep your payment operations visible from collection through payout and settlement.</p><ul><li><Check/> Real-time transaction visibility</li><li><Check/> Payin and payout workflows</li><li><Check/> Settlement status tracking</li><li><Check/> Clear reporting for operations</li></ul><button className="textBtn">Explore Pay101 solutions <ArrowRight size={17}/></button></div>
    </section>
