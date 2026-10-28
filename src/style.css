@@ -1492,3 +1492,23 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
 .orbitCurrency{background:#e8f4ff;box-shadow:0 4px 13px #1887ec16}
 }
 @media(max-width:650px){.marketsSection{background:linear-gradient(#fff,#f4faff)}.orbitHub{box-shadow:0 0 0 9px #e6f7ff,0 10px 30px #208aff40}}
+
+/* Pixel-aligned reference composition for Explore Markets (1600 x 800 source). */
+@media(min-width:951px){
+.p101MarketsOrbit{width:100%;max-width:1160px;min-height:560px;grid-template-columns:350px 220px 350px;grid-template-rows:repeat(3,112px);justify-content:space-between;align-content:space-between;gap:0;margin:40px auto 20px}
+.p101MarketsOrbit:before{width:600px;height:540px;opacity:.7}
+.orbitRing{width:470px;height:470px;opacity:.35}
+.orbitHub{width:220px;height:220px;align-self:center;justify-self:center;position:relative;overflow:hidden;background:radial-gradient(circle at 34% 25%,#8be5ff 0%,#299fff 27%,#067af4 60%,#1251c9 100%)}
+.orbitHub:after{content:"";position:absolute;inset:0;border-radius:50%;background:repeating-linear-gradient(0deg,transparent 0 28px,#ffffff14 29px 30px),repeating-linear-gradient(90deg,transparent 0 35px,#ffffff12 36px 37px);mask-image:radial-gradient(circle,#000 25%,transparent 75%);pointer-events:none}
+.orbitCard{width:350px;min-height:112px;position:relative;z-index:2;transform:none!important;grid-template-columns:64px 1fr 48px;gap:4px 14px;padding:15px 20px}
+.orbitCard:after{display:none}
+.orbitCard1,.orbitCard5{justify-self:end}.orbitCard2,.orbitCard6{justify-self:start}
+.orbitCard3{transform:translateX(-70px)!important}.orbitCard4{transform:translateX(70px)!important}
+.orbitCard3:hover{transform:translate(-70px,-4px)!important}.orbitCard4:hover{transform:translate(70px,-4px)!important}
+.orbitCard:hover{transform:translateY(-4px)!important}
+.orbitFlag{width:58px;height:52px}.orbitDetails b{font-size:18px}.orbitDetails small{font-size:12px}.orbitCurrency{width:45px;height:45px;font-size:14px}
+.p101MarketConnections{position:absolute;z-index:-1;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.orbitSatellite{position:absolute;z-index:1;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 30% 25%,#fff,#e5f3ff);box-shadow:0 5px 18px #3a9ee929;color:#1178dc;font-size:14px;font-weight:800}
+.orbitSatellite1{left:48%;top:10%}.orbitSatellite2{left:34%;top:60%}.orbitSatellite3{right:32%;top:60%}.orbitSatellite4{left:49%;bottom:3%}
+}
+@media(max-width:950px){.p101MarketConnections,.orbitSatellite{display:none}}
