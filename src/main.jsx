@@ -280,20 +280,17 @@ const currencySlides=[
  {code:'INR',name:'Indian Rupee',symbol:'₹',amount:'₹ 1,84,290',volume:'₹ 2,840',region:'INDIA',tx:[['Payment received','Merchant checkout','+₹ 2,840','Success'],['Payment sent','Vendor transfer','-₹ 1,280','Success'],['Money received','Bank account','+₹ 4,820','Settled']]}
 ];
 function Dashboard(){
- const [activeCurrency,setActiveCurrency]=React.useState(0);
- React.useEffect(()=>{const timer=setInterval(()=>setActiveCurrency(i=>(i+1)%currencySlides.length),5000);return ()=>clearInterval(timer)},[]);
- const current=currencySlides[activeCurrency];
- return <motion.div className="dashboard" initial={{opacity:0,y:30}} animate={{opacity:1,y:0}} transition={{duration:.8}}>
- <div className="dashGlow"/>
- <div className="dashHead"><div><small>PAYMENT OVERVIEW · {current.region}</small><h3>Pay101 Dashboard</h3></div><div className="user">P</div></div>
- <div className="currencySpotlight" key={current.code}><div><span>{current.code} · {current.name}</span><strong>{current.amount}</strong><small>Example total</small></div><div className="currencyMark">{current.symbol}</div></div>
- <div className="currencyProgress" aria-label="Currency rotation">{currencySlides.map((item,i)=><button key={item.code} onClick={()=>setActiveCurrency(i)} className={i===activeCurrency?'active':''} aria-label={`Show ${item.name}`} aria-pressed={i===activeCurrency}/>)}</div>
- <div className="stats"><div><span>Example payment</span><strong>{current.volume}</strong><b>● {current.code} example</b></div><div><span>Success rate</span><strong>98.7%</strong><b>↑ 1.2%</b></div></div>
- <div className="chartBox"><div className="chartTitle"><span>Payment activity</span><small>{current.code} · demo</small></div><div className="chart"><ResponsiveContainer width="100%" height="100%"><AreaChart data={chart}><defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#0878f9" stopOpacity=".28"/><stop offset="100%" stopColor="#0878f9" stopOpacity="0"/></linearGradient></defs><XAxis dataKey="m" hide/><Tooltip contentStyle={{background:'#fff',border:'1px solid #dce6ea',borderRadius:10,color:'#10202b'}}/><Area type="monotone" dataKey="v" stroke="#0878f9" strokeWidth={3} fill="url(#fill)"/></AreaChart></ResponsiveContainer></div></div>
-
+ const [currency,setCurrency]=React.useState('INR');
+ const currencies={INR:{amount:'₹1,84,290',transactions:'2,840'},USD:{amount:'$184,290',transactions:'2,840'},EUR:{amount:'€184,290',transactions:'2,840'},BRL:{amount:'R$184.290',transactions:'2.840'}};
+ const current=currencies[currency];
+ return <motion.div className="p101Hub" initial={{opacity:0,y:24}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{duration:.6}} aria-label="Illustrative Pay101 payment hub dashboard">
+  <div className="p101HubTop"><div className="p101HubTitle"><strong>Pay101</strong> <span>Payment Hub</span></div><span className="p101HubDemo">DEMO DATA</span></div>
+  <div className="p101HubMetrics"><div className="p101HubMetric p101HubPrimary"><span className="p101HubMetricIcon"><WalletCards size={21}/></span><div><small>Payments Overview</small><strong>{current.amount}</strong></div></div><div className="p101HubMetric"><span className="p101HubMetricIcon p101HubGreen"><Check size={19}/></span><small>Success Rate</small><strong>98.7%</strong></div><div className="p101HubMetric"><span className="p101HubMetricIcon"><ArrowRight size={19}/></span><small>Transactions</small><strong>{current.transactions}</strong></div></div>
+  <div className="p101HubFlow"><div className="p101HubFlowCol"><div className="p101HubFlowCard"><span className="p101HubFlowIcon p101Upi">₹</span><span>UPI</span><ArrowRight size={14}/></div><div className="p101HubFlowCard"><span className="p101HubFlowIcon"><CreditCard size={19}/></span><span>Cards</span><ArrowRight size={14}/></div></div><div className="p101HubFlowCenter"><span className="p101HubFlowCore"><span className="p101HubLayers">◇</span><strong>Pay101</strong><small>Payment Hub</small></span></div><div className="p101HubFlowCol"><div className="p101HubFlowCard"><span className="p101HubFlowIcon"><Landmark size={19}/></span><span>IMPS Payouts</span><ArrowRight size={14}/></div><div className="p101HubFlowCard"><span className="p101HubFlowIcon"><Landmark size={19}/></span><span>Bank Transfer</span><ArrowRight size={14}/></div></div></div>
+  <div className="p101HubActivity"><div className="p101HubActivityTop"><strong>Transaction Activity</strong><select aria-label="Select sample currency" value={currency} onChange={e=>setCurrency(e.target.value)}>{Object.keys(currencies).map(c=><option key={c} value={c}>{c}</option>)}</select></div><div className="p101HubChart"><ResponsiveContainer width="100%" height="100%"><AreaChart data={chart}><defs><linearGradient id="p101HubAreaFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#1984ff" stopOpacity=".2"/><stop offset="100%" stopColor="#1984ff" stopOpacity="0"/></linearGradient></defs><XAxis dataKey="m" hide/><Area dataKey="v" type="monotone" stroke="#167bfa" strokeWidth={3} fill="url(#p101HubAreaFill)" isAnimationActive={true}/></AreaChart></ResponsiveContainer></div></div>
+  <div className="p101HubToast"><span>✓</span> Transaction Successful</div>
  </motion.div>
 }
-
 
 function MerchantLogin(){
  React.useEffect(()=>{document.title='Merchant Login | Pay101';},[]);
