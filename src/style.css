@@ -1552,3 +1552,51 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
 @media(min-width:901px) and (max-width:1200px){.marketsSection{grid-template-columns:minmax(230px,.35fr) minmax(620px,1fr);padding-left:16px;padding-right:16px}.p101WorldCard{width:39%;padding:10px;gap:6px}.p101WorldCard3{left:-2%}.p101WorldCard4{right:-2%}.p101WorldSphere{width:180px;height:180px}}
 @media(max-width:900px){.p101WorldMap{height:540px;margin-top:22px}.p101WorldCard{width:38%;height:100px;padding:9px;grid-template-columns:39px minmax(0,1fr) 31px;gap:5px}.p101WorldFlag{width:38px;height:38px}.p101WorldCardText b{font-size:13px}.p101WorldCardText small{font-size:10px}.p101WorldBadge{width:30px;height:30px;font-size:10px}.p101WorldCard3{left:0}.p101WorldCard4{right:0}.p101WorldSphere{width:170px;height:170px}.p101WorldSphere strong{font-size:25px}.p101WorldFloat{display:none}}
 @media(max-width:600px){.p101WorldMap{height:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding-top:160px;background:radial-gradient(circle at 50% 70px,#d8efff,transparent 180px)}.p101WorldLines{display:none}.p101WorldSphere{top:0;transform:translateX(-50%);width:140px;height:140px}.p101WorldSphere strong{font-size:22px}.p101WorldSphere small{font-size:9px}.p101WorldCard{position:static;width:auto;height:94px;grid-template-columns:32px minmax(0,1fr);grid-template-rows:40px auto;gap:4px;padding:8px;border-radius:14px}.p101WorldFlag{grid-column:1;grid-row:1;width:32px;height:32px}.p101WorldCardText{grid-column:2;grid-row:1/3;gap:4px}.p101WorldCardText b{font-size:12px}.p101WorldCardText small{font-size:9px}.p101WorldBadge{grid-column:1;grid-row:2;width:29px;height:24px;font-size:9px}.p101WorldArrow{display:none}}
+
+
+/* Explore Markets: compact country cards without collisions with the central hub. */
+@media (min-width: 901px) {
+  .p101WorldCard {
+    width: 30%;
+    height: 92px;
+    padding: 9px 11px;
+    grid-template-columns: 40px minmax(0,1fr) 34px;
+    grid-template-rows: 1fr 16px;
+    column-gap: 8px;
+    border-radius: 16px;
+  }
+  .p101WorldCard1,.p101WorldCard2 { top: 24px; }
+  .p101WorldCard3 { left: 0; top: 234px; }
+  .p101WorldCard4 { right: 0; top: 234px; }
+  .p101WorldCard5,.p101WorldCard6 { bottom: 24px; }
+  .p101WorldFlag { width: 40px; height: 38px; border-radius: 9px; }
+  .p101WorldCardText { gap: 3px; }
+  .p101WorldCardText b { font-size: 14px; }
+  .p101WorldCardText small { font-size: 10px; line-height: 1.25; }
+  .p101WorldBadge { width: 33px; height: 33px; font-size: 10px; }
+  .p101WorldArrow { width: 13px; height: 13px; }
+}
+@media (min-width: 601px) and (max-width: 900px) {
+  .p101WorldCard {
+    width: 30%;
+    height: 88px;
+    padding: 8px;
+    grid-template-columns: 30px minmax(0,1fr);
+    grid-template-rows: 1fr;
+    gap: 6px;
+    border-radius: 14px;
+  }
+  .p101WorldCard1,.p101WorldCard2 { top: 28px; }
+  .p101WorldCard3 { top: 226px; }
+  .p101WorldCard4 { top: 226px; }
+  .p101WorldCard5,.p101WorldCard6 { bottom: 28px; }
+  .p101WorldFlag { grid-column: 1; grid-row: 1; width: 30px; height: 30px; }
+  .p101WorldCardText { grid-column: 2; grid-row: 1; gap: 3px; }
+  .p101WorldCardText b { font-size: 12px; }
+  .p101WorldCardText small { font-size: 9px; }
+  .p101WorldBadge,.p101WorldArrow { display: none; }
+}
+@media (max-width: 600px) {
+  .p101WorldCard { min-width: 0; overflow: hidden; }
+  .p101WorldCardText { min-width: 0; overflow-wrap: anywhere; }
+}
