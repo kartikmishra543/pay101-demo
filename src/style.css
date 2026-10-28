@@ -1441,3 +1441,9 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
  }
  .p101Header .pay101MegaNav.mobileOpen{max-height:calc(100dvh - 68px)!important;overflow-y:auto!important}
 }
+
+/* Confirmation view matches the existing compact consultation popup. */
+.p101ConsultThanks{padding:16px 14px 18px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:9px;overflow-y:auto}
+.p101ConsultThanksIcon{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:#e9f4ff;color:#0878f9;font-size:29px;font-weight:800}
+.p101ConsultThanks h3{margin:0;color:#112e55;font-size:22px}.p101ConsultThanks p{margin:0;color:#365373;font-size:13px;line-height:1.5}.p101ConsultThanks .p101ConsultThanksDetail{font-size:12px;color:#657c96}.p101ConsultThanks .p101ConsultSubmit{width:100%;margin-top:7px}
+.p101EnquiryOverlay{position:fixed;inset:0;z-index:99999;background:rgba(7,24,48,.4);display:grid;place-items:center;padding:16px}.p101EnquiryDialog{width:min(320px,calc(100vw - 32px));max-height:calc(100dvh - 40px);overflow:auto;border:1px solid #dce8f6;border-radius:20px;background:white;box-shadow:0 22px 65px #123f743b}
