@@ -1646,3 +1646,10 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
 /* Highlight Developers navigation link */
 .p101Header .pay101MegaTab.pay101DevelopersLink{color:#0969f9!important;font-weight:750!important;text-decoration:none!important;display:inline-flex;align-items:center;justify-content:center;}
 .p101Header .pay101MegaTab.pay101DevelopersLink:hover,.p101Header .pay101MegaTab.pay101DevelopersLink:focus-visible{color:#0053d6!important;background:#e8f0ff!important;}
+
+/* Resources dropdown: restore arrow icons and item spacing to match other menus */
+@media(min-width:721px){
+.p101Header .pay101ResourceList .pay101MegaCol{gap:10px!important;}
+.p101Header .pay101ResourceList .pay101MegaCol a{display:flex!important;align-items:flex-start!important;gap:12px!important;padding:12px!important;}
+.p101Header .pay101ResourceList .pay101MegaArrow{display:inline-flex!important;flex:0 0 30px!important;align-items:center!important;justify-content:center!important;}
+}
