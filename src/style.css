@@ -1642,3 +1642,7 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
 .p101Header .pay101ResourceList .pay101MegaCol a strong{display:block!important;font-size:15px!important;}
 .p101Header .pay101ResourceList .pay101MegaCol a small{display:block!important;font-size:13px!important;margin-top:3px!important;}
 }
+
+/* Highlight Developers navigation link */
+.p101Header .pay101MegaTab.pay101DevelopersLink{color:#0969f9!important;font-weight:750!important;text-decoration:none!important;display:inline-flex;align-items:center;justify-content:center;}
+.p101Header .pay101MegaTab.pay101DevelopersLink:hover,.p101Header .pay101MegaTab.pay101DevelopersLink:focus-visible{color:#0053d6!important;background:#e8f0ff!important;}
