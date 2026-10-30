@@ -1660,3 +1660,9 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
 .p101Header .pay101ResourceList .pay101MegaCol a{padding:7px 12px!important;margin:0!important;min-height:0!important;}
 .p101Header .pay101MegaPanel:has(.pay101ResourceList){padding:8px!important;}
 }
+
+/* Resources dropdown: increase item title and description font size by 1px */
+@media(min-width:721px){
+.p101Header .pay101ResourceList .pay101MegaCol a strong{font-size:16px!important;}
+.p101Header .pay101ResourceList .pay101MegaCol a small{font-size:14px!important;}
+}
