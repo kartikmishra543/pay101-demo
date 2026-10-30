@@ -9,6 +9,10 @@
       "destination": "/"
     },
     {
+      "source": "/signup",
+      "destination": "/"
+    },
+    {
       "source": "/how-it-works",
       "destination": "/"
     },
