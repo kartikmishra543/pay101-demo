@@ -1653,3 +1653,10 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
 .p101Header .pay101ResourceList .pay101MegaCol a{display:flex!important;align-items:flex-start!important;gap:12px!important;padding:12px!important;}
 .p101Header .pay101ResourceList .pay101MegaArrow{display:inline-flex!important;flex:0 0 30px!important;align-items:center!important;justify-content:center!important;}
 }
+
+/* Compact Resources list spacing to match Markets dropdown */
+@media(min-width:721px){
+.p101Header .pay101ResourceList .pay101MegaCol{gap:0!important;}
+.p101Header .pay101ResourceList .pay101MegaCol a{padding:7px 12px!important;margin:0!important;min-height:0!important;}
+.p101Header .pay101MegaPanel:has(.pay101ResourceList){padding:8px!important;}
+}
