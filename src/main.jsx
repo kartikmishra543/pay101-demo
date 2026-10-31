@@ -256,7 +256,7 @@ function App(){
      <div className="p101FooterCol"><h4>Markets</h4><a href="/#markets">India</a><a href="/#markets">Nepal</a><a href="/#markets">Bhutan</a><a href="/#markets">Brazil</a><a href="/#markets">Australia</a></div>
      <div className="p101FooterCol"><h4>Company</h4><a href="/#about">About us</a><a href="/how-it-works">How it works</a><a href="/#developers">Developers</a><a href="/#security">Security</a><a href="/#blog">Blog</a><a href="/#contact">Contact</a><a href="mailto:support@pay101.uk?subject=Pay101%20Integration%20Request" style={{color:"#0868ef",fontWeight:700}}>Request Integration <ArrowRight size={15}/></a></div>
     </div>
-    <div className="p101FooterBottom"><span>© 2026 Pay101. All rights reserved.</span></div>
+    <div className="p101FooterBottom"><span>© 2026 Pay101. All rights reserved.</span><div><a href="/aml-policy">AML Policy</a><a href="/cookie-policy">Cookie Policy</a><a href="/terms-and-conditions">Terms and Conditions</a><a href="/kyc-policy">KYC Policy</a></div></div>
    </footer>
  </div>
 }
