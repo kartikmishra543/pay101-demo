@@ -51,3 +51,12 @@ main h3{font-size:var(--p101-type-h3)!important;font-weight:700!important}
 .pay101CountryEmpty,.pay101CountryInfo p{font:400 14px/1.65 Manrope,system-ui,sans-serif;color:#5d6b87}
 .pay101CountryEnquiry,.pay101CountryInfo a{display:inline-block;color:#0868ef;font:700 14px Manrope,system-ui,sans-serif;text-decoration:none;margin-top:12px}
 @media(max-width:900px){.pay101ContinentMenu{grid-template-columns:1fr}.pay101CountryList,.pay101CountryInfo{border-left:0;border-top:1px dashed #cdd9ef;padding-top:16px;margin-top:12px}}
+
+/* Mobile-only inline accordion: open each dropdown immediately below its selected tab. */
+@media(max-width:900px){
+  .pay101MegaNav{width:100%;flex-basis:100%;min-width:0;align-items:stretch;justify-content:flex-start;flex-direction:column}
+  .pay101MegaTabs{display:flex;position:static;flex-direction:column;flex-wrap:nowrap;align-items:stretch;width:100%;gap:2px;padding:0;background:transparent;border:0;box-shadow:none}
+  .pay101MegaTab{display:flex;align-items:center;justify-content:space-between;width:100%;text-align:left}
+  .pay101MegaPanel,.p101Header .pay101MegaPanel{position:static!important;top:auto!important;left:auto!important;transform:none!important;width:100%;max-height:none;overflow:visible;margin:3px 0 8px;padding:14px 8px;box-shadow:none;border-radius:14px;z-index:auto}
+  .pay101MegaPanel::before{display:none}
+}
