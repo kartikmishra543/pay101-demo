@@ -1678,3 +1678,37 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
 .p101Header .pay101MegaPanel .pay101CountryInfo h3{font-size:14px!important;line-height:1.4!important;}
 .p101Header .pay101MegaPanel .pay101ContinentChoice{font-size:16px!important;line-height:1.4!important;}
 .p101Header .pay101MegaPanel .pay101CountryInfo p{font-size:14px!important;line-height:1.45!important;}
+
+/* Mobile-only visual polish: fluid images, non-overlapping layouts and readable controls.
+   Desktop styles and document structure are intentionally untouched. */
+@media (max-width: 720px) {
+  html,body,#root,.app { max-width:100%; }
+  .app { overflow-x:clip; }
+  img,video,svg,canvas { max-width:100%; }
+  img { height:auto; }
+  .hero,.marketsSection,.dashboardShowcase,.security,.split,.sectionHead,
+  .merchantLayout { min-width:0; }
+  .hero > *,.marketsSection > *,.dashboardShowcase > *,.split > *,
+  .merchantLayout > * { min-width:0;max-width:100%; }
+  .hero { grid-template-columns:minmax(0,1fr);gap:20px;padding-left:16px;padding-right:16px; }
+  .heroCopy { min-width:0;max-width:100%; }
+  .heroCopy h1,.heroCopy p,.marketsIntro h2,.marketsIntro p { overflow-wrap:break-word; }
+  .dashboard,.globeStage,.p101WorkflowVisual,.p101WorldMap,.splitVisual {
+    max-width:100%;min-width:0;margin-left:auto;margin-right:auto;
+  }
+  .globeStage { width:100%; }
+  .globeBrandImage,.globeHeroVideo,.p101FullHeroBackground img,
+  .p101FullHeroBackground video { max-width:100%;object-fit:cover; }
+  .p101WorldMap { width:100%; }
+  .p101WorldCard { min-width:0; }
+  .p101WorldCardText { min-width:0;overflow-wrap:anywhere; }
+  .featureGrid,.railList { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .primary,.ghost,.textBtn { max-width:100%; }
+  input,select,textarea { max-width:100%; }
+}
+@media (max-width: 420px) {
+  .hero { padding-left:14px;padding-right:14px; }
+  .featureGrid,.railList { grid-template-columns:minmax(0,1fr); }
+  .globeStage { height:min(390px,100vw); }
+  .p101WorldMap { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
