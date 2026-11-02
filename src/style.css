@@ -1712,3 +1712,22 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
   .globeStage { height:min(390px,100vw); }
   .p101WorldMap { grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
+
+/* Mobile industries: readable cards without clipped carousel edges. */
+@media (max-width: 800px) {
+  .p101IndustrySection { box-sizing:border-box; min-width:0; margin:40px 16px; padding:32px 16px; }
+  .p101IndustryHeading h2 { overflow-wrap:break-word; }
+  .p101IndustryHeading p { font-size:16px; }
+  .p101IndustryCarousel { overflow:visible; mask-image:none; -webkit-mask-image:none; margin-top:24px; }
+  .p101IndustryTrack { display:block; width:100%; animation:none; transform:none; will-change:auto; }
+  .p101IndustryCardGroup { display:grid; grid-template-columns:minmax(0,1fr); gap:20px; width:100%; }
+  .p101IndustryCardGroup[aria-hidden="true"] { display:none; }
+  .p101IndustryCardGroup .p101IndustryCard { box-sizing:border-box; width:100%; min-width:0; max-width:100%; transform:none; }
+  .p101IndustryArt { flex-shrink:0; }
+  .p101IndustryArt img { width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; }
+  .p101IndustryCardBody { min-width:0; padding:20px; gap:12px; }
+  .p101IndustryCardBody h3,.p101IndustryCardBody p { overflow-wrap:break-word; }
+  .p101IndustryChips { min-width:0; }
+  .p101IndustryChips span { max-width:100%; box-sizing:border-box; white-space:normal; overflow-wrap:anywhere; }
+  .p101IndustryFoot .primary { box-sizing:border-box; white-space:normal; text-align:center; }
+}
