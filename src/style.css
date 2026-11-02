@@ -1745,25 +1745,26 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
 @media(max-width:600px){.p101WhyInner{padding:40px 20px}.p101WhyGrid{grid-template-columns:minmax(0,1fr);gap:16px}}
 
 /* Explore Markets: reserve space for floating controls and keep the diagram fluid. */
-.marketsSection{box-sizing:border-box;width:100%;max-width:1440px;padding:56px 80px;grid-template-columns:minmax(260px,300px) minmax(0,1fr);gap:28px 40px;overflow:hidden}
+.marketsSection{box-sizing:border-box;width:100%;max-width:1440px;padding:56px 80px;grid-template-columns:minmax(280px,340px) minmax(0,1fr);gap:28px 40px;overflow:hidden}
 .marketsIntro{min-width:0;max-width:100%}
+.marketsIntro .kicker{font-size:18px;line-height:1.5;letter-spacing:.1em}
 .marketsIntro h2{font-size:clamp(32px,2.8vw,42px);line-height:1.2;margin:16px 0 0;overflow-wrap:break-word}
-.marketsIntro p{font-size:16px;line-height:1.7;max-width:380px;margin-top:18px}
-.p101WorldMap{height:520px;max-width:900px;margin:0 auto}
-.p101WorldSphere{width:180px;height:180px}
-.p101WorldSphere strong{font-size:28px}
+.marketsIntro p{font-size:18px;line-height:1.7;max-width:380px;margin-top:18px}
+.p101WorldMap{height:440px;max-width:760px;margin:0 auto}
+.p101WorldSphere{width:160px;height:160px}
+.p101WorldSphere strong{font-size:26px}
 .p101WorldSphere small{font-size:11px}
-.p101WorldCard{height:auto;min-height:92px;width:30%;padding:12px;grid-template-columns:36px minmax(0,1fr);grid-template-rows:auto;gap:8px;border-radius:16px}
-.p101WorldFlag{width:36px;height:36px;grid-row:1;grid-column:1}
+.p101WorldCard{height:auto;min-height:76px;width:27%;padding:10px;grid-template-columns:30px minmax(0,1fr);grid-template-rows:auto;gap:8px;border-radius:16px}
+.p101WorldFlag{width:30px;height:30px;grid-row:1;grid-column:1}
 .p101WorldCardText{grid-column:2;grid-row:1;gap:5px;overflow-wrap:break-word}
 .p101WorldCardText b{font-size:14px;line-height:1.35}
 .p101WorldCardText small{font-size:11px;line-height:1.4}
 .p101WorldBadge,.p101WorldArrow{display:none}
-.p101WorldCard1,.p101WorldCard2{top:24px;bottom:auto}
-.p101WorldCard3{left:0;top:214px;bottom:auto}
-.p101WorldCard4{right:0;top:214px;bottom:auto}
-.p101WorldCard5,.p101WorldCard6{top:auto;bottom:24px}
-.p101WorldFloat{width:40px;height:40px;font-size:11px}
+.p101WorldCard1,.p101WorldCard2{top:16px;bottom:auto}
+.p101WorldCard3{left:0;top:182px;bottom:auto}
+.p101WorldCard4{right:0;top:182px;bottom:auto}
+.p101WorldCard5,.p101WorldCard6{top:auto;bottom:16px}
+.p101WorldFloat{width:34px;height:34px;font-size:10px}
 .marketDisclaimer{min-width:0;margin:0;font-size:11px;line-height:1.6}
 @media(max-width:1199px){
  .marketsSection{grid-template-columns:minmax(0,1fr);gap:24px;padding:48px 80px}
@@ -1774,10 +1775,10 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
 @media(max-width:900px){.marketsSection{padding:40px 72px 40px 24px}}
 @media(max-width:600px){
  .marketsSection{padding:36px 68px 36px 20px;gap:20px}
- .marketsIntro h2{font-size:30px}.marketsIntro p{font-size:15px}
+ .marketsIntro h2{font-size:30px}.marketsIntro p{font-size:17px}
  .p101WorldMap{height:auto;margin-top:0;padding-top:156px;gap:12px}
  .p101WorldSphere{width:132px;height:132px}.p101WorldSphere strong{font-size:24px}.p101WorldSphere small{font-size:10px}
- .p101WorldCard{position:static;width:100%;min-height:88px;padding:12px;grid-template-columns:32px minmax(0,1fr);gap:10px}
+ .p101WorldCard{position:static;width:100%;min-height:76px;padding:10px;grid-template-columns:32px minmax(0,1fr);gap:10px}
  .p101WorldFlag{width:32px;height:32px}.p101WorldCardText b{font-size:14px}.p101WorldCardText small{font-size:11px}
 }
 @media(max-width:480px){.p101WorldMap{grid-template-columns:minmax(0,1fr)}}
