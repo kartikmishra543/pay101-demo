@@ -1731,3 +1731,15 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
   .p101IndustryChips span { max-width:100%; box-sizing:border-box; white-space:normal; overflow-wrap:anywhere; }
   .p101IndustryFoot .primary { box-sizing:border-box; white-space:normal; text-align:center; }
 }
+
+/* Why Pay101 follows the About section, with responsive benefit cards. */
+.p101WhySection{background:#f3f7ff;scroll-margin-top:85px}
+.p101WhyInner{max-width:1220px;margin:0 auto;padding:56px 28px 64px}
+.p101WhyInner>h2{margin:0 0 28px;color:#10202b}
+.p101WhyGrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.p101WhyCard{min-width:0;background:#fff;border:1px solid #dfe8f5;border-radius:20px;padding:24px;box-shadow:0 8px 24px rgba(26,70,160,.04)}
+.p101WhyIcon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:#e8f1ff;color:#0868ef;font-size:24px;font-weight:700;margin-bottom:20px}
+.p101WhyCard h3{margin:0 0 12px;line-height:1.4;overflow-wrap:break-word}
+.p101WhyCard p{margin:0;color:#617581;font-size:16px;line-height:1.7;overflow-wrap:break-word}
+@media(max-width:1000px){.p101WhyGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.p101WhyInner{padding:40px 20px}.p101WhyGrid{grid-template-columns:minmax(0,1fr);gap:16px}}
