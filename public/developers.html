@@ -42,6 +42,34 @@
 .dev-sub{font-size:16px;line-height:1.7}.dev-btn,.dev-outline{font-family:Manrope,sans-serif;font-size:14px;font-weight:800}
 .dev-index b,.dev-security p,.dev-section summary{font-size:16px}.dev-glance dd{font-size:15px}
 @media(max-width:720px){.dev-hero h1{font-size:clamp(38px,9vw,52px)}.dev-section h2{font-size:clamp(28px,7vw,35px)}.dev-lead{font-size:16px}}
+
+/* Developer product hero: existing Pay101 light palette */
+.dev-product-hero{padding:76px 0 78px;overflow:hidden;background:linear-gradient(115deg,#f5f8ff 0%,#eef4ff 65%,#e4efff 100%);border-bottom:1px solid #dfe8f8}
+.dev-product-hero .dev-hero-grid{grid-template-columns:1.05fr 1fr;gap:54px}
+.dev-product-label{display:inline-flex;align-items:center;gap:9px;border:1px solid #cbdcf6;border-radius:30px;padding:7px 14px;background:#ffffffb0;color:#203658;font-size:10px;font-weight:800;letter-spacing:.075em}
+.dev-product-label:before{content:"";width:6px;height:6px;border-radius:50%;background:#1a73ff}
+.dev-product-hero h1{font-size:clamp(36px,4.3vw,56px);line-height:1.08;letter-spacing:-.045em;margin:23px 0 19px;max-width:600px;color:#111c3c}
+.dev-product-hero .p101-accent{color:#0a6bfa}
+.dev-product-hero .dev-lead{font-size:16px;line-height:1.65;margin:0;max-width:510px;color:#5d6b87}
+.dev-product-hero .dev-lead strong{color:#314765;font-weight:750}
+.dev-product-hero .dev-actions{gap:27px;align-items:center;margin-top:28px}
+.dev-api-link{display:inline-flex;align-items:center;gap:10px;color:#142548;font-size:13px;font-weight:800}
+.dev-api-link span{display:grid;place-items:center;width:27px;height:27px;border:1px solid #9cb8e0;border-radius:50%;color:#0a6bfa}
+.dev-api-link:hover{color:#0a6bfa}
+.dev-code-scene{position:relative;min-width:0}
+.dev-hero-code{position:relative;z-index:1;margin:0;background:#fff;border:1px solid #d6e3f8;border-radius:16px;box-shadow:0 22px 55px #1a46a018;overflow:hidden}
+.dev-hero-code figcaption{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 16px;background:#e8f0fd;border-bottom:1px solid #d6e3f8;font-size:10px;color:#587197}
+.dev-code-dots{display:flex;gap:6px}.dev-code-dots i{width:8px;height:8px;border-radius:50%;background:#93afd5}
+.dev-hero-code pre{margin:0;padding:18px 16px 20px;overflow-x:auto;color:#203658;font:10px/1.85 ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:2}
+.dev-code-comment{color:#6d819e}.dev-code-method{color:#0a6bfa;font-weight:700}.dev-code-string{color:#167452}
+.dev-currency-network{position:absolute;inset:-35px -45px -20px 35px;pointer-events:none;color:#8dadde}
+.dev-currency-network:before{content:"";position:absolute;inset:50px 10px 65px 40%;border-right:2px solid #c5d9f6;transform:rotate(-27deg)}
+.dev-currency-network span{position:absolute;display:grid;place-items:center;width:66px;height:66px;border:2px solid #bcd2f1;border-radius:50%;font-size:32px;font-weight:750;background:#eaf2ff}
+.dev-currency-network span:nth-child(1){top:0;right:100px}.dev-currency-network span:nth-child(2){top:110px;right:0}.dev-currency-network span:nth-child(3){bottom:0;right:-18px}
+.dev-product-hero a:focus-visible{outline:3px solid #0a6bfa;outline-offset:5px}
+@media(max-width:900px){.dev-product-hero .dev-hero-grid{grid-template-columns:1fr 1fr;gap:28px}.dev-hero-code pre{font-size:9px}}
+@media(max-width:720px){.dev-product-hero{padding:45px 0 50px}.dev-product-hero .dev-hero-grid{grid-template-columns:1fr;gap:38px}.dev-product-hero h1{font-size:clamp(36px,8vw,50px)}.dev-product-hero .dev-lead{max-width:100%}.dev-hero-code pre{font-size:clamp(8px,2.15vw,11px)}.dev-currency-network{inset:-15px -12px -12px 10px}}
+
 </style></head>
 <body>
 <header class="container topbar">
@@ -50,7 +78,22 @@
   <a class="button primary" href="/signup">Get started →</a><button class="hamb" id="hamb" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 </header>
 <main class="dev-page">
-<section class="dev-hero" id="quickstart"><div class="dev-wrap"><p class="dev-crumb">About us › For developers › Developers</p><div class="dev-hero-grid"><div><h1>Connect <span class="p101-accent">Pay101</span> to Your Platform</h1><p class="dev-lead">Accept payments and send payouts from your own website or app. Approved partners receive the full integration guide, credentials and support from our team.</p><div class="dev-actions"><a class="dev-btn" href="mailto:support@pay101.uk?subject=Pay101%20API%20Access%20Request">Request API access →</a><a class="dev-outline" href="#documentation">Explore documentation</a></div></div><aside class="dev-glance"><h3>At a Glance</h3><dl><dt>Services</dt><dd>PayIn (collect) and PayOut (send)</dd><dt>Connection</dt><dd>Secure JSON over HTTPS</dd><dt>Payout modes</dt><dd>IMPS, NEFT, RTGS</dd><dt>Access</dt><dd>Approved partners only</dd><dt>Documentation</dt><dd>Shared after approval</dd></dl></aside></div></div></section>
+<section class="dev-hero dev-product-hero" id="quickstart"><div class="dev-wrap"><div class="dev-hero-grid"><div class="dev-product-copy"><span class="dev-product-label">PAY101 FOR DEVELOPERS</span><h1>Build payments<br><span class="p101-accent">into your product.</span></h1><p class="dev-lead">Connect Pay101 with PayIn and PayOut APIs. As a <strong>payout API provider</strong>, we help you collect payments, send money to bank accounts and confirm every result from your own server.</p><div class="dev-actions"><a class="dev-btn" href="mailto:support@pay101.uk?subject=Pay101%20API%20Access%20Request">Request API access →</a><a class="dev-api-link" href="#api"><span aria-hidden="true">→</span>Explore the APIs</a></div></div><div class="dev-code-scene"><div class="dev-currency-network" aria-hidden="true"><span>£</span><span>₹</span><span>$</span></div><figure class="dev-hero-code"><figcaption><span class="dev-code-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Simplified example</span></figcaption><pre><code><span class="dev-code-comment">// 1. Sign in from your server to get a token</span>
+<span class="dev-code-method">POST</span> /merchant/login  <span class="dev-code-comment">→ token</span>
+
+<span class="dev-code-comment">// 2. Send a payout</span>
+<span class="dev-code-method">POST</span> /payout/direct-payout
+<span class="dev-code-comment">Authorization: Bearer &lt;token&gt;</span>
+{
+  <span class="dev-code-string">"order_id"</span>: <span class="dev-code-string">"ORDER_1024"</span>,
+  <span class="dev-code-string">"amount"</span>: 1000.00,
+  <span class="dev-code-string">"payment_type"</span>: <span class="dev-code-string">"IMPS"</span>,
+  <span class="dev-code-string">"callback_url"</span>: <span class="dev-code-string">"https://yoursite.com/payout/callback"</span>
+  <span class="dev-code-comment">// plus beneficiary details</span>
+}
+
+<span class="dev-code-comment">// 3. Confirm the result</span>
+<span class="dev-code-method">GET</span> /payout/check-status/ORDER_1024 <span class="dev-code-comment">→ SUCCESS</span></code></pre></figure></div></div></div></section>
 <div class="dev-wrap">
 <section class="dev-section" id="api"><h2>What You <span class="p101-accent">Can Do</span></h2><p class="dev-sub">Two services, one connection.</p><div class="dev-cards"><article><span class="dev-symbol">↘</span><h3>Accept Payments</h3><p>Create an order for your customer, receive the result on your server and confirm the final status before you credit them.</p></article><article><span class="dev-symbol">↗</span><h3>Send Payouts</h3><p>Pay partners, vendors or customers to their bank accounts by IMPS, NEFT or RTGS.</p></article><article><span class="dev-symbol">✓</span><h3>Check Every Result</h3><p>Verify payments and check payout status with your own order ID, so your records match.</p></article></div></section>
 <section class="dev-section" id="documentation"><h2>What’s Inside the <span class="p101-accent">Documentation</span></h2><p class="dev-sub">Approved partners get a full guide with these sections.</p><div class="dev-index"><article><b>Getting started</b><span>Onboarding and credentials</span></article><article><b>Authentication</b><span>Signing in to your account</span></article><article><b>PayIn</b><span>Collect payments, step by step</span></article><article><b>PayOut</b><span>Send money to bank accounts</span></article><article><b>Server access</b><span>Approving your server addresses</span></article><article><b>Go-live checklist</b><span>What to check before launch</span></article></div></section>
