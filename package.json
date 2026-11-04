@@ -1,9 +1,23 @@
 {
-  "name":"pay101-demo",
-  "private":true,
-  "version":"1.0.0",
-  "type":"module",
-  "scripts":{"dev":"vite","build":"vite build","preview":"vite preview"},
-  "dependencies":{"@vitejs/plugin-react":"latest","vite":"latest","react":"latest","react-dom":"latest","lucide-react":"latest","framer-motion":"latest","recharts":"latest","tailwindcss":"latest","@tailwindcss/vite":"latest"},
-  "devDependencies":{}
+  "name": "pay101-demo",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node scripts/build-header.mjs",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "lucide-react": "latest",
+    "framer-motion": "latest",
+    "recharts": "latest",
+    "tailwindcss": "latest",
+    "@tailwindcss/vite": "latest"
+  },
+  "devDependencies": {}
 }

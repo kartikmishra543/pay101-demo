@@ -70,13 +70,10 @@
 @media(max-width:900px){.dev-product-hero .dev-hero-grid{grid-template-columns:1fr 1fr;gap:28px}.dev-hero-code pre{font-size:9px}}
 @media(max-width:720px){.dev-product-hero{padding:45px 0 50px}.dev-product-hero .dev-hero-grid{grid-template-columns:1fr;gap:38px}.dev-product-hero h1{font-size:clamp(36px,8vw,50px)}.dev-product-hero .dev-lead{max-width:100%}.dev-hero-code pre{font-size:clamp(8px,2.15vw,11px)}.dev-currency-network{inset:-15px -12px -12px 10px}}
 
-</style></head>
+</style><link rel="stylesheet" href="/shared-header/header.css">
+</head>
 <body>
-<header class="container topbar">
-  <a class="logo" href="/" aria-label="Pay101 home"><img class="pay101-original-logo" src="/assets/pay101-logo.png" alt="Pay101"><span class="developer-label">DEVELOPERS</span></a>
-  <nav class="navlinks" id="navlinks"><a href="#quickstart">Quick start</a><a href="#api">API resources</a><a href="#prerequisites">Prerequisites</a><a href="#faq">FAQs</a></nav>
-  <a class="button primary" href="/signup">Get started →</a><button class="hamb" id="hamb" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-</header>
+<div id="pay101-shared-header"></div>
 <main class="dev-page">
 <section class="dev-hero dev-product-hero" id="quickstart"><div class="dev-wrap"><div class="dev-hero-grid"><div class="dev-product-copy"><span class="dev-product-label">PAY101 FOR DEVELOPERS</span><h1>Build payments<br><span class="p101-accent">into your product.</span></h1><p class="dev-lead">Connect Pay101 with PayIn and PayOut APIs. As a <strong>payout API provider</strong>, we help you collect payments, send money to bank accounts and confirm every result from your own server.</p><div class="dev-actions"><a class="dev-btn" href="mailto:support@pay101.uk?subject=Pay101%20API%20Access%20Request">Request API access →</a><a class="dev-api-link" href="#api"><span aria-hidden="true">→</span>Explore the APIs</a></div></div><div class="dev-code-scene"><div class="dev-currency-network" aria-hidden="true"><span>£</span><span>₹</span><span>$</span></div><figure class="dev-hero-code"><figcaption><span class="dev-code-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Simplified example</span></figcaption><pre><code><span class="dev-code-comment">// 1. Sign in from your server to get a token</span>
 <span class="dev-code-method">POST</span> /merchant/login  <span class="dev-code-comment">→ token</span>
@@ -120,11 +117,8 @@
     <div class="p101FooterBottom"><span>© 2026 Pay101. All rights reserved.</span><div><a href="mailto:support@pay101.uk?subject=Privacy%20Policy%20Request">Privacy policy</a><a href="mailto:support@pay101.uk?subject=Terms%20of%20Service%20Request">Terms of service</a></div></div>
    </footer>
 <script>
-const menu=document.getElementById('hamb'),nav=document.getElementById('navlinks');
-menu.addEventListener('click',()=>{let open=nav.classList.toggle('show');menu.setAttribute('aria-expanded',String(open));});
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('show');menu.setAttribute('aria-expanded','false')}));
 document.querySelectorAll('.faq-button').forEach(b=>b.addEventListener('click',()=>{const item=b.closest('.faq-item');const open=item.classList.toggle('open');b.setAttribute('aria-expanded',String(open))}));
 
 </script>
-<script src="/pay101-menu.js" defer></script></body>
+<script type="module" src="/shared-header/header.js"></script></body>
 </html>
