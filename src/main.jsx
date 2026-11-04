@@ -1,4 +1,4 @@
-import Pay101Header from './Pay101Header.jsx';
+import Pay101Header, {PAY101_I18N} from './Pay101Header.jsx';
 import React from 'react';
 import {createRoot} from 'react-dom/client';
 import {motion} from 'framer-motion';
