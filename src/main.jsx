@@ -15,11 +15,7 @@ function ConsultationForm(){
  const [open,setOpen]=React.useState(false);
  const introTimer=React.useRef(null);
  React.useEffect(()=>{
-  let shown=false;
-  try{shown=sessionStorage.getItem('pay101-consult-intro')==='shown';if(!shown)sessionStorage.setItem('pay101-consult-intro','shown')}catch(e){}
-  if(shown)return;
-  setOpen(true);
-  introTimer.current=setTimeout(()=>setOpen(false),4000);
+  introTimer.current=setTimeout(()=>setOpen(true),20000);
   return()=>clearTimeout(introTimer.current);
  },[]);
  const [fields,setFields]=React.useState({name:'',email:'',industry:'',location:'',phone:''});
