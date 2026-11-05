@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/payin",
+      "destination": "/payin.html"
+    },
+    {
       "source": "/security",
       "destination": "/"
     },
