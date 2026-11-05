@@ -168,17 +168,26 @@ function App(){
     </div>
    </section>
 
-   <section id="solutions" className="section">
-    <div className="sectionHead"><div><span className="kicker">PAY101 SOLUTIONS</span><h2>Payment Flows Built for <em>Business</em></h2></div><p>Bring collections, payouts and settlement operations into a clear, connected payment experience.</p></div>
-    <div className="featureGrid">
-     <Feature icon={<Zap/>} title="Instant Settlements" text="Streamline settlement workflows and get clearer visibility into when funds are available."/>
-     <Feature icon={<CreditCard/>} title="Payin Solutions" text="Accept customer payments through convenient digital payment flows designed for modern businesses."/>
-     <Feature icon={<Send/>} title="Payout Solutions" text="Move funds to vendors, partners and customers through a unified payout workflow."/>
-     <Feature icon={<WalletCards/>} title="UPI Payments" text="Support UPI payment flows for fast and familiar digital transactions."/>
-     <Feature icon={<Send/>} title="IMPS Transfers" text="Enable quick bank-to-bank transfers through the IMPS rail."/>
-     <Feature icon={<Landmark/>} title="NEFT & RTGS" text="Support bank transfer workflows through NEFT and RTGS."/>
-    </div>
-   </section>
+   <section id="solutions" className="section p101HomeSolutions">
+<style>{`
+.p101HomeSolutions .p101SolutionsIntro{max-width:680px;margin:12px 0 0;color:#708598;font-size:17px;line-height:1.65}
+.p101HomeSolutions h2{margin:16px 0 0}.p101HomeSolutions h2 em{font-style:normal;color:#0878ff}
+.p101HomeSolutionGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:38px}
+.p101HomeSolutionCard{display:flex;flex-direction:column;align-items:flex-start;padding:28px;border:1px solid #dbe6f6;border-radius:20px;background:#fff;color:#10202b;text-decoration:none;box-shadow:0 6px 18px rgba(15,27,45,.04);transition:transform .2s,box-shadow .2s}
+.p101HomeSolutionCard:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(10,108,255,.12)}
+.p101HomeSolutionIcon{width:46px;height:42px;display:grid;place-items:center;background:#e5eeff;color:#0878ff;border-radius:12px;font-size:24px;margin-bottom:18px}
+.p101HomeSolutionCard h3{margin:0 0 10px;font-size:20px}.p101HomeSolutionCard p{margin:0;color:#708598;font-size:16px;line-height:1.65}
+.p101HomeSolutionCard .p101SolutionMore{margin-top:18px;color:#0878ff;font-weight:700;font-size:15px}
+@media(max-width:800px){.p101HomeSolutionGrid{grid-template-columns:1fr}.p101HomeSolutionCard{padding:24px}}
+`}</style>
+<span className="kicker">PAY101 SOLUTIONS</span>
+<h2>Payment Flows <em>Built for Business</em></h2>
+<p className="p101SolutionsIntro">Bring collections, payouts and settlement operations into a clear, connected payment experience. One platform, three flows, no juggling between tools.</p>
+<div className="p101HomeSolutionGrid">
+<a className="p101HomeSolutionCard" href="/payin"><span className="p101HomeSolutionIcon" aria-hidden="true">↓</span><h3>Payin</h3><p>Accept UPI, cards, wallets and IMPS transfers at checkout. Customers pay the way they prefer, and you collect <strong>online payments</strong> through a single integration.</p><span className="p101SolutionMore">Explore payin →</span></a>
+<a className="p101HomeSolutionCard" href="/solutions#payout"><span className="p101HomeSolutionIcon" aria-hidden="true">↑</span><h3>Payout</h3><p>Pay vendors, partners, creators and customers by bank transfer. Need to pay many people at once? Use our <strong>bulk payout service</strong> instead of sending transfers one by one.</p><span className="p101SolutionMore">Explore payout →</span></a>
+<a className="p101HomeSolutionCard" href="/solutions#settlement"><span className="p101HomeSolutionIcon" aria-hidden="true">⇄</span><h3>Settlement</h3><p>See what has been paid, what is pending and when funds are available. Reconcile settlements against transactions without spreadsheets and guesswork.</p><span className="p101SolutionMore">Explore settlement →</span></a>
+</div></section>
 
    
 
