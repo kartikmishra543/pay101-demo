@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/payout",
+      "destination": "/payout.html"
+    },
+    {
       "source": "/payin",
       "destination": "/payin.html"
     },
