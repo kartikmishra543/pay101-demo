@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 // Keep every public marketing subpage aligned with the homepage's shared chrome.
-const source = fs.readFileSync('public/about.html', 'utf8');
+const source = fs.readFileSync('scripts/shared-footer.html', 'utf8');
 const footer = source.match(/<footer\b[\s\S]*?<\/footer>/)[0];
 function walk(directory) {
   for (const entry of fs.readdirSync(directory, {withFileTypes: true})) {
