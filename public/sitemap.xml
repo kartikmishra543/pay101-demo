@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://pay101.io/</loc>
-  </url>
+  <url><loc>https://www.pay101.io/</loc></url>
+  <url><loc>https://www.pay101.io/solutions</loc></url>
+  <url><loc>https://www.pay101.io/payin</loc></url>
+  <url><loc>https://www.pay101.io/payout</loc></url>
+  <url><loc>https://www.pay101.io/settlement</loc></url>
+  <url><loc>https://www.pay101.io/pricing</loc></url>
+  <url><loc>https://www.pay101.io/developers</loc></url>
+  <url><loc>https://www.pay101.io/security</loc></url>
+  <url><loc>https://www.pay101.io/how-it-works</loc></url>
+  <url><loc>https://www.pay101.io/aml-policy</loc></url>
+  <url><loc>https://www.pay101.io/cookie-policy</loc></url>
+  <url><loc>https://www.pay101.io/terms-and-conditions</loc></url>
+  <url><loc>https://www.pay101.io/kyc-policy</loc></url>
 </urlset>
