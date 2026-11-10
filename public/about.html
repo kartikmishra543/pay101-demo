@@ -169,7 +169,18 @@ html{scroll-behavior:smooth}
  .about-page .photo{min-height:230px}
 }
 
-.about-page{font-family:Manrope,system-ui,sans-serif;background:#fff;--blue:#0878f9;--blue2:#1687ff}.about-page section[id]{scroll-margin-top:110px}</style>
+.about-page{font-family:Manrope,system-ui,sans-serif;background:#fff;--blue:#0878f9;--blue2:#1687ff}.about-page section[id]{scroll-margin-top:110px}
+/* About hero: independent text and artwork columns. */
+.about-page .hero.about .about-hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:44px;width:100%;padding-top:76px;padding-bottom:76px}
+.about-page .about-hero-copy{position:relative;z-index:1;min-width:0}
+.about-page .hero.about h1{font-size:clamp(38px,4.2vw,58px);max-width:none;line-height:1.1;letter-spacing:-1.8px}
+.about-page .hero.about p.sub{max-width:600px;font-size:18px;line-height:1.75}
+.about-page .about-hero-graphic{min-width:0;display:flex;align-items:center;justify-content:center}
+.about-page .hero.about .about-hero-graphic svg.coins{position:static;inset:auto;display:block;width:100%;height:auto;max-width:500px;opacity:1;overflow:visible}
+.about-page .hero.about .btns{gap:18px}
+@media(max-width:900px){.about-page .hero.about .about-hero-grid{grid-template-columns:1fr;gap:28px;padding-top:48px;padding-bottom:44px}.about-page .hero.about h1{font-size:clamp(36px,7vw,54px)}.about-page .hero.about .about-hero-graphic svg.coins{max-width:380px}.about-page .hero.about p.sub{max-width:none}}
+@media(max-width:480px){.about-page .hero.about .about-hero-grid{gap:20px}.about-page .hero.about .about-hero-graphic svg.coins{max-width:290px}.about-page .hero.about .btns{align-items:flex-start;flex-direction:column}}
+</style>
 </head>
 <body><div id="pay101-shared-header"></div><div class="about-page">
 
@@ -179,8 +190,13 @@ html{scroll-behavior:smooth}
 
 <main>
 <section class="hero about" aria-label="About Pay101">
- <svg class="coins" viewBox="0 0 700 560" aria-hidden="true" fill="none" stroke="#9fc4ff" stroke-width="2">
-  <g font-family="Plus Jakarta Sans,sans-serif" font-weight="700" fill="#cfe2ff" stroke="none" text-anchor="middle">
+<div class="wrap about-hero-grid"><div class="about-hero-copy">
+  <span class="pill"><i></i>ABOUT PAY101</span>
+  <h1>Payments made simple<br><em>for growing businesses.</em></h1>
+  <p class="sub">Pay101 is a <strong>fintech payment company</strong> that brings payins, payouts and settlements into one connected experience. It is built around the way businesses and customers pay in different markets.</p>
+  <div class="btns"><a class="btn pri" href="#contact">Talk to our team →</a><a class="btn ghost" href="#vision"><b>→</b>Our vision and mission</a></div>
+ </div><div class="about-hero-graphic"><svg class="coins" viewBox="0 0 700 560" aria-hidden="true" fill="none" stroke="#9fc4ff" stroke-width="2">
+  <g font-family="Manrope,sans-serif" font-weight="700" fill="#cfe2ff" stroke="none" text-anchor="middle">
    <circle cx="130" cy="120" r="46" stroke="#9fc4ff" fill="rgba(120,170,255,.14)"/><text x="130" y="136" font-size="42">€</text>
    <circle cx="360" cy="70" r="34" stroke="#9fc4ff" fill="rgba(120,170,255,.14)"/><text x="360" y="83" font-size="32">£</text>
    <circle cx="520" cy="190" r="40" stroke="#9fc4ff" fill="rgba(120,170,255,.14)"/><text x="520" y="205" font-size="38">₹</text>
@@ -190,13 +206,7 @@ html{scroll-behavior:smooth}
    <circle cx="170" cy="430" r="28" stroke="#9fc4ff" fill="rgba(120,170,255,.14)"/><text x="170" y="441" font-size="26">£</text>
   </g>
   <path d="M130 120 360 70 520 190 250 260 400 400 610 360M250 260 130 120M400 400 170 430M520 190 610 360" stroke-opacity=".5"/>
- </svg>
- <div class="wrap">
-  <span class="pill"><i></i>ABOUT PAY101</span>
-  <h1>Payments made simple<br><em>for growing businesses.</em></h1>
-  <p class="sub">Pay101 is a <strong>fintech payment company</strong> that brings payins, payouts and settlements into one connected experience. It is built around the way businesses and customers pay in different markets.</p>
-  <div class="btns"><a class="btn pri" href="#contact">Talk to our team →</a><a class="btn ghost" href="#vision"><b>→</b>Our vision and mission</a></div>
- </div>
+ </svg></div></div>
 </section>
 
 <div class="wrap">
