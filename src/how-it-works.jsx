@@ -30,10 +30,10 @@ function Page(){
       </div>
       <a className="primary small p101FooterCta" href="/signup">Get started <ArrowRight size={16}/></a>
      </div>
-     <div className="p101FooterCol"><h4>Solutions</h4><a href="/#solutions">Payin Solutions</a><a href="/#solutions">Payout Solutions</a><a href="/#solutions">Instant Settlements</a></div>
-     <div className="p101FooterCol"><h4>Industries</h4><a href="/#industries">E-commerce</a><a href="/#industries">Gaming</a><a href="/#industries">Media &amp; Entertainment</a><a href="/#industries">Travel</a><a href="/#industries">Education</a></div>
-     <div className="p101FooterCol"><h4>Markets</h4><a href="/#markets">India</a><a href="/#markets">Nepal</a><a href="/#markets">Bhutan</a><a href="/#markets">Brazil</a><a href="/#markets">Australia</a></div>
-     <div className="p101FooterCol"><h4>Company</h4><a href="/#about">About us</a><a href="/how-it-works">How it works</a><a href="/#developers">Developers</a><a href="/#security">Security</a><a href="/#blog">Blog</a><a href="/#contact">Contact</a></div>
+     <div className="p101FooterCol"><h4>Solutions</h4><a href="/payin">Payin Solutions</a><a href="/payout">Payout Solutions</a><a href="/settlement">Instant Settlements</a></div>
+     <div className="p101FooterCol"><h4>Industries</h4><a href="/industries/e-commerce">E-commerce</a><a href="/industries/gaming">Gaming</a><a href="/industries/media-entertainment">Media &amp; Entertainment</a><a href="/industries/travel">Travel</a><a href="/industries/education">Education</a></div>
+     <div className="p101FooterCol"><h4>Markets</h4><a href="/markets/india">India</a><a href="/markets/nepal">Nepal</a><a href="/markets/bhutan">Bhutan</a><a href="/markets/brazil">Brazil</a><a href="/markets/australia">Australia</a></div>
+     <div className="p101FooterCol"><h4>Company</h4><a href="/about">About us</a><a href="/how-it-works">How it works</a><a href="/developers">Developers</a><a href="/security">Security</a><a href="/blog">Blog</a><a href="/contact">Contact</a></div>
     </div>
     <div className="p101FooterBottom"><span>© 2026 Pay101. All rights reserved.</span><div><a href="mailto:support@pay101.uk?subject=Privacy%20Policy%20Request">Privacy policy</a><a href="mailto:support@pay101.uk?subject=Terms%20of%20Service%20Request">Terms of service</a></div></div>
    </footer>

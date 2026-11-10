@@ -1,6 +1,58 @@
 {
   "rewrites": [
     {
+      "source": "/blog",
+      "destination": "/blog.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/markets/australia",
+      "destination": "/markets/australia.html"
+    },
+    {
+      "source": "/markets/brazil",
+      "destination": "/markets/brazil.html"
+    },
+    {
+      "source": "/markets/bhutan",
+      "destination": "/markets/bhutan.html"
+    },
+    {
+      "source": "/markets/nepal",
+      "destination": "/markets/nepal.html"
+    },
+    {
+      "source": "/markets/india",
+      "destination": "/markets/india.html"
+    },
+    {
+      "source": "/industries/education",
+      "destination": "/industries/education.html"
+    },
+    {
+      "source": "/industries/travel",
+      "destination": "/industries/travel.html"
+    },
+    {
+      "source": "/industries/media-entertainment",
+      "destination": "/industries/media-entertainment.html"
+    },
+    {
+      "source": "/industries/gaming",
+      "destination": "/industries/gaming.html"
+    },
+    {
+      "source": "/industries/e-commerce",
+      "destination": "/industries/e-commerce.html"
+    },
+    {
       "source": "/settlement",
       "destination": "/settlement.html"
     },
@@ -51,6 +103,10 @@
     {
       "source": "/kyc-policy",
       "destination": "/kyc-policy.html"
+    },
+    {
+      "source": "/industries/digital-businesses",
+      "destination": "/"
     }
   ],
   "redirects": [

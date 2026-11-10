@@ -245,10 +245,10 @@ function App(){
       </div>
       <a className="primary small p101FooterCta" href="/signup">Get started <ArrowRight size={16}/></a>
      </div>
-     <div className="p101FooterCol"><h4>Solutions</h4><a href="/#solutions">Payin Solutions</a><a href="/#solutions">Payout Solutions</a><a href="/#solutions">Instant Settlements</a></div>
-     <div className="p101FooterCol"><h4>Industries</h4><a href="/#industries">E-commerce</a><a href="/#industries">Gaming</a><a href="/#industries">Media &amp; Entertainment</a><a href="/#industries">Travel</a><a href="/#industries">Education</a></div>
-     <div className="p101FooterCol"><h4>Markets</h4><a href="/#markets">India</a><a href="/#markets">Nepal</a><a href="/#markets">Bhutan</a><a href="/#markets">Brazil</a><a href="/#markets">Australia</a></div>
-     <div className="p101FooterCol"><h4>Company</h4><a href="/#about">About us</a><a href="/how-it-works">How it works</a><a href="/#developers">Developers</a><a href="/#security">Security</a><a href="/#blog">Blog</a><a href="/#contact">Contact</a><a href="mailto:support@pay101.uk?subject=Pay101%20Integration%20Request" style={{color:"#0868ef",fontWeight:700}}>Request Integration <ArrowRight size={15}/></a></div>
+     <div className="p101FooterCol"><h4>Solutions</h4><a href="/payin">Payin Solutions</a><a href="/payout">Payout Solutions</a><a href="/settlement">Instant Settlements</a></div>
+     <div className="p101FooterCol"><h4>Industries</h4><a href="/industries/e-commerce">E-commerce</a><a href="/industries/gaming">Gaming</a><a href="/industries/media-entertainment">Media &amp; Entertainment</a><a href="/industries/travel">Travel</a><a href="/industries/education">Education</a></div>
+     <div className="p101FooterCol"><h4>Markets</h4><a href="/markets/india">India</a><a href="/markets/nepal">Nepal</a><a href="/markets/bhutan">Bhutan</a><a href="/markets/brazil">Brazil</a><a href="/markets/australia">Australia</a></div>
+     <div className="p101FooterCol"><h4>Company</h4><a href="/about">About us</a><a href="/how-it-works">How it works</a><a href="/developers">Developers</a><a href="/security">Security</a><a href="/blog">Blog</a><a href="/contact">Contact</a><a href="/contact#integration" style={{color:"#0868ef",fontWeight:700}}>Request Integration <ArrowRight size={15}/></a></div>
     </div>
     <div className="p101FooterBottom"><span>© 2026 Pay101. All rights reserved.</span><div><a href="/aml-policy">AML Policy</a><a href="/cookie-policy">Cookie Policy</a><a href="/terms-and-conditions">Terms and Conditions</a><a href="/kyc-policy">KYC Policy</a></div></div>
    </footer>
@@ -394,7 +394,7 @@ function DevelopersPage(){
     </div>
    </section>
   </main>
-  <footer className="merchantFooter"><span>© 2026 Pay101</span><div><a href="/">Home</a><a href="/how-it-works">How it works</a><a href="mailto:support@pay101.uk">Contact</a></div></footer>
+  <footer className="merchantFooter"><span>© 2026 Pay101</span><div><a href="/">Home</a><a href="/how-it-works">How it works</a><a href="/contact">Contact</a></div></footer>
  </div>
 }
 
@@ -417,7 +417,7 @@ function Pay101SolutionsPage(){
  <section className="p101SolSection p101SolAlt"><div className="p101SolWrap"><span className="p101SolEyebrow">INDUSTRIES</span><h2>Built for <em>your industry</em></h2><div className="p101SolCards">{[['Media and entertainment','Collect subscriptions and pay creators and partners.'],['Gaming','Handle top-ups and pay players and partners on time.'],['Digital businesses','Collect from customers and pay out to your network.']].map(([a,b])=><div key={a}><h3>{a}</h3><p>{b}</p></div>)}</div></div></section>
  <section className="p101SolSection"><div className="p101SolWrap"><div className="p101SolCta"><span className="p101SolEyebrow">GET IN TOUCH</span><h2>Let's find the right <em>solution for you</em></h2><p>Tell us about your business and the markets you want to reach. We will help you choose the right solutions and plan your setup.</p><a className="p101SolButton" href="/contact">Contact Pay101 →</a></div></div></section>
  <section className="p101SolSection p101SolAlt"><div className="p101SolWrap p101SolFaq"><span className="p101SolEyebrow">FAQ</span><h2>Solutions <em>questions</em></h2>{faq.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}</div></section>
- </main><footer className="merchantFooter"><span>© 2026 Pay101. All rights reserved.</span><div><a href="/">Home</a><a href="/developers">Developers</a><a href="mailto:support@pay101.uk">Contact</a></div></footer></div>
+ </main><footer className="merchantFooter"><span>© 2026 Pay101. All rights reserved.</span><div><a href="/">Home</a><a href="/developers">Developers</a><a href="/contact">Contact</a></div></footer></div>
 }
 
 
@@ -440,7 +440,7 @@ function Pay101SecurityPage(){
  <section className="p101SecSection"><div className="p101SecWrap"><span className="p101SecEyebrow">How it works</span><h2>Secure from setup <em>to scale</em></h2><div className="p101SecSteps">{steps.map(([title,description],i)=><div className="p101SecCard" key={title}><span className="p101SecNumber">{i+1}</span><h3>{title}</h3><p>{description}</p></div>)}</div></div></section>
  <section className="p101SecSection p101SecAlt" id="contact"><div className="p101SecWrap"><div className="p101SecCta"><span className="p101SecEyebrow">Get in touch</span><h2>Questions about <em>security?</em></h2><p>Talk to our team about how Pay101 protects payins, payouts and settlements for your business.</p><a className="p101SecButton" href="mailto:support@pay101.uk?subject=Pay101%20Security%20Enquiry">Contact Pay101 →</a></div></div></section>
  <section className="p101SecSection"><div className="p101SecWrap p101SecFaq"><span className="p101SecEyebrow">FAQ</span><h2>Security <em>questions</em></h2>{faqs.map(([q,a])=><details key={q}><summary>{q}</summary><p>{a}</p></details>)}</div></section>
- </main><footer className="merchantFooter"><span>© 2026 Pay101. All rights reserved.</span><div><a href="/">Home</a><a href="/solutions">Solutions</a><a href="mailto:support@pay101.uk">Contact</a></div></footer></div>
+ </main><footer className="merchantFooter"><span>© 2026 Pay101. All rights reserved.</span><div><a href="/">Home</a><a href="/solutions">Solutions</a><a href="/contact">Contact</a></div></footer></div>
 }
 
 const isMerchantLogin=window.location.pathname==='/login'||window.location.hostname==='partner.pay101.uk';
