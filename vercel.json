@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/industries",
+      "destination": "/"
+    },
+    {
       "source": "/blog",
       "destination": "/blog.html"
     },
