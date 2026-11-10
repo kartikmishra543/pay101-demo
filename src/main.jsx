@@ -50,15 +50,15 @@ function ConsultationForm(){
 }
 
 // Telegram preview; set the public bot URL after the Pay101 bot is created.
-const PAY101_TELEGRAM_BOT_URL = '';
+const PAY101_TELEGRAM_BOT_URL = 'https://t.me/Pay101TelBot';
 function TelegramPopup(){
  const [open,setOpen]=React.useState(false);
  const logo=<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.8 3.2 18.5 20c-.25 1.18-.9 1.47-1.82.91l-5.03-3.71-2.42 2.33c-.27.27-.5.5-1.02.5l.36-5.12 9.31-8.41c.4-.36-.09-.56-.62-.2L5.75 13.54.8 11.99c-1.08-.34-1.1-1.08.23-1.6L20.4 2.93c.9-.34 1.68.2 1.4.27Z"/></svg>;
  return <div className="p101WhatsAppWidget p101TelegramWidget">
   <style>{`.p101TelegramWidget .p101WhatsAppTrigger,.p101TelegramWidget .p101WhatsAppLogoSmall,.p101TelegramWidget .p101WhatsAppContact{background:#229ed9}.p101TelegramWidget .p101WhatsAppTrigger:hover,.p101TelegramWidget .p101WhatsAppContact:hover{background:#168ac0}.p101TelegramWidget .p101WhatsAppPanelHead{background:#168ac0}.p101TelegramWidget .p101WhatsAppPanelHead small{color:#e4f5ff}.p101TelegramWidget .p101WhatsAppPanelBody{background:#edf7fd}.p101TelegramWidget .p101WhatsAppBubble{color:#183b55}.p101TelegramWidget .p101WhatsAppContact:disabled{opacity:.65;cursor:default;border:0;width:calc(100% - 36px);font-family:inherit}`}</style>
   {open&&<section className="p101WhatsAppPanel" role="dialog" aria-label="Pay101 Telegram bot preview">
-   <div className="p101WhatsAppPanelHead"><span className="p101WhatsAppLogoSmall">{logo}</span><div><strong>Pay101 on Telegram</strong><small>Bot preview</small></div><button type="button" onClick={()=>setOpen(false)} aria-label="Close Telegram popup"><X size={18}/></button></div>
-   <div className="p101WhatsAppPanelBody"><div className="p101WhatsAppBubble">Hello! Welcome to Pay101 👋<br/>Have a question about payment solutions? Our Telegram bot will help you get started.</div>{!PAY101_TELEGRAM_BOT_URL&&<p>Our Telegram bot is coming soon. Please use the contact form for enquiries in the meantime.</p>}</div>
+   <div className="p101WhatsAppPanelHead"><span className="p101WhatsAppLogoSmall">{logo}</span><div><strong>Pay101 on Telegram</strong><small>Connect with Pay101</small></div><button type="button" onClick={()=>setOpen(false)} aria-label="Close Telegram popup"><X size={18}/></button></div>
+   <div className="p101WhatsAppPanelBody"><div className="p101WhatsAppBubble">Hello! Welcome to Pay101 👋<br/>Have a question about payment solutions? Open our Telegram bot to get started.</div>{!PAY101_TELEGRAM_BOT_URL&&<p>Our Telegram bot is coming soon. Please use the contact form for enquiries in the meantime.</p>}</div>
    {PAY101_TELEGRAM_BOT_URL?<a className="p101WhatsAppContact" href={PAY101_TELEGRAM_BOT_URL} target="_blank" rel="noopener noreferrer">Open Telegram <ArrowRight size={16}/></a>:<button className="p101WhatsAppContact" type="button" disabled>Telegram bot coming soon</button>}
   </section>}
   <button type="button" className="p101WhatsAppTrigger" onClick={()=>setOpen(v=>!v)} aria-expanded={open} aria-label={open?'Close Telegram contact popup':'Open Telegram contact popup'}>{logo}</button>
