@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/industries",
-      "destination": "/"
+      "destination": "/industries.html"
     },
     {
       "source": "/blog",
