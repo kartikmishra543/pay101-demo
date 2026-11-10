@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/build-header.mjs",
+    "build": "vite build && node scripts/build-header.mjs && node scripts/brand-subpages.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

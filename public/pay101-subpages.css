@@ -1,0 +1,21 @@
+.p101-subpage{--blue:#0878f9;--blue2:#1687ff;--blue-dark:#075ee8;--blueDeep:#064dc4;--ink:#10202b;--navy:#10202b;--muted:#61727d;--line:#dce5e9;--bg:#fff;--soft:#eef5ff;--pale:#f5f8fc}
+.p101-subpage body{margin:0;background:#fff;color:#10202b;font-family:Manrope,system-ui,sans-serif;line-height:1.6}
+.p101-subpage :is(.solutions-page,.payin-page,.payout-page,.settlement-page,.industries-page,.dev-page){--blue:#0878f9;--blue2:#1687ff;--blue-dark:#075ee8;--ink:#10202b;--muted:#61727d;--line:#dce5e9;--bg:#fff;--soft:#eef5ff;--fnt:Manrope,system-ui,sans-serif;font-family:Manrope,system-ui,sans-serif}
+.p101-subpage :is(main,section,.layout,.paper,.p101Footer) :is(h1,h2,h3,h4,p,a,button,input,select,textarea,summary,li){font-family:Manrope,system-ui,sans-serif}
+.p101-subpage :is(.btn.pri,.cta .btn.pri,.pr-btn:not(.pr-ghost),.dev-btn,.button,.p101SecButton,.p101SolButton){background:linear-gradient(115deg,#1687ff 0%,#0878f9 55%,#075ee8 100%)!important;color:#fff!important;border-color:transparent;box-shadow:0 10px 24px rgba(8,120,249,.22)}
+.p101-subpage :is(.btn.pri,.pr-btn,.dev-btn,.button):hover{filter:brightness(1.04);box-shadow:0 14px 30px rgba(8,120,249,.28)}
+.p101-subpage :is(.btn.sec,.pr-ghost,.secondary){color:#0868ef;border-color:#c5dbf3}
+.p101-subpage :is(.eyebrow,.pr-eyebrow,.dev-eyebrow,.dev-product-label,.p101SecEyebrow,.p101SolEyebrow){color:#0868ef}
+.p101-subpage :is(h1,h2) em{color:#0868ef;font-style:normal}
+.p101-subpage .hero h1 em{color:#1687ff}
+.p101-subpage :is(.solutions-page,.payin-page,.payout-page,.settlement-page,.industries-page) .cta{background:linear-gradient(120deg,#eef5ff 0%,#d3e5ff 55%,#c6ddff 100%)!important;border:1px solid #c5dbf3;color:#10202b;box-shadow:none}
+.p101-subpage :is(.solutions-page,.payin-page,.payout-page,.settlement-page,.industries-page) .cta p{color:#61727d}
+.p101-subpage :is(.card,.detail-card,.paper,.pr-card){border-color:#dce5e9}
+.p101-subpage .p101Footer{max-width:1200px;margin:0 auto;background:#fff!important;color:#10202b;font-family:Manrope,system-ui,sans-serif;line-height:1.6;box-sizing:border-box}
+.p101-subpage .p101Footer .brandLogo{width:145px;height:auto;max-height:none}
+.p101-subpage .p101Footer a{text-decoration:none;color:#61727d}
+.p101-subpage .p101Footer a:hover{color:#0868ef}
+.p101-subpage .p101Footer h4{font-size:14px;color:#10202b;margin:0 0 14px;letter-spacing:normal;text-transform:none}
+.p101-subpage .p101Footer .p101FooterCta{display:inline-flex;align-items:center;background:linear-gradient(115deg,#1687ff,#0878f9 55%,#075ee8);color:#fff;padding:12px 18px;border-radius:12px;box-shadow:0 10px 24px rgba(8,120,249,.22)}
+.p101-subpage :is(a,button):focus-visible{outline:3px solid #1687ff;outline-offset:4px}
+@media(max-width:760px){.p101-subpage .p101Footer{padding-bottom:90px}}
