@@ -77,6 +77,9 @@
 <section aria-labelledby="payout-status">
 <h2 id="payout-status">7. PayOuts and Status Checks</h2>
 <p>Payout requests must contain accurate order, amount, beneficiary, bank, payment type, purpose, contact, and callback information as required by the current API documentation.</p>
-<p class="meta">Section 7 is incomplete on this page. For the full terms for your account, email <a href="mailto:support@pay101.io">support@pay101.io</a>.</p>
+<p>Before submitting a payout, check the amount and beneficiary bank details against your records. Keep your order ID so you can look up the payout and reconcile it with your records.</p>
+<p>Use the payout status endpoint in the current Pay101 API documentation to check the result using your order ID. A request acknowledgement or callback alone does not confirm that the payout succeeded. Mark the payout as paid only after the status endpoint confirms <strong>SUCCESS</strong>.</p>
+<p>If the payout is <strong>PENDING</strong>, a request times out, or the status is unclear, check the original order before submitting another payout to avoid duplicate payments. If the status is <strong>FAILURE</strong>, review the response and correct any identified issue before retrying in accordance with the API documentation.</p>
+<p>If the status remains unclear or differs from your records, contact <a href="mailto:support@pay101.io">support@pay101.io</a> with the order ID and the status shown. Keep API keys, credentials and full beneficiary bank details out of email.</p>
 </section>
 </article></main><footer class="bottom">© 2026 Pay101 · Policy content subject to legal review.<p><a href="/aml-policy">AML Policy</a><a href="/cookie-policy">Cookie Policy</a><a href="/terms-and-conditions">Terms and Conditions</a><a href="/kyc-policy">KYC Policy</a></p></footer><script type="module" src="/shared-header/header.js"></script></body></html>
