@@ -1,25 +1,81 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Terms and Conditions | Pay101</title><link rel="stylesheet" href="/policy-pages.css"><link rel="stylesheet" href="/shared-header/header.css">
-</head><body><div id="pay101-shared-header"></div><section class="hero"><div class="hero-inner"><span class="eyebrow">Pay101 · Policy information</span><h1>Terms and Conditions</h1><p>Effective 22 August 2026 · Last reviewed / updated 28 October 2026</p></div></section><main class="layout"><aside class="sidebar"><strong>Policies</strong><a href="/aml-policy">AML Policy</a><a href="/cookie-policy">Cookie Policy</a><a href="/terms-and-conditions">Terms and Conditions</a><a href="/kyc-policy">KYC Policy</a><hr style="border:0;border-top:1px solid #e5eaf2;margin:18px 0"><a href="/">← All drafts</a></aside><article class="paper"><div class="notice">The Terms and Conditions text in the supplied PDF ends during section 7. This draft intentionally does not invent the missing sections.</div><p class="meta">Website: https://www.pay101.io Support: support@pay101.io Registered Legal Name: Pay101 Effective Date: 22/08/2026 Last Updated: 28/10/2026</p>
-<h2>1. About These Terms These Terms and Conditions (“Terms”) govern access to and use of the Pay101 website, merchant dashboard, API documentation, PayIn and PayOut API functionality, and related services (“Services”).</h2>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Terms and Conditions | Pay101</title>
+<meta name="description" content="Read Pay101’s terms for merchant onboarding, account security, API integration, PayIn verification and PayOut status checks.">
+<link rel="canonical" href="https://www.pay101.io/terms-and-conditions"><link rel="stylesheet" href="/policy-pages.css"><link rel="stylesheet" href="/shared-header/header.css">
+<style>
+  .terms-page .hero p + p { margin-top: 10px; }
+  .terms-page .layout { grid-template-columns: 240px minmax(0, 1fr); }
+  .terms-page .sidebar { max-height: calc(100vh - 120px); overflow-y: auto; }
+  .terms-page .sidebar strong { margin: 0 0 8px; }
+  .terms-page .sidebar ol { margin: 0; padding-left: 20px; color: #526682; font-size: 13px; }
+  .terms-page .sidebar li a { padding: 5px 0; }
+  .terms-page .sidebar a { color: #355375; }
+  .terms-page .sidebar a:hover { text-decoration: underline; }
+  .terms-page .sidebar a:focus-visible, .terms-page .paper a:focus-visible { outline: 2px solid #075ee8; outline-offset: 3px; }
+  .terms-page .terms-related { border-top: 1px solid #e1e9f4; margin-top: 15px; padding-top: 14px; }
+  .terms-page .paper { min-width: 0; overflow-wrap: anywhere; }
+  .terms-page .paper section + section { border-top: 1px solid #e1e9f4; margin-top: 26px; padding-top: 23px; }
+  .terms-page .paper h2 { margin: 0 0 12px; scroll-margin-top: 110px; }
+  .terms-page .paper a { color: #0754be; text-decoration: underline; text-underline-offset: 2px; }
+  @media (max-width: 760px) { .terms-page .sidebar { max-height: none; overflow: visible; } }
+</style>
+</head><body class="terms-page"><div id="pay101-shared-header"></div><section class="hero"><div class="hero-inner"><span class="eyebrow">Pay101 · Policy information</span><h1>Terms and Conditions</h1><p>Terms for the Pay101 website, merchant dashboard and payment APIs.</p>
+<p>Effective <time datetime="2026-08-22">22 August 2026</time> · Last reviewed <time datetime="2026-10-28">28 October 2026</time></p></div></section><main class="layout"><nav class="sidebar" aria-label="Terms and conditions contents">
+<strong>On this page</strong>
+<ol>
+  <li><a href="#about-these-terms">About These Terms</a></li>
+  <li><a href="#services">Services</a></li>
+  <li><a href="#merchant-onboarding">Eligibility and Merchant Onboarding</a></li>
+  <li><a href="#account-security">Account and Credential Security</a></li>
+  <li><a href="#api-integration">API Integration and IP Whitelisting</a></li>
+  <li><a href="#payin-verification">PayIn, Callbacks and Payment Verification</a></li>
+  <li><a href="#payout-status">PayOuts and Status Checks</a></li>
+</ol>
+<div class="terms-related"><strong>Related policies</strong>
+<a href="/aml-policy">AML Policy</a>
+<a href="/cookie-policy">Cookie Policy</a>
+<a href="/kyc-policy">KYC Policy</a>
+</div>
+</nav><article class="paper"><div class="notice">The text available here ends partway through section 7. For a complete copy of the terms that apply to your account, contact <a href="mailto:support@pay101.io">support@pay101.io</a>.</div>
+<section aria-labelledby="about-these-terms">
+<h2 id="about-these-terms">1. About These Terms</h2>
+<p>These Terms and Conditions (“Terms”) govern access to and use of the Pay101 website, merchant dashboard, API documentation, PayIn and PayOut API functionality, and related services (“Services”).</p>
 <p>“Pay101”, “we”, “us” and “our” refer to Pay101. “Merchant”, “you” and “your” refer to a business using, or applying to use, the Services and its authorised users.</p>
 <p>By registering for an account or using the Services, you agree to these Terms and any applicable Merchant Agreement, pricing schedule, API documentation, and service-specific terms. If these documents conflict, the order of precedence should be specified in the signed Merchant Agreement.</p>
-<p>Legal and company details</p>
-<p class="meta">Registered Legal Name: Pay101 Company Number: [Insert company registration number] Registered Office: [Insert registered office address] Website: https://www.pay101.io Support: support@pay101.io</p>
-<h2>2. Services Pay101’s API Integration Documentation v1.0 describes merchant authentication, PayIn order creation and payment verification, direct PayOut initiation and status checks, and IP whitelisting. The documentation identifies the API base URL as https://api.pay101.uk and describes PayIn and PayOut amounts in INR.</h2>
+<p>Support: <a href="mailto:support@pay101.io">support@pay101.io</a></p>
+</section>
+<section aria-labelledby="services">
+<h2 id="services">2. Services</h2>
+<p>Pay101’s API Integration Documentation v1.0 describes merchant authentication, PayIn order creation and payment verification, direct PayOut initiation and status checks, and IP whitelisting. The documentation identifies the API base URL as https://api.pay101.uk and describes PayIn and PayOut amounts in INR.</p>
 <p>The available Services, supported transaction types, currencies, transfer modes, transaction limits, fees, settlement arrangements, and any third-party processing relationships are determined by the current API documentation and the Merchant Agreement.</p>
 <p>Pay101 must not be described as holding, safeguarding, receiving, or transferring funds in a particular legal capacity unless that description accurately reflects its actual operating model and applicable permissions.</p>
-<h2>3. Eligibility and Merchant Onboarding The Services are intended for eligible businesses and their authorised representatives. You confirm that you have authority to accept these Terms on behalf of the business and that the information supplied during registration and verification is accurate, complete, and current.</h2>
+</section>
+<section aria-labelledby="merchant-onboarding">
+<h2 id="merchant-onboarding">3. Eligibility and Merchant Onboarding</h2>
+<p>The Services are intended for eligible businesses and their authorised representatives. You confirm that you have authority to accept these Terms on behalf of the business and that the information supplied during registration and verification is accurate, complete, and current.</p>
 <p>Pay101 may request company registration records, identity and ownership details, business information, settlement details, and other documents reasonably required for onboarding, risk assessment, or compliance. Access may depend on satisfactory verification and any required approval.</p>
-<h2>4. Account and Credential Security You are responsible for protecting merchant login details and ensuring only authorised personnel access the dashboard and Services.</h2>
+</section>
+<section aria-labelledby="account-security">
+<h2 id="account-security">4. Account and Credential Security</h2>
+<p>You are responsible for protecting merchant login details and ensuring only authorised personnel access the dashboard and Services.</p>
 <p>The API documentation describes a merchant login that returns a Bearer JWT and requires X-Authorization-Key and X-Module-Secret headers for the relevant PayIn and PayOut API calls.</p>
 <p>You must protect these credentials, AES Key and AES IV, and any Transaction PIN (TPIN). Never expose them in client-side code, public repositories, URLs, or unsecured logs. Use secure server-side storage, least-privilege access, and prompt rotation or revocation if credentials may have been compromised.</p>
-<p>You must promptly notify support@pay101.io of suspected unauthorised access.</p>
-<h2>5. API Integration and IP Whitelisting You must implement the Services according to the current Pay101 API documentation and maintain secure systems.</h2>
+<p>You must promptly notify <a href="mailto:support@pay101.io">support@pay101.io</a> of suspected unauthorised access.</p>
+</section>
+<section aria-labelledby="api-integration">
+<h2 id="api-integration">5. API Integration and IP Whitelisting</h2>
+<p>You must implement the Services according to the current Pay101 API documentation and maintain secure systems.</p>
 <p>The API documentation states that API access is restricted to whitelisted IP addresses and instructs merchants to provide their server outbound IP addresses to Pay101 before going live. Merchants must notify Pay101 if those addresses change and should include relevant staging and production servers.</p>
 <p>The documentation specifies AES-256-CBC encryption for PayIn payloads, while PayOut payloads are sent as JSON without that payload encryption. Merchants must follow the exact current technical specification and contact Pay101 if any instructions are unclear.</p>
 <p>Pay101 may update technical requirements with reasonable notice where practicable, subject to the Merchant Agreement.</p>
-<h2>6. PayIn, Callbacks and Payment Verification Merchants must provide accurate order and customer details and a valid HTTPS callback URL as required by the API documentation. A callback is a notification and should not, by itself, be treated as final proof that a payment succeeded.</h2>
+</section>
+<section aria-labelledby="payin-verification">
+<h2 id="payin-verification">6. PayIn, Callbacks and Payment Verification</h2>
+<p>Merchants must provide accurate order and customer details and a valid HTTPS callback URL as required by the API documentation. A callback is a notification and should not, by itself, be treated as final proof that a payment succeeded.</p>
 <p>The API documentation instructs merchants to call the payment verification endpoint after receiving a callback and to credit a customer only after an independently confirmed SUCCESS response.</p>
 <p>Merchants are responsible for implementing this verification flow, handling duplicate or delayed notifications safely, and maintaining their own order records.</p>
-<h2>7. PayOuts and Status Checks Payout requests must contain accurate order, amount, beneficiary, bank, payment type, purpose, contact, and callback information as required by the current API documentation.</h2>
-<p>Merchants are responsible for checking beneficiary details and ensuring that each instruct</p></article></main><footer class="bottom">© 2026 Pay101 · Policy content subject to legal review.<p><a href="/aml-policy">AML Policy</a><a href="/cookie-policy">Cookie Policy</a><a href="/terms-and-conditions">Terms and Conditions</a><a href="/kyc-policy">KYC Policy</a></p></footer><script type="module" src="/shared-header/header.js"></script></body></html>
+</section>
+<section aria-labelledby="payout-status">
+<h2 id="payout-status">7. PayOuts and Status Checks</h2>
+<p>Payout requests must contain accurate order, amount, beneficiary, bank, payment type, purpose, contact, and callback information as required by the current API documentation.</p>
+</section>
+</article></main><footer class="bottom">© 2026 Pay101 · Policy content subject to legal review.<p><a href="/aml-policy">AML Policy</a><a href="/cookie-policy">Cookie Policy</a><a href="/terms-and-conditions">Terms and Conditions</a><a href="/kyc-policy">KYC Policy</a></p></footer><script type="module" src="/shared-header/header.js"></script></body></html>
