@@ -49,8 +49,16 @@ async function sendMessage(token, chatId, text) {
       body: JSON.stringify({ chat_id: chatId, text, link_preview_options: { is_disabled: true } }),
       signal: AbortSignal.timeout(5000),
     });
-    return result.ok && (await result.json()).ok === true;
-  } catch {
+    const response = await result.json();
+    if (result.ok && response.ok === true) return true;
+    console.warn('Telegram sendMessage rejected', {
+      status: result.status,
+      errorCode: Number.isInteger(response.error_code) ? response.error_code : null,
+      migratedChat: Number.isSafeInteger(response.parameters?.migrate_to_chat_id),
+    });
+    return false;
+  } catch (error) {
+    console.warn('Telegram sendMessage failed', { timedOut: error?.name === 'TimeoutError' });
     return false;
   }
 }
@@ -85,7 +93,7 @@ export default async function handler(req, res) {
   }
 
   const group = process.env.TELEGRAM_SUPPORT_CHAT_ID;
-  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const token = process.env.TELEGRAM_BOT_TOKEN?.trim();
   const enabled = /^-\d+$/.test(group ?? '') && Boolean(token);
   if (chat.type !== 'private') {
     if (!enabled || String(chat.id) !== group || !['group', 'supergroup'].includes(chat.type)) {
