@@ -1,33 +1,98 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>KYC Policy | Pay101</title><link rel="stylesheet" href="/policy-pages.css"><link rel="stylesheet" href="/shared-header/header.css">
-</head><body><div id="pay101-shared-header"></div><section class="hero"><div class="hero-inner"><span class="eyebrow">Pay101 · Policy information</span><h1>KYC Policy</h1><p>Effective 22 August 2026 · Last reviewed / updated 28 October 2026</p></div></section><main class="layout"><aside class="sidebar"><strong>Policies</strong><a href="/aml-policy">AML Policy</a><a href="/cookie-policy">Cookie Policy</a><a href="/terms-and-conditions">Terms and Conditions</a><a href="/kyc-policy">KYC Policy</a><hr style="border:0;border-top:1px solid #e5eaf2;margin:18px 0"><a href="/">← Back to home</a></aside><article class="paper"><p class="meta"><strong>Website:</strong> <a href="https://www.pay101.io">www.pay101.io</a> &nbsp; <strong>Contact:</strong> <a href="mailto:support@pay101.io">support@pay101.io</a></p>
-<p class="meta">This policy is subject to final legal and compliance verification.</p>
-<h2>1. Purpose</h2>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Know Your Customer (KYC) Policy | Pay101</title>
+<meta name="description" content="Read Pay101’s KYC policy for merchant onboarding, documents, verification, ongoing checks and support.">
+<link rel="canonical" href="https://www.pay101.io/kyc-policy"><link rel="stylesheet" href="/policy-pages.css"><link rel="stylesheet" href="/shared-header/header.css">
+<style>
+  .kyc-page .hero p + p { margin-top: 10px; }
+  .kyc-page .layout { grid-template-columns: 240px minmax(0, 1fr); }
+  .kyc-page .sidebar { max-height: calc(100vh - 120px); overflow-y: auto; }
+  .kyc-page .sidebar strong { margin: 0 0 8px; }
+  .kyc-page .sidebar ol { margin: 0; padding-left: 20px; color: #526682; font-size: 13px; }
+  .kyc-page .sidebar li a { padding: 5px 0; }
+  .kyc-page .sidebar a { color: #355375; }
+  .kyc-page .sidebar a:hover { text-decoration: underline; }
+  .kyc-page .sidebar a:focus-visible, .kyc-page .paper a:focus-visible { outline: 2px solid #075ee8; outline-offset: 3px; }
+  .kyc-page .kyc-related { border-top: 1px solid #e1e9f4; margin-top: 15px; padding-top: 14px; }
+  .kyc-page .paper { min-width: 0; overflow-wrap: anywhere; }
+  .kyc-page .paper section + section { border-top: 1px solid #e1e9f4; margin-top: 26px; padding-top: 23px; }
+  .kyc-page .paper h2 { margin: 0 0 12px; scroll-margin-top: 110px; }
+  .kyc-page .paper a { color: #0754be; text-decoration: underline; text-underline-offset: 2px; }
+  @media (max-width: 760px) { .kyc-page .sidebar { max-height: none; overflow: visible; } }
+</style>
+</head><body class="kyc-page"><div id="pay101-shared-header"></div><section class="hero"><div class="hero-inner"><span class="eyebrow">Pay101 · Policy information</span><h1>Know Your Customer (KYC) Policy</h1>
+<p>Merchant onboarding, document verification and ongoing due diligence.</p>
+<p>Effective <time datetime="2026-08-22">22 August 2026</time> · Last reviewed <time datetime="2026-10-28">28 October 2026</time></p></div></section><main class="layout"><nav class="sidebar" aria-label="KYC policy contents">
+  <strong>On this page</strong>
+  <ol>
+    <li><a href="#purpose">Purpose</a></li>
+    <li><a href="#scope">Scope and Role of Pay101</a></li>
+    <li><a href="#requested-information">Information That May Be Requested</a></li>
+    <li><a href="#verification">Verification and Due Diligence</a></li>
+    <li><a href="#risk-assessment">Risk Assessment and Enhanced Due Diligence</a></li>
+    <li><a href="#screening">Screening and Prohibited or Restricted Activity</a></li>
+    <li><a href="#ongoing-monitoring">Ongoing Monitoring and Refresh of Information</a></li>
+    <li><a href="#merchant-responsibilities">Merchant Responsibilities</a></li>
+    <li><a href="#api-safeguards">API and Payment Verification Safeguards</a></li>
+    <li><a href="#incomplete-checks">Incomplete Checks, Refusal, Suspension, and Termination</a></li>
+    <li><a href="#personal-data">Personal Data, Confidentiality, and Retention</a></li>
+    <li><a href="#suspicious-activity">Suspicious Activity and Legal Obligations</a></li>
+    <li><a href="#policy-changes">Changes to This Policy</a></li>
+    <li><a href="#kyc-contact">Contact</a></li>
+  </ol>
+  <div class="kyc-related">
+    <strong>Related policies</strong>
+    <a href="/aml-policy">AML Policy</a>
+    <a href="/cookie-policy">Cookie Policy</a>
+    <a href="/terms-and-conditions">Terms and Conditions</a>
+  </div>
+</nav><article class="paper">
+<section aria-labelledby="purpose">
+<h2 id="purpose">1. Purpose</h2>
 <p>This Know Your Customer (KYC) Policy explains how Pay101 intends to identify and verify merchants and, where applicable, their beneficial owners, directors, authorised representatives, and other relevant parties.</p>
 <p>The objective is to help prevent identity fraud, impersonation, money laundering, terrorist financing, sanctions evasion, and other financial crime.</p>
-<h2>2. Scope and Role of Pay101</h2>
+</section>
+<section aria-labelledby="scope">
+<h2 id="scope">2. Scope and Role of Pay101</h2>
 <p>This policy applies to businesses applying to use Pay101’s payment technology, API services, merchant dashboard, collection (PayIn), payout (PayOut), and related services.</p>
 <p>The checks required for a particular merchant or transaction may depend on the service, risk level, applicable law, and the role performed by Pay101 and its banking, payment, or other service partners.</p>
-<p>Pay101 must not claim to perform regulated verification or make regulatory decisions unless it is authorised and operationally responsible for doing so.</p>
-<h2>3. Information That May Be Requested</h2>
+</section>
+<section aria-labelledby="requested-information">
+<h2 id="requested-information">3. Information That May Be Requested</h2>
 <p>Depending on the merchant’s legal form, location, products, risk profile, and services requested, Pay101 or its authorised service partners may request some or all of the following:</p>
-<p>Business name, trading name, registration number, registered address, operating address, and incorporation documents. Details of directors, partners, trustees, authorised signatories, and ultimate beneficial owners (UBOs), where applicable. Identity and address evidence for relevant individuals, where legally permitted and required. Tax or business identification details and relevant licences or regulatory permissions. Business website, description of goods or services, customer locations, expected transaction volumes, and payment flows. Business bank-account or settlement-account details and evidence that the account is associated with the merchant. Information about ownership, source of funds, source of wealth, or business relationships where additional checks are justified.</p>
-<h2>4. Verification and Due Diligence</h2>
+<ul>
+  <li>Business name, trading name, registration number, registered address, operating address, and incorporation documents.</li>
+  <li>Details of directors, partners, trustees, authorised signatories, and ultimate beneficial owners (UBOs), where applicable.</li>
+  <li>Identity and address evidence for relevant individuals, where legally permitted and required.</li>
+  <li>Tax or business identification details and relevant licences or regulatory permissions.</li>
+  <li>Business website, description of goods or services, customer locations, expected transaction volumes, and payment flows.</li>
+  <li>Business bank-account or settlement-account details and evidence that the account is associated with the merchant.</li>
+  <li>Information about ownership, source of funds, source of wealth, or business relationships where additional checks are justified.</li>
+</ul>
+</section>
+<section aria-labelledby="verification">
+<h2 id="verification">4. Verification and Due Diligence</h2>
 <p>Pay101 may use document checks, electronic verification, business-register searches, screening providers, and other lawful methods to assess information supplied during onboarding.</p>
 <p>Documents and information may be checked for authenticity, consistency, validity, and signs of alteration. Verification methods must be proportionate to the risk and permitted by applicable law.</p>
 <p>Submission of documents does not guarantee approval or activation.</p>
-<h2>5. Risk Assessment and Enhanced Due Diligence</h2>
+</section>
+<section aria-labelledby="risk-assessment">
+<h2 id="risk-assessment">5. Risk Assessment and Enhanced Due Diligence</h2>
 <p>Applications may be assessed using factors such as the merchant’s industry, countries of operation, ownership structure, expected transaction activity, product type, payment methods, adverse information, and relevant sanctions or politically exposed person (PEP) screening results.</p>
 <p>Where the risk is higher, Pay101 or its authorised partner may request additional documents, conduct further checks, require senior review, apply transaction or service limits, or decline or suspend the application.</p>
 <p>PEP status alone should not automatically be treated as proof of wrongdoing.</p>
-<h2>6. Screening and Prohibited or Restricted Activity</h2>
+</section>
+<section aria-labelledby="screening">
+<h2 id="screening">6. Screening and Prohibited or Restricted Activity</h2>
 <p>Where applicable and lawful, Pay101 or its authorised partners may screen relevant persons and businesses against sanctions lists, PEP databases, adverse-media sources, and other risk databases.</p>
 <p>Merchants must not use the services for unlawful activity or activity prohibited by the applicable service agreement, partner rules, or law.</p>
 <p>Pay101 may reject, restrict, pause, or terminate access where required by law, partner requirements, or a reasonable financial-crime risk assessment.</p>
-<h2>7. Ongoing Monitoring and Refresh of Information</h2>
-<p>KYC is not necessarily a one-time check.</p>
+</section>
+<section aria-labelledby="ongoing-monitoring">
+<h2 id="ongoing-monitoring">7. Ongoing Monitoring and Refresh of Information</h2>
 <p>Pay101 or its authorised partners may request updated records when a merchant’s ownership, directors, address, business model, website, banking details, transaction profile, or risk status changes, or when documents expire or additional checks are required.</p>
 <p>Transaction activity may be reviewed to identify activity that appears inconsistent with the merchant’s stated business or expected use.</p>
-<h2>8. Merchant Responsibilities</h2>
+</section>
+<section aria-labelledby="merchant-responsibilities">
+<h2 id="merchant-responsibilities">8. Merchant Responsibilities</h2>
 <p>Merchants must:</p>
 <ul><li>Provide complete, accurate, current, and non-misleading information.</li>
 <li>Submit genuine documents.</li>
@@ -37,27 +102,37 @@
 <li>Protect dashboard access, API credentials, and other security information.</li>
 <li>Promptly report suspected compromise or unauthorised activity.</li>
 </ul>
-<h2>9. API and Payment Verification Safeguards</h2>
+</section>
+<section aria-labelledby="api-safeguards">
+<h2 id="api-safeguards">9. API and Payment Verification Safeguards</h2>
 <p>Where API services are used, merchants must protect authentication credentials and secrets, restrict access to authorised systems, and follow the current integration documentation.</p>
 <p>IP whitelisting should be configured where required.</p>
 <p>Payment callbacks or notifications should not, by themselves, be treated as final proof of payment. Merchants should verify payment status using the applicable authenticated status-check process before crediting a customer or treating a payment as complete.</p>
 <p>Payouts should not be treated as successful until the authoritative status confirms success.</p>
-<h2>10. Incomplete Checks, Refusal, Suspension, and Termination</h2>
+</section>
+<section aria-labelledby="incomplete-checks">
+<h2 id="incomplete-checks">10. Incomplete Checks, Refusal, Suspension, and Termination</h2>
 <p>If requested information is missing, inconsistent, expired, or cannot be verified, Pay101 may pause onboarding or use of relevant services, request further evidence, impose restrictions, or decline or terminate access, subject to applicable law and contractual obligations.</p>
 <p>Pay101 may be unable to disclose certain details where disclosure is prohibited or could compromise fraud prevention, an investigation, or legal obligations.</p>
-<h2>11. Personal Data, Confidentiality, and Retention</h2>
+</section>
+<section aria-labelledby="personal-data">
+<h2 id="personal-data">11. Personal Data, Confidentiality, and Retention</h2>
 <p>KYC information must be collected and processed only for appropriate purposes and in accordance with applicable data-protection law and Pay101’s Privacy Policy.</p>
 <p>Access should be limited to authorised personnel and service providers who need the information for verification, compliance, security, or legal purposes.</p>
 <p>Records should be retained for the period required by applicable law, contractual requirements, and legitimate compliance needs, then securely deleted or anonymised where appropriate.</p>
-<p>Pay101 should publish its actual retention periods and relevant data-controller/processor details after legal review.</p>
-<h2>12. Suspicious Activity and Legal Obligations</h2>
+</section>
+<section aria-labelledby="suspicious-activity">
+<h2 id="suspicious-activity">12. Suspicious Activity and Legal Obligations</h2>
 <p>Where applicable, Pay101 and/or its relevant regulated partners may escalate suspicious activity, make reports to competent authorities, or take other actions required by law.</p>
 <p>Nothing in this policy promises that every application or transaction will be approved, nor does it prevent Pay101 or a partner from taking legally required action.</p>
-<h2>13. Changes to This Policy</h2>
+</section>
+<section aria-labelledby="policy-changes">
+<h2 id="policy-changes">13. Changes to This Policy</h2>
 <p>Pay101 may update this policy to reflect changes in law, risk controls, services, or partner requirements.</p>
-<p>The current version should be made available on the website with its effective or last-updated date.</p>
-<h2>14. Contact</h2>
-<p>For KYC-related questions, contact support@pay101.io.</p>
-<p>Do not send identity documents or other sensitive information by ordinary email unless Pay101 has specifically confirmed that this is an approved and secure submission method.</p>
-<p><strong>Pay101</strong><br/>Website: <a href="https://www.pay101.io">www.pay101.io</a><br/>Support: <a href="mailto:support@pay101.io">support@pay101.io</a></p>
+</section>
+<section aria-labelledby="kyc-contact">
+<h2 id="kyc-contact">14. Contact</h2>
+<p>For KYC questions or help submitting documents, email <a href="mailto:support@pay101.io">support@pay101.io</a>.</p>
+<p>Use the secure submission method confirmed by Pay101 for identity documents and other sensitive information.</p>
+</section>
 </article></main><footer class="bottom">© 2026 Pay101 · Policy content subject to legal review.<p><a href="/aml-policy">AML Policy</a><a href="/cookie-policy">Cookie Policy</a><a href="/terms-and-conditions">Terms and Conditions</a><a href="/kyc-policy">KYC Policy</a></p></footer><script type="module" src="/shared-header/header.js"></script></body></html>
