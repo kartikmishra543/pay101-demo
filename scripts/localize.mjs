@@ -43,6 +43,7 @@ await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
 const origin = 'http://127.0.0.1:' + server.address().port;
 const strings = new Set();
 let browser;
+let homepageMarkup;
 try {
   browser = await chromium.launch({headless: true, args: chromiumBinary.args, executablePath: await chromiumBinary.executablePath()});
   const context = await browser.newContext();
@@ -75,6 +76,12 @@ try {
       await collect();
     }
     await collect();
+    if (route === '/') {
+      homepageMarkup = await page.locator('#root').evaluate(root => root.innerHTML);
+      if (!homepageMarkup.includes('<main') || !homepageMarkup.includes('<h1')) {
+        throw new Error('Homepage prerender is missing its main content.');
+      }
+    }
   }
   await page.goto(origin, {waitUntil: 'domcontentloaded'});
   for (const slide of await page.locator('.heroDot').all()) {
@@ -195,7 +202,10 @@ await fs.writeFile(path.join(dist, 'pay101-translations.json'), bundle);
 await fs.writeFile(path.join(dist, 'pay101-localization.js'), client);
 const tag = '<style>body[dir="rtl"] :is(pre,code,kbd,samp){direction:ltr;text-align:left;unicode-bidi:isolate}</style><script defer src="/pay101-localization.js?v=' + version + '"></script>';
 for (const file of pages) {
-  const html = await fs.readFile(file, 'utf8');
+  let html = await fs.readFile(file, 'utf8');
+  if (file === path.join(dist, 'index.html')) {
+    html = html.replace('<div id="root"></div>', () => '<div id="root">' + homepageMarkup + '</div>');
+  }
   await fs.writeFile(file, html.replace(/<\/body>/i, tag + '</body>'));
 }
 console.log('Published site translation assets for ' + pages.size + ' pages.');
