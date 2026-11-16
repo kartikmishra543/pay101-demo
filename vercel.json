@@ -119,5 +119,6 @@
       "destination": "https://partner.pay101.uk/login",
       "permanent": false
     }
-  ]
+  ],
+  "buildCommand": "npm run build:localized"
 }
