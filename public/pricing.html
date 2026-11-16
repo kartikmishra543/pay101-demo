@@ -57,10 +57,10 @@ input,select,textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(79,70,229,.15)}
 .qs .btn{width:100%;justify-content:center;margin-top:18px}
 /* in-page nav pills */
-.pills{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:64px;z-index:40;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
-.pills .wrap{display:flex;gap:6px;padding-top:10px;padding-bottom:10px}
+.pills{background:#fff;border-bottom:1px solid var(--line);}
+.pills .wrap{display:flex;flex-wrap:wrap;gap:6px;padding-top:10px;padding-bottom:10px}
 .pills a{padding:7px 16px;border-radius:999px;font-size:.85rem;font-weight:500;color:var(--muted)}
-.pills a:hover{background:#eef0ff;color:var(--accent)}
+.pills a:hover,.pills a:focus-visible{background:#eef0ff;color:var(--accent)}
 /* cards */
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;transition:.2s}
