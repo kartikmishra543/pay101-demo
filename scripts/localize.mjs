@@ -14,7 +14,7 @@ const headers = {'Content-Type': 'application/json', 'x-goog-api-key': secret};
 const available = await fetch(apiRoot + 'models?pageSize=100', {headers, signal: AbortSignal.timeout(15000)});
 if (!available.ok) throw new Error('Gemini model discovery failed: HTTP ' + available.status);
 const supported = (await available.json()).models?.filter(model => model.supportedGenerationMethods?.includes('generateContent')).map(model => model.name) || [];
-const model = ['gemini-3.5-flash-lite','gemini-3.1-flash-lite','gemini-3.5-flash','gemini-3-flash-preview','gemini-2.5-flash'].map(name => 'models/' + name).find(name => supported.includes(name));
+const model = ['gemini-3.1-flash-lite','gemini-3.5-flash-lite','gemini-3.5-flash','gemini-3-flash-preview','gemini-2.5-flash'].map(name => 'models/' + name).find(name => supported.includes(name));
 if (!model) throw new Error('The Pay101 Gemini key returned no supported Flash model for translations.');
 console.log('Translation model: ' + model);
 const dist = path.resolve('dist');
@@ -104,7 +104,7 @@ const batches = [];
 let batch = [];
 let size = 0;
 for (const entry of entries) {
-  if (batch.length && (batch.length >= 55 || size + entry.length > 5300)) {
+  if (batch.length && (batch.length >= 105 || size + entry.length > 8500)) {
     batches.push(batch);
     batch = [];
     size = 0;
@@ -131,6 +131,13 @@ async function translate(code, input) {
       });
       if (!response.ok) {
         if (response.status === 400 || response.status === 401 || response.status === 403) throw Object.assign(new Error('Gemini translation configuration rejected: HTTP ' + response.status), {fatal: true});
+        if (response.status === 429) {
+          const details = (await response.json().catch(() => null))?.error?.details || [];
+          const violations = details.flatMap(detail => detail.violations || []);
+          const quota = violations.map(item => [item.quotaId, item.quotaValue].filter(Boolean).join('=')).filter(Boolean).join(', ');
+          const unavailable = violations.some(item => String(item.quotaValue) === '0');
+          throw Object.assign(new Error('Gemini HTTP 429' + (quota ? ' (' + quota + ')' : '')), {fatal: unavailable});
+        }
         throw new Error('Gemini HTTP ' + response.status);
       }
       const result = await response.json();
@@ -145,10 +152,12 @@ async function translate(code, input) {
 }
 const jobs = Object.keys(languages).flatMap(code => batches.map(input => ({code, input})));
 let index = 0;
-await Promise.all(Array.from({length: 3}, async () => {
+await Promise.all(Array.from({length: 1}, async () => {
   while (index < jobs.length) {
     const {code, input} = jobs[index++];
     const output = await translate(code, input);
+    console.log('Completed translation batch ' + index + ' of ' + jobs.length);
+    if (index < jobs.length) await new Promise(resolve => setTimeout(resolve, 6500));
     input.forEach((value, i) => { translations[code][value] = output[i]; });
   }
 }));
