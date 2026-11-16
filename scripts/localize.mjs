@@ -11,14 +11,14 @@ const secret = process.env.GEMINI_API_KEY;
 if (!secret) throw new Error('GEMINI_API_KEY is required to build localized pages.');
 const dist = path.resolve('dist');
 const rules = JSON.parse(await fs.readFile('vercel.json', 'utf8')).rewrites;
-const routes = ['/', ...rules.filter(({destination}) => destination.endsWith('.html')).map(({source}) => source)];
+const routes = ['/', ...rules.map(({source}) => source)];
 const types = {'.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json'};
 const pages = new Set();
 const server = http.createServer(async (req, res) => {
   try {
     const route = new URL(req.url, 'http://localhost').pathname;
     const rewritten = route === '/' ? '/index.html' : rules.find(rule => rule.source === route)?.destination || route;
-    const file = path.resolve(dist, '.' + rewritten);
+    const file = path.resolve(dist, rewritten === '/' ? 'index.html' : '.' + rewritten);
     if (!file.startsWith(dist + path.sep)) throw new Error('Invalid path');
     const body = await fs.readFile(file);
     if (file.endsWith('.html')) pages.add(file);
@@ -42,15 +42,23 @@ try {
   });
   const page = await context.newPage();
   const collect = async () => {
-    const result = await page.evaluate(extractor);
+    const result = await page.evaluate('(' + extractor + ')()');
     for (const entry of result) strings.add(entry);
   };
   for (const route of routes) {
     await page.goto(origin + route, {waitUntil: 'domcontentloaded'});
-    await page.getByRole('button', {name: 'Select website language'}).waitFor({timeout: 15000});
+    await page.locator('body h1').first().waitFor({timeout: 15000});
+    for (const tab of await page.locator('.howTabs [role="tab"]').all()) {
+      await tab.click();
+      await collect();
+    }
     await collect();
   }
   await page.goto(origin, {waitUntil: 'domcontentloaded'});
+  for (const slide of await page.locator('.heroDot').all()) {
+    await slide.click();
+    await collect();
+  }
   const nav = page.getByRole('navigation', {name: 'Main navigation'});
   for (const label of ['Solutions', 'Markets', 'Resources', 'Get in Touch']) {
     await nav.getByRole('button', {name: new RegExp('^' + label)}).hover();
