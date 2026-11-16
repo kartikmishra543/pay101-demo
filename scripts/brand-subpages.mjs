@@ -1,3 +1,4 @@
+import {createHash} from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -10,6 +11,15 @@ const faviconTags = `<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">`;
+
+function versionedAsset(file) {
+  const contents = fs.readFileSync(path.join('dist', 'shared-header', file));
+  const version = createHash('sha256').update(contents).digest('hex').slice(0, 12);
+  return '/shared-header/' + file + '?v=' + version;
+}
+
+const headerStyles = versionedAsset('header.css');
+const headerScript = versionedAsset('header.js');
 
 function walk(directory) {
   for (const entry of fs.readdirSync(directory, {withFileTypes: true})) {
@@ -29,8 +39,9 @@ function walk(directory) {
     html = html.replace(/<aside\b[^>]*class="social"[^>]*>[\s\S]*?<\/aside>/g, '');
     html = html.replace(/<footer\b[\s\S]*?<\/footer>/g, '');
     if (!html.includes('id="pay101-shared-header"')) html = html.replace(/<body\b[^>]*>/i, '$&<div id="pay101-shared-header"></div>');
-    html = html.replace('</head>', '<link rel="stylesheet" href="/shared-header/header.css"><link rel="stylesheet" href="/pay101-footer.css"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/pay101-subpages.css"></head>');
-    html = html.replace('</body>', footer + (html.includes('src="/shared-header/header.js"') ? '' : '<script type="module" src="/shared-header/header.js"></script>') + '</body>');
+    html = html.replace('</head>', '<link rel="stylesheet" href="' + headerStyles + '"><link rel="stylesheet" href="/pay101-footer.css"><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/pay101-subpages.css"></head>');
+    html = html.replace(/<script\b[^>]*\bsrc="\/shared-header\/header\.js(?:\?[^"]*)?"[^>]*><\/script>/g, '');
+    html = html.replace('</body>', footer + '<script type="module" src="' + headerScript + '"></script>' + '</body>');
     fs.writeFileSync(file, html);
   }
 }
