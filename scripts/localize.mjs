@@ -46,8 +46,11 @@ try {
     for (const entry of result) strings.add(entry);
   };
   for (const route of routes) {
-    await page.goto(origin + route, {waitUntil: 'domcontentloaded'});
-    await page.locator('body h1').first().waitFor({timeout: 15000});
+    const response = await page.goto(origin + route, {waitUntil: 'domcontentloaded'});
+    if (!response?.ok()) throw new Error('Could not load public route ' + route);
+    console.log('Collecting public copy from ' + route);
+    if (await page.locator('#root').count()) await page.locator('#root > *').first().waitFor({state: 'attached', timeout: 15000});
+    if (await page.locator('#pay101-shared-header').count()) await page.locator('#pay101-shared-header header').waitFor({state: 'attached', timeout: 15000});
     for (const tab of await page.locator('.howTabs [role="tab"]').all()) {
       await tab.click();
       await collect();
