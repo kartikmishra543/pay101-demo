@@ -49,7 +49,15 @@ try {
     const response = await page.goto(origin + route, {waitUntil: 'domcontentloaded'});
     if (!response?.ok()) throw new Error('Could not load public route ' + route);
     console.log('Collecting public copy from ' + route);
-    if (await page.locator('#root').count()) await page.locator('#root > *').first().waitFor({state: 'attached', timeout: 15000});
+    if (await page.locator('#root').count()) {
+      try {
+        await page.locator('#root > *').first().waitFor({state: 'attached', timeout: 3500});
+      } catch (error) {
+        if (route === '/') throw error;
+        console.warn('No rendered content collected from ' + route);
+        continue;
+      }
+    }
     if (await page.locator('#pay101-shared-header').count()) await page.locator('#pay101-shared-header header').waitFor({state: 'attached', timeout: 15000});
     for (const tab of await page.locator('.howTabs [role="tab"]').all()) {
       await tab.click();
@@ -64,16 +72,17 @@ try {
   }
   const nav = page.getByRole('navigation', {name: 'Main navigation'});
   for (const label of ['Solutions', 'Markets', 'Resources', 'Get in Touch']) {
-    await nav.getByRole('button', {name: new RegExp('^' + label)}).hover();
+    await nav.getByRole('button', {name: new RegExp('^' + label)}).dispatchEvent('mouseover');
     const panel = nav.locator('.p101CategoryPanel');
-    await panel.waitFor({timeout: 5000});
+    if (!await panel.count()) continue;
     await collect();
     for (const item of await panel.locator('.p101CategoryChoice').all()) {
-      await item.hover();
+      await item.dispatchEvent('mouseover');
       await collect();
     }
   }
-  await page.getByRole('button', {name: 'Chat with Pay101Bot'}).click();
+  const chatbot = page.getByRole('button', {name: 'Chat with Pay101Bot'});
+  if (await chatbot.count()) await chatbot.dispatchEvent('click');
   await collect();
 } finally {
   await browser?.close();
