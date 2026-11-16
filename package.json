@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/build-header.mjs && node scripts/brand-subpages.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "build:localized": "npm run build && npm install --no-save --package-lock=false playwright-core@1.55.0 @sparticuz/chromium@140.0.0 && node scripts/localize.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
