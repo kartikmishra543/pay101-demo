@@ -36,11 +36,6 @@ h2 em,h1 em{font-style:italic;background:linear-gradient(90deg,var(--accent),var
 .btn-primary:hover{transform:translateY(-2px)}
 .btn-ghost{border-color:rgba(255,255,255,.35);color:#fff}
 .btn-ghost:hover{background:rgba(255,255,255,.1)}
-/* nav */
-nav{position:sticky;top:0;z-index:50;background:rgba(11,27,58,.92);backdrop-filter:blur(10px);padding-top:env(safe-area-inset-top,0px)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-nav .logo{color:#fff;font-weight:800;font-size:1.3rem}nav .logo img{height:30px;display:block}
-nav .links{display:flex;gap:26px}nav .links a{color:#c7d2ea;font-size:.9rem;font-weight:500}nav .links a:hover{color:#fff}
 /* hero */
 .hero{background:radial-gradient(900px 400px at 85% -10%,rgba(124,58,237,.35),transparent),linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;padding:80px 0 90px;position:relative;overflow:hidden}
 .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
@@ -137,7 +132,7 @@ footer a{display:block;padding:3px 0;color:#a9b6d3}footer a:hover{color:#fff}
   .hero .grid,.qgrid{grid-template-columns:1fr}
   .cards,.why .cards{grid-template-columns:repeat(2,1fr)}
   .steps,.two{grid-template-columns:1fr}
-  .fg{grid-template-columns:1fr 1fr}nav .links{display:none}
+  .fg{grid-template-columns:1fr 1fr}
 }
 @media(max-width:560px){
   section{padding:52px 0}.hero{padding:52px 0 60px}
@@ -150,13 +145,6 @@ footer a{display:block;padding:3px 0;color:#a9b6d3}footer a:hover{color:#fff}
 </head>
 <body>
 
-<nav><div class="wrap">
-  <a class="logo" href="https://www.pay101.io/"><img src="https://www.pay101.io/assets/pay101-logo.png" alt="Pay101"></a>
-  <div class="links">
-    <a href="https://www.pay101.io/payin">Payin</a><a href="https://www.pay101.io/payout">Payout</a><a href="https://www.pay101.io/settlement">Settlement</a><a href="https://www.pay101.io/how-it-works">How it works</a><a href="https://www.pay101.io/developers">Developers</a>
-  </div>
-  <a class="btn btn-primary" style="padding:9px 20px" href="https://www.pay101.io/signup">Get started →</a>
-</div></nav>
 
 <header class="hero">
   <span class="curr" style="right:4%;top:6%">₹</span><span class="curr" style="right:30%;bottom:-6%">$</span><span class="curr" style="left:-2%;bottom:-8%">R$</span>
