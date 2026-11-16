@@ -8,15 +8,18 @@ import chromiumBinary from '@sparticuz/chromium';
 import {extractor, client} from './pay101-localization-source.mjs';
 
 const secret = process.env.GEMINI_API_KEY;
-if (!secret) throw new Error('GEMINI_API_KEY is required to build localized pages.');
 const apiRoot = 'https://generativelanguage.googleapis.com/v1beta/';
 const headers = {'Content-Type': 'application/json', 'x-goog-api-key': secret};
-const available = await fetch(apiRoot + 'models?pageSize=100', {headers, signal: AbortSignal.timeout(15000)});
-if (!available.ok) throw new Error('Gemini model discovery failed: HTTP ' + available.status);
-const supported = (await available.json()).models?.filter(model => model.supportedGenerationMethods?.includes('generateContent')).map(model => model.name) || [];
-const model = ['gemini-3.1-flash-lite','gemini-3.5-flash-lite','gemini-3.5-flash','gemini-3-flash-preview','gemini-2.5-flash'].map(name => 'models/' + name).find(name => supported.includes(name));
-if (!model) throw new Error('The Pay101 Gemini key returned no supported Flash model for translations.');
-console.log('Translation model: ' + model);
+let model;
+async function findModel() {
+  if (!secret) throw new Error('GEMINI_API_KEY is required to build localized pages.');
+  const available = await fetch(apiRoot + 'models?pageSize=100', {headers, signal: AbortSignal.timeout(15000)});
+  if (!available.ok) throw new Error('Gemini model discovery failed: HTTP ' + available.status);
+  const supported = (await available.json()).models?.filter(model => model.supportedGenerationMethods?.includes('generateContent')).map(model => model.name) || [];
+  model = ['gemini-3.1-flash-lite','gemini-3.5-flash-lite','gemini-3.5-flash','gemini-3-flash-preview','gemini-2.5-flash'].map(name => 'models/' + name).find(name => supported.includes(name));
+  if (!model) throw new Error('The Pay101 Gemini key returned no supported Flash model for translations.');
+  console.log('Translation model: ' + model);
+}
 const dist = path.resolve('dist');
 const rules = JSON.parse(await fs.readFile('vercel.json', 'utf8')).rewrites;
 const routes = ['/', ...rules.map(({source}) => source)];
@@ -68,7 +71,7 @@ try {
     }
     if (await page.locator('#pay101-shared-header').count()) await page.locator('#pay101-shared-header header').waitFor({state: 'attached', timeout: 15000});
     for (const tab of await page.locator('.howTabs [role="tab"]').all()) {
-      await tab.click();
+      await tab.dispatchEvent('click');
       await collect();
     }
     await collect();
@@ -100,6 +103,16 @@ try {
 const entries = [...strings].sort();
 const languages = {ru: 'Russian', ar: 'Modern Standard Arabic'};
 const translations = {ru: Object.create(null), ar: Object.create(null)};
+try {
+  const saved = JSON.parse(await fs.readFile('scripts/pay101-translation-cache.json', 'utf8'));
+  for (const code of Object.keys(languages)) {
+    for (const entry of entries) {
+      if (Object.hasOwn(saved[code] || {}, entry) && typeof saved[code][entry] === 'string') translations[code][entry] = saved[code][entry];
+    }
+  }
+} catch (error) {
+  if (error.code !== 'ENOENT') throw error;
+}
 const batches = [];
 let batch = [];
 let size = 0;
@@ -125,7 +138,7 @@ async function translate(code, input) {
         body: JSON.stringify({
           systemInstruction: {parts: [{text: instruction}]},
           contents: [{parts: [{text: JSON.stringify(input)}]}],
-          generationConfig: {temperature: 0, responseMimeType: 'application/json', responseSchema: schema}
+          generationConfig: {temperature: 0, responseMimeType: 'application/json', responseSchema: schema, maxOutputTokens: 16384}
         }),
         signal: AbortSignal.timeout(45000)
       });
@@ -142,15 +155,25 @@ async function translate(code, input) {
       }
       const result = await response.json();
       const output = JSON.parse(result.candidates?.[0]?.content?.parts?.map(part => part.text || '').join('') || 'null');
-      if (!Array.isArray(output) || output.length !== input.length || output.some(value => typeof value !== 'string' || !value.trim())) throw new Error('Gemini returned an incomplete translation batch.');
+      if (!Array.isArray(output) || output.length !== input.length || output.some(value => typeof value !== 'string' || !value.trim())) throw Object.assign(new Error('Gemini returned an incomplete translation batch.'), {split: true});
       return output;
     } catch (error) {
+      if ((error.split || error instanceof SyntaxError) && input.length > 1) {
+        const middle = Math.ceil(input.length / 2);
+        const first = await translate(code, input.slice(0, middle));
+        await new Promise(resolve => setTimeout(resolve, 6500));
+        return first.concat(await translate(code, input.slice(middle)));
+      }
       if (error.fatal || attempt === 3) throw error;
       await new Promise(resolve => setTimeout(resolve, (attempt + 1) * (/429/.test(error.message) ? 15000 : 5000)));
     }
   }
 }
-const jobs = Object.keys(languages).flatMap(code => batches.map(input => ({code, input})));
+const jobs = Object.keys(languages).flatMap(code =>
+  batches.map(batch => ({code, input: batch.filter(value => !Object.hasOwn(translations[code], value))})).filter(({input}) => input.length)
+);
+console.log('Translation batches requiring Gemini: ' + jobs.length);
+if (jobs.length) await findModel();
 let index = 0;
 await Promise.all(Array.from({length: 1}, async () => {
   while (index < jobs.length) {
