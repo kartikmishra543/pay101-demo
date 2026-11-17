@@ -623,7 +623,7 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101FooterBottom div{display:flex;gap:25px}.p101FooterBottom a{color:inherit;text-decoration:none}
 @media(max-width:1050px){.p101HeaderInner{gap:12px}.p101NavLink{padding:11px 8px;font-size:13px}.p101FooterGrid{grid-template-columns:repeat(4,1fr)}.p101FooterBrand{grid-column:1/-1}}
 @media(max-width:900px){
-.p101HeaderInner{height:70px}.p101Burger{display:flex;margin-left:8px}.p101Actions{margin-left:auto}.p101Signin{display:none}
+.p101HeaderInner{height:70px}.p101Burger{display:flex;margin-left:8px}.p101Actions{margin-left:auto}
 .p101Nav{display:none;position:absolute;top:70px;left:0;right:0;max-height:calc(100dvh - 70px);overflow-y:auto;background:#f4f8fc;padding:15px 24px 24px;border-bottom:1px solid #e1e9f2;flex-direction:column;align-items:stretch;gap:4px}
 .p101Nav.mobileOpen{display:flex}.p101NavLink{width:100%;justify-content:space-between;font-size:15px;padding:13px}
 .p101Mega,.p101Drop{position:static;box-shadow:none;width:100%;min-width:0;margin:0 0 10px;display:none}
@@ -1810,4 +1810,18 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
 .paymentMethodsLoop .paymentBrandIcon img {
   object-fit: contain !important;
   object-position: center;
+}
+
+/* Keep both account actions visible on mobile. */
+@media(max-width:900px){
+  .p101Header .p101Signin{display:inline-flex;align-items:center;min-height:44px;padding:0 6px;font-size:13px}
+  .p101Header .p101Signin:focus-visible{outline:2px solid #0878f9;outline-offset:2px}
+}
+@media(max-width:550px){
+  .p101Header .p101HeaderInner{gap:6px!important;padding-inline:10px}
+  .p101Header .brandLogo{width:clamp(78px,21vw,112px)}
+  .p101Header .p101Actions .primary{padding-inline:8px;font-size:12px!important}
+  .p101Header .p101Actions .primary svg{display:none}
+  .p101Header .p101Signin{padding-inline:3px;font-size:12px}
+  .p101Header .p101Burger{margin-inline:0;padding-inline:4px}
 }
