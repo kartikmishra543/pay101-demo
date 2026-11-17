@@ -1837,7 +1837,10 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
   object-position: center;
 }
 .paymentMethodsLoop .paymentBrand-esewa .paymentBrandIcon img {
-  transform: scale(1.22);
+  transform: translateY(-10px) scale(1.22);
+}
+.paymentMethodsLoop .paymentBrand-pix .paymentBrandIcon img {
+  transform: scale(.82);
 }
 
 /* Blend the masked carousel as a whole so white artwork backgrounds disappear. */
