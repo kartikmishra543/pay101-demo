@@ -175,7 +175,7 @@ async function translate(code, input) {
         await new Promise(resolve => setTimeout(resolve, 6500));
         return first.concat(await translate(code, input.slice(middle)));
       }
-      if (error.fatal || attempt === 3) throw error;
+      if (error.fatal || attempt === 3 || /GenerateRequestsPerDayPerProjectPerModel/.test(error.message)) throw error;
       await new Promise(resolve => setTimeout(resolve, (attempt + 1) * (/429/.test(error.message) ? 15000 : 5000)));
     }
   }
@@ -186,11 +186,20 @@ const jobs = Object.keys(languages).flatMap(code =>
 console.log('Translation batches requiring Gemini: ' + jobs.length);
 if (jobs.length) await findModel();
 let index = 0;
+let dailyQuotaExhausted = false;
 await Promise.all(Array.from({length: 2}, async () => {
-  while (index < jobs.length) {
+  while (!dailyQuotaExhausted && index < jobs.length) {
     const job = index++;
     const {code, input} = jobs[job];
-    const output = await translate(code, input);
+    let output;
+    try {
+      output = await translate(code, input);
+    } catch (error) {
+      if (!/Gemini HTTP 429.*GenerateRequestsPerDayPerProjectPerModel/.test(error.message)) throw error;
+      if (!dailyQuotaExhausted) console.warn('Gemini daily quota exhausted. Publishing saved translations and displaying untranslated copy in English.');
+      dailyQuotaExhausted = true;
+      return;
+    }
     console.log('Completed translation batch ' + (job + 1) + ' of ' + jobs.length + ' (' + code + ')');
 
     input.forEach((value, i) => { translations[code][value] = output[i]; });
