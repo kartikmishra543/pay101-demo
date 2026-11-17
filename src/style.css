@@ -1826,3 +1826,17 @@ main h3{font-size:var(--p101-type-h3);font-weight:700}
   .p101Header .p101Signin{padding-inline:3px;font-size:12px}
   .p101Header .p101Burger{margin-inline:0;padding-inline:4px}
 }
+
+/* Keep brand artwork centered in equal-size carousel slots. */
+.paymentMethodsLoop .paymentMethodCard .paymentBrandIcon img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  object-position: center;
+}
+.paymentMethodsLoop .paymentBrand-esewa .paymentBrandIcon img {
+  mix-blend-mode: multiply !important;
+  transform: scale(1.22);
+}
