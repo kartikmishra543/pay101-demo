@@ -1062,7 +1062,8 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.015em!important;line-height:1.14;font-weight:
 .p101FullVideoHero .heroHeadline{color:#fff!important;font-size:clamp(45px,5.3vw,80px)!important;line-height:1.07!important}
 .p101FullVideoHero .heroHeadline em{color:#64baff!important}
 .p101FullVideoHero .heroDescription{color:#e3eefc!important}
-.p101FullVideoHero .eyebrow{color:#b9dfff!important;border-color:rgba(159,212,255,.4)!important;background:rgba(6,44,90,.52)!important}
+.p101FullVideoHero .eyebrow{color:#07366c!important;border-color:#8fcaff!important;background:linear-gradient(105deg,#f0f9ff,#c7e8ff)!important;box-shadow:0 4px 16px rgba(50,150,255,.22);font-weight:800;letter-spacing:1.5px;max-width:100%;white-space:normal}
+.p101FullVideoHero .eyebrow .dot{background:#0878f9;flex-shrink:0}
 .p101FullVideoHero .heroCtas .play,.p101FullVideoHero .trust,.p101FullVideoHero .trust span{color:#e3eefc!important}
 .p101FullVideoHero .trust{border-color:rgba(255,255,255,.25)!important}
 .p101FullVideoHero .orb{display:none!important}
