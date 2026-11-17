@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How It Works: Collect, Pay Out &amp; Settle in 3 Steps | Pay101</title>
+<meta name="description" content="See how Pay101 works in three simple steps: collect customer payments, pay out to partners and track settlements, all from one connected payment platform.">
+<link rel="canonical" href="https://www.pay101.io/how-it-works">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Collect?", "acceptedAnswer": {"@type": "Answer", "text": "Collect is the area for accepting customer payments and reviewing their transaction status. Available payment methods depend on your platform configuration."}}, {"@type": "Question", "name": "What is Pay Out?", "acceptedAnswer": {"@type": "Answer", "text": "Pay Out helps businesses send funds to eligible beneficiaries and monitor the progress of those transfers."}}, {"@type": "Question", "name": "What is Settle?", "acceptedAnswer": {"@type": "Answer", "text": "Settle helps users review settlement records and understand the status and timing of incoming funds. Actual timelines depend on your payment arrangements."}}, {"@type": "Question", "name": "Where can I get help while using the dashboard?", "acceptedAnswer": {"@type": "Answer", "text": "Use the getting-started guide, contextual help near a field, or your platform’s support channel."}}]}</script>
+<style>@scope (.payin-page){
+:scope{--ink:#0f1b2d;--blue:#0a6cff;--blue2:#2a86ff;--muted:#64748b;--soft:#eef4ff;--bg:#f3f7ff;--line:#dfe7f5;--fnt:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:scope{font-family:var(--fnt);color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;margin:auto;padding:0 28px}
+section{padding:84px 0}
+h1{font-size:68px;line-height:1.02;letter-spacing:-2px;font-weight:800}
+h2{font-size:40px;line-height:1.15;letter-spacing:-1px;font-weight:700}
+h2 em,h1 em{font-style:normal;color:var(--blue)}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:1.6px;color:var(--blue);text-transform:uppercase;margin-bottom:14px}
+.lead{color:var(--muted);font-size:17.5px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:12px;font-weight:700;font-size:15.5px}
+.pri{background:linear-gradient(180deg,var(--blue2),var(--blue));color:#fff;box-shadow:0 10px 24px rgba(10,108,255,.28)}
+.ghost{color:#fff}
+.ghost b{width:32px;height:32px;border:1.5px solid rgba(255,255,255,.7);border-radius:50%;display:grid;place-items:center;font-weight:500}
+.btns{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin-top:30px}
+/* header */
+header{position:sticky;top:0;z-index:70;background:rgba(243,247,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:20px;height:78px}
+.logo{display:flex;align-items:center;gap:10px;font-size:34px;font-weight:700;letter-spacing:-1px}
+.logo svg{width:38px;height:38px}
+.logo b{color:var(--blue);font-weight:800}
+nav{display:flex;gap:2px;flex:1;justify-content:center}
+.it{position:relative}
+.it>a{display:flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;font-weight:600;font-size:15px;color:#5b6b85}
+.it.dd>a:after{content:"";width:5px;height:5px;border:solid currentColor;border-width:0 2px 2px 0;transform:rotate(45deg) translateY(-2px)}
+.it:hover>a,.it.open>a{color:var(--blue);background:#e5eeff}
+.it.dev>a{color:var(--blue);font-weight:700}
+.dm{display:none;position:absolute;left:0;top:100%;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 54px rgba(15,27,45,.14);padding:22px 26px}
+.it:hover .dm,.it.open .dm{display:block}
+.dm.mega{width:min(880px,92vw);left:-120px}
+.it:hover .dm.mega,.it.open .dm.mega{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.dm.sm{width:270px}
+.dm h6{font-size:12.5px;color:var(--muted);font-weight:700;letter-spacing:.5px;margin-bottom:6px}
+.dm a{display:block;padding:8px 0;font-weight:600;font-size:15px}
+.dm a small{display:block;font-weight:400;color:var(--muted);font-size:13px}
+.dm a:hover{color:var(--blue)}
+.tools{display:flex;align-items:center;gap:18px}
+.lang{border:1px solid var(--line);background:#fff;border-radius:10px;padding:9px 12px;font-size:13px;font-weight:700}
+.sign{font-weight:600;font-size:15px}
+.gs{padding:13px 22px}
+.burger{display:none;margin-left:auto;width:44px;height:44px;border:0;background:none;font-size:26px;color:var(--ink)}
+/* hero */
+.hero{position:relative;color:#fff;padding:0;min-height:560px;display:flex;align-items:center;overflow:hidden;background:radial-gradient(900px 500px at 78% 40%,rgba(42,134,255,.45),transparent 60%),linear-gradient(120deg,#0b1626 0%,#14263f 55%,#1d3a5f 100%)}
+.hero svg.coins{position:absolute;right:-40px;top:0;height:100%;width:62%;opacity:.55}
+.hero .wrap{position:relative;padding-top:80px;padding-bottom:80px}
+.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.3);border-radius:99px;padding:9px 18px;font-size:12px;font-weight:700;letter-spacing:1.5px;margin-bottom:26px;background:rgba(255,255,255,.05)}
+.pill i{width:7px;height:7px;border-radius:50%;background:var(--blue2)}
+.hero h1 em{color:var(--blue2)}
+.hero p.sub{font-size:19px;color:#d3dcec;max-width:540px;margin-top:22px}
+.dots{display:flex;gap:8px;margin-top:34px}.dots i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.45)}.dots i:last-child{width:28px;border-radius:9px;background:var(--blue2)}
+.trust{background:#fff;border-bottom:1px solid var(--line);padding:22px 0}
+.trust .wrap{display:flex;gap:18px;align-items:flex-start}
+.trust b{color:var(--blue);white-space:nowrap}.trust p{color:var(--muted);font-size:16px}
+/* layout bits */
+.two{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.grid{display:grid;gap:20px;margin-top:38px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;transition:.2s;box-shadow:0 6px 18px rgba(15,27,45,.04)}
+a.card:hover,.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(10,108,255,.12)}
+.ico{width:46px;height:42px;border-radius:12px;background:#e5eeff;color:var(--blue);display:grid;place-items:center;font-size:20px;font-weight:700;margin-bottom:16px}
+.card h3{font-size:19px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15.5px}
+.more{display:inline-block;margin-top:14px;color:var(--blue);font-weight:700;font-size:14.5px}
+.white{background:#fff}
+.note{font-size:13.5px;color:var(--muted);margin-top:18px}
+/* markets hub */
+.hubwrap{text-align:center}
+.hub{width:190px;height:190px;border-radius:50%;margin:34px auto 28px;display:grid;place-items:center;color:#fff;font-weight:800;font-size:30px;line-height:1.1;background:radial-gradient(circle at 35% 30%,#7fb6ff,var(--blue) 70%);box-shadow:0 0 0 18px rgba(42,134,255,.12),0 0 80px rgba(10,108,255,.35)}
+.hub small{display:block;font-size:11px;font-weight:600;opacity:.9;margin-top:4px}
+.mk{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;text-align:left}
+.mk div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:0 6px 18px rgba(15,27,45,.04)}
+.mk b{display:block;font-size:16.5px}.mk span{font-size:14px;color:var(--muted)}
+/* faq + cta */
+details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-top:12px}
+summary{font-weight:700;cursor:pointer;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--blue);font-size:24px;line-height:1}
+details[open] summary:after{content:"–"}
+details p{margin-top:10px;color:var(--muted)}
+.cta{background:radial-gradient(420px 260px at 100% 0,rgba(6,41,162,.18),transparent 70%),radial-gradient(360px 240px at 0 100%,rgba(6,41,162,.14),transparent 70%),#DFEDF9;color:#0f1b2d;text-align:center;border-radius:26px;padding:60px 24px;border:1px solid #c5dbf3}
+.cta p{color:#2d4470;margin:12px auto 0;max-width:580px}
+.cta .btn.pri{background:#0629A2;box-shadow:0 10px 24px rgba(6,41,162,.3)}
+.cta .btn{margin-top:26px}
+footer{background:#0b1626;color:#9fb0cc;padding:28px 0;text-align:center;font-size:14px}
+/* side + floating */
+.social{position:fixed;left:0;top:50%;transform:translateY(-50%);z-index:60;background:#fff;border:1px solid var(--line);border-radius:0 14px 14px 0;padding:8px 6px;display:flex;flex-direction:column;gap:6px;box-shadow:0 8px 24px rgba(15,27,45,.1)}
+.social a{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff}
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:65;display:flex;flex-direction:column;gap:12px;align-items:center}
+.fab a,.fab button{width:48px;height:48px;border-radius:50%;border:0;display:grid;place-items:center;color:#fff;font-size:20px;box-shadow:0 8px 20px rgba(15,27,45,.25);cursor:pointer}
+.fab .main{background:var(--blue)}
+.fab .opt{display:none}.fab.open .opt{display:grid}
+.mbar{display:none}
+@media(max-width:960px){
+ .wrap{padding:0 18px}
+ section{padding:52px 0}
+ h1{font-size:40px;letter-spacing:-1.2px}h2{font-size:28px}.lead{font-size:16.5px}
+ .bar{height:64px}.logo{font-size:28px}.logo svg{width:32px;height:32px}
+ .tools{display:none}.burger{display:block}
+ nav{display:none}
+ nav.show{display:flex;flex-direction:column;justify-content:flex-start;position:fixed;top:64px;left:0;right:0;bottom:0;background:#fff;padding:8px 18px 110px;overflow:auto;z-index:80}
+ .it>a{padding:17px 6px;border-bottom:1px solid var(--line);border-radius:0;justify-content:space-between;font-size:16.5px}
+ .it:hover>a{background:none;color:#5b6b85}.it.open>a,.it.dev>a{color:var(--blue)}
+ .dm,.dm.sm,.dm.mega{position:static;width:100%;box-shadow:none;border:0;padding:4px 6px 10px}
+ .it:hover .dm,.it:hover .dm.mega{display:none}
+ .it.open .dm,.it.open .dm.mega{display:block}
+ .dm.mega>div{margin-bottom:8px}.dm a small{display:none}
+ .hero{min-height:0}.hero .wrap{padding-top:44px;padding-bottom:48px}
+ .hero svg.coins{width:100%;right:-30%;opacity:.3}
+ .hero p.sub{font-size:16.5px}
+ .btn{width:100%;justify-content:center}.ghost{width:auto}
+ .two{grid-template-columns:1fr;gap:20px}
+ .g3,.g4{grid-template-columns:1fr}.grid{margin-top:26px}
+ .mk{grid-template-columns:1fr 1fr}
+ .hub{width:150px;height:150px;font-size:24px;margin:26px auto 22px}
+ .social{display:none}
+ .trust .wrap{flex-direction:column;gap:4px}
+ .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:62;background:#fff;border-top:1px solid var(--line);padding:10px 78px calc(10px + env(safe-area-inset-bottom,0px)) 14px;gap:10px}
+ .mbar a{flex:1;text-align:center;padding:13px;border-radius:12px;font-weight:700;font-size:15px}
+ .fab{bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+ :scope{padding-bottom:78px}
+}
+
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+.chips span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:8px 16px;font-weight:600;font-size:14.5px}
+.mgroup{margin-top:40px}
+.mgroup h3{font-size:20px;margin-bottom:4px}
+.mgroup>p{color:var(--muted);font-size:15px}
+.mt{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+.mt .m{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;transition:.2s;display:flex;gap:16px;align-items:flex-start}
+.mt .m:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(10,108,255,.12)}
+.mt .ic{flex:none;width:48px;height:48px;border-radius:14px;background:#e5eeff;color:var(--blue);display:grid;place-items:center;font-size:22px;font-weight:800}
+.mt b{display:block;font-size:17px}.mt span{color:var(--muted);font-size:14.5px;line-height:1.5;display:block;margin-top:2px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.badges span{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 18px;font-weight:700;font-size:15px;color:#33405a}
+.tabs{display:flex;gap:8px;overflow-x:auto;margin-top:28px;padding-bottom:4px}
+.tabs button{flex:none;border:1px solid var(--line);background:#fff;border-radius:99px;padding:10px 20px;font:700 14.5px var(--fnt);color:#5b6b85;cursor:pointer}
+.tabs button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.tp{display:none;background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px;margin-top:16px}
+.tp.on{display:block}
+.tp h3{font-size:22px;margin-bottom:6px}.tp p{color:var(--muted)}
+.steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}
+.num{width:42px;height:42px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800;margin-bottom:14px}
+.note2{background:#eef4ff;border:1px dashed var(--blue2);border-radius:12px;padding:12px 16px;font-size:14px;color:#2d4470;margin-top:18px}
+@media(max-width:960px){.mt{grid-template-columns:1fr 1fr}.mt .m{flex-direction:column;gap:10px;padding:16px}.steps4{grid-template-columns:1fr 1fr}.tp{padding:20px}}
+@media(max-width:520px){.mt{grid-template-columns:1fr}.mt .m{flex-direction:row}.steps4{grid-template-columns:1fr}}
+.payh1{font-size:60px}
+@media(max-width:960px){.payh1{font-size:36px}}
+
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.three a.card{display:block}
+.three .more{display:inline-block;margin-top:12px;color:var(--blue);font-weight:700;font-size:14.5px}
+.sect-intro{max-width:740px}
+.uses{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.uses div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-weight:600}
+.uses div:before{content:"✓";color:var(--blue);font-weight:800;margin-right:10px}
+@media(max-width:960px){.three,.uses{grid-template-columns:1fr}}
+@media(min-width:961px){.hero svg.coins{width:50%;right:-10px;opacity:.7}.payh1{max-width:620px}.hero .wrap{width:100%}.it>a,.sign,.gs,.lang{white-space:nowrap}.it>a{padding:10px 10px}.bar{gap:12px}.tools{gap:12px}}
+}</style>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/shared-header/header.css"><style id="payin-section-navigation">html{scroll-behavior:smooth}.payin-page section[id]{scroll-margin-top:112px}@media(max-width:900px){.payin-page section[id]{scroll-margin-top:88px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style><style>@scope (.payin-page){
+.trust .wrap{display:flex}.trust b{color:var(--blue)}
+.tabs button{border:1px solid var(--line);background:#fff;border-radius:99px;padding:11px 24px;font:700 15px var(--fnt);color:#5b6b85;cursor:pointer;white-space:nowrap}
+.tabs button.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.tp.on{display:block}
+.stepn{font-size:12.5px;font-weight:800;letter-spacing:1.6px;color:var(--blue)}
+.steph{font-size:26px;margin:6px 0 8px}
+.tp .uses{grid-template-columns:repeat(3,1fr)}
+.flow{display:flex;align-items:stretch;gap:12px;margin-top:26px;flex-wrap:wrap}
+.fn{flex:1;min-width:150px;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}
+.fn i{display:grid;place-items:center;width:42px;height:42px;margin:0 auto 8px;border-radius:12px;background:#e5eeff;color:var(--blue);font-style:normal;font-size:18px}
+.fn b{font-size:15px}
+.arw{align-self:center;color:var(--blue);font-weight:800;font-size:20px}
+.vid{display:flex;gap:18px;align-items:center;margin-top:30px;background:linear-gradient(120deg,#0b1626,#1d3a5f);color:#fff;border-radius:20px;padding:26px 28px}
+.vid .play{width:56px;height:56px;border-radius:50%;background:var(--blue2);display:grid;place-items:center;font-size:20px;flex:none}
+.vid b{display:block;font-size:18px}.vid span{display:block;color:#b7c8e6;font-size:14px}.vid small{color:#8fa6cc}
+.dash{display:grid;grid-template-columns:230px 1fr;gap:0;margin-top:34px;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:0 14px 36px rgba(10,108,255,.08)}
+.dash aside{background:var(--bg);padding:20px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:4px}
+.dash aside small{font-size:11px;font-weight:800;letter-spacing:1.4px;color:var(--muted);margin:10px 0 4px}
+.dash aside a{padding:10px 12px;border-radius:10px;font-weight:600;font-size:14.5px;color:#5b6b85}
+.dash aside a:hover,.dash aside a.sel{background:#e5eeff;color:var(--blue)}
+.dmain{padding:28px}
+.dmain h3{font-size:22px}
+.prog{margin-top:20px;border:1px solid var(--line);border-radius:16px;padding:20px}
+.ph{display:flex;justify-content:space-between;gap:12px;font-size:15px;margin-bottom:12px}
+.track{height:8px;border-radius:8px;background:#e5eeff;overflow:hidden;margin-bottom:12px}
+.track i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue2),var(--blue));border-radius:8px;transition:width .35s}
+.task{display:flex;gap:14px;align-items:flex-start;padding:12px 4px;border-top:1px solid var(--line);cursor:pointer}
+.task input{width:20px;height:20px;margin-top:3px;accent-color:var(--blue)}
+.task b{display:block;font-size:15.5px}.task small{display:block;color:var(--muted);font-size:14px}
+@media(max-width:960px){.tp .uses{grid-template-columns:1fr}.arw{display:none}.dash{grid-template-columns:1fr}.dash aside{flex-direction:row;flex-wrap:wrap;border-right:0;border-bottom:1px solid var(--line)}.dash aside small{display:none}.vid{flex-direction:column;align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){.track i{transition:none}}
+}</style>
+</head>
+<body style="margin:0"><div id="pay101-shared-header"></div><div class="payin-page">
+
+
+
+
+
+<main>
+<section class="hero" style="min-height:0" aria-label="How Pay101 works">
+ <svg class="coins" viewBox="0 0 700 560" aria-hidden="true" fill="none" stroke="#9fc4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M1 1.5l5 3-5 3" fill="none" stroke="#9fc4ff" stroke-width="1.8"/></marker></defs>
+  <g fill="rgba(120,170,255,.14)">
+   <rect x="70" y="92" width="124" height="78" rx="12"/><path d="M70 120h124M90 148h38" fill="none"/>
+   <rect x="62" y="252" width="116" height="84" rx="14"/><path d="M78 252l30-22h52" fill="none"/><circle cx="150" cy="294" r="8"/>
+   <rect x="104" y="400" width="66" height="112" rx="12"/><path d="M126 412h22" fill="none"/>
+  </g>
+  <g fill="#cfe2ff" stroke="none" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" text-anchor="middle">
+   <text x="137" y="470" font-size="30">$</text>
+  </g>
+  <g stroke-dasharray="2 8" marker-end="url(#ar)" stroke-opacity=".8">
+   <path d="M194 131C262 131 286 196 336 240"/>
+   <path d="M178 294L326 284"/>
+   <path d="M170 456C252 456 292 384 344 326"/>
+  </g>
+  <circle cx="400" cy="282" r="76" fill="rgba(42,134,255,.22)" stroke-opacity=".6"/>
+  <circle cx="400" cy="282" r="52" fill="rgba(42,134,255,.35)"/>
+  <path d="M376 282l18 19 34-40" stroke="#e6f0ff" stroke-width="6" fill="none"/>
+  <path d="M478 282H540" stroke-dasharray="2 8" marker-end="url(#ar)" stroke-opacity=".8"/>
+  <g fill="rgba(120,170,255,.14)">
+   <rect x="552" y="252" width="104" height="72" rx="6"/>
+   <path d="M546 252l14-44h88l14 44z"/>
+   <rect x="592" y="284" width="24" height="40" rx="3"/>
+  </g>
+  <g fill="rgba(120,170,255,.16)">
+   <circle cx="318" cy="132" r="20"/><circle cx="486" cy="168" r="16"/><circle cx="520" cy="396" r="22"/>
+  </g>
+  <g fill="#cfe2ff" stroke="none" font-family="Plus Jakarta Sans,sans-serif" font-weight="800" text-anchor="middle">
+   <text x="318" y="141" font-size="22">€</text><text x="486" y="174" font-size="17">$</text><text x="520" y="405" font-size="24">£</text>
+  </g>
+ </svg>
+ <div class="wrap" style="padding-top:64px;padding-bottom:70px">
+  <p style="font-size:14px;color:#9fb3d6;margin-bottom:16px">Company › How it works</p>
+  <span class="pill eyebrow">A SIMPLER WAY TO MOVE MONEY</span>
+  <h1 class="payh1">One platform.<br><em>Three simple steps.</em></h1>
+  <p class="sub">Collect customer payments, pay your partners, and track settlements — all from one connected payment platform.</p>
+  <div class="btns"><a class="btn pri" href="#how-it-works">Explore How It Works →</a><a class="btn ghost" href="#dashboard-guide"><b>→</b>Explore User Guide</a></div>
+ </div>
+</section>
+
+<div class="trust"><div class="wrap" style="flex-wrap:wrap;gap:12px 34px;align-items:center"><b>✓ Clear payment visibility</b><b>✓ Simple workflows</b><b>✓ One dashboard</b></div></div>
+
+<section class="white" id="how-it-works">
+ <div class="wrap">
+  <p class="eyebrow">How it works</p>
+  <h2>Your payment journey, <em>made clear</em></h2>
+  <p class="lead sect-intro" style="margin-top:12px">Choose a solution to see how it fits into your payment operations.</p>
+  <div class="vid"><div class="play">▶</div><div><b>How Pay101 works</b><span>Video coming soon · 35 sec</span><small>Collect, Pay out and Settle in one clear place</small></div></div>
+  <div class="tabs" role="tablist"><button class="on" data-t="s0">Collect</button><button class="" data-t="s1">Pay Out</button><button class="" data-t="s2">Settle</button></div>
+  <div class="tp on" id="s0">
+   <p class="stepn">STEP 01 / 03</p>
+   <h3 class="steph">Collect customer payments</h3>
+   <p class="lead">Give customers a convenient way to pay, then follow each transaction from initiation to confirmation.</p>
+   <div class="uses"><div>Offer supported payment methods</div><div>Track transaction status</div><div>Review payment activity in one place</div></div>
+   <div class="flow"><div class="fn"><i>▣</i><b>Customer checkout</b></div><span class="arw">→</span><div class="fn"><i>✓</i><b>Payment processed</b></div><span class="arw">→</span><div class="fn"><i>▤</i><b>Merchant dashboard</b></div></div>
+   <div class="btns"><a class="btn pri" href="/signup">Explore Collect →</a></div>
+  </div><div class="tp" id="s1">
+   <p class="stepn">STEP 02 / 03</p>
+   <h3 class="steph">Pay out to partners</h3>
+   <p class="lead">Manage outgoing payments to vendors, partners and customers, with visibility into transfer progress.</p>
+   <div class="uses"><div>Prepare payment instructions</div><div>Review payout status</div><div>Keep records in one place</div></div>
+   <div class="flow"><div class="fn"><i>▣</i><b>Create payout</b></div><span class="arw">→</span><div class="fn"><i>✓</i><b>Transfer processed</b></div><span class="arw">→</span><div class="fn"><i>▤</i><b>Review status</b></div></div>
+   <div class="btns"><a class="btn pri" href="/signup">Explore Pay Out →</a></div>
+  </div><div class="tp" id="s2">
+   <p class="stepn">STEP 03 / 03</p>
+   <h3 class="steph">Track settlements</h3>
+   <p class="lead">Review settlement records and understand when funds are expected to arrive.</p>
+   <div class="uses"><div>View settlement records</div><div>Track payment timelines</div><div>Review funds received</div></div>
+   <div class="flow"><div class="fn"><i>▣</i><b>Payments collected</b></div><span class="arw">→</span><div class="fn"><i>✓</i><b>Settlement processing</b></div><span class="arw">→</span><div class="fn"><i>▤</i><b>Funds tracking</b></div></div>
+   <div class="btns"><a class="btn pri" href="/signup">Explore Settle →</a></div>
+  </div>
+ </div>
+</section>
+
+<section id="solutions">
+ <div class="wrap">
+  <p class="eyebrow">Three connected solutions</p>
+  <h2>One Platform. <em>Complete Payment Control.</em></h2>
+  <p class="lead sect-intro" style="margin-top:12px">From payment collection to payment distribution and settlements management, all the tools you need to manage financial transactions are available to you where you need them.</p>
+  <div class="three">
+   <a class="card" href="/payin"><div class="ico">▣</div><h3>Collect</h3><p><b style="color:var(--ink)">Accept Payments Securely</b><br>Get your customer payments and monitor every payment in one place.</p><span class="more">Explore Payin →</span></a>
+   <a class="card" href="/payout"><div class="ico">➜</div><h3>Pay Out</h3><p><b style="color:var(--ink)">Move Money Seamlessly</b><br>Manage partner and vendor transfers with clear, real-time status visibility where supported.</p><span class="more">Explore Payout →</span></a>
+   <a class="card" href="/settlement"><div class="ico">⌂</div><h3>Settle</h3><p><b style="color:var(--ink)">Settle Everything</b><br>Monitor all settlement transactions and timelines easily.</p><span class="more">Explore Settlement →</span></a>
+  </div>
+ </div>
+</section>
+
+<section class="white" id="dashboard-guide">
+ <div class="wrap">
+  <p class="eyebrow">Quick guide</p>
+  <h2>Your dashboard, <em>with a little guidance</em></h2>
+  <p class="lead sect-intro" style="margin-top:12px">Use the getting-started checklist to explore each solution. Tick off topics as you learn them, or launch the guided tour.</p>
+  <div class="dash">
+   <aside><small>WORKSPACE</small><a href="#dashboard-guide">▦ Overview</a><a href="#how-it-works">▣ Collect</a><a href="#how-it-works">➜ Pay Out</a><a href="#how-it-works">⌂ Settle</a><small>SUPPORT</small><a class="sel" href="#dashboard-guide">ⓘ Getting Started</a></aside>
+   <div class="dmain">
+    <h3>Welcome to your workspace</h3><p class="lead" style="font-size:15.5px">Learn the essentials at your own pace.</p><a class="btn pri" href="#how-it-works" id="tour" style="margin-top:6px;padding:11px 20px;font-size:14.5px">Launch guided tour →</a>
+    <div class="prog"><div class="ph"><b>Your getting-started checklist</b><b id="pc">0 of 3 complete</b></div><div class="track"><i id="pb"></i></div><label class="task"><input type="checkbox" class="ck"><span><b>Understand Collect</b><small>Learn how customer payments are accepted and tracked.</small></span></label><label class="task"><input type="checkbox" class="ck"><span><b>Understand Pay Out</b><small>Learn the basic payout workflow and statuses.</small></span></label><label class="task"><input type="checkbox" class="ck"><span><b>Understand Settle</b><small>Learn where to review settlement information.</small></span></label></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="white">
+ <div class="wrap">
+  <p class="eyebrow">Why Pay101</p>
+  <h2>One connected <em>payment platform</em></h2>
+  <div class="grid g4">
+   <div class="card"><div class="ico">◎</div><h3>One dashboard</h3><p>Collections, payouts and settlements in one place.</p></div>
+   <div class="card"><div class="ico">⚡</div><h3>Clear visibility</h3><p>Follow each transaction from initiation to confirmation.</p></div>
+   <div class="card"><div class="ico">↻</div><h3>Simple workflows</h3><p>Three connected steps, easy for your team to learn.</p></div>
+   <div class="card"><div class="ico">💬</div><h3>Helpful support</h3><p>Our team helps you plan and launch.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="contact" style="padding-top:20px">
+ <div class="wrap">
+  <div class="cta">
+   <p class="eyebrow" style="color:#0629A2">Get in Touch</p>
+   <h2>Ready to <em style="color:#0629A2">get started?</em></h2>
+   <p>Explore the payment flow or speak with our team to understand which solution fits your business.</p>
+   <a class="btn pri" href="mailto:support@pay101.uk">Talk to our team ↗</a>
+  </div>
+ </div>
+</section>
+
+<section id="faq" class="white">
+ <div class="wrap" style="max-width:840px">
+  <p class="eyebrow">Need help?</p>
+  <h2>Frequently asked <em>questions</em></h2>
+  <details><summary>What is Collect?</summary><p>Collect is the area for accepting customer payments and reviewing their transaction status. Available payment methods depend on your platform configuration.</p></details><details><summary>What is Pay Out?</summary><p>Pay Out helps businesses send funds to eligible beneficiaries and monitor the progress of those transfers.</p></details><details><summary>What is Settle?</summary><p>Settle helps users review settlement records and understand the status and timing of incoming funds. Actual timelines depend on your payment arrangements.</p></details><details><summary>Where can I get help while using the dashboard?</summary><p>Use the getting-started guide, contextual help near a field, or your platform’s support channel.</p></details>
+ </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Pay101. All rights reserved.</div></footer>
+
+<div class="fab" id="fab">
+
+ <a class="opt" style="background:#0a6cff" href="mailto:info@pay101.io" aria-label="Email">✉</a>
+ <button class="main" aria-label="Contact options" onclick="document.getElementById('fab').classList.toggle('open')">💬</button>
+</div>
+<div class="mbar"><a style="background:#e5eeff;color:var(--blue)" href="/#contact">Talk to sales</a><a style="background:var(--blue);color:#fff" href="/signup">Get started</a></div>
+
+<script>
+document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('.tabs button').forEach(function(x){x.classList.remove('on')});document.querySelectorAll('.tp').forEach(function(x){x.classList.remove('on')});b.classList.add('on');document.getElementById(b.dataset.t).classList.add('on');});});
+</script>
+<script>
+(function(){var c=document.querySelectorAll('.ck'),pc=document.getElementById('pc'),pb=document.getElementById('pb');
+function u(){var n=0;c.forEach(function(x){if(x.checked)n++});pc.textContent=n+' of 3 complete';pb.style.width=(n/3*100)+'%'}
+c.forEach(function(x){x.addEventListener('change',u)});u();var tb=document.querySelectorAll('.tabs button'),tr=document.getElementById('tour'),i=0;tr.addEventListener('click',function(e){tb[i%3].click();i++});})();
+</script>
+</div><script type="module" src="/shared-header/header.js"></script></body></html>
