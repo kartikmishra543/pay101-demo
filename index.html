@@ -13,14 +13,16 @@
 <link rel="stylesheet" href="/pay101-menu.css">
   <meta name="google-site-verification" content="kWUWcnHoQHVw21yqDQd-2KuM33lMOXHJrihKit1ftNg" />
 <link rel="stylesheet" href="/pay101-footer.css"><link rel="stylesheet" href="/pay101-subpages.css"><script>if(location.pathname!=='/')document.documentElement.classList.add('p101-subpage');</script><style>
+.p101HubFlowCore { gap: 5px; }
 .p101HubFlowCore .p101HubLayers { display: none; }
 .p101HubFlowCore strong {
   display: block;
-  width: 80px;
+  width: min(80px, calc(100% - 12px));
   height: 28px;
+  flex-shrink: 0;
   overflow: hidden;
   color: transparent;
-  background: white url('/assets/pay101-logo.png') center / 70px auto no-repeat;
+  background: white url('/assets/pay101-logo.png') center / calc(100% - 8px) auto no-repeat;
   border-radius: 6px;
 }
 </style>
